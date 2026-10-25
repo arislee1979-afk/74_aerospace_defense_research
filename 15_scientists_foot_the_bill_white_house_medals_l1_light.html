@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「銀行和政府在印鈔票，但最後買單的是科學家」——2026年10月白宮科技獎章授勳、Elon Musk領銜之巨企結盟與主權算力交換機制 · L1 知識發布 (Claude 淺色暖紙)</title>
+  <meta name="description" content="依據尤瓦爾·赫拉利《人類簡史》第16章（L2906–2910, L3050–3058）信貸買單鐵律，深度解碼2026年9–10月白宮科技峰會、川普頒發國家科學獎章予Elon Musk、黃仁勳、蘇姿丰、Sergey Brin（協同Google執行長皮查伊）、納德拉與戴爾，以及24億美元創世紀任務與台灣台積電物理底座。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="mermaid.min.js"></script>
+  <style>
+:root {
+  --bg-canvas: #faf9f5;
+  --bg-mesh: radial-gradient(at 0% 0%, rgba(180, 83, 9, 0.07) 0px, transparent 55%),
+             radial-gradient(at 100% 0%, rgba(37, 99, 235, 0.06) 0px, transparent 50%),
+             radial-gradient(at 50% 100%, rgba(21, 128, 61, 0.05) 0px, transparent 60%),
+             #faf9f5;
+  --surface-card: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-inset: #f4f1ea;
+  --surface-toc: rgba(250, 249, 245, 0.95);
+  --border-subtle: #e8e4da;
+  --border-card: #e2ded3;
+  --border-strong: #c8c2b3;
+  --border-accent: rgba(180, 83, 9, 0.35);
+  --amber: #b45309;
+  --amber-light: #fef3c7;
+  --blue: #1d4ed8;
+  --blue-light: #eff6ff;
+  --crimson: #b91c1c;
+  --crimson-light: #fef2f2;
+  --emerald: #15803d;
+  --emerald-light: #f0fdf4;
+  --text-heading: #1a1714;
+  --text-body: #332f29;
+  --text-muted: #6e675f;
+  --text-faint: #9c9489;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Noto Sans TC', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --sidebar-w: 296px;
+  --header-h: 62px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-canvas);
+  background-image: var(--bg-mesh);
+  background-attachment: fixed;
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.82;
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--header-h);
+  background: rgba(250, 249, 245, 0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; z-index: 1000;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; color: var(--text-heading);
+  font-weight: 700; font-size: 1.02rem;
+}
+.nav-badge {
+  font-family: var(--font-mono); font-size: 0.74rem;
+  background: var(--amber-light); color: var(--amber);
+  border: 1px solid var(--border-accent);
+  padding: 2px 9px; border-radius: 9999px; font-weight: 600;
+}
+.nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.theme-switch-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; font-weight: 600; padding: 6px 13px;
+  border-radius: 8px; text-decoration: none; transition: all 0.2s ease;
+  background: var(--surface-card); color: var(--text-body);
+  border: 1px solid var(--border-card); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.theme-switch-btn:hover {
+  background: var(--surface-inset); color: var(--text-heading); border-color: var(--border-strong);
+}
+.btn-archify-switch {
+  background: var(--blue-light); color: var(--blue); border-color: rgba(29, 78, 216, 0.28);
+}
+.btn-archify-switch:hover { background: #dbeafe; border-color: var(--blue); }
+
+.layout-container { display: flex; padding-top: var(--header-h); min-height: 100vh; }
+.sidebar {
+  width: var(--sidebar-w); flex-shrink: 0;
+  height: calc(100vh - var(--header-h));
+  position: sticky; top: var(--header-h); overflow-y: auto;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--surface-toc); padding: 24px 16px;
+}
+.toc-title {
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-muted); margin-bottom: 12px; padding-left: 10px; font-weight: 700;
+}
+.toc-list { list-style: none; }
+.toc-item { margin-bottom: 4px; }
+.toc-link {
+  display: block; padding: 7px 10px; color: var(--text-muted);
+  text-decoration: none; font-size: 0.86rem; border-radius: 6px;
+  transition: all 0.15s ease; line-height: 1.45;
+}
+.toc-link:hover { color: var(--text-heading); background: rgba(0, 0, 0, 0.045); }
+.toc-sub { padding-left: 22px; font-size: 0.81rem; color: var(--text-faint); }
+
+.main-content { flex: 1; max-width: 1120px; padding: 42px 52px; margin: 0 auto; }
+.hero { margin-bottom: 44px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 32px; }
+.hero-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.meta-pill {
+  font-size: 0.76rem; font-family: var(--font-mono); padding: 3px 10px;
+  border-radius: 9999px; background: var(--amber-light); color: var(--amber);
+  border: 1px solid var(--border-accent); font-weight: 500;
+}
+.meta-pill.accent { background: var(--blue-light); color: var(--blue); border-color: rgba(29, 78, 216, 0.28); }
+.meta-pill.emerald { background: var(--emerald-light); color: var(--emerald); border-color: rgba(21, 128, 61, 0.28); }
+.hero-title {
+  font-family: var(--font-display); font-size: 2.22rem; font-weight: 700;
+  line-height: 1.32; color: var(--text-heading); margin-bottom: 16px; letter-spacing: -0.015em;
+}
+.hero-subtitle { font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; max-width: 980px; }
+
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 16px; margin-top: 24px;
+}
+.kpi-card {
+  background: var(--surface-card); border: 1px solid var(--border-card);
+  border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.kpi-num { font-family: var(--font-display); font-size: 1.62rem; font-weight: 700; color: var(--amber); line-height: 1.2; }
+.kpi-label { font-size: 0.85rem; font-weight: 700; color: var(--text-heading); margin-top: 4px; }
+.kpi-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; line-height: 1.45; }
+
+.section { margin-bottom: 60px; scroll-margin-top: 80px; }
+.section-title {
+  font-size: 1.52rem; font-weight: 700; color: var(--text-heading);
+  margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--border-subtle); flex-wrap: wrap;
+}
+.section-title span.badge {
+  font-size: 0.76rem; background: var(--surface-inset); color: var(--text-muted);
+  padding: 3px 9px; border-radius: 6px; font-family: var(--font-mono);
+  font-weight: 500; border: 1px solid var(--border-card);
+}
+
+.chapter-box {
+  background: var(--surface-card); border: 1px solid var(--border-card);
+  border-radius: 12px; padding: 28px 30px; margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.035);
+}
+.chapter-box h3 { color: var(--text-heading); font-size: 1.24rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.chapter-box h4 { color: var(--amber); font-size: 1.05rem; margin: 20px 0 10px 0; font-weight: 700; }
+.chapter-box p { margin-bottom: 14px; color: var(--text-body); text-align: justify; }
+.chapter-box ul, .chapter-box ol { margin-left: 22px; margin-bottom: 16px; }
+.chapter-box li { margin-bottom: 8px; }
+
+.two-col-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin: 18px 0; }
+.sub-card { background: #fcfbf9; border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px; }
+.sub-card h4 { margin-top: 0; font-size: 1.04rem; color: var(--text-heading); margin-bottom: 10px; }
+
+.weread-quote {
+  font-family: Georgia, 'Noto Sans TC', serif; font-style: italic;
+  color: #1e3a8a; background: #f8fafc; border-left: 4px solid #2563eb;
+  padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.96rem;
+}
+.weread-quote .quote-meta {
+  display: block; font-style: normal; font-family: var(--font-mono);
+  font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;
+}
+
+.callout {
+  border-left: 4px solid var(--amber); background: var(--amber-light);
+  padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 18px 0;
+}
+.callout-title { font-weight: 700; color: var(--amber); margin-bottom: 6px; font-size: 0.95rem; }
+.callout.info { border-left-color: var(--blue); background: var(--blue-light); }
+.callout.info .callout-title { color: var(--blue); }
+.callout.danger { border-left-color: var(--crimson); background: var(--crimson-light); }
+.callout.danger .callout-title { color: var(--crimson); }
+.callout.success { border-left-color: var(--emerald); background: var(--emerald-light); }
+.callout.success .callout-title { color: var(--emerald); }
+
+.table-container {
+  overflow-x: auto; border: 1px solid var(--border-card);
+  border-radius: 10px; background: var(--surface-card);
+  margin: 20px 0 24px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+table.knowledge-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
+table.knowledge-table th {
+  background: var(--surface-inset); color: var(--text-heading);
+  font-weight: 700; padding: 12px 14px; border-bottom: 1px solid var(--border-strong); white-space: nowrap;
+}
+table.knowledge-table td {
+  padding: 12px 14px; border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-body); vertical-align: top; line-height: 1.65;
+}
+table.knowledge-table tr:hover td { background: #fbfaf6; }
+
+.archify-wrapper-card {
+  background: var(--surface-card); border: 1px solid rgba(29, 78, 216, 0.3);
+  border-radius: 12px; padding: 18px; margin-bottom: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+.archify-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+.archify-title { font-size: 1.02rem; font-weight: 700; color: var(--blue); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.archify-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue-light); color: var(--blue);
+  border: 1px solid rgba(29, 78, 216, 0.3); padding: 5px 12px;
+  border-radius: 6px; font-size: 0.82rem; text-decoration: none; font-weight: 600;
+}
+.archify-pill:hover { background: #dbeafe; }
+.archify-iframe { width: 100%; height: 660px; border: 1px solid var(--border-card); border-radius: 8px; background: #faf9f5; }
+
+.ev-badge {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.72rem;
+  font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-right: 4px;
+}
+.ev-fact { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+.ev-author { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.ev-inf { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+.ev-unk { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+footer {
+  border-top: 1px solid var(--border-subtle); padding: 40px 0 60px 0;
+  margin-top: 60px; color: var(--text-muted); font-size: 0.85rem; text-align: center;
+}
+
+@media (max-width: 960px) {
+  .sidebar { display: none; }
+  .main-content { padding: 24px 16px; }
+  .hero-title { font-size: 1.75rem; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <a href="#hero" class="nav-brand">
+      <span>🏛️ 大歷史 × 當代國防算力研究</span>
+      <span class="nav-badge">科學家替印鈔買單 · 白宮授勳 L1+L2</span>
+    </a>
+    <div class="nav-actions">
+      <a href="15_scientists_foot_the_bill_white_house_medals_l2_light.html?theme=light" target="_blank" class="theme-switch-btn btn-archify-switch">⚡ 開啟 L2 淺色互動圖譜 ↗</a>
+      <a href="15_scientists_foot_the_bill_white_house_medals_l1.md" target="_blank" class="theme-switch-btn">📄 檢視 L1 Markdown 原稿</a>
+      <a href="14_mobius_history_spacex_nvda_ukraine_taiwan_l1.html" class="theme-switch-btn">🔗 前篇：東印度公司 vs SPCX/NVDA</a>
+    </div>
+  </header>
+
+  <div class="layout-container">
+    <!-- Sidebar TOC -->
+    <aside class="sidebar">
+      <div class="toc-title">科學家買單 · 深度導覽</div>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#hero" class="toc-link">專題導論：赫拉利信貸買單鐵律</a></li>
+        <li class="toc-item"><a href="#knowledge-map" class="toc-link">Mermaid 全域體系拓撲圖</a></li>
+        <li class="toc-item"><a href="#archify-l2" class="toc-link">Archify L2 淺色互動知識圖譜</a></li>
+        <li class="toc-item"><a href="#sec1" class="toc-link">1. 問題：36兆美債與誰替印鈔買單？</a></li>
+        <li class="toc-item"><a href="#sec1-harari" class="toc-link toc-sub">• 《人類簡史》L2906 核心論斷</a></li>
+        <li class="toc-item"><a href="#sec1-paradigm" class="toc-link toc-sub">• 1945 布希體系 → 2026 巨企實驗室</a></li>
+        <li class="toc-item"><a href="#sec2" class="toc-link">2. 真實案例：白宮 9–10 月結盟三部曲</a></li>
+        <li class="toc-item"><a href="#sec2-act1" class="toc-link toc-sub">• 9/14 資料中心即石油 & 9/29 東廳座次</a></li>
+        <li class="toc-item"><a href="#sec2-act2" class="toc-link toc-sub">• 10/8 國家科學獎章六國寶加冕</a></li>
+        <li class="toc-item"><a href="#sec2-act3" class="toc-link toc-sub">• 60億科學倡議與24億創世紀任務</a></li>
+        <li class="toc-item"><a href="#sec3" class="toc-link">3. 方法與解釋：為何以 Elon Musk 為首？</a></li>
+        <li class="toc-item"><a href="#sec3-equation" class="toc-link toc-sub">• 主權信貸 × 實驗室買單三層方程式</a></li>
+        <li class="toc-item"><a href="#sec3-musk" class="toc-link toc-sub">• 白宮給予 Musk 最高評價的四重原因</a></li>
+        <li class="toc-item"><a href="#sec3-matrix" class="toc-link toc-sub">• 白宮 ↔ 六大科技巨頭雙向交換矩陣</a></li>
+        <li class="toc-item"><a href="#sec4" class="toc-link">4. 台灣視角、結構矛盾與貝氏檢驗</a></li>
+        <li class="toc-item"><a href="#sec4-taiwan" class="toc-link toc-sub">• 2位台灣出生得主與台積電實體底座</a></li>
+        <li class="toc-item"><a href="#sec4-bayesian" class="toc-link toc-sub">• HYP-15-01/02 貝氏對稱檢驗表</a></li>
+        <li class="toc-item"><a href="#sec5" class="toc-link">5. 結構化查核來源清單</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="hero-meta">
+          <span class="meta-pill">《人類簡史》第16章 (L2906–2910, L3050–3058)</span>
+          <span class="meta-pill accent">2026-10-08 白宮國家科學獎章授勳</span>
+          <span class="meta-pill emerald">Elon Musk · 黃仁勳 · 蘇姿丰 · 布林/皮查伊 · 納德拉 · 戴爾</span>
+        </div>
+        <h1 class="hero-title">「銀行和政府在印鈔票，但最後買單的是科學家」——解碼 2026 年 10 月白宮科技獎章授勳、Elon Musk 領銜之巨企結盟與主權算力交換機制</h1>
+        <p class="hero-subtitle">
+          為什麼白宮在 2026 年 10 月 8 日打破 67 年純學術慣例，將美國最高榮譽「國家科學獎章」與「國家技術與創新獎章」一次頒發給身家合計 1.736 兆美元的六位現職科技掌門人，並由川普總統盛讚為首的 <strong>Elon Musk</strong> 為「現代愛迪生」與「美國國寶」？回到尤瓦爾·赫拉利《人類簡史》第 16 章的底層鐵律：當美國聯邦政府累積逾 36 兆美元主權債務、央行印鈔面臨物理極限時，唯有掌握<strong>太空軌道、自製能源渦輪、百萬兆級晶片與超級智慧（SI）算力</strong>的超大型科技企業實驗室，才能把未來的經濟大餅做大，替國家的印鈔機買單。
+        </p>
+
+        <!-- KPI Strip -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-num">$1.736 兆 / 6 人</div>
+            <div class="kpi-label">10/8 白宮授勳「美國國寶」身家</div>
+            <div class="kpi-desc">打破 67 年學術傳統，首次將國家科學獎章集中授予現職科技巨頭掌門人 (NY Post 2026-10-08)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">$60 億 / $24 億</div>
+            <div class="kpi-label">白宮科學倡議與「創世紀任務」</div>
+            <div class="kpi-desc">11 家巨頭捐 24 億美元算力 (NVDA 10億、AMD 5億、Google 1.5億) 訓練 14 個聯邦部會主權模型</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">22 萬顆 GB300/月</div>
+            <div class="kpi-label">馬斯克 SpaceX SI 物理買單速度</div>
+            <div class="kpi-desc">以 Raptor 火箭引擎鑄造產線自製渦輪發電，Q3 營收年增 161% 達 145.8 億美元 (SI 占 76 億)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">50% 生於台灣</div>
+            <div class="kpi-label">國家科學獎章得主與矽盾底座</div>
+            <div class="kpi-desc">4 位科學獎章得主中黃仁勳、蘇姿丰生於台灣；六巨頭晶片 100% 仰賴台積電 CoWoS 先進封裝</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Quote Banner -->
+      <section class="section">
+        <div class="weread-quote" style="font-size: 1.05rem; padding: 20px 24px; background: #fffbeb; border-left: 5px solid #b45309; color: #78350f;">
+          「是誰在最後買單？不是銀行家，也不是政府，而是科學家。銀行和政府在印鈔票，但最後買單的是科學家……當代經濟之所以能夠度過一次又一次的信貸危機，靠的正是科學家和工程師在實驗室裡不斷推出生物科技、奈米科技與演算法的新突破。」
+          <span class="quote-meta">—— 尤瓦爾·赫拉利（Yuval Noah Harari），《人類簡史：從動物到上帝（新版）》第 16 章〈資本主義教條〉（L2906–2910, L3050–3058） <span class="ev-badge ev-author">AUTHOR STATEMENT</span></span>
+        </div>
+      </section>
+
+      <!-- Mermaid Section -->
+      <section id="knowledge-map" class="section">
+        <h2 class="section-title">全域體系架構圖 (Mermaid 垂直展開結構) <span class="badge">可縮放 · 全螢幕 · 可匯出 SVG</span></h2>
+        <div class="diagram-box" data-diagram-card data-diagram-title="科學家替印鈔買單與白宮科技授勳全景架構">
+          <div class="diagram-header-bar" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #cbd5e1; background: #f8fafc; border-top-left-radius: 12px; border-top-right-radius: 12px; flex-wrap: wrap; gap: 10px;">
+            <div class="diagram-status" style="display: flex; align-items: center; gap: 8px;">
+              <span class="status-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+              <span class="diagram-name" style="font-weight: 600; font-size: 0.92rem; color: #0f172a;">「政府印鈔、科學家買單」：2026 白宮科技獎章授勳與主權算力交換拓撲圖</span>
+              <span id="zoom-level-badge" style="font-size: 0.75rem; background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; padding: 2px 8px; border-radius: 9999px; font-family: monospace;">100%</span>
+            </div>
+            <div class="diagram-actions" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="ctrl-btn" onclick="zoomMermaid(0.2)" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #1e293b; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600;">🔍 放大</button>
+              <button type="button" class="ctrl-btn" onclick="zoomMermaid(-0.2)" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #1e293b; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600;">🔍 縮小</button>
+              <button type="button" class="ctrl-btn" onclick="resetMermaidZoom()" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #1e293b; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600;">🔄 重設</button>
+              <button type="button" class="ctrl-btn" onclick="openMermaidFullscreen()" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #1e293b; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600;">⛶ 全螢幕檢視</button>
+              <button type="button" class="ctrl-btn btn-export" onclick="exportMermaidSvg()" style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 700;">⬇️ 匯出 SVG</button>
+            </div>
+          </div>
+          <div class="mermaid-wrapper svg-shell" id="mermaid-shell" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 32px 16px; margin: 0; border: 1px solid #cbd5e1; border-top: none; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; text-align: center; background: #ffffff;">
+            <div id="mermaid-zoom-target" style="display: inline-block; min-width: 860px; transform-origin: top center; transition: transform 0.15s ease-out;">
+              <pre class="mermaid" id="main-mermaid">
+graph TD
+    subgraph HarariLaw ["📜 1. 《人類簡史》信貸鐵律：銀行與政府印鈔，科學家買單 (L2906–2910)"]
+        direction TB
+        H1["<b style='font-size:15px; color:#b45309;'>36兆美元美債與印鈔泡沫壓力</b><br/><br/>• 現代銀行10:1部分準備金與90%數位信貸預支未來大餅<br/>• 2008與2020後全球央行擴表數十兆美元，美債突破36兆<br/>• 若無實質全要素生產力(TFP)躍遷，恐重演1789路易十六50%預算付息破產"]
+        H2["<b style='font-size:15px; color:#b45309;'>1945《無盡的前沿》→ 2026《新黃金時代》範式轉移</b><br/><br/>• 傳統大學教授已無力負擔百億至千億美元級GW資料中心與火箭星系<br/>• 聯邦傳統科研預算受國債利息排擠，必須外包予兆元級私人科技巨企<br/>• 白宮OSTP克拉齊奧斯報告確立：由超大型企業實驗室替國家主權信貸買單"]
+        H1 --> H2
+    end
+
+    subgraph WhiteHouseTrilogy ["🏛️ 2. 白宮 2026 年 9–10 月「政商授勳與算力結盟」三部曲"]
+        direction TB
+        W1["<b style='font-size:15px; color:#1d4ed8;'>第一幕 (9/14) & 第二幕 (9/29)：排除減速與東廳座次</b><br/><br/>• 9/14 All-In峰會川普連線黃仁勳擴音：資料中心是未來25年石油，絕不放慢<br/>• 9/29 白宮東廳34人午宴：川普居中，左一馬斯克、右一黃仁勳、右二蘇姿丰、左三皮查伊<br/>• 簽署一頁紙《白宮超級智慧協議》自律承諾，掃除強制AI專法與暫停風險"]
+        W2["<b style='font-size:15px; color:#1d4ed8;'>第三幕 (10/8)：打破67年傳統頒授國家科學與技術創新獎章</b><br/><br/>• 史上首次將國家科學獎章集中頒予現職科技巨頭掌門人 (合計身家1.736兆美元)<br/>• 國家科學獎章4人：Elon Musk、Jensen Huang(黃仁勳)、Lisa Su(蘇姿丰)、Sergey Brin<br/>• 國家技術與創新獎章2人：Satya Nadella(微軟)、Michael Dell(戴爾)；川普封為「美國國寶」"]
+        W1 --> W2
+    end
+
+    subgraph MuskAndTitans ["🚀 3. 為何以 Elon Musk 為首？六大科技巨頭的物理買單分工"]
+        direction TB
+        M1["<b style='font-size:15px; color:#b91c1c;'>為首核心：Elon Musk (白宮最高評價「現代愛迪生」)</b><br/><br/>• 唯一打通「太空發射+1.1萬顆星鏈+自製Raptor渦輪發電+xAI算力」物理閉環<br/>• SpaceX(SPCX, 2兆市值)月裝22萬顆GB300，Q3營收暴增161%達145.8億美元(SI占76億)<br/>• 現場呼應川普行政命令改名 SpaceX SI，並掌握烏克蘭 Starshield 戰場可否認開關"]
+        M2["<b style='font-size:15px; color:#b91c1c;'>算力與雲端五大支柱：黃仁勳 · 蘇姿丰 · 布林/皮查伊 · 納德拉 · 戴爾</b><br/><br/>• 黃仁勳 (NVDA)：前沿超級智慧「絕對骨幹」，Blackwell年營收1840億、推進Vera Rubin<br/>• 蘇姿丰 (AMD)：小晶片(Chiplet)驅動能源部El Capitan百萬兆級(Exascale)核武與科學超算<br/>• Google (布林受獎/皮查伊簽約)：攜手SpaceX發射Trillium TPU v6e太空算力衛星；微軟與戴爾建構主權雲機櫃"]
+        M1 --> M2
+    end
+
+    subgraph SovereignLoop ["🌐 4. 24億創世紀任務、川普帳戶全民入股與台灣矽盾底座"]
+        direction TB
+        S1_Node["<b style='font-size:15px; color:#15803d;'>60億科學倡議 × 24億「創世紀任務」× 7000萬「川普帳戶」</b><br/><br/>• 11家巨頭捐24億算力 (NVDA 10億、AMD 5億、OpenAI 2億、Google 1.5億) 訓練14部會模型<br/>• 財政部10/1自動開立7000萬兒童「川普帳戶」，Dell捐62.5億、Musk宣示贈每人一股SPCX (105億)<br/>• 將「美國主權信貸、全民兒童資產、科技巨頭市值」鎖入同一莫比烏斯環"]
+        S2_Node["<b style='font-size:15px; color:#15803d;'>台灣矽盾底座 (Taiwan Lens) 與四大結構矛盾邊界</b><br/><br/>• 4位科學獎章得主中2位(50%)生於台灣(黃仁勳、蘇姿丰)；所有AI與太空晶片100%仰賴台積電CoWoS<br/>• 結構矛盾：頒獎前數小時范斯暫停H-1B簽證 vs 台上5位得主為移民；民間取代公共科研之壟斷隱憂<br/>• 財務與物理邊界：SpaceX前三季FCF -349.7億；Suncatcher太空TPU受真空散熱限制每15分鐘須停機冷卻"]
+        S1_Node --> S2_Node
+    end
+
+    HarariLaw ==> WhiteHouseTrilogy
+    WhiteHouseTrilogy ==> MuskAndTitans
+    MuskAndTitans ==> SovereignLoop
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Archify L2 Embed Section -->
+      <section id="archify-l2" class="section">
+        <h2 class="section-title">Archify L2 淺色互動知識圖譜 <span class="badge">Schema 1 · Light Showcase</span></h2>
+        <div class="archify-wrapper-card">
+          <div class="archify-header">
+            <div class="archify-title">
+              <span>⚡ 「銀行與政府印鈔票，最後買單的是科學家」——2026白宮科技授勳與主權算力結盟 (L2 互動拓撲)</span>
+              <span style="font-size:0.75rem; color:#64748b; font-family:monospace;">white-house-medals-bailout.architecture.json · 支援路徑探測 (R) / 節點搜尋 (/) / 語義透鏡 (L)</span>
+            </div>
+            <a href="15_scientists_foot_the_bill_white_house_medals_l2_light.html?theme=light" target="_blank" class="archify-pill">⚡ 獨立視窗全螢幕探索 L2 ↗</a>
+          </div>
+          <iframe class="archify-iframe" src="15_scientists_foot_the_bill_white_house_medals_l2_light.html?theme=light" title="White House Tech Medals and Harari Bailout Loop L2 Light"></iframe>
+        </div>
+      </section>
+
+      <!-- SECTION 1 -->
+      <section id="sec1" class="section">
+        <h2 class="section-title">1. 核心問題（Problem）：當 36 兆美元主權信貸遇上物理算力瓶頸，誰來替國家的印鈔機買單？ <span class="badge">《人類簡史》第16章 L2811–2910</span></h2>
+
+        <div class="chapter-box" id="sec1-harari">
+          <h3>1.1 赫拉利的信貸時間差悖論：印鈔是一秒鐘的記帳，買單卻是實驗室的生死賽跑</h3>
+          <p>在《人類簡史》第 16 章中，赫拉利指出現代經濟建立在「對未來的信任」之上：透過 10:1 的部分準備金制度，銀行與政府得以在當下憑空創造「信貸（Credit）」，全球超過 90% 的金錢皆是電腦伺服器上的數位記帳 <span class="ev-badge ev-fact">FACT</span>。然而，這套機制存在一個致命的時間差：</p>
+          <ul>
+            <li><strong>印鈔與發債是一瞬間的政治決定</strong>：2008 年金融海嘯與 2020 年疫情量化寬鬆後，全球央行與財政部創造了數十兆美元的流動性。到了 2026 年，美國聯邦政府債務已突破 <strong>35 兆至 36 兆美元</strong>，年度國債利息支出已逼近甚至超越國防預算，面臨重演 1780 年代法國路易十六因 50% 年度預算用於付息而引發信用崩潰的歷史臨界點 <span class="ev-badge ev-fact">FACT</span> <span class="ev-badge ev-inf">INFERENCE</span>。</li>
+            <li><strong>填補信貸缺口必須仰賴實質生產力躍遷</strong>：銀行家與財政部長不會發明新能源，也不會設計平行運算晶片。如果實驗室裡的科學家與工程師無法在債務泡沫破裂前推出足以讓經濟大餅倍增的新技術（如「超級智慧 SI」、自動化機器人、核融合與太空基建），整個主權信貸體系就會崩盤 <span class="ev-badge ev-author">AUTHOR STATEMENT</span>。</li>
+          </ul>
+        </div>
+
+        <div class="chapter-box" id="sec1-paradigm">
+          <h3>1.2 從 1945《無盡的前沿》到 2026《新黃金時代》：當「實驗室」變成萬億美元科技巨企</h3>
+          <p>為什麼白宮在 2026 年必須與超大型科技公司（Mega-Cap Tech）深度結合？因為<strong>當代能夠替 36 兆美元國債買單的「實驗室」，已經不再位於傳統大學校園內</strong>：</p>
+          <div class="two-col-grid">
+            <div class="sub-card">
+              <h4>🏛️ 1945 范內瓦·布希模式（舊範式）</h4>
+              <p>二戰後范內瓦·布希（Vannevar Bush）發表《科學：無盡的前沿》，由<strong>聯邦政府編列預算資助大學教授與國家實驗室</strong>進行基礎科研，過去 67 年的「國家科學獎章」（共 529 位得主，含 2025 年初的 14 位得主）幾乎全數頒給大學學者 <span class="ev-badge ev-fact">FACT</span>。</p>
+            </div>
+            <div class="sub-card">
+              <h4>🚀 2026 克拉齊奧斯《新黃金時代》（新範式）</h4>
+              <p>訓練前沿「超級智慧」模型、建造配備數十萬顆 GPU 的吉瓦級（GW）資料中心、發射萬顆低軌衛星，單一專案資本開支動輒 <strong>100 億至 1,000 億美元以上</strong>。在聯邦財政赤字受限下，白宮科技政策辦公室（OSTP）主任 Michael Kratsios 於 2026 年 7 月發布《科學：新黃金時代》，正式確立<strong>由超大型私人科技資本承接國家級科研與戰略基建</strong> <span class="ev-badge ev-fact">FACT</span>。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section id="sec2" class="section">
+        <h2 class="section-title">2. 真實案例（Cases）：2026 年 9–10 月白宮「科技授勳與算力結盟」三部曲全解碼 <span class="badge">2026.09.14 – 2026.10.19</span></h2>
+
+        <div class="chapter-box" id="sec2-act1">
+          <h3>2.1 第一幕（9/14 & 9/29）：確立「資料中心即未來 25 年石油」與白宮東廳權力座次</h3>
+          <p>當部分 AI 安全派（如 Anthropic 執行長 Dario Amodei 於 9 月 12 日發表《我們必須為前沿定速》）呼籲放慢 AI 研發時，白宮與硬體巨頭立即聯手反制——因為<strong>一旦算力資本開支（CapEx）踩煞車，支撐美股與美債信用的「未來大餅預期」將立即破裂</strong> <span class="ev-badge ev-inf">INFERENCE</span>：</p>
+          <ul>
+            <li><strong>9 月 14 日 All-In 峰會現場擴音通話</strong>：NVIDIA 執行長<strong>黃仁勳（Jensen Huang）</strong>在洛杉磯舞台上接聽川普總統來電並對全場數千人擴音。川普將反對 AI 發展定調為「中了競爭對手與中國的下懷」，並公開宣示：<strong>「資料中心很棒，它們讓人民致富、讓各州致富。它是未來 20 到 25 年的石油，比網際網路還大得多。」</strong>黃仁勳當場回應：<strong>「您說得對。我們不會讓它（指放慢）發生，先生。」</strong>（<a href="https://www.moneycontrol.com/artificial-intelligence/trump-rings-nvidia-ceo-jensen-huang-live-mid-panel-calls-data-centres-the-oil-of-the-next-25-years-article-14029774.html" target="_blank">Moneycontrol 2026-09-14</a>） <span class="ev-badge ev-fact">FACT</span></li>
+            <li><strong>9 月 29 日白宮東廳「超級智慧午宴」34 人權力座次</strong>：川普居中，<strong>左手第一位（左一）為 Elon Musk（SpaceX/Tesla/xAI）</strong>，<strong>右手第一位（右一）為黃仁勳（NVIDIA）</strong>；右側依序為<strong>蘇姿丰（AMD，右二）</strong>、陳福陽（Broadcom，右三）、Sanjay Mehrotra（Micron，右四）；左側依序為 Mark Zuckerberg（Meta，左二）、<strong>Sundar Pichai 皮查伊（Google 執行長，左三）</strong>、Greg Brockman（OpenAI，左四）（<a href="https://www.aa.com.tr/en/americas/trump-to-host-top-tech-executives-officials-for-white-house-ai-lunch/4072640" target="_blank">Anadolu Agency 2026-09-29</a>）。會後僅簽署一頁紙的業者自律承諾，徹底排除強制監管專法 <span class="ev-badge ev-fact">FACT</span>。</li>
+          </ul>
+        </div>
+
+        <div class="chapter-box" id="sec2-act2">
+          <h3>2.2 第二幕（10/8）：白宮「科學：新黃金時代」峰會與六大科技國寶集體授勳</h3>
+          <p>2026 年 10 月 8 日下午，川普總統在華盛頓特區美國和平研究所主持白宮<strong>「科學：新黃金時代（Science: A New Golden Age）」</strong>峰會，親自將<strong>「國家科學獎章」</strong>與<strong>「國家技術與創新獎章」</strong>裝在珠寶盒中頒給六位現職科技領袖，稱他們為<strong>「美國國寶（national treasures）」</strong>，六人合計個人淨資產高達 <strong>1.736 兆美元</strong>（<a href="https://nypost.com/2026/10/08/us-news/trump-honors-elon-musk-jensen-haung-and-other-top-tech-ceos-with-prestigious-science-award/" target="_blank">NY Post 2026-10-08</a>；<a href="https://www.forbes.com/sites/antoniopequenoiv/2026/10/08/trump-awards-modern-day-thomas-edison-elon-musk-national-medal-of-science-culminating-reconciliation-photos/" target="_blank">Forbes 2026-10-08</a>） <span class="ev-badge ev-fact">FACT</span>：</p>
+
+          <div class="table-container">
+            <table class="knowledge-table">
+              <thead>
+                <tr>
+                  <th>受獎人與職銜</th>
+                  <th>獎章類別</th>
+                  <th>白宮官方授獎詞（Official Citation）</th>
+                  <th>川普總統現場評價</th>
+                  <th>替主權信貸買單之物理角色</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Elon Musk</strong><br>SpaceX / Tesla / xAI 執行長<br>（生於南非）</td>
+                  <td><strong>國家科學獎章</strong></td>
+                  <td>表彰其「極具雄心與規模的工程成就，推動太空探索、智慧系統、通訊等領域前沿，更新美國科技領導地位，開啟美國製造業新篇章」。</td>
+                  <td>全場最高評價：<strong>「史上最偉大的科技創辦人之一」、「現代愛迪生」、「我的朋友」、「國寶」</strong>：「老實說，沒有人像他這樣，我們為你驕傲，非常驕傲。」</td>
+                  <td><strong>政商結盟之首</strong>：掌握逾 1.1 萬顆星鏈/Starshield、Raptor 渦輪自發電與月裝 22 萬顆 GB300（SpaceX SI），並以川普帳戶贈股綁定 7,200 萬兒童。</td>
+                </tr>
+                <tr>
+                  <td><strong>2. 黃仁勳 (Jensen Huang)</strong><br>NVIDIA 創辦人暨執行長<br>（生於台灣）</td>
+                  <td><strong>國家科學獎章</strong></td>
+                  <td>表彰其「將圖形處理器推進為通用運算架構，透過處理器設計與軟體創新，轉型大規模平行運算，推動科學運算與超級智慧的突破」。</td>
+                  <td><strong>「輝達晶片是前沿超級智慧的骨幹，絕對的骨幹（the absolute backbone）。他領先其他人和公司好幾年。全世界現在都運行在輝達之上。」</strong></td>
+                  <td><strong>全球算力鑄幣廠</strong>：以 Blackwell（2025 營收 1,840 億美元）與 Vera Rubin 支撐全球 AI 資本支出，於創世紀任務捐出 <strong>10 億美元算力</strong>。</td>
+                </tr>
+                <tr>
+                  <td><strong>3. 蘇姿丰 (Lisa Su)</strong><br>AMD 董事長暨執行長<br>（生於台灣）</td>
+                  <td><strong>國家科學獎章</strong></td>
+                  <td>表彰其「以半導體工程與高效能運算的終身領導力，透過處理器架構與小晶片（chiplet）整合創新，驅動世界首台百萬兆級（exascale）超級電腦」。</td>
+                  <td>稱其為<strong>「產業先驅」</strong>，強調她以 Zen 微架構與小晶片技術將 AMD 從不到 20 億美元帶成<strong>超過 1 兆美元</strong>的巨擘。</td>
+                  <td><strong>國家核武模擬與百億億次超算底座</strong>：支撐美國能源部 El Capitan / Frontier 超算，於創世紀任務捐出 <strong>5 億美元算力</strong>。</td>
+                </tr>
+                <tr>
+                  <td><strong>4. 謝爾蓋·布林 (Sergey Brin)</strong><br>Google 共同創辦人<br>*(協同執行長 **皮查伊 Sundar Pichai**)*</td>
+                  <td><strong>國家科學獎章</strong></td>
+                  <td>表彰其「開發資訊檢索與資料處理的基礎演算法，徹底改變全世界在科學、商業與日常生活中獲取資訊的方式」。</td>
+                  <td>形容其「把全人類知識放進指尖」，並指出他重返 Google 推動「超級智慧」進展。*(註：執行長 **皮查伊** 出席 9/29 白宮午宴居左三座次與習近平國宴，共同代表 Google)*。</td>
+                  <td><strong>演算法與太空 TPU 實驗室</strong>：Google 承諾創世紀任務 <strong>1.5 億美元算力</strong>，並攜手 SpaceX 發射搭載 Trillium TPU v6e 的 Suncatcher 軌道衛星。</td>
+                </tr>
+                <tr>
+                  <td><strong>5. 納德拉 (Satya Nadella)</strong><br>Microsoft 董事長暨執行長<br>（生於印度）</td>
+                  <td><strong>國家技術與創新獎章</strong></td>
+                  <td>表彰其「以轉型領導力帶領關鍵美國科技公司重生，迎向雲端運算新時代；建造超大規模基礎設施，促成美國超級智慧的訓練與全球部署」。</td>
+                  <td>稱讚其近三十多年來是微軟轉型的關鍵人物，「徹底改變了微軟」。</td>
+                  <td><strong>超大規模主權雲與企業變現管道</strong>：建造橫跨全美電網的超大規模 AI 資料中心，將算力轉化為企業與政府日常生產力。</td>
+                </tr>
+                <tr>
+                  <td><strong>6. 麥可·戴爾 (Michael Dell)</strong><br>Dell 創辦人暨執行長<br>（生於美國）</td>
+                  <td><strong>國家技術與創新獎章</strong></td>
+                  <td>表彰其「推動個人與企業運算普及的願景；以技術與商業管理才能建立全球科技公司；支持下一代美國科學家、工程師與技術人才」。</td>
+                  <td>特別感謝戴爾夫婦為聯邦<strong>「川普帳戶（Trump Accounts）」</strong>捐出 <strong>62.5 億美元</strong>（嘉惠 2,500 萬名兒童）：「他們長大時會因為你而富有。」</td>
+                  <td><strong>AI 伺服器整合與全民資本先行者</strong>：供應 SpaceX / xAI 高密度液冷伺服器機櫃，並率先打通富豪向聯邦兒童投資帳戶注資的制度範例。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="chapter-box" id="sec2-act3">
+          <h3>2.3 第三幕（10/8 同場發布）：60 億美元科學倡議與 24 億美元「創世紀任務（Genesis Mission）」</h3>
+          <p>在頒發獎章的同一場峰會上，白宮正式公布《川普政府宣布本世紀最宏大的科學倡議組合》（總額逾 <strong>60 億美元</strong>），其中最核心的<strong>「創世紀任務（Genesis Mission）」</strong>直接揭示了「科學家替政府買單」的實質契約（<a href="https://www.straitstimes.com/world/united-states/trump-secures-us2-4-billion-ai-pledge-as-he-honours-tech-executives-musk-huang" target="_blank">The Straits Times 2026-10-09</a>；<a href="https://dig.watch/updates/tech-executives-awarded-at-white-house-ai-summit" target="_blank">Digital Watch Observatory 2026-10-09</a>）： <span class="ev-badge ev-fact">FACT</span></p>
+          <ul>
+            <li><strong>11 家私人科技巨頭直接捐出 24 億美元算力</strong>：包括 <strong>NVIDIA 10 億美元、AMD 5 億美元、OpenAI 2 億美元、Anthropic 1.5 億美元、Google 1.5 億美元</strong>。</li>
+            <li><strong>聯邦開放 14 個部會核心科學數據庫</strong>：將能源部（DOE）、太空總署（NASA）、衛生部（HHS）、國防部等 14 個聯邦機構的科學資料集交由上述企業的算力平台訓練「科學基礎模型」與 AI 代理人，另有 10 億美元投向喬治亞州等地的運算基建。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section id="sec3" class="section">
+        <h2 class="section-title">3. 方法與解釋（Method & Explanation）：為什麼白宮必須以 Elon Musk 為首，並給予最高評價？ <span class="badge">位元 × 原子垂直閉環</span></h2>
+
+        <div class="chapter-box" id="sec3-equation">
+          <h3>3.1 主權信貸 × 實驗室買單的三層宏觀方程式</h3>
+          <p>根據《人類簡史》第 16 章的信貸邏輯，美國政府與這六大科技巨頭的結盟，在宏觀財務上執行了三層「買單（Bailout）」功能 <span class="ev-badge ev-inf">INFERENCE</span>：</p>
+          <ol>
+            <li><strong>第一層：全要素生產力（TFP）買單</strong>——透過「超級智慧（SI）」、物理機器人與太空能源基建創造非線性的實質 GDP 成長，避免 36 兆美元國債陷入 1780 年代法國式的付息螺旋。</li>
+            <li><strong>第二層：美元與美債吸金力買單</strong>——如同 17 世紀全球資金為了買 VOC 股票而湧入阿姆斯特丹，2026 年全球主權基金與退休金之所以願意持續承接美債與美元，是因為美國獨占了 NVIDIA、SpaceX（SPCX）、Microsoft、Google、AMD 等高成長科技資產。</li>
+            <li><strong>第三層：私人資本開支（CapEx）替代政府赤字</strong>——在聯邦預算受限下，利用民間股東募集的資金（如 SpaceX 857 億美元 IPO 與雲端巨頭每年逾 2,000 億美元 CapEx）及「創世紀任務」的 24 億美元算力捐贈，直接替國家建設戰略科研與國防基建。</li>
+          </ol>
+        </div>
+
+        <div class="chapter-box" id="sec3-musk">
+          <h3>3.2 為什麼為首的人必然是 Elon Musk？白宮新聞稿與川普給予最高評價的四重底層原因</h3>
+          <p>在六位獲獎巨頭中，唯有 <strong>Elon Musk</strong> 被川普稱為<strong>「現代愛迪生」、「史上最偉大的科技創辦人之一」與「沒有人像他這樣」</strong>，白宮官方授獎詞更特別表彰其<strong>「開啟了美國製造業的新篇章」</strong>。從硬體工程與地緣主權視角剖析，Musk 居於首席地位有四個不可替代的物理原因：</p>
+          <div class="two-col-grid">
+            <div class="sub-card">
+              <h4>⚡ 1. 唯一打通「火箭 × 能源渦輪 × 算力」物理閉環</h4>
+              <p>當其他 AI 巨頭受困於地面電網排隊與燃氣渦輪機 18 個月交期瓶頸時，SpaceX（2026 年 2 月併入 xAI、6 月完成 857 億美元史上最大 IPO）直接用 <strong>Raptor 火箭引擎超合金精密鑄造產線自製燃氣渦輪發電葉片</strong>，支撐每月部署 <strong>22 萬顆 NVIDIA GB300（約 0.5 GW/月）</strong>，使 SpaceX 2026 Q3 營收年增 161% 達 145.8 億美元（SI 算力占 76 億美元） <span class="ev-badge ev-fact">FACT</span>。</p>
+            </div>
+            <div class="sub-card">
+              <h4>🛰️ 2. 替白宮握住地緣衝突的「軌道可否認開關」</h4>
+              <p>SpaceX 擁有逾 11,000 顆低軌衛星與五角大廈 Starshield 合約。在 10 月 8 日白宮授勳後僅 5 天（10 月 13 日），烏克蘭戰場的 Starshield 即發生 160 km/h 限速事件，配合白宮施壓基輔停止打擊俄國煉油廠以壓低期中選舉前柴油價格。沒有任何其他矽谷 CEO 能為白宮提供如此直接的戰場物理槓桿 <span class="ev-badge ev-fact">FACT</span> <span class="ev-badge ev-inf">INFERENCE</span>。</p>
+            </div>
+            <div class="sub-card">
+              <h4>🗣️ 3. 國家話語權即時對齊（「SpaceX SI」正名）</h4>
+              <p>川普於 2026 年 9 月底簽署行政命令，要求聯邦部門將「人工智慧（AI）」統一改稱<strong>「超級智慧（Superintelligence, SI）」</strong>。在 10 月 8 日頒獎典禮台下，Musk 第一時間當眾呼應總統，宣布將旗下業務改名為 <strong>SpaceX SI</strong>，並在 2026 選舉週期投入 3.66 億美元助選 <span class="ev-badge ev-fact">FACT</span>。</p>
+            </div>
+            <div class="sub-card">
+              <h4>👶 4. 「川普帳戶」7,200 萬兒童贈股綁定全民資本</h4>
+              <p>繼獲獎者 Michael Dell 為聯邦「川普帳戶（Trump Accounts）」捐出 62.5 億美元後，Musk 於 10 月 19 日宣布將送給全美約 7,200 萬名兒童每人一股 SpaceX 股票（總值約 105 億美元），透過財政部剛自動開立的 7,000 萬個川普帳戶（鎖定 5 年不得賣出），將全民家庭財富與太空算力帝國綁定 <span class="ev-badge ev-fact">FACT</span> <span class="ev-badge ev-inf">INFERENCE</span>。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-box" id="sec3-matrix">
+          <h3>3.3 白宮（國家主權）↔ 六大科技巨頭（實驗室與資本）雙向交換矩陣</h3>
+          <div class="table-container">
+            <table class="knowledge-table">
+              <thead>
+                <tr>
+                  <th>交換維度</th>
+                  <th>白宮／美國國家主權提供的資源（印鈔、法權與護航）</th>
+                  <th>超大型科技公司與科學家提供的回報（替信貸與霸權買單）</th>
+                  <th>2026 年 9–10 月查核實證</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. 榮譽加冕與社會正當性</strong></td>
+                  <td>頒授國家科學獎章與技術創新獎章，封為「美國國寶」與「現代愛迪生」，對沖公眾對 AI 搶工作（64% 民調認為發展太快）的信任危機。</td>
+                  <td>提供鉅額政治獻金（Musk 3.66 億美元、Brin 捐助 RNC）與公開政治背書（黃仁勳 9/14 擴音通話）。</td>
+                  <td>10/08 和平研究所授勳典禮；9/14 All-In 峰會擴音通話 <span class="ev-badge ev-fact">FACT</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2. 科研財政與算力外包</strong></td>
+                  <td>開放能源部、太空總署、衛生部等 14 個聯邦部會核心科學數據庫，並提供喬治亞州等地 10 億美元基建配套。</td>
+                  <td>11 家巨頭於「創世紀任務」直接捐出 <strong>24 億美元算力</strong>（NVDA 10億、AMD 5億、Google 1.5億），替國家訓練科學基礎模型。</td>
+                  <td>10/08 白宮宣布 60 億美元科學倡議與 24 億美元創世紀任務 <span class="ev-badge ev-fact">FACT</span></td>
+                </tr>
+                <tr>
+                  <td><strong>3. 監管豁免與能源放行</strong></td>
+                  <td>拒絕強制 AI 暫停（Pause）與聯邦專法，以一頁紙《白宮超級智慧協議》自律取代監管；將資料中心定調為「未來 25 年石油」掃除地方阻力。</td>
+                  <td>維持每年數千億美元的 AI 資料中心、晶片與太空基建資本支出（CapEx），撐起美國 GDP 與美股財富效應。</td>
+                  <td>9/29 白宮東廳午宴與羅斯福廳閉門會（黃仁勳反駁 Amodei） <span class="ev-badge ev-fact">FACT</span></td>
+                </tr>
+                <tr>
+                  <td><strong>4. 全民資本綁定 (Trump Accounts)</strong></td>
+                  <td>財政部於 10/1 為全美 7,000 萬兒童自動開立「川普帳戶」，並發布新稅則允許富豪直接捐贈個股（享稅務優惠且鎖定 5 年禁售）。</td>
+                  <td><strong>Michael Dell</strong> 承諾捐 62.5 億美元、<strong>Elon Musk</strong> 宣示贈與 7,200 萬股 SpaceX 股票（約 105 億美元），為聯邦社會政策買單。</td>
+                  <td>10/01 財政部自動開戶；10/08 表彰 Dell；10/19 Musk 宣布贈股 <span class="ev-badge ev-fact">FACT</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section id="sec4" class="section">
+        <h2 class="section-title">4. 台灣視角（Taiwan Lens）、結構矛盾與貝氏對稱檢驗 <span class="badge">HYP-15-01 / HYP-15-02</span></h2>
+
+        <div class="chapter-box" id="sec4-taiwan">
+          <h3>4.1 台灣在這場「科學家替美國印鈔買單」大結盟中的關鍵位置</h3>
+          <div class="callout success">
+            <div class="callout-title">🌏 關鍵地緣與產業事實：4 位國家科學獎章得主中 2 位（50%）生於台灣，且六巨頭硬體 100% 繫於台積電</div>
+            <p>在 2026 年 10 月 8 日獲頒美國最高榮譽「國家科學獎章」的四人（Elon Musk、Sergey Brin、黃仁勳、蘇姿丰）中，<strong>黃仁勳與蘇姿丰皆出生於台灣台南（占 50%）</strong>；而這六位「美國國寶」用來替美國 36 兆美元主權信貸買單的所有核心硬體——從 NVIDIA 的 Blackwell / Vera Rubin、SpaceX 每月部署 22 萬顆的 GB300、AMD 驅動能源部 El Capitan 超算的 Chiplet 處理器，到 Google 送上太空的第六代 Trillium TPU v6e——其<strong>先進製程晶圓代工與 CoWoS / SoIC 先進封裝幾乎 100% 依賴台灣台積電（TSMC）與台灣高階伺服器／衛星 ODM 供應鏈</strong> <span class="ev-badge ev-fact">FACT</span>。這意味著：美國政府要靠科技巨頭買單，而科技巨頭必須靠台灣的晶圓廠與非紅供應鏈才能交出實體算力 <span class="ev-badge ev-inf">INFERENCE</span>。</p>
+          </div>
+
+          <h4>4.2 適用邊界與四大內在結構矛盾</h4>
+          <ul>
+            <li><strong>矛盾一：「移民國寶買單」vs.「H-1B 簽證暫停」</strong>：六位受獎人中有五位是移民（馬斯克生於南非、布林生於蘇聯、納德拉生於印度、黃仁勳與蘇姿丰生於台灣），但就在典禮舉行前數小時，副總統范斯卻宣布以「打擊詐欺」為由暫停微軟等科技公司使用 H-1B 簽證（<a href="https://www.thebrief.news/en/standard/article/29657/trump-awards-top-science-medals-to-musk-and-tech-ceos-amid-h-1b-fight" target="_blank">The Brief 2026-10-08</a>） <span class="ev-badge ev-fact">FACT</span>。</li>
+            <li><strong>矛盾二：私人壟斷取代公共科研之治理風險</strong>：當聯邦基礎科研經費縮減、改由 11 家營利巨頭以 24 億美元算力主導「創世紀任務」並排除強制監管時，公共科學議程與安全邊界面臨被少數企業商業利益綁架的風險 <span class="ev-badge ev-inf">INFERENCE</span>。</li>
+            <li><strong>矛盾三：資本開支（CapEx）與自由現金流（FCF）的時序錯配</strong>：SpaceX 雖於 2026 Q3 創造 145.8 億美元營收，但前三季累計 FCF 達 <strong>-349.7 億美元</strong>，2027 年挑戰 10–20 GW 算力需投入 3,000–7,000 億美元 CapEx；若終端軟體變現落後於硬體折舊，仍將面臨信貸緊縮考驗 <span class="ev-badge ev-fact">FACT</span>。</li>
+            <li><strong>矛盾四：物理熱力學極限</strong>：Google 與 SpaceX 合作的 Project Suncatcher 太空運算衛星雖證明 Trillium TPU v6e 可耐受 15 krad(Si) 質子輻射，但受限於太空真空黑體輻射散熱，每全速運轉 <strong>15 分鐘</strong>即必須停機冷卻，且 HBM 在 2 krad(Si) 下即出現位元翻轉 <span class="ev-badge ev-fact">FACT</span>。</li>
+          </ul>
+        </div>
+
+        <div class="chapter-box" id="sec4-bayesian">
+          <h3>4.3 貝氏決策對稱檢驗表（Symmetric Hypothesis Testing：H<sub>A</sub> vs. H<sub>B</sub>）</h3>
+          <div class="table-container">
+            <table class="knowledge-table">
+              <thead>
+                <tr>
+                  <th>檢驗命題編號</th>
+                  <th>多頭／結構強化假設（H<sub>A</sub>：科學家成功替主權信貸買單）</th>
+                  <th>具體競爭空頭／反證假設（H<sub>B</sub>：買單速度落後於泡沫膨脹）</th>
+                  <th>外部可觀測檢驗指標與失效條件（Falsification Gate）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>HYP-15-01</strong><br>創世紀任務與放鬆監管對算力硬體鏈之推力</td>
+                  <td>白宮將資料中心定調為「未來 25 年石油」、頒授科技巨頭國家科學獎章並啟動 60 億美元科學倡議／24 億美元創世紀任務，加上排除強制 AI 暫停法規，將使北美雲端巨頭與 SpaceX SI 之硬體 CapEx 順風延續至 2027–2028 年，鞏固台積電 CoWoS 與台系伺服器鏈訂單。</td>
+                  <td>1. 美國本土電網併網排隊與地方反建資料中心（70% 民調反對）無法單靠行政命令解決，導致機房建置遞延；<br>2. H-1B 簽證限制與關稅推升研發與建置成本。</td>
+                  <td><strong>觀察窗：2026 Q4 – 2027 Q2</strong>。<br>追蹤 NVIDIA、AMD、Broadcom 與台積電法說會對 Sovereign AI 與創世紀任務算力交付之營收認列；若北美 CSP 與 SpaceX 連兩季下修 CapEx 指引則降級 H<sub>A</sub>。</td>
+                </tr>
+                <tr>
+                  <td><strong>HYP-15-02</strong><br>Musk 領銜之「航太－能源－算力」政商閉環溢價</td>
+                  <td>Musk 透過白宮最高榮譽背書、自製 Raptor 燃氣渦輪發電、月裝 22 萬顆 GB300 及「川普帳戶」全民贈股，使 SpaceX（SPCX）獲得國防（Starshield）、太空與主權算力準壟斷地位，帶動台系衛星與 AI 伺服器鏈成長。</td>
+                  <td>1. SpaceX 前三季累計 FCF 達 -$349.7 億，2027 年 3,000–7,000 億 CapEx 面臨融資瓶頸；<br>2. 11/3 期中選舉後若國會變天，眾議院對 Starshield 限速與利益衝突展開高強度調查。</td>
+                  <td><strong>觀察窗：2026.11 – 2027 Q1</strong>。<br>1. 檢驗 2026/10/31 SpaceX 額定算力是否由 1.7 GW 升至 2.2 GW；<br>2. 觀察 11/3 期中選舉後國會對 Starshield 與川普帳戶之立法動向。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section id="sec5" class="section">
+        <h2 class="section-title">5. 結構化查核來源清單（Verified Sources） <span class="badge">原典書籍 × 2026.09–10 權威外電</span></h2>
+        <div class="chapter-box">
+          <ul>
+            <li><strong>大歷史原典書籍與本機跨庫研究基底</strong>：
+              <ul>
+                <li>尤瓦爾·赫拉利，《人類簡史：從動物到上帝（新版）》第 16 章〈資本主義教條〉（L2811–2910, L2969–2975, L3050–3058）。</li>
+                <li>本機 72 庫報告：<code>2026-10-20_trump_national_medals_tech_giants_report.md</code>、<code>2026-10-20_jensen_huang_trump_call_white_house_summit_note.md</code>、<code>2026-10-20_google_suncatcher_tpu_v6e_orbital_hardware_note.md</code>。</li>
+                <li>本機 74 庫報告：<code>10_starlink_ukraine_zalenskyy_trump_musk_report.md</code>、<code>11_google_suncatcher_orbital_compute_report.md</code>、<code>12_musk_spacex_stock_gift_trump_accounts_report.md</code>、<code>14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md</code>。</li>
+              </ul>
+            </li>
+            <li><strong>外部權威媒體查核連結（2026 年 9–10 月）</strong>：
+              <ul>
+                <li>Forbes (2026-10-08): <a href="https://www.forbes.com/sites/antoniopequenoiv/2026/10/08/trump-awards-modern-day-thomas-edison-elon-musk-national-medal-of-science-culminating-reconciliation-photos/" target="_blank">Trump Awards 'Modern-Day Thomas Edison' Elon Musk National Medal Of Science</a></li>
+                <li>New York Post (2026-10-08): <a href="https://nypost.com/2026/10/08/us-news/trump-honors-elon-musk-jensen-haung-and-other-top-tech-ceos-with-prestigious-science-award/" target="_blank">Trump honors Elon Musk, Jensen Huang and other top tech CEOs with prestigious science award ($1.736T net worth)</a></li>
+                <li>Desi Talk Chicago / ANI (2026-10-09): <a href="https://desitalkchicago.com/trump-honours-six-tech-giants-with-national-medals-of-science-technology-and-innovation-2/" target="_blank">Trump honours six tech giants with National Medals of Science, Technology and Innovation</a></li>
+                <li>The Straits Times (2026-10-09): <a href="https://www.straitstimes.com/world/united-states/trump-secures-us2-4-billion-ai-pledge-as-he-honours-tech-executives-musk-huang" target="_blank">Trump secures US$2.4 billion AI pledge as he honours tech executives Musk, Huang</a></li>
+                <li>Digital Watch Observatory (2026-10-09): <a href="https://dig.watch/updates/tech-executives-awarded-at-white-house-ai-summit" target="_blank">American tech executives awarded National Medals of Science and of Technology during White House AI summit</a></li>
+                <li>Moneycontrol (2026-09-14): <a href="https://www.moneycontrol.com/artificial-intelligence/trump-rings-nvidia-ceo-jensen-huang-live-mid-panel-calls-data-centres-the-oil-of-the-next-25-years-article-14029774.html" target="_blank">Trump rings Nvidia CEO Jensen Huang live mid-panel, calls data centres 'the oil of the next 25 years'</a></li>
+                <li>Anadolu Agency (2026-09-29): <a href="https://www.aa.com.tr/en/americas/trump-to-host-top-tech-executives-officials-for-white-house-ai-lunch/4072640" target="_blank">Trump to host top tech executives, officials for White House AI lunch</a></li>
+                <li>聯合新聞網 (2026-10-10): <a href="https://udn.com/news/amp/story/6813/9805688" target="_blank">美國「國寶」 黃仁勳、蘇姿丰獲美國家科學獎章</a></li>
+                <li>Newtalk 新頭殼 (2026-10-10): <a href="https://newtalk.tw/news/view/2026-10-10/1064724" target="_blank">6科技巨頭 只有一個美國出生的! 川普頒最高科學與技術榮譽 台灣就佔2名</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <p>74_aerospace_defense_research × 72_semiconductor_research × 50_WeRead · L1 &amp; L2 Knowledge Publication · 2026-10-25</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      securityLevel: 'loose',
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: 'basis',
+        nodeSpacing: 36,
+        rankSpacing: 48
+      },
+      themeVariables: {
+        primaryColor: '#ffffff',
+        primaryTextColor: '#1a1714',
+        primaryBorderColor: '#c8c2b3',
+        lineColor: '#6e675f',
+        secondaryColor: '#f4f1ea',
+        tertiaryColor: '#faf9f5'
+      }
+    });
+
+    let currentMermaidScale = 1.0;
+    function zoomMermaid(delta) {
+      const target = document.getElementById('mermaid-zoom-target');
+      if (!target) return;
+      currentMermaidScale = Math.min(Math.max(currentMermaidScale + delta, 0.5), 2.5);
+      target.style.transform = 'scale(' + currentMermaidScale + ')';
+      const badge = document.getElementById('zoom-level-badge');
+      if (badge) badge.textContent = Math.round(currentMermaidScale * 100) + '%';
+    }
+
+    function resetMermaidZoom() {
+      const target = document.getElementById('mermaid-zoom-target');
+      if (!target) return;
+      currentMermaidScale = 1.0;
+      target.style.transform = 'scale(1)';
+      const badge = document.getElementById('zoom-level-badge');
+      if (badge) badge.textContent = '100%';
+    }
+
+    function exportMermaidSvg() {
+      const container = document.getElementById('mermaid-zoom-target');
+      const svg = container ? container.querySelector('svg') : document.querySelector('.mermaid-wrapper svg');
+      if (!svg) {
+        alert('SVG 圖表尚未渲染完成，請稍候片刻');
+        return;
+      }
+      const serializer = new XMLSerializer();
+      let source = serializer.serializeToString(svg);
+      if (!source.match(/^<svg[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)) {
+        source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+      }
+      if (!source.match(/^<svg[^>]+xmlns\:xlink="http:\/\/www\.w3\.org\/1999\/xlink"/)) {
+        source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+      }
+      const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'white-house-medals-scientists-bailout-topology.svg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    let fullscreenScale = 1.0;
+    function zoomFullscreen(delta) {
+      const clone = document.querySelector('#mermaid-fullscreen-stage svg');
+      if (!clone) return;
+      fullscreenScale = Math.min(Math.max(fullscreenScale + delta, 0.6), 3.5);
+      clone.style.transform = 'scale(' + fullscreenScale + ')';
+      clone.style.transformOrigin = 'top center';
+      clone.style.transition = 'transform 0.15s ease-out';
+      const badge = document.getElementById('fs-zoom-badge');
+      if (badge) badge.textContent = Math.round(fullscreenScale * 100) + '%';
+    }
+
+    function resetFullscreenZoom() {
+      const clone = document.querySelector('#mermaid-fullscreen-stage svg');
+      if (!clone) return;
+      fullscreenScale = 1.0;
+      clone.style.transform = 'scale(1)';
+      const badge = document.getElementById('fs-zoom-badge');
+      if (badge) badge.textContent = '100%';
+    }
+
+    function openMermaidFullscreen() {
+      const container = document.getElementById('mermaid-zoom-target');
+      const svg = container ? container.querySelector('svg') : document.querySelector('.mermaid-wrapper svg');
+      if (!svg) {
+        alert('圖表尚未完成渲染，請稍候片刻');
+        return;
+      }
+      let modal = document.getElementById('mermaid-fullscreen-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'mermaid-fullscreen-modal';
+        modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(250, 249, 245, 0.98); backdrop-filter: blur(12px); z-index: 99999; display: flex; flex-direction: column; overflow: hidden;';
+        modal.innerHTML = `
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid #e2ded3; background: #ffffff; flex-wrap: wrap; gap: 10px;">
+            <div style="font-weight: 700; color: #1a1714; font-size: 1.05rem; display: flex; align-items: center; gap: 10px;">
+              <span>🏛️ 「政府印鈔、科學家買單」：2026 白宮科技授勳與主權算力交換拓撲圖</span>
+              <span style="font-size: 0.78rem; background: #fef3c7; color: #b45309; border: 1px solid rgba(180,83,9,0.35); padding: 2px 8px; border-radius: 9999px;">淺色全螢幕視圖</span>
+              <span id="fs-zoom-badge" style="font-size: 0.78rem; background: #f4f1ea; color: #37332d; padding: 2px 8px; border-radius: 9999px; font-family: monospace;">100%</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <button type="button" onclick="zoomFullscreen(0.2)" style="background: #f4f1ea; border: 1px solid #c8c2b3; color: #1a1714; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">🔍 放大</button>
+              <button type="button" onclick="zoomFullscreen(-0.2)" style="background: #f4f1ea; border: 1px solid #c8c2b3; color: #1a1714; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">🔍 縮小</button>
+              <button type="button" onclick="resetFullscreenZoom()" style="background: #f4f1ea; border: 1px solid #c8c2b3; color: #1a1714; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">🔄 重設</button>
+              <button type="button" onclick="exportMermaidSvg()" style="background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">⬇️ 匯出 SVG</button>
+              <button type="button" onclick="closeMermaidFullscreen()" style="background: #fee2e2; border: 1px solid #fca5a5; color: #b91c1c; padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">✕ 關閉 (ESC)</button>
+            </div>
+          </div>
+          <div id="mermaid-fullscreen-stage" style="flex: 1; overflow: auto; padding: 40px; display: flex; justify-content: center; align-items: flex-start; -webkit-overflow-scrolling: touch; background: #ffffff;">
+          </div>
+        `;
+        document.body.appendChild(modal);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeMermaidFullscreen();
+        });
+      }
+      const stage = document.getElementById('mermaid-fullscreen-stage');
+      stage.innerHTML = '';
+      fullscreenScale = 1.0;
+      const clone = svg.cloneNode(true);
+      clone.style.width = '100%';
+      clone.style.minWidth = '1100px';
+      clone.style.maxWidth = '1800px';
+      clone.style.height = 'auto';
+      clone.style.transform = 'scale(1)';
+      stage.appendChild(clone);
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      const badge = document.getElementById('fs-zoom-badge');
+      if (badge) badge.textContent = '100%';
+    }
+
+    function closeMermaidFullscreen() {
+      const modal = document.getElementById('mermaid-fullscreen-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
