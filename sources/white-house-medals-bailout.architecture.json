@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "「銀行與政府印鈔票，最後買單的是科學家」——2026白宮科技授勳與主權算力結盟圖譜",
+    "subtitle": "《人類簡史》信貸鐵律 · 36兆美元主權債務 · Elon Musk領銜六巨頭授勳 · 24億創世紀任務 · 台積電先進封裝物理底座",
+    "output": "74_aerospace_defense_research/15_scientists_foot_the_bill_white_house_medals_l2_light.html",
+    "quality_profile": "showcase",
+    "locale": "zh-TW",
+    "legend": {
+      "mode": "all",
+      "entries": {
+        "frontend": { "label": "1. 《人類簡史》信貸印鈔與科學家買單鐵律" },
+        "backend": { "label": "2. 白宮 2026.09–10 授勳加冕與政商交換" },
+        "security": { "label": "3. Elon Musk 領銜與六大科技國寶實驗室" },
+        "database": { "label": "4. 創世紀任務、全民入股與台灣矽盾底座" },
+        "cloud": { "label": "5. 結構矛盾、貝氏對稱檢驗與跨庫校勘" }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "c_harari_law",
+      "type": "frontend",
+      "label": "赫拉利信貸買單鐵律",
+      "sublabel": "銀行政府印鈔·實驗室科學家買單(L2906)",
+      "tag": "Harari Law",
+      "pos": [50, 80],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_sovereign_debt_36t",
+      "type": "frontend",
+      "label": "36兆美債與印鈔泡沫",
+      "sublabel": "2008/2020擴表·防範1789路易十六付息陷阱",
+      "tag": "Sovereign Debt",
+      "pos": [380, 80],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_bush_to_kratsios",
+      "type": "frontend",
+      "label": "科研範式歷史轉移",
+      "sublabel": "1945大學基礎科研→2026萬億巨企實驗室",
+      "tag": "Paradigm Shift",
+      "pos": [710, 80],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_allin_datacenter_oil",
+      "type": "backend",
+      "label": "9/14 資料中心即石油",
+      "sublabel": "川普連線黃仁勳·未來25年石油·拒絕放慢",
+      "tag": "Compute Oil",
+      "pos": [50, 240],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_eastroom_seating",
+      "type": "backend",
+      "label": "9/29 白宮東廳權力座次",
+      "sublabel": "左一馬斯克·右一黃仁勳·蘇姿丰皮查伊同席",
+      "tag": "Power Table",
+      "pos": [380, 240],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_oct8_medals_summit",
+      "type": "backend",
+      "label": "10/8 國家科學獎章授勳",
+      "sublabel": "打破67年學術慣例·1.736兆身家六國寶加冕",
+      "tag": "Medal Coronation",
+      "pos": [710, 240],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_musk_edison_lead",
+      "type": "security",
+      "label": "馬斯克：為首現代愛迪生",
+      "sublabel": "白宮最高評價·Raptor渦輪+月裝22萬GB300",
+      "tag": "First Among Equals",
+      "pos": [50, 400],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_huang_su_chip_backbone",
+      "type": "security",
+      "label": "黃仁勳與蘇姿丰晶片雙雄",
+      "sublabel": "NVDA超級智慧絕對骨幹·AMD百億億次超算",
+      "tag": "Silicon Backbone",
+      "pos": [380, 400],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_google_msft_dell",
+      "type": "security",
+      "label": "Google·微軟·戴爾基建",
+      "sublabel": "布林與皮查伊太空TPU·納德拉主權雲·戴爾機櫃",
+      "tag": "Hyperscale & Orbit",
+      "pos": [710, 400],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_genesis_mission_24b",
+      "type": "database",
+      "label": "24億創世紀任務算力外包",
+      "sublabel": "60億倡議·NVDA捐10億/AMD捐5億訓練14部會模型",
+      "tag": "Genesis Mission",
+      "pos": [50, 560],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_trump_accounts_gift",
+      "type": "database",
+      "label": "川普帳戶全民資本綁定",
+      "sublabel": "7千萬兒童帳戶·Dell捐62.5億·Musk贈股105億",
+      "tag": "National Equity",
+      "pos": [380, 560],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_taiwan_tsmc_shield",
+      "type": "database",
+      "label": "台灣台積電實體買單底座",
+      "sublabel": "2位台灣出生得主·CoWoS與非紅硬體不可替代",
+      "tag": "Taiwan Silicon Base",
+      "pos": [710, 560],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_bayesian_risk_gate",
+      "type": "cloud",
+      "label": "結構矛盾與貝氏檢驗閘門",
+      "sublabel": "H-1B凍結矛盾·SPCX負現金流·Suncatcher散熱極限",
+      "tag": "Epistemic Audit",
+      "pos": [380, 720],
+      "size": [160, 64]
+    }
+  ],
+  "connections": [
+    {
+      "from": "c_harari_law",
+      "to": "c_sovereign_debt_36t",
+      "label": "預支未來大餅"
+    },
+    {
+      "from": "c_sovereign_debt_36t",
+      "to": "c_bush_to_kratsios",
+      "label": "財政赤字逼迫外包"
+    },
+    {
+      "from": "c_bush_to_kratsios",
+      "to": "c_allin_datacenter_oil",
+      "label": "排除減速護航CapEx"
+    },
+    {
+      "from": "c_allin_datacenter_oil",
+      "to": "c_eastroom_seating",
+      "label": "確立政商核心同盟"
+    },
+    {
+      "from": "c_eastroom_seating",
+      "to": "c_oct8_medals_summit",
+      "label": "國家最高榮譽加冕"
+    },
+    {
+      "from": "c_oct8_medals_summit",
+      "to": "c_allin_datacenter_oil",
+      "label": "行政正名超級智慧SI"
+    },
+    {
+      "from": "c_allin_datacenter_oil",
+      "to": "c_musk_edison_lead",
+      "label": "航太能源算力閉環"
+    },
+    {
+      "from": "c_musk_edison_lead",
+      "to": "c_huang_su_chip_backbone",
+      "label": "月採購22萬顆GB300"
+    },
+    {
+      "from": "c_musk_edison_lead",
+      "to": "c_google_msft_dell",
+      "label": "發射Suncatcher太空TPU"
+    },
+    {
+      "from": "c_huang_su_chip_backbone",
+      "to": "c_genesis_mission_24b",
+      "label": "捐贈15億算力替國研發"
+    },
+    {
+      "from": "c_allin_datacenter_oil",
+      "to": "c_trump_accounts_gift",
+      "label": "全民兒童持股綁定"
+    },
+    {
+      "from": "c_trump_accounts_gift",
+      "to": "c_taiwan_tsmc_shield",
+      "label": "實體晶圓封裝兌現"
+    },
+    {
+      "from": "c_genesis_mission_24b",
+      "to": "c_bayesian_risk_gate",
+      "label": "FCF與治理邊界審計"
+    },
+    {
+      "from": "c_taiwan_tsmc_shield",
+      "to": "c_bayesian_risk_gate",
+      "label": "HYP-15-01/02對稱檢驗"
+    }
+  ]
+}
