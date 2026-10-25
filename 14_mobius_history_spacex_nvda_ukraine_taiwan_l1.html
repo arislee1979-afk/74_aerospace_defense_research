@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14 — 從東印度公司到星鏈與算力帝國：SpaceX、NVIDIA、美俄烏雙軌博弈與台海戰略對照（L1 Knowledge Publication）</title>
+<style>
+  :root {
+    --bg: #faf9f5;
+    --card: #ffffff;
+    --ink: #1e1e1c;
+    --muted: #66635b;
+    --line: #e6e2d8;
+    --accent: #0f5fd0;
+    --accent-soft: #eef4fc;
+    --gold: #9e6314;
+    --gold-soft: #fdf5e8;
+    --green: #16794b;
+    --green-soft: #e6f6ee;
+    --purple: #6b3fa0;
+    --purple-soft: #f3eef9;
+    --gray-soft: #f1f0ec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Serif TC", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+    line-height: 1.85;
+    font-size: 16px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 36px 24px 88px; }
+  header.hero {
+    background: linear-gradient(135deg, #0d1624 0%, #19273c 100%);
+    color: #f7f6f2;
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px rgba(13, 22, 36, 0.12);
+  }
+  header.hero .kicker {
+    color: #7ab3ff;
+    font-weight: 700;
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  header.hero h1 {
+    margin: 0 0 14px;
+    font-size: 1.75rem;
+    line-height: 1.42;
+    font-weight: 800;
+  }
+  header.hero .sub {
+    color: #d6e0ec;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  header.hero .meta {
+    color: #9cb0c9;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 14px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  header.hero .meta a { color: #9ec5ff; text-decoration: underline; }
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 10px;
+    margin: 0 3px;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .b-fact { background: var(--green-soft); color: var(--green); border: 1px solid #bce3cf; }
+  .b-auth { background: var(--accent-soft); color: var(--accent); border: 1px solid #bfd7fa; }
+  .b-inf  { background: var(--gold-soft); color: var(--gold); border: 1px solid #f2d7b0; }
+  .b-unk  { background: var(--gray-soft); color: #686662; border: 1px solid #d8d5cd; }
+  .legend {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 22px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 0 0 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  }
+  section.card h2 {
+    font-size: 1.32rem;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--line);
+    color: #121b28;
+  }
+  section.card h3 {
+    font-size: 1.1rem;
+    margin: 22px 0 10px;
+    color: #1d3557;
+  }
+  section.card p { margin: 0 0 1.1em; text-align: justify; }
+  section.card ul, section.card ol { margin: 0 0 1.1em; padding-left: 22px; }
+  section.card li { margin: 8px 0; }
+  blockquote {
+    background: #f5f7fb;
+    border-left: 4px solid var(--accent);
+    margin: 18px 0;
+    padding: 15px 20px;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.95rem;
+  }
+  blockquote .src {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .table-wrap { overflow-x: auto; margin: 16px 0 20px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 11px 13px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f3f1eb;
+    font-weight: 700;
+    color: #22201c;
+  }
+  tr:nth-child(even) td { background: #fcfbf9; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .pill-nav a {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.83rem;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .pill-nav a:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  footer.note {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 30px;
+    line-height: 1.75;
+    text-align: center;
+  }
+  @media (max-width: 680px) {
+    .wrap { padding: 20px 14px 60px; }
+    header.hero { padding: 28px 20px; }
+    section.card { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">74_aerospace_defense_research · L1 Knowledge Publication · 2026-10-25</div>
+  <h1>從東印度公司到星鏈與算力帝國：大歷史莫比烏斯環下的 SpaceX、NVIDIA、美俄烏雙軌博弈與台海戰略對照</h1>
+  <div class="sub">
+    先用歷史（16–19 世紀《人類簡史》與《文明的故事》中的現代信貸、科學家買單與荷蘭／英國東印度公司主權外包），後寫現代（2026 年市值 2 兆美元的 SpaceX 與 AI 算力霸主 NVIDIA）。深度解碼為何 SpaceX 可透過 Starlink / Starshield 影響烏克蘭戰局並與川普政府形成「雙向可否認性」共振、為何川普政府「既援助烏克蘭又表面友好普丁」，並對照北京對台的灰區封鎖與台灣的「多軌衛星＋先進算力實體底座」破局之道。
+  </div>
+  <div class="meta">
+    認識論五維屬性：<code>claim_type: synthesis</code> · <code>source_tier: primary &amp; secondary</code> · <code>document_role: synthesis</code> · <code>verification_status: verified</code> · <code>workflow_disposition: keep</code><br>
+    文章結構：問題（Problem） → 先用歷史（Historical Foundation） → 後寫現代案例（SPCX &amp; NVDA） → 方法與地緣解釋（Ukraine-US-Russia &amp; Beijing-Taiwan） → 適用邊界與貝氏檢驗<br>
+    對應權威 Markdown：<a href="14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md">14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md</a> ｜ 前序報告：<a href="10_starlink_ukraine_zalenskyy_trump_musk_report.html">10_Starlink 降速風暴</a> · <a href="12_musk_spacex_stock_gift_trump_accounts_report.md">12_Musk 川普帳戶贈股</a> ｜ 歷史原典：<a href="https://arislee1979-afk.github.io/mobius-credit-empire/" target="_blank">🏛️ 03 大歷史莫比烏斯環原典庫 ↗</a>
+  </div>
+</header>
+
+<div class="legend">
+  <strong>證據分級標記（依 <code>user:argon-flash-v2</code> 與 <code>AGENTS.md</code>）：</strong>
+  <span class="badge b-fact">FACT</span> 原典史實／官方財報／多家主流外電交叉實證
+  <span class="badge b-auth">AUTHOR STATEMENT</span> 原書作者或當代當事人署名聲明
+  <span class="badge b-inf">INFERENCE</span> 跨時代制度同構性推論（附貝氏檢驗條件）
+  <span class="badge b-unk">UNKNOWN</span> 尚未公開之一手合約或監察長調查缺口
+</div>
+
+<nav class="pill-nav">
+  <a href="#sec-0">0. 執行摘要與全景對照</a>
+  <a href="#sec-1">1. 核心問題</a>
+  <a href="#sec-2">2. 【先用歷史】莫比烏斯環與東印度公司</a>
+  <a href="#sec-3">3. 【後寫現代】SpaceX 與 NVIDIA 結構同構</a>
+  <a href="#sec-4">4. 【地緣對照】烏克蘭星鏈開關、川普雙軌外交 vs. 北京對台政策</a>
+  <a href="#sec-5">5. 適用邊界與貝氏對稱檢驗</a>
+  <a href="#sec-6">6. 查核來源清單</a>
+</nav>
+
+<section class="card" id="sec-0">
+  <h2>0. 執行摘要：五百年大歷史原型 × 2026 當代軍工算力地緣對照</h2>
+  <p>本研究將本機書庫（<code>50_WeRead/topics/大歷史</code>）中的<a href="../50_WeRead/topics/大歷史/02_全書正文MD/01_人類簡史：從動物到上帝（新版）.md">《人類簡史》第 2、14–16 章</a>、<a href="../50_WeRead/topics/大歷史/02_全書正文MD/文明的故事（全11卷）/">《文明的故事》第 7–10 卷</a>與<a href="../50_WeRead/topics/大歷史/02_全書正文MD/押沙龍講世界史/押沙龍講世界史.md">《押沙龍講世界史》第 61–62 章</a>，與本庫（<code>74_aerospace_defense_research</code>）及 2026 年 10 月最新國際權威外電結合，提煉出五大跨時代結構映射：</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:18%">結構維度</th>
+          <th style="width:36%">16–19 世紀大歷史原型（原典書籍實證）</th>
+          <th style="width:36%">2026 當代軍工科技與地緣映射（SPCX / NVDA / 美俄烏 / 台海）</th>
+          <th style="width:10%">認識論分級</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. 科學家替印鈔機買單</strong></td>
+          <td>銀行與政府透過 10:1 部分準備金與國債創造信貸（Credit），但最終填補信貸泡沫、避免崩盤的，是實驗室裡創造新產能與新技術的<strong>科學家</strong>（《人類簡史》L2906）。</td>
+          <td>2008 與 2020 年後全球央行擴表數十兆美元，當代替主權債務與法幣購買力買單的，是以 <strong>NVIDIA（NVDA）</strong> Blackwell / Vera Rubin 算力平台與 <strong>SpaceX（SPCX）</strong> 軌道基建為核心的 AI 生產力革命。</td>
+          <td><span class="badge b-auth">AUTHOR STATEMENT</span><br><span class="badge b-fact">FACT</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. 主權外包與特許壟斷公司</strong></td>
+          <td>荷蘭東印度公司（VOC, 1602）與英國東印度公司（EIC, 1600）以「法律虛構＋有限責任」募資，壟斷遠洋航道與香料／鴉片貿易，並獲國家授權擁有私人艦隊與 35 萬僱傭軍（《人類簡史》L2959–2979）。</td>
+          <td><strong>SpaceX</strong> 壟斷全球逾 11,000 顆低軌衛星與可重用火箭發射產能，透過五角大廈 <strong>Starshield</strong> 合約承接戰場 C4ISR 通訊；<strong>NVIDIA</strong> 透過 CUDA 與先進封裝壟斷全球「主權 AI（Sovereign AI）」算力軍火庫。</td>
+          <td><span class="badge b-fact">FACT</span><br><span class="badge b-inf">INFERENCE</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. 全民入股與政商利益共同體</strong></td>
+          <td>VOC 連續 198 年平均配息 18%，連阿姆斯特丹市長女僕都持股；英國國會議員與大臣普遍持有 EIC 與鴉片商股票，使國家政策與公司市值深度綁定（《押沙龍講世界史》L6268；《人類簡史》L2988）。</td>
+          <td>SpaceX 於 2026 年 6 月完成 857 億美元史上最大 IPO（市值約 2 兆美元），Musk 捐助 3.66 億美元助選並宣示透過聯邦 7,000 萬個<strong>「川普帳戶（Trump Accounts）」</strong>贈與全美兒童每股 SPCX（約 105 億美元）。</td>
+          <td><span class="badge b-fact">FACT</span><br><span class="badge b-inf">INFERENCE</span></td>
+        </tr>
+        <tr>
+          <td><strong>4. 戰場開關與「可否認性」雙簧</strong></td>
+          <td>17–18 世紀英荷政府常以「特許公司商業行為或地方總督便宜行事」推諉海外軍事衝突責任，但在需要施壓外國政權時，立即動用特許公司封鎖航道或切斷補給。</td>
+          <td>2026 年 10 月烏克蘭 <strong>Starshield 160 km/h 限速事件</strong>：Musk 稱「Starshield 歸美國政府與總統控制」，白宮與國務卿 Rubio 稱「由 SpaceX 商業條款決定」，實質形成逼迫基輔停止打擊俄煉油廠的「可否認外交槓桿」。</td>
+          <td><span class="badge b-fact">FACT</span><br><span class="badge b-inf">INFERENCE</span></td>
+        </tr>
+        <tr>
+          <td><strong>5. 帝國雙面外交：美俄烏 vs. 台海</strong></td>
+          <td>金融帝國不打無上限的意識形態消耗戰：英國一面發債軍援盟邦維持歐陸均勢，一面與交戰方維持貿易以壓低國內通膨與國債殖利率上限。</td>
+          <td><strong>川普政府</strong>一面維持對烏防禦軍售並派特使 Witkoff 促談，一面與普丁簽署俄國柴油進口協議、豁免制裁以壓低期中選舉前油價；對照<strong>北京對台</strong>一面以軍演與海底電纜灰區破壞施壓，一面透過跨國企業在華利益阻撓台灣衛星防禦並輔以經貿融通。</td>
+          <td><span class="badge b-fact">FACT</span><br><span class="badge b-inf">INFERENCE</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="sec-1">
+  <h2>1. 核心問題（Problem）：當主權暴力、邊疆通訊與底層算力再次集中於私人股份公司</h2>
+  <p>在 20 世紀民族國家高峰期，人們習以為常地認為「發動與停止戰爭的權力」、「國家級戰略通訊網路」與「核心國防工業」由主權國家政府獨占。然而，2022 至 2026 年間的三組結構性發展徹底顛覆了這項假設：</p>
+  <ol>
+    <li><strong>私人企業握有主權戰場的物理開關</strong>：2026 年 10 月 13 日深夜，烏克蘭軍方發現其依賴 SpaceX 運行的軍用級 <strong>Starshield</strong> 終端，在移動時速超過 160 公里（100 英里）時無預警斷線，直接導致烏軍攔截俄羅斯 Shahed 噴射無人機（時速約 320 公里）與中程打擊無人機的導引系統失效（<a href="https://www.theguardian.com/world/2026/oct/15/starshield-starlink-ukraine-restriction-explained" target="_blank">The Guardian 2026-10-15</a>）。事後 SpaceX 執行長 Elon Musk 與美國白宮、國務院互推責任，暴露出單一私人企業實質掌握了主權國家防空網的開關。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>「航太－能源－算力」超大型複合體的誕生</strong>：SpaceX 於 2026 年 2 月併購 xAI、6 月以 857 億美元完成史上最大 IPO（市值約 2 兆美元，代號 <code>SPCX</code>），並在 2026 年 Q3 財報展現每月部署 22 萬顆 <strong>NVIDIA（NVDA）</strong> GB300 晶片、以 Raptor 火箭引擎精密鑄造產線自製燃氣渦輪發電葉片的跨界壟斷力（<a href="https://uk.investing.com/news/stock-market-news/earnings-call-transcript-spacex-tops-q3-2026-estimates-shares-jump-after-hours-93CH-4921099" target="_blank">Investing.com 2026-10-21</a>）。與此同時，NVIDIA 憑藉 Blackwell 與 Vera Rubin 架構，將「主權 AI（Sovereign AI）」打造為各國政府必須排隊採購的數位軍火庫（<a href="https://tickeron.com/blogs/nvidia-nvda-vera-rubin-and-blackwell-drive-strong-growth-outlook-into-2026-12068/" target="_blank">Tickeron 2026-03-31</a>）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>交易型大國外交與台海地緣映射</strong>：川普政府在 2026 年 10 月一方面透過北約代購管道（PURL）與特使穿梭維持對烏克蘭的防禦支撐，另一方面卻為了壓低美國期中選舉前的柴油價格與推動談判，與普丁達成俄羅斯柴油進口協議、豁免國會對俄制裁，並向基輔施壓要求停止打擊俄國煉油廠（<a href="https://www.atlanticcouncil.org/dispatches/what-will-end-trumps-back-and-forth-approach-toward-russia-and-ukraine/" target="_blank">Atlantic Council 2026-10-23</a>）。 <span class="badge b-fact">FACT</span></li>
+  </ol>
+  <p>若將時間軸拉回 1500 年至 1900 年的大歷史尺度，對照哈拉瑞《人類簡史》與杜蘭特《文明的故事》所剖析的<strong>「科學、帝國與資本主義的莫比烏斯環」</strong>，我們會發現：這並非歷史的異常偏離，而是<strong>「股份制特許公司主權外包」</strong>與<strong>「帝國信貸算計」</strong>在 21 世紀太空與 AI 時代的結構性重演。 <span class="badge b-inf">INFERENCE</span></p>
+</section>
+
+<section class="card" id="sec-2">
+  <h2>2. 第一部分【先用歷史】：大歷史原典中的「科學 × 帝國 × 資本」莫比烏斯環與特許公司原型</h2>
+
+  <h3>2.1 概念基石：「銀行與政府印鈔票，但最後買單的是科學家」</h3>
+  <p>在《人類簡史》第 16 章〈資本主義教條〉（L2811–2910）中，哈拉瑞指出：西元 1500 年全球商品與服務總產值約為 <strong>2,500 億美元</strong>（人均約 550 美元），而當代全球年產值逼近 <strong>60 兆美元</strong>（人均約 8,800 美元），總產值成長了 <strong>240 倍</strong>。這場爆炸性成長源於三大制度結合： <span class="badge b-fact">FACT</span></p>
+  <ul>
+    <li><strong>部分準備金與 10:1 信用乘數</strong>：透過「加州銀行家 A 先生、建築承包商 B 先生、麵包師傅 C 小姐」的閉環模型，銀行金庫裡雖只有 <strong>100 萬美元實體現金</strong>，帳面上卻能創造出 <strong>1,000 萬美元</strong>的銀行存款（《人類簡史》L2815–2841）。當代全球超過 <strong>90% 的金錢</strong>皆是電腦伺服器上的數位記帳，唯一支撐是人們對「未來資源必定比現在更豐沛」的信任。 <span class="badge b-auth">AUTHOR STATEMENT</span></li>
+    <li><strong>「死財富（Wealth）」vs.「活資本（Capital）」</strong>：亞當·斯密（Adam Smith）於 1776 年《國富論》提出「生產利潤必須再投資於增加生產」的第一誡命（《人類簡史》L2873–2885）。法老建造非生產性的金字塔、海盜將金幣埋在荒島只叫「財富」；唯有將資金投入能產生更高未來現金流的生產工具、新航線與科技研發，才叫「資本」。 <span class="badge b-auth">AUTHOR STATEMENT</span></li>
+    <li><strong>實驗室替印鈔機買單的鐵律</strong>：如果未來的大餅沒有真正變大，銀行與政府創造的信貸就只是通膨泡沫。誰讓大餅真正變大？哈拉瑞給出了最核心的論斷：</li>
+  </ul>
+  <blockquote>
+    「是誰在最後買單？不是銀行家，也不是政府，而是科學家。銀行和政府在印鈔票，但最後買單的是科學家……當代經濟之所以能夠度過一次又一次的信貸危機，靠的正是科學家和工程師在實驗室裡不斷推出生物科技、奈米科技與演算法的新突破。」
+    <span class="src">—— 尤瓦爾·赫拉利，《人類簡史：從動物到上帝（新版）》第 16 章（L2906–2910, L3050–3058） <span class="badge b-auth">AUTHOR STATEMENT</span></span>
+  </blockquote>
+
+  <h3>2.2 制度發明：股份制特許公司（VOC / WIC / EIC）的「主權外包」與雙用基礎設施壟斷</h3>
+  <p>歐洲海洋帝國之所以能擊敗人口與稅基龐大的亞洲陸權帝國（如明清中國、奧斯曼土耳其、波斯），關鍵在於陸權帝國依賴「向農民徵稅與戰場掠奪」，而歐洲帝國自 1492 年哥倫布（Christopher Columbus）獲西班牙伊莎貝拉女王「天使輪探險創投」後，於 17 世紀發明了<strong>「股份制特許公司（Chartered Joint-Stock Company）」</strong>（《人類簡史》L2912–2979）： <span class="badge b-fact">FACT</span></p>
+  <ul>
+    <li><strong>法律虛構（Legal Fiction）與有限責任（Limited Liability）</strong>：公司作為獨立「法人」承擔債務與訴訟，股東僅以出資額為限承擔風險，使成千上萬的中產階級敢將積蓄投入高風險遠洋拓殖（《人類簡史》L252–268, L2929）。 <span class="badge b-auth">AUTHOR STATEMENT</span></li>
+    <li><strong>荷蘭聯合東印度公司（VOC, 1602–1800）</strong>：初始募集資本達 <strong>660 萬荷蘭盾</strong>（為英國東印度公司初始資本的 44 倍），在 198 年存續期間平均每年配發 <strong>18%–22% 的高額股息</strong>，連阿姆斯特丹市長家的女僕都持股（《文明的故事》第 7 卷 L4745；《押沙龍講世界史》L6268）。VOC 獲國家授權建造武裝商船、僱用傭兵、建築堡壘、簽署條約並設立法院，實質統治印尼群島近兩百年，直到 1800 年才轉歸荷蘭政府接管（《人類簡史》L2959–2963）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>荷蘭西印度公司（WIC, 1621）與華爾街起源</strong>：1626 年以價值 60 荷蘭盾（約 <strong>24 美元</strong>）的小飾品買下曼哈頓島建立「新阿姆斯特丹」，並築起防禦印第安人與英國人的木牆——這道私人公司的防禦工事正是今日全球金融中樞<strong>「華爾街（Wall Street）」</strong>的起源（《人類簡史》L2965；《文明的故事》第 7 卷 L4747）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>英國東印度公司（EIC, 1600–1858）</strong>：總部位於倫敦利德賀街一棟民間大樓，卻在 18 世紀中葉建立起高達 <strong>35 萬人</strong>的私人正規軍隊（超越大英帝國王室正規陸軍）。1757 年克萊武（Robert Clive）贏得普拉西戰役、1765 年取得孟加拉三省<strong>「徵稅與財政管理權（Diwani）」</strong>（統治 3,000 萬人口、年徵稅 400 萬英鎊），直到 1858 年才收歸英國王室國有（《人類簡史》L2979；《文明的故事》第 10 卷 L8575–8583）。 <span class="badge b-fact">FACT</span></li>
+  </ul>
+
+  <h3>2.3 主權信用決戰與「政商雙面外交」的歷史鐵律</h3>
+  <ul>
+    <li><strong>獨立司法與主權信用擊敗專制暴力（西荷八十年信貸戰爭，1568–1648）</strong>：哈布斯堡西班牙國王坐擁美洲銀礦卻屢次違約賴帳、控制法院並逮捕日耳曼銀行家；反觀僅 200 多萬人口的荷蘭共和國憑藉「按時連本帶利還款」與「保護私有產權的獨立司法」，獲得全歐洲最低廉的信貸，造出 <strong>16,000 艘商船與 16 萬水手</strong>（超過英、法、西三國總和），僱用傭兵擊敗西班牙帝國（《人類簡史》L2935–2951；《文明的故事》第 7 卷 L4741）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>1720 英法雙重泡沫分流</strong>：法國約翰·勞（John Law）身兼<strong>密西西比公司總裁、皇家銀行（央行）行長與財政大臣</strong>三職，無限印鈔護盤導致泡沫崩盤、法國王室信用破產，使路易十六在 1780 年代須將 <strong>50% 年度預算用於付息</strong>而引爆 1789 年法國大革命；同年英國南海泡沫後，英國國會啟動獨立調查、將財政大臣關入倫敦塔，並由沃波爾（Robert Walpole）協調獨立的<strong>英格蘭銀行与東印度公司承接 1,800 萬英鎊債務</strong>，保住大英帝國低利融資霸權（《人類簡史》L2969–2975；《文明的故事》第 9 卷 L113–157, L485–506）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>國家淪為「資本家工會」與跨國討債</strong>：當外國政權威脅本國特許公司與股東現金流時，國家便出動砲艦——1840 年因英國國會議員與大臣持有鴉片商股份而發動第一次鴉片戰爭；1821 年倫敦證交所發行「希臘叛軍公債」促成 1827 年納瓦里諾海戰；1882 年英國為保護債權人出兵佔領埃及（《人類簡史》L2988–2998）。 <span class="badge b-fact">FACT</span></li>
+  </ul>
+</section>
+
+<section class="card" id="sec-3">
+  <h2>3. 第二部分【後寫現代・真實案例】：當代「新東印度公司」——SpaceX (SPCX) 與 NVIDIA (NVDA) 的結構同構性</h2>
+  <p>將五百年大歷史透鏡對準 2026 年的美國科技與國防工業，<strong>SpaceX（SPCX）</strong>與 <strong>NVIDIA（NVDA）</strong>分別繼承了大歷史莫比烏斯環中<strong>「特許東印度公司（軌道航道與戰場通訊主權外包）」</strong>與<strong>「總實驗室／算力鑄幣廠（替全球主權信貸買單並壟斷 AI 軍火庫）」</strong>的雙核心角色。</p>
+
+  <h3>3.1 SpaceX（SPCX，市值約 2 兆美元）＝ 21 世紀的「荷蘭／英國東印度公司（VOC / EIC）」</h3>
+  <ul>
+    <li><strong>軌道運輸與低軌頻譜的準自然壟斷</strong>：如同 17 世紀荷蘭擁有 1.6 萬艘商船，SpaceX 在近地軌道（LEO）擁有<strong>超過 11,000 顆運行中的 Starlink 衛星</strong>（超越全球所有競爭對手總和），且 Falcon 9 商業發射艙位已排滿至 <strong>2028–2029 年</strong>（<a href="https://topics.amcham.com.tw/2026/10/taiwans-leo-ambitions-face-high-hurdles/" target="_blank">AmCham Taiwan 2026-10-19</a>）。由於低軌衛星壽命僅約 5 年，缺乏自有可重用火箭的競爭者在「非對稱作戰成本交換比（Cost-Exchange Ratio）」上難以單獨抗衡。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>「航太－能源－算力」垂直整合閉環（2026 Q3 財報實證）</strong>：SpaceX 於 2026 年 2 月併入 <strong>xAI</strong>、6 月完成 <strong>857 億美元</strong>史上最大 IPO（市值約 2 兆美元）。2026 年 10 月 20 日公布的 Q3 財報顯示，單季營收年增 <strong>161%</strong> 達 <strong>145.8 億美元</strong>（淨利 44 億美元），其中 AI 算力基礎設施（SI）營收達 <strong>76 億美元</strong>，超越 Starlink 成為第一大引擎；公司更直接以 <strong>Raptor 火箭引擎精密鑄造產線</strong>自製燃氣渦輪發電葉片（繞過 18 個月交期瓶頸），每月部署 <strong>22 萬顆 NVIDIA GB300 晶片（約 0.5 GW/月）</strong>（<a href="https://uk.investing.com/news/stock-market-news/earnings-call-transcript-spacex-tops-q3-2026-estimates-shares-jump-after-hours-93CH-4921099" target="_blank">Investing.com 2026-10-21</a>；<a href="https://emergent.sh/news/spacex-ai-revenue-surges-161-q3-2026-earnings" target="_blank">Emergent News 2026-10-21</a>）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>「川普帳戶」全民兒童贈股＝當代版「VOC 全民股東共同體」</strong>：17 世紀連阿姆斯特丹市長女僕都持有 VOC 股票；2026 年 10 月 19 日，Musk 宣布將把個人持有的 SpaceX 股票送給<strong>全美約 7,200 萬至 7,300 萬名兒童每人一股</strong>（總值約 <strong>105 億美元</strong>，占其受益持股約 1.1%），最可能管道即為美國財政部 2026 年 10 月 1 日完成自動開戶的 7,000 萬個<strong>「川普帳戶（Trump Accounts）」</strong>（家長不得拒絕受贈、且 5 年內不得賣出）（<a href="https://apnews.com/article/elon-musk-spacex-stock-children-trump-accounts-105-billion-post-e387c8052e6d63" target="_blank">AP News 2026-10-19</a>；<a href="12_musk_spacex_stock_gift_trump_accounts_report.md">本庫報告 12</a>）。 <span class="badge b-fact">FACT</span> <span class="badge b-inf">INFERENCE</span></li>
+  </ul>
+
+  <h3>3.2 NVIDIA（NVDA）＝ 替全球信貸印鈔買單的「總實驗室」與「主權 AI 算力軍火商」</h3>
+  <ul>
+    <li><strong>替全球央行擴表買單的硬科技底座</strong>：對應《人類簡史》L2906「銀行與政府印鈔票，科學家買單」，2008 與 2020 年後全球央行印製數十兆美元信貸，最終仰賴 AI 與加速運算提升全要素生產力來填補信貸缺口。NVIDIA 憑藉 <strong>Blackwell</strong> 架構在 2025 年創造 <strong>1,840 億美元</strong>營收，並於 2026 年推出整合 7 顆晶片的 <strong>Vera Rubin</strong> 平台，邁向單季營收 650 億–780 億美元規模（<a href="https://www.investing.com/analysis/nvidia-ai-spending-tailwind-still-points-to-higher-revenue-estimates-200677805" target="_blank">Investing.com 2026-04-02</a>；<a href="https://tickeron.com/blogs/nvidia-nvda-vera-rubin-and-blackwell-drive-strong-growth-outlook-into-2026-12068/" target="_blank">Tickeron 2026-03-31</a>）。 <span class="badge b-fact">FACT</span> <span class="badge b-inf">INFERENCE</span></li>
+    <li><strong>「主權 AI（Sovereign AI）」與雙軌經貿外交</strong>：如同 17 世紀各國君主必須向阿姆斯特丹採購青銅火炮，今日各國政府與 SpaceX（xAI）皆須向 NVIDIA 採購 GPU 並高度依賴<strong>台灣台積電（TSMC）</strong>先進製程與 CoWoS 封裝（<a href="https://thequantumspace.org/2026/01/13/chinas-nvidia-surge-meets-a-hard-reality/" target="_blank">The Quantum Space 2026-01-13</a>）。同時，面對美國 BIS 出口管制，黃仁勳一方面配合美國「非紅供應鏈」戰略，另一方面於 <strong>2026 年 5 月與 Elon Musk、Tim Cook 共同隨美國總統川普代表團訪問北京</strong>（<a href="https://topics.amcham.com.tw/2026/10/taiwans-leo-ambitions-face-high-hurdles/" target="_blank">AmCham Taiwan 2026-10-19</a>），展現跨國科技資本在大國夾縫中的雙軌生存法則。 <span class="badge b-fact">FACT</span></li>
+  </ul>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>比較維度</th>
+          <th>荷蘭／英國東印度公司（VOC 1602 / EIC 1600）</th>
+          <th>SpaceX（NASDAQ: SPCX，Starlink / Starshield / xAI）</th>
+          <th>NVIDIA（NASDAQ: NVDA，CUDA / Blackwell / Vera Rubin）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>核心物理與生態護城河</strong></td>
+          <td>遠洋武裝商船隊（荷蘭 1.6 萬艘）、好望角與麻六甲航道、香料與鴉片專賣權</td>
+          <td>逾 <strong>11,000 顆低軌衛星</strong>、Falcon 9 / Starship 可重用火箭（排至 2029）、Raptor 渦輪發電與 xAI 叢集</td>
+          <td><strong>CUDA 生態系</strong>、Blackwell / Vera Rubin 7 晶片架構、NVLink 與台積電 CoWoS 先進封裝配額</td>
+        </tr>
+        <tr>
+          <td><strong>在莫比烏斯環中的位置</strong></td>
+          <td><strong>帝國拓殖與現金流汲取端</strong>：以有限責任募集民間資本，征服殖民地回流 18%–22% 股息</td>
+          <td><strong>邊疆基建與主權外包端</strong>：承接五角大廈與 NASA 任務，掌握全球戰場通訊與軌道算力入口</td>
+          <td><strong>替主權信貸買單的「總實驗室」與算力軍火商</strong>：以算力躍遷支撐全球央行印鈔與資本市場估值</td>
+        </tr>
+        <tr>
+          <td><strong>與國家主權暴力的關係</strong></td>
+          <td>獲皇家特許狀直接擁有宣戰權、締約權、法院與 <strong>35 萬私人大軍</strong>（EIC）</td>
+          <td>透過 <strong>Starshield / Starlink</strong> 掌握現代無人機作戰、防空攔截與 C4ISR 的「數位生殺開關」</td>
+          <td>受美國 BIS 出口管制約束，決定哪一個國家能取得訓練前沿軍事與經濟 AI 模型的「算力彈藥」</td>
+        </tr>
+        <tr>
+          <td><strong>與國家及全民利益綁定</strong></td>
+          <td>國會議員持股、VOC 全民入股（含市長女僕）、與英格蘭銀行共同承接國債（1720）</td>
+          <td>Musk 捐 3.66 億美元助選、獲國家科學獎章，宣示透過聯邦 7,000 萬個<strong>「川普帳戶」</strong>贈全美兒童每股 SPCX</td>
+          <td>美股退休金（401k）與全球主權基金第一大權重核心，隨川普總統代表團（2026.05）參與對華外交</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="sec-4">
+  <h2>4. 第三部分【方法與深度解釋】：Starlink 烏克蘭戰場開關、川普「援烏又親普丁」雙軌外交，對照北京對台政策與台海韌性</h2>
+
+  <h3>4.1 私人公司握有戰場開關：2026 年 10 月 Starshield 烏克蘭 160 km/h 限速風暴與「雙向可否認性」</h3>
+  <p>根據本庫<a href="10_starlink_ukraine_zalenskyy_trump_musk_report.html">《10_Starlink 降速風暴報告》</a>及<a href="https://www.theguardian.com/world/2026/oct/15/starshield-starlink-ukraine-restriction-explained" target="_blank">《衛報》（2026-10-15）</a>、<a href="https://www.aljazeera.com/news/2026/10/22/ukraines-access-to-starlink-a-decision-for-elon-musk-rubio-says" target="_blank">《半島電視台》（2026-10-22）</a>的交叉查核：</p>
+  <ul>
+    <li><strong>戰場實況</strong>：2026 年 10 月 13 日深夜，烏軍使用的軍用級 <strong>Starshield</strong> 遭無預警設定 <strong>160 km/h（100 mph）速度上限</strong>，導致烏軍攔截俄軍 Shahed 噴射無人機（時速約 320 km/h）的導引系統失效，同期間美方彈道飛彈預警亦曾中斷三天。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>三方羅生門</strong>：Musk 於 10 月 14 日發文稱「Starshield 歸美國政府所有，任何速度限制由美軍與美國總統（POTUS）決定」；但川普宣稱「不知情、未參與」，國防部長 Pete Hegseth 與國務卿 Marco Rubio（10 月 21 日）則公開定調「這受私人商業合約與服務條款（ToS）規範，決定權在 SpaceX 與 Elon Musk 手中，而非白宮」；與此同時，《華爾街日報》（10 月 20 日）與《每日電訊報》（10 月 16 日）引述知情官員指 Musk 下令降速，且事前事後皆與白宮討論（<a href="https://www.aljazeera.com/news/2026/10/22/ukraines-access-to-starlink-a-decision-for-elon-musk-rubio-says" target="_blank">Al Jazeera 2026-10-22</a>）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>大歷史制度解讀——「雙向可否認性（Bidirectional Plausible Deniability）」</strong>：正如 17–18 世紀英國王室與東印度公司互推海外衝突責任，當白宮希望施壓澤倫斯基停止打擊俄羅斯煉油廠、卻又不想承擔「違反國會軍援法案、協助普丁轟炸平民」的憲政彈劾風險時，由私人承包商 SpaceX 出面限速、白宮再稱「管不了私人公司商業條款」，便創造了完美的政治防火牆；而當歐洲盟友批評 Musk 干預戰爭時，Musk 又能拿五角大廈 Starshield 合約當擋箭牌。<strong>權力在國家與公司之間無縫流動，問責卻在兩者的接縫中消失。</strong> <span class="badge b-inf">INFERENCE</span></li>
+  </ul>
+
+  <h3>4.2 解碼川普政府「既援助烏克蘭、表面又友好普丁」：帝國信貸算計與均勢交易法則</h3>
+  <p>為何川普政府一面維持對烏軍售管道（自 2017 年批准首批 210 枚 Javelin 反坦克飛彈 DSCA 18-02，至 2026 年持續 PURL 代購與特使 Steve Witkoff 穿梭促成 11 月阿布達比三方和談及赫爾松局部停火），一面卻在 2026 年 10 月 9 日與普丁達成俄羅斯柴油進口協議、10 月 17 日豁免《2026 制裁俄伊法案》，甚至讓特使公開稱普丁為「人道主義者」（<a href="https://www.atlanticcouncil.org/dispatches/what-will-end-trumps-back-and-forth-approach-toward-russia-and-ukraine/" target="_blank">Atlantic Council 2026-10-23</a>；<a href="https://www.mprnews.org/story/2026/10/24/ukraine-and-russia-eye-new-peace-talks-but-steep-obstacles-remain" target="_blank">MPR News 2026-10-24</a>）？從大歷史信貸戰爭視角看，背後有三大冷酷算計： <span class="badge b-inf">INFERENCE</span></p>
+  <ol>
+    <li><strong>「國債利息上限」與防範路易十六財政陷阱</strong>：18 世紀法國因海外戰爭債務導致 50% 年度預算用於付息而崩潰（《人類簡史》L2973）。面對逾 35 兆美元聯邦債務，美國拒絕無上限消耗戰，轉而將防線控制在「讓烏軍守住現有 80% 領土，但嚴禁烏軍炸毀俄煉油廠推升全球油價」的成本交換區間。</li>
+    <li><strong>國內期中選舉通膨優先於海外意識形態</strong>：如同 17 世紀荷蘭商人在戰爭中仍向敵國購買大宗物資以平抑國內物價，川普在 2026 年 11 月 3 日期中選舉前最優先考量的是壓低美國國內柴油價格與換回美籍囚犯 Stephen Hubbard。</li>
+    <li><strong>大國均勢交易籌碼</strong>：保留對烏軍援（Javelin、情報、基礎星鏈）是為了在美俄談判桌上保有籌碼；對普丁釋放善意並考慮「美俄中三方峰會」則是為了將莫斯科拉回華盛頓主導的交易框架。</li>
+  </ol>
+
+  <h3>4.3 對照北京政府對台政策：從「西荷信貸戰」與「烏克蘭星鏈開關」看台海灰區封鎖與反脆弱戰略</h3>
+  <p>將「大歷史特許公司」、「烏克蘭星鏈開關」與「川普雙軌外交」映射至台海，可清晰解析北京對台策略與台灣的破局之道：</p>
+  <ul>
+    <li><strong>北京的「反東印度公司灰區絞索（Gray-Zone ICAD）」</strong>：台灣目前高達 <strong>95% 的國際網際網路與電信流量依賴 24 條海底光纜</strong>（<a href="https://topics.amcham.com.tw/2026/10/taiwans-leo-ambitions-face-high-hurdles/" target="_blank">AmCham Taiwan 2026-10-19</a>）。北京不急於發動高成本的兩棲登陸，而是透過抽砂船、拖網船與權宜輪頻繁切斷外島海底光纜，配合環台軍演測試能源與通訊隔離（<a href="https://globaltaiwan.org/2025/03/countering-chinas-subsea-cable-sabotage/" target="_blank">Global Taiwan Institute 2025-03-19</a>），同時交替施展經貿融通與認知戰。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>北京利用跨國巨企在華曝險阻撓台灣衛星防禦</strong>：Musk 旗下的 Tesla 在上海擁有超級工廠（年銷逾 <strong>65 萬輛</strong>），Musk 曾於 2022–2023 年發表將台灣比擬為「中國特別行政區」言論，且《華爾街日報》於 2024 年 10 月披露，<strong>普丁曾應習近平要求私下請託 Musk「不要在台灣上空開通 Starlink 服務」</strong>（<a href="https://www.businessinsider.com/putin-elon-musk-starlink-taiwan-china-favor-xi-jinping-report-2024-10" target="_blank">Business Insider / WSJ 2024-10-24</a>）。儘管台灣立法院於 <strong>2026 年 7 月修正《電信管理法》</strong>豁免外資持股上限（原直接 49%／間接 60%）與董事長國籍限制以替 SpaceX 鋪路（<a href="https://www.taiwannews.com.tw/news/6400549" target="_blank">Taiwan News 2026-07-14</a>），但烏克蘭 2026 年 10 月的限速風暴證明：<strong>「向 SpaceX 租用頻寬」絕不等於「擁有戰時通訊主權」</strong>。 <span class="badge b-fact">FACT</span> <span class="badge b-inf">INFERENCE</span></li>
+    <li><strong>台灣的兩大反脆弱破局支點（為什麼台灣不是烏克蘭？）</strong>：
+      <ol>
+        <li><strong>通訊層：「多軌道、多供應商（Multi-Orbit, Multi-Vendor）」去單一依賴架構</strong>：中華電信已於 2025 年 6 月取得歐洲 <strong>Eutelsat OneWeb</strong> 低軌商用執照，並整合盧森堡 <strong>SES</strong> 中軌衛星（MEO）與自有 <strong>ST-2</strong> 高軌衛星（GEO）；遠傳電信則於 2026 年 5 月簽約引進 <strong>Amazon Leo（原 Project Kuiper）</strong>（預計 2027 上半年商轉），加上國家太空中心（TASA）規劃 2028/2030 發射 6 顆自研通訊衛星與亞太盟友合建星系（<a href="https://topics.amcham.com.tw/2026/10/taiwans-leo-ambitions-face-high-hurdles/" target="_blank">AmCham Taiwan 2026-10-19</a>）。 <span class="badge b-fact">FACT</span></li>
+        <li><strong>算力與實體製造層：掌握「新東印度公司（NVDA &amp; SPCX）」的物理心臟</strong>：烏克蘭在美歐財政中屬於「純資金與軍火消耗端」；但台灣透過<strong>台積電（TSMC）先進製程與 CoWoS 封裝</strong>，以及 NDAA 非紅供應鏈下的高頻 RF、相控陣列 PCB 與伺服器 ODM 群聚，直接掐住了 NVIDIA（Blackwell / Vera Rubin）與 SpaceX（每月 22 萬顆 GB300 算力擴張）的物理命脈。只要華爾街數十兆美元的 AI 信貸泡沫與美國主權算力仍需由台灣晶圓廠買單，確保台海安全就是美國「資本家工會」保衛自身資產負債表的核心生存利益。 <span class="badge b-fact">FACT</span> <span class="badge b-inf">INFERENCE</span></li>
+      </ol>
+    </li>
+  </ul>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>戰略比較維度</th>
+          <th>烏克蘭戰場與美俄烏博弈（2022–2026.10）</th>
+          <th>台海地緣博弈與北京對台政策（2022–2026.10）</th>
+          <th>台灣供應鏈與國防政策之啟示</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>主要對手施壓模式</strong></td>
+          <td>俄羅斯發動全面陸空入侵（占領約 20% 領土），以高強度彈道飛彈與 Shahed 噴射無人機轟炸能源與城市基建。</td>
+          <td>北京採取<strong>「灰區封鎖（Gray-Zone ICAD）」</strong>：以拖網船／權宜輪切斷海底光纜、環台軍演模擬封鎖，搭配經貿融通與認知戰。</td>
+          <td>台灣最迫切的風險是「24 條海底光纜切斷＋能源隔離＋跨國通訊受阻」的複合型灰區絞索。</td>
+        </tr>
+        <tr>
+          <td><strong>SpaceX / Starlink 的角色與風險</strong></td>
+          <td>烏軍高度依賴單一 Starlink / Starshield 系統；2026 年 10 月 13 日遭無預警設定 <strong>160 km/h 速度上限</strong>，防空攔截無人機失效。</td>
+          <td>Musk 因 Tesla 上海廠（年銷 65 萬輛）對華高度曝險，曾傳普丁應習近平要求請 Musk 勿在台開通 Starlink；台灣於 2026.07 修法放寬外資上限。</td>
+          <td><strong>嚴禁將戰時通訊 100% 押注於單一跨國公司</strong>；必須維持 OneWeb + SES + Amazon Leo + 自研星系的異質多軌備援。</td>
+        </tr>
+        <tr>
+          <td><strong>美國（川普政府）的雙軌算計</strong></td>
+          <td>一面維持防禦軍援與 Witkoff 促談；一面為壓低期中選舉前油價與普丁簽署柴油協議、豁免制裁，施壓基輔停炸俄煉油廠。</td>
+          <td>一面透過軍售與 NDAA 非紅供應鏈強化台灣防禦；一面要求半導體赴美設廠，並由川普率 Musk、黃仁勳訪京（2026.05）維持大國交易管道。</td>
+          <td>認清大國外交本質是「成本交換比」與「主權信貸利益」精算，必須強化自身不可替代的實體籌碼。</td>
+        </tr>
+        <tr>
+          <td><strong>在「信貸 × 算力」閉環中的位置</strong></td>
+          <td><strong>純資金與軍火消耗端</strong>：戰事延長持續消耗美歐財政預算與庫存，易引發國內選民與赤字反彈。</td>
+          <td><strong>全球算力與雙用硬體的物理心臟</strong>：掌握 NVIDIA 先進 AI 晶片（TSMC CoWoS）與衛星／伺服器非紅供應鏈。</td>
+          <td>越能鞏固「先進製程＋非紅衛星與無人機硬體製造」的自由現金流與產能，大國就越無法將台灣當作交易籌碼。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="sec-5">
+  <h2>5. 適用邊界、貝氏對稱檢驗（H<sub>A</sub> vs. H<sub>B</sub>）與未驗證缺口</h2>
+
+  <h3>5.1 歷史類比的三大結構邊界（17 世紀 VOC / EIC ≠ 21 世紀 SPCX / NVDA）</h3>
+  <ul>
+    <li><strong>主權暴力的直接性差異</strong>：17 世紀 VOC 與 EIC 擁有皇家特許狀授予的直接徵募陸海軍、設法院判死刑與直接徵稅權（Diwani），並在無監督下釀成 1770 年孟加拉大饑荒（1,000 萬人死亡）；今日 SpaceX 與 NVIDIA 雖握有通訊開關與算力分配權，但並無私人陸海軍，仍受美國 ITAR、EAR 出口管制與國防部合約約束。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>民主憲政與國會制衡的存續</strong>：如同 1720 年英國國會清算南海泡沫，2026 年 10 月 Starshield 限速與對俄制裁豁免後，美國跨黨派參眾議員（Tillis、Shaheen、Crow 等）立即要求五角大廈監察長啟動調查並威脅在跛腳鴨會期杯葛白宮議程（<a href="https://www.atlanticcouncil.org/dispatches/what-will-end-trumps-back-and-forth-approach-toward-russia-and-ukraine/" target="_blank">Atlantic Council 2026-10-23</a>）。 <span class="badge b-fact">FACT</span></li>
+    <li><strong>技術替代速度</strong>：烏克蘭限速事件已直接催化歐盟 IRIS²、Eutelsat OneWeb、Amazon Leo 以及不依賴衛星訊號之光纖／AI 視覺終端自主導引無人機的加速部署。 <span class="badge b-inf">INFERENCE</span></li>
+  </ul>
+
+  <h3>5.2 貝氏決策對稱檢驗表（Symmetric Hypothesis Testing）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:14%">命題編號</th>
+          <th style="width:30%">多頭／結構強化假設（H<sub>A</sub>）</th>
+          <th style="width:30%">具體競爭空頭／反證假設（H<sub>B</sub>）</th>
+          <th style="width:26%">外部可觀測檢驗指標與失效條件</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>HYP-14-01</strong><br>多重衛星韌性與台廠轉單</td>
+          <td>烏克蘭 Starshield 限速事件與台海光纜灰區威脅，迫使歐亞各國將「多軌道、多供應商衛星備援（OneWeb / Amazon Leo）」列為剛性國防支出，帶動具 NDAA 非紅認證之台系高頻 PCB、RF 與天線廠毛利率擴張。</td>
+          <td>1. 非 SpaceX 星系因火箭發射艙位遭排擠（Falcon 9 排至 2029 年）而部署延宕；<br>2. 台灣修法後仍選擇直接租用 Starlink 頻寬，台廠僅分得低毛利組裝。</td>
+          <td><strong>觀察窗：未來 2–4 個財報季</strong>。<br>檢視昇達科、華通、啟碁等非 SpaceX 客戶營收占比與毛利率；若未提升或 TASA 2028 標案延後，則降級 H<sub>A</sub>。</td>
+        </tr>
+        <tr>
+          <td><strong>HYP-14-02</strong><br>SPCX × NVDA 算力閉環對台保護傘</td>
+          <td>SpaceX（月裝 22 萬顆 GB300）與全球 Sovereign AI 對 NVIDIA Blackwell / Rubin 的剛性需求，使台灣先進製程與 CoWoS 成為支撐美股資本市值與主權信貸的物理核心，鞏固美方對台海安全底線之實質承諾。</td>
+          <td>1. AI 算力 CapEx 因軟體端自由現金流回收不如預期而於 2027 年見頂回落；<br>2. 美方加速要求先進封裝移往美國本土，逐步稀釋台灣本土產能不可替代性。</td>
+          <td><strong>觀察窗：2026 Q4 – 2027 Q2</strong>。<br>追蹤 SpaceX 2026/10/31 算力是否達 2.2 GW 及 NVIDIA FY2027 財報交付數據；若雲端 CapEx 連兩季下修則觸發先驗重置。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5.3 尚未驗證之資料缺口（Explicitly Marked <code>UNKNOWN</code>）</h3>
+  <ul>
+    <li><strong>2026 年 10 月 13 日烏克蘭 Starshield 160 km/h 限速指令之原始簽核紀錄</strong> <span class="badge b-unk">UNKNOWN</span>：五角大廈尚未公開合約權限附件與監察長調查結果（限期 2026-11-01 答覆），WSJ 與 Telegraph 之匿名官員說法與白宮及 Musk 公開聲明仍相衝突。</li>
+    <li><strong>2024 年 10 月 WSJ 報導「普丁應習近平要求請 Musk 勿在台開通 Starlink」之原始通話紀錄</strong> <span class="badge b-unk">UNKNOWN</span>：克里姆林宮與 Musk 均未證實。</li>
+    <li><strong>Musk 贈與全美 7,200 萬兒童每股 SpaceX 股票之 SEC 正式申報與執行細則</strong> <span class="badge b-unk">UNKNOWN</span>：截至 2026-10-25 僅為 X 貼文宣示，尚無 SEC 正式申報文件。</li>
+  </ul>
+</section>
+
+<section class="card" id="sec-6">
+  <h2>6. 結構化查核來源清單（Verified Sources）</h2>
+  <ul>
+    <li><strong>大歷史原典書籍（本機 <code>50_WeRead/topics/大歷史</code>）</strong>：
+      <ul>
+        <li>尤瓦爾·赫拉利，<a href="../50_WeRead/topics/大歷史/02_全書正文MD/01_人類簡史：從動物到上帝（新版）.md">《人類簡史：從動物到上帝（新版）》</a>，第 2、14、15、16 章（L252–268, L2245–3095）。</li>
+        <li>威爾·杜蘭特，<a href="../50_WeRead/topics/大歷史/02_全書正文MD/文明的故事（全11卷）/07_文明的故事07：理性開始的時代.md">《文明的故事 07：理性開始的時代》</a>（L4739–4765）、<a href="../50_WeRead/topics/大歷史/02_全書正文MD/文明的故事（全11卷）/09_文明的故事09：伏爾泰時代.md">《09：伏爾泰時代》</a>（L113–157, L485–506）、<a href="../50_WeRead/topics/大歷史/02_全書正文MD/文明的故事（全11卷）/10_文明的故事10：盧梭與大革命.md">《10：盧梭與大革命》</a>（L8573–8605）。</li>
+        <li>押沙龍，<a href="../50_WeRead/topics/大歷史/02_全書正文MD/押沙龍講世界史/押沙龍講世界史.md">《押沙龍講世界史》</a>，第 61–62 章（L6180–6365）。</li>
+        <li>前序 L1 重整：<a href="https://arislee1979-afk.github.io/mobius-credit-empire/" target="_blank">《03_科學帝國與資本主義的莫比烏斯環_書籍深度重整_L1.md》（線上全景站 ↗）</a>。</li>
+      </ul>
+    </li>
+    <li><strong>當代航太、算力與地緣政治查核來源（2024–2026.10）</strong>：
+      <ul>
+        <li>The Guardian (2026-10-15): <a href="https://www.theguardian.com/world/2026/oct/15/starshield-starlink-ukraine-restriction-explained" target="_blank">What is Starshield, SpaceX's military-grade Starlink system, and how will its restriction affect Ukraine?</a></li>
+        <li>Al Jazeera / AP / Reuters (2026-10-22): <a href="https://www.aljazeera.com/news/2026/10/22/ukraines-access-to-starlink-a-decision-for-elon-musk-rubio-says" target="_blank">Ukraine's access to Starlink a decision for Elon Musk, Rubio says</a></li>
+        <li>Atlantic Council — John E. Herbst (2026-10-23): <a href="https://www.atlanticcouncil.org/dispatches/what-will-end-trumps-back-and-forth-approach-toward-russia-and-ukraine/" target="_blank">What will end Trump's back-and-forth approach toward Russia and Ukraine</a></li>
+        <li>MPR News / AP (2026-10-24): <a href="https://www.mprnews.org/story/2026/10/24/ukraine-and-russia-eye-new-peace-talks-but-steep-obstacles-remain" target="_blank">Ukraine and Russia eye new peace talks, but steep obstacles remain</a></li>
+        <li>Investing.com (2026-10-21): <a href="https://uk.investing.com/news/stock-market-news/earnings-call-transcript-spacex-tops-q3-2026-estimates-shares-jump-after-hours-93CH-4921099" target="_blank">SpaceX tops Q3 2026 estimates, shares jump after hours</a></li>
+        <li>Emergent News (2026-10-21): <a href="https://emergent.sh/news/spacex-ai-revenue-surges-161-q3-2026-earnings" target="_blank">SpaceX AI Revenue Surges 161% in Q3 2026 Earnings Beat</a></li>
+        <li>AP News (2026-10-19): <a href="https://apnews.com/article/elon-musk-spacex-stock-children-trump-accounts-105-billion-post-e387c8052e6d63" target="_blank">Elon Musk pledges SpaceX shares to American children</a></li>
+        <li>Investing.com (2026-04-02): <a href="https://www.investing.com/analysis/nvidia-ai-spending-tailwind-still-points-to-higher-revenue-estimates-200677805" target="_blank">Nvidia AI Spending Tailwind Still Points to Higher Revenue Estimates ($184B Blackwell revenue)</a></li>
+        <li>Tickeron (2026-03-31): <a href="https://tickeron.com/blogs/nvidia-nvda-vera-rubin-and-blackwell-drive-strong-growth-outlook-into-2026-12068/" target="_blank">NVIDIA (NVDA): Vera Rubin and Blackwell Drive Strong Growth Outlook into 2026</a></li>
+        <li>Taiwan Business TOPICS — AmCham Taiwan (2026-10-19): <a href="https://topics.amcham.com.tw/2026/10/taiwans-leo-ambitions-face-high-hurdles/" target="_blank">Taiwan's LEO Ambitions Face High Hurdles</a></li>
+        <li>Business Insider / WSJ (2024-10-24): <a href="https://www.businessinsider.com/putin-elon-musk-starlink-taiwan-china-favor-xi-jinping-report-2024-10" target="_blank">Putin Asked Musk to Block Starlink Over Taiwan As Favor to Xi: Report</a></li>
+        <li>Taiwan News (2026-07-14): <a href="https://www.taiwannews.com.tw/news/6400549" target="_blank">Taiwan telecom amendments may open market to Starlink</a></li>
+        <li>Global Taiwan Institute (2025-03-19): <a href="https://globaltaiwan.org/2025/03/countering-chinas-subsea-cable-sabotage/" target="_blank">Countering China's Subsea Cable Sabotage</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<footer class="note">
+  74_aerospace_defense_research · L1 Knowledge Publication · 2026-10-25 · 嚴格遵循 AGENTS.md 認識論五維標籤、貝氏對稱檢驗與智庫寫作規範。
+</footer>
+
+</div>
+</body>
+</html>
