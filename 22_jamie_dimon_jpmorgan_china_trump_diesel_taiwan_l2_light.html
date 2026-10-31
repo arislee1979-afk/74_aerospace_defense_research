@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>22 — 華爾街的理性牌局與白宮的強人交易：當傑米・戴蒙的「美國優勢論」撞上川普時代的地緣現實 — Knowledge L2 HTML</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  :root {
+    --paper: #F7F4ED;
+    --paper-elevated: #FFFFFF;
+    --cream-shell: #F0E9D9;
+    --ink: #1A1714;
+    --ink-secondary: #4A4843;
+    --ink-muted: #78756E;
+    --terracotta: #D97757;
+    --crimson: #B91C1C;
+    --amber: #B45309;
+    --teal: #0F766E;
+    --navy: #1D4ED8;
+    --border-warm: #E2DAC7;
+    --shadow-soft: 0 6px 24px rgba(26, 23, 20, 0.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Serif TC", "Noto Sans TC", "PingFang TC", serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.82;
+    font-size: 16.5px;
+  }
+  .top-banner {
+    background: var(--cream-shell);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 10px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13px;
+    color: var(--ink-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .top-banner .pill {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .layout-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  @media (max-width: 1024px) {
+    .layout-container {
+      grid-template-columns: 1fr;
+      padding: 20px 16px 60px;
+      gap: 24px;
+    }
+    .toc-sidebar {
+      position: static !important;
+    }
+  }
+  .toc-sidebar {
+    position: sticky;
+    top: 24px;
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 20px 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .toc-sidebar h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+  .toc-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toc-sidebar a {
+    text-decoration: none;
+    color: var(--ink-secondary);
+    font-size: 14px;
+    line-height: 1.45;
+    display: block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .toc-sidebar a:hover {
+    background: var(--paper-elevated);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  main {
+    min-width: 0;
+  }
+  .hero-header {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-top: 5px solid var(--terracotta);
+    border-radius: 14px;
+    padding: 32px 34px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) {
+    .hero-header, .section-card {
+      padding: 22px 18px !important;
+    }
+    .hero-title {
+      font-size: 24px !important;
+    }
+  }
+  .hero-eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    color: var(--ink-secondary);
+    line-height: 1.72;
+    margin-bottom: 22px;
+  }
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .kpi-card {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi-card .k-label {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .kpi-card .k-val {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 4px 0;
+  }
+  .kpi-card .k-sub {
+    font-size: 12.5px;
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+  .section-card {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-radius: 14px;
+    padding: 32px 36px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 28px;
+  }
+  .section-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    border-bottom: 2px solid var(--cream-shell);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .section-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 22px 0 10px;
+  }
+  .section-card p {
+    margin-bottom: 16px;
+    font-size: 16.5px;
+    text-align: justify;
+  }
+  .section-card ul, .section-card ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+  .section-card li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  blockquote.thesis-box {
+    background: var(--cream-shell);
+    border-left: 4px solid var(--terracotta);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 18px 0 22px;
+    font-size: 15.8px;
+    color: var(--ink);
+  }
+  .quote-card {
+    background: #FAF8F3;
+    border: 1px solid var(--border-warm);
+    border-left: 4px solid var(--navy);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 15.8px;
+    color: var(--ink-secondary);
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 18px 0 22px;
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    min-width: 640px;
+  }
+  th {
+    background: var(--cream-shell);
+    color: var(--ink);
+    font-weight: 800;
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--border-warm);
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-warm);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  tr:nth-child(even) td {
+    background: #FAF8F3;
+  }
+  .epistemic-tag {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--cream-shell);
+    color: var(--ink-secondary);
+    border: 1px solid var(--border-warm);
+  }
+  a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: var(--terracotta);
+  }
+
+  /* v12/v15 Dual-Track Mermaid Subgraph & Vertical-Only Contract */
+  .svg-shell {
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 18px;
+    margin: 22px auto;
+    max-width: 780px;
+    overflow-x: hidden;
+  }
+  .svg-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-secondary);
+  }
+  .svg-toolbar-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .svg-toolbar-btns button {
+    background: #fff;
+    border: 1px solid var(--border-warm);
+    color: var(--ink);
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .svg-toolbar-btns button:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+  .mermaid-viewport {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px 12px;
+    max-width: 760px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border: 1px solid var(--border-warm);
+  }
+  .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform-origin: top center;
+    transition: transform 0.18s ease;
+  }
+
+  /* Dual-Track CSS Contract for Subgraph Titles & Spacer */
+  .cluster-label foreignObject {
+    overflow: visible !important;
+  }
+  .cluster-label foreignObject > div {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+  .cluster-label,
+  .cluster-label text,
+  .cluster-label span,
+  .cluster-label p,
+  .cluster-label .nodeLabel {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-align: center;
+    color: #1A1714 !important;
+    fill: #1A1714 !important;
+  }
+  .cluster rect {
+    rx: 8px !important;
+    ry: 8px !important;
+  }
+  .spacer {
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    font-size: 0px !important;
+    line-height: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    border: none !important;
+  }
+  .spacer rect {
+    height: 0px !important;
+    fill: transparent !important;
+    stroke: none !important;
+    display: none !important;
+  }
+  .spacer .label {
+    padding: 0px !important;
+    height: 0px !important;
+  }
+  .spacer span {
+    display: none !important;
+  }
+
+  .legend-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-secondary);
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  /* Fullscreen Modal Dialog */
+  dialog#mermaid-modal {
+    width: 94vw;
+    max-width: 1100px;
+    height: 90vh;
+    margin: auto;
+    border: 2px solid var(--border-warm);
+    border-radius: 14px;
+    background: var(--paper-elevated);
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  }
+  dialog#mermaid-modal::backdrop {
+    background: rgba(20, 20, 19, 0.65);
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-warm);
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .modal-header h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .modal-close-btn {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .modal-body {
+    height: calc(100% - 56px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid var(--border-warm);
+  }
+  .decision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .decision-box {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-top: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .decision-box.warn { border-top-color: var(--crimson); }
+  .decision-box.amber { border-top-color: var(--amber); }
+  .decision-box h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .decision-box p {
+    font-size: 15px;
+    line-height: 1.62;
+    margin-bottom: 0;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <div><strong>Knowledge Publication L2 (Claude Light Edition)</strong> · 專案：<code>74_aerospace_defense_research</code> · 基準時間：2026-10-31 UTC+8</div>
+  <div><span class="pill">v12.1 / v15 Vertical-Only Contract</span></div>
+</div>
+
+<div class="layout-container">
+  <aside class="toc-sidebar">
+    <h3>章節導覽 (Reading TOC)</h3>
+    <ul>
+      <li><a href="#sec-thesis">核心命題與認識論矩陣</a></li>
+      <li><a href="#sec-graph">L2 垂直分層戰略架構圖</a></li>
+      <li><a href="#sec-prologue">序章：兩套平行宇宙的大戰略</a></li>
+      <li><a href="#sec-ch1">第一章：消失的「台灣」與結構性消音</a></li>
+      <li><a href="#sec-ch2">第二章：能源籌碼逆轉與俄柴油協議</a></li>
+      <li><a href="#sec-ch3">第三章：強人私交外交 vs. 建制同盟</a></li>
+      <li><a href="#sec-ch4">第四章：T-Dome $140 億軍售籌碼化</a></li>
+      <li><a href="#sec-ch5">第五章：戴蒙與川普的殊途同歸</a></li>
+      <li><a href="#sec-epilogue">終章：給台灣讀者的三個認知座標</a></li>
+      <li><a href="#sec-sources">附錄：結構化查核來源清單</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="hero-header" id="sec-thesis">
+      <div class="hero-eyebrow">WALL STREET RATIONAL HEGEMONY × WHITE HOUSE PATRIMONIAL TRANSACTIONALISM × TAIWAN T-DOME · 2026-10-31</div>
+      <h1 class="hero-title">華爾街的理性牌局與白宮的強人交易：當傑米・戴蒙的「美國優勢論」撞上川普時代的地緣現實</h1>
+      <p class="hero-subtitle">
+        深度剖析摩根大通執行長傑米・戴蒙（Jamie Dimon）涉華戰略談話、台灣在印太安全論述中的「結構性消音」與 1.5 兆美元安全與韌性倡議（SRI）、川普對俄柴油豁免交易與強人私交外交之深層矛盾，以及台灣 140 億美元「T-Dome」防空軍售延宕對台海防衛與同盟信用的連鎖衝擊。對應 L1 原稿：<a href="22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_l1.md"><code>22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_l1.md</code></a>。
+      </p>
+
+      <blockquote class="thesis-box">
+        <strong>核心決策命題與貝氏結構結論（Executive Thesis）</strong> <span class="epistemic-tag">[INFERENCE]</span>：<br>
+        1. <strong>華爾街對台灣的「結構性消音」與慢性去風險化</strong>：戴蒙在細數亞洲六個鄰國（菲、日、韓、印尼、越、印）與五項國安戰略物資（F-35 零件、醫藥、半導體、AI、鋰）時全程略過台灣，除受制於摩根大通在華全資證券與清算暴險外，更反映其 <a href="https://www.jpmorgan.com/about-us/security-and-resiliency" target="_blank" rel="noopener">1.5 兆美元「安全與韌性倡議（SRI）」</a>已將台灣從「必須捍衛的同盟」移至「必須回流本土或友岸備份的單點故障（Single Point of Failure）」 <span class="epistemic-tag">[FACT / INFERENCE]</span>。<br>
+        2. <strong>能源王牌在選舉通膨前的逆轉</strong>：戴蒙視美國能源獨立與 LNG 為逼迫中俄讓步的王牌，但 2026 年美伊戰爭封鎖荷姆茲海峽與烏軍打擊俄煉油廠推升全美柴油突破 $6.5/加侖（9 月 CPI 3.7%）後，川普於 10 月 9–10 日越過邁阿密烏歐談判代表與普丁達成<a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">「俄羅斯柴油進口豁免協議」</a>，並要求烏軍停打俄煉油廠，暴露國內短期選票如何將國家能源稟賦逆轉為向侵略者妥協的軟肋 <span class="epistemic-tag">[FACT / INFERENCE]</span>。<br>
+        3. <strong>從基輔到台北的籌碼化骨牌</strong>：川普在 2026 年 5 月北京峰會公然將「對台軍售」稱為談判籌碼，並為維護川習二會與保留美伊戰爭彈藥庫存，將台灣立法院通過 250 億美元特別預算中高達 <a href="https://www.washingtonpost.com/national-security/2026/05/23/us-pauses-14-billion-taiwan-arms-sale-after-china-summit/" target="_blank" rel="noopener">140 億美元的「T-Dome」多層次防空軍售案</a>凍結於行政審批程序 <span class="epistemic-tag">[FACT]</span>。<br>
+        4. <strong>戴蒙與川普的殊途同歸</strong>：戴蒙代表資本集團「慢性撤資、建立美洲堡壘備援」，川普代表白宮「急性套現、短線強人交易」，兩者皆以「美國本土絕對安全凌駕邊陲盟友存亡」為底層預設；台灣唯有厚植自主不對稱防空、非紅供應鏈與核心半導體根系，方能避免淪為大國牌桌上的「下一筆柴油協議」 <span class="epistemic-tag">[INFERENCE]</span>。
+      </blockquote>
+
+      <div class="kpi-strip">
+        <div class="kpi-card">
+          <div class="k-label">摩根大通安全與韌性倡議 (SRI)</div>
+          <div class="k-val">$1.5 兆美元 (10年)</div>
+          <div class="k-sub">首年帶動逾 $2,300 億融資 · 聚焦美歐本土國防與晶片</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">全美柴油價格與美俄柴油豁免</div>
+          <div class="k-val">$6.3–$6.5 / 加侖</div>
+          <div class="k-sub">10/9 豁免俄柴油至 2027/4 · 要求烏軍停炸煉油廠</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">皮尤 2026 全球盟邦好感度逆轉</div>
+          <div class="k-val">25 個傳統盟友親中逾美</div>
+          <div class="k-sub">加拿大對華好感 44% vs 對美 33% · 盟邦啟動避險</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">台灣「T-Dome」防空軍售凍結案</div>
+          <div class="k-val">$140 億美元 (逾 4,500 億台幣)</div>
+          <div class="k-sub">隸屬 $250 億特別預算 · 卡關川習會與美伊彈藥排擠</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-card">
+      <h2>雙系統對撞：華爾街「法理制度霸權」vs. 白宮「家產制個人交易」認識論總表</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:20%">戰略維度</th>
+              <th style="width:32%">華爾街理性牌局：傑米・戴蒙（Jamie Dimon / JPMorgan）</th>
+              <th style="width:32%">白宮強人交易：川普政府（Donald Trump / White House）</th>
+              <th style="width:16%">認識論標籤與查核來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>地緣稟賦與對華籌碼</strong></td>
+              <td>美國坐擁兩大洋屏障、人均 GDP $8 萬與能源自主；中國人均 GDP $1.5 萬、日進口 <strong>1,100 萬桶原油</strong>，應以 <strong>LNG 與 40 國軍事／20 國貿易同盟</strong>施壓北京遵守規則。</td>
+              <td>視多邊同盟為「搭便車賠錢貨」，將普丁與習近平視為可私下拍板大交易的「好朋友（Great Friends）」，以單邊關稅與元首密室交易取代制度同盟。</td>
+              <td><span class="epistemic-tag">FACT / AUTHOR STATEMENT</span><br><a href="https://www.pewresearch.org/global/2026/07/15/people-in-many-countries-now-view-china-more-positively-than-the-u-s/" target="_blank" rel="noopener">Pew Research 2026</a></td>
+            </tr>
+            <tr>
+              <td><strong>對台灣的定位與行動</strong></td>
+              <td><strong>「結構性消音」與慢性去風險化</strong>：點名菲、日、韓、印尼、越、印六國卻略過台灣；推動 <a href="https://www.jpmorgan.com/about-us/security-and-resiliency" target="_blank" rel="noopener"><strong>$1.5 兆 SRI 倡議</strong></a>將半導體、AI、鋰與 F-35 零件回流美加歐。</td>
+              <td><strong>「急性套現」與交易籌碼化</strong>：5 月訪京稱「對台軍售是極佳談判籌碼」，為護航川習會與保留美伊戰爭庫存，扣押台灣 <a href="https://dominotheory.com/14-billion-arms-sale-still-on-hold-as-trump-and-xi-look-to-apec/" target="_blank" rel="noopener"><strong>$140 億 T-Dome 防空軍售</strong></a>。</td>
+              <td><span class="epistemic-tag">FACT / INFERENCE</span><br><a href="https://www.jpmorgan.com/about-us/security-and-resiliency" target="_blank" rel="noopener">JPMorgan SRI</a> · <a href="https://www.washingtonpost.com/national-security/2026/05/23/us-pauses-14-billion-taiwan-arms-sale-after-china-summit/" target="_blank" rel="noopener">WashPost</a></td>
+            </tr>
+            <tr>
+              <td><strong>能源槓桿與俄烏戰場</strong></td>
+              <td>主張以美國每日逾千萬桶原油產量與 LNG 出口優勢作為地緣長矛，封鎖俄國戰爭外匯並制衡北京海上能源命脈。</td>
+              <td>因荷姆茲海峽受阻與柴油飆至 $6.5/加侖，於 10/9 越過烏歐盟友達成<a href="https://www.axios.com/2026/10/10/trump-zelensky-putin-diesel-deal-war" target="_blank" rel="noopener"><strong>美俄柴油協議</strong></a>（豁免制裁至 2027/4），痛罵澤倫斯基並施壓停炸俄煉油廠。</td>
+              <td><span class="epistemic-tag">FACT / verified</span><br><a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">The Guardian</a> · <a href="https://www.axios.com/2026/10/10/trump-zelensky-putin-diesel-deal-war" target="_blank" rel="noopener">Axios</a></td>
+            </tr>
+            <tr>
+              <td><strong>對前線盟友的終極意涵</strong></td>
+              <td><strong>溫水抽身（Fortress America）</strong>：趁台海未爆衝突前複製本土晶片與軍工備援，一旦備援完成，前線權重即降級為可切割之外部風險。</td>
+              <td><strong>明火變現（Transactional Auction）</strong>：在當下政治拍賣會上直接將烏克蘭自衛權與台灣防空時間表擺上貨架，換取選前油價與峰會表象。</td>
+              <td><span class="epistemic-tag">INFERENCE / synthesis</span><br><a href="https://understandingwar.org/research/china-taiwan/china-taiwan-update-may-8-2026/" target="_blank" rel="noopener">ISW 2026-05-08</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-graph">
+      <h2>L2 視覺化架構：華爾街理性避險 × 白宮強人交易 × 台海防衛衝擊直式傳導圖</h2>
+      <p>
+        遵循 <code>knowledge-l1-publisher-v12</code> 與 L2 垂直單欄規範（Vertical-Only Contract），下方將全文四大結構層次——「第一層：平行宇宙的兩套美國大戰略起點 $\to$ 第二層：華爾街結構性消音與能源牌局逆轉 $\to$ 第三層：從基輔柴油協議到台北 T-Dome 凍結的骨牌傳導 $\to$ 第四層：結構現實主義合流與台灣三大反脆弱底牌」——濃縮為單張垂直分層有向圖，支援縮放、全螢幕檢視與 SVG 向量匯出：
+      </p>
+
+      <div class="svg-shell">
+        <div class="svg-toolbar">
+          <span>垂直分層戰略傳導圖 · 縮放比例：<strong id="zoom-pct">100%</strong></span>
+          <div class="svg-toolbar-btns">
+            <button type="button" onclick="zoomMermaid(1.15)" aria-label="放大">放大 (+)</button>
+            <button type="button" onclick="zoomMermaid(0.85)" aria-label="縮小">縮小 (−)</button>
+            <button type="button" onclick="resetMermaid()" aria-label="重設為 100%">重設 (100%)</button>
+            <button type="button" id="btn-fullscreen" onclick="openFullscreen()" aria-label="全螢幕檢視">全螢幕檢視</button>
+            <button type="button" onclick="exportSVG()" aria-label="匯出 SVG">匯出 SVG</button>
+          </div>
+        </div>
+
+        <div class="mermaid-viewport" id="mermaid-box">
+          <pre class="mermaid" id="mermaid-graph">
+flowchart TD
+    classDef primary fill:#F8FAFC,stroke:#0284C7,stroke-width:2px,color:#0F172A;
+    classDef mechanism fill:#FFFBEB,stroke:#D97706,stroke-width:2px,color:#0F172A;
+    classDef result fill:#ECFDF5,stroke:#059669,stroke-width:2px,color:#0F172A;
+    classDef risk fill:#FEF2F2,stroke:#DC2626,stroke-width:2px,color:#0F172A;
+    classDef spacer fill:none,stroke:none;
+
+    subgraph Signals["<b style='font-size:17px; font-weight:700;'>第一層：兩套平行宇宙的美國大戰略起點</b>"]
+        direction TB
+        S_Signals[" "]:::spacer
+        P1["<b>P1 戴蒙的「美國優勢論」資產負債表</b><br/>[AUTHOR STATEMENT]<br/>兩洋天然屏障、人均 GDP $8萬、能源獨立；<br/>中國日進口 1,100 萬桶油且嚇壞亞洲六鄰國。"]:::primary
+        P2["<b>P2 白宮南草坪的「強人交易主義」</b><br/>[FACT]<br/>10/9–10 川普為壓低期中選舉前柴油價格，<br/>痛罵澤倫斯基並與普丁達成俄柴油進口豁免。"]:::risk
+        S_Signals ~~~ P1
+        P1 ~~~ P2
+    end
+
+    subgraph Mechanisms["<b style='font-size:17px; font-weight:700;'>第二層：華爾街「結構性消音」與能源籌碼逆轉</b>"]
+        direction TB
+        S_Mechanisms[" "]:::spacer
+        M1["<b>M1 台灣在印太論述中的「結構性消音」</b><br/>[INFERENCE]<br/>摩根大通在華全資業務避險，且將台灣視為<br/>地緣單點故障，啟動 $1.5 兆 SRI 本土備份。"]:::mechanism
+        M2["<b>M2 美伊戰爭荷姆茲危機與柴油通膨軟肋</b><br/>[FACT]<br/>荷姆茲海峽受阻疊加俄煉油廠受襲，全美柴油<br/>飆破 $6.5/加侖，迫使白宮向莫斯科求購柴油。"]:::risk
+        M3["<b>M3 強人私交外交摧毀建制派同盟信用</b><br/>[FACT]<br/>川普視普丁、習近平為對等交易者，皮尤民調<br/>顯示 25 個傳統盟友民眾對華好感反超美國。"]:::risk
+        S_Mechanisms ~~~ M1
+        M1 ~~~ M2
+        M2 ~~~ M3
+    end
+
+    subgraph Domino["<b style='font-size:17px; font-weight:700;'>第三層：從基輔到台北的籌碼化骨牌效應</b>"]
+        direction TB
+        S_Domino[" "]:::spacer
+        C1["<b>C1 烏克蘭前線代價：停炸煉油廠與札波羅熱轟炸</b><br/>[FACT]<br/>美方施壓烏軍停打俄能源並限制情資通訊；<br/>次日俄軍以 5 枚滑翔炸彈轟炸札波羅熱平民。"]:::risk
+        C2["<b>C2 台灣 $140 億「T-Dome」防空軍售遭凍結</b><br/>[FACT]<br/>川普稱對台軍售為「極佳談判籌碼」，為護航<br/>川習會與保留中東彈藥，扣押 PAC-3 採購案。"]:::risk
+        C3["<b>C3 波斯灣危機的「不可能三角」</b><br/>[INFERENCE]<br/>壓制伊朗核武、重開荷姆茲海峽與保衛台灣<br/>三者互斥，北京得以藉調停中東換取台海讓步。"]:::mechanism
+        S_Domino ~~~ C1
+        C1 ~~~ C2
+        C2 ~~~ C3
+    end
+
+    subgraph Synthesis["<b style='font-size:17px; font-weight:700;'>第四層：結構現實主義合流與台灣三大認知座標</b>"]
+        direction TB
+        S_Synthesis[" "]:::spacer
+        D1["<b>D1 溫水抽身 vs. 明火變現的殊途同歸</b><br/>[INFERENCE]<br/>戴蒙以資本複製推進「美洲堡壘」慢性撤資；<br/>川普以元首交易把前線防務當場擺上貨架套現。"]:::mechanism
+        D2["<b>D2 台灣生存底牌：無法搬走的不對稱嚇阻</b><br/>[INFERENCE]<br/>跳脫大國無條件救援幻想，深耕自主防空網、<br/>低軌多軌衛星、分散電網與核心半導體根系。"]:::result
+        S_Synthesis ~~~ D1
+        D1 ~~~ D2
+    end
+
+    P2 ~~~ S_Mechanisms
+    M3 ~~~ S_Domino
+    C3 ~~~ S_Synthesis
+
+    P1 -->|"點名亞洲六國卻略過台灣"| M1
+    P1 -.->|"能源優勢遇上選前通膨"| M2
+    P2 ==>|"豁免俄柴油制裁換取選票"| M2
+    P2 ==>|"崇拜無約束強人權力"| M3
+    M2 ==>|"轉嫁通膨責任並要求停火"| C1
+    M3 -->|"將對台軍售納入川習談判"| C2
+    M2 -->|"美軍中東彈藥消耗與油價壓力"| C3
+    C3 ==>|"北京以中東調停逼美讓步"| C2
+    M1 ==>|"資本集團慢性建立本土備援"| D1
+    C1 -->|"前線單點依賴遭強權背刺"| D1
+    C2 ==>|"防空黃金時間淪為交易籌碼"| D1
+    D1 ==>|"確立自主不對稱防衛與實業底牌"| D2
+          </pre>
+        </div>
+
+        <div class="legend-bar">
+          <span class="legend-item"><span class="legend-swatch" style="background:#F8FAFC;border:2px solid #0284C7;"></span> 戰略觀察與主張 (Primary)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#FFFBEB;border:2px solid #D97706;"></span> 結構機制與資本轉移 (Mechanism)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#FEF2F2;border:2px solid #DC2626;"></span> 地緣風險與同盟衝擊 (Risk)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#ECFDF5;border:2px solid #059669;"></span> 綜合判讀與台灣底牌 (Result)</span>
+        </div>
+      </div>
+
+      <h3>節點登錄表（Node Registry）與關係驗證表（Edge Registry）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:10%">節點 ID</th>
+              <th style="width:24%">節點名稱</th>
+              <th style="width:38%">核心機制與量化數據</th>
+              <th style="width:14%">認識論標籤</th>
+              <th style="width:14%">查核來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td><strong>戴蒙的「美國優勢論」</strong></td>
+              <td>美國人均 GDP $8 萬、能源自給、兩洋護城河；中國人均 GDP $1.5 萬、日進口 1,100 萬桶油，嚇壞菲日韓印尼越印六國。</td>
+              <td><span class="epistemic-tag">AUTHOR STATEMENT</span></td>
+              <td><a href="https://www.jpmorgan.com/about-us/security-and-resiliency" target="_blank" rel="noopener">JPMorgan</a></td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td><strong>白宮強人交易主義</strong></td>
+              <td>2026-10-09/10 川普與普丁達成俄柴油豁免協議，痛批澤倫斯基給美國農民與卡車司機製造柴油危機並稱「該換總統」。</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">The Guardian</a></td>
+            </tr>
+            <tr>
+              <td><strong>M1</strong></td>
+              <td><strong>台灣的「結構性消音」</strong></td>
+              <td>摩根大通在華全資證券避險，並透過 1.5 兆美元 SRI 倡議（首年帶動逾 $2,300 億融資）將半導體、F-35 零件與重稀土回流美歐。</td>
+              <td><span class="epistemic-tag">FACT / INFERENCE</span></td>
+              <td><a href="https://globalbusinessoutlook.com/banking-and-finance/jpmorgan-expands-usd-1-5-trillion-10-year-sri-initiative-to-canada/" target="_blank" rel="noopener">Global Business Outlook</a></td>
+            </tr>
+            <tr>
+              <td><strong>M2</strong></td>
+              <td><strong>荷姆茲危機與柴油軟肋</strong></td>
+              <td>美伊戰爭致波斯灣每日逾千萬桶出口受阻，疊加烏軍打擊俄煉油廠，全美柴油自 $3.5 飆破 $6.5/加侖（9 月 CPI 3.7%）。</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.pbs.org/newshour/world/war-with-iran-delivers-high-oil-prices-and-another-shock-to-the-global-economy" target="_blank" rel="noopener">PBS NewsHour</a></td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><strong>強人私交摧毀同盟信用</strong></td>
+              <td>川普崇拜普丁與習近平無約束決策權並對盟邦課徵關稅；2026 皮尤民調顯示 25 個傳統盟友對華好感度超越對美好感度。</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.pewresearch.org/global/2026/07/15/people-in-many-countries-now-view-china-more-positively-than-the-u-s/" target="_blank" rel="noopener">Pew Research</a></td>
+            </tr>
+            <tr>
+              <td><strong>C1</strong></td>
+              <td><strong>基輔前線代價與轟炸</strong></td>
+              <td>10/22 四萬噸俄柴油自波羅的海啟航赴紐約；協議次日俄軍以 5 枚滑翔炸彈轟炸札波羅熱住宅區致 20 名平民（含 3 童）罹難。</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.axios.com/2026/10/10/trump-zelensky-putin-diesel-deal-war" target="_blank" rel="noopener">Axios</a></td>
+            </tr>
+            <tr>
+              <td><strong>C2</strong></td>
+              <td><strong>台灣 $140 億 T-Dome 凍結</strong></td>
+              <td>台灣立法院 2026/5 通過 $250 億特別預算並提出 $140 億（逾 4,500 億台幣）PAC-3 MSE 與指管雷達採購，遭白宮凍結數月。</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.washingtonpost.com/national-security/2026/05/23/us-pauses-14-billion-taiwan-arms-sale-after-china-summit/" target="_blank" rel="noopener">WashPost</a> · <a href="https://understandingwar.org/research/china-taiwan/china-taiwan-update-may-8-2026/" target="_blank" rel="noopener">ISW</a></td>
+            </tr>
+            <tr>
+              <td><strong>C3</strong></td>
+              <td><strong>波斯灣「不可能三角」</strong></td>
+              <td>諾貝爾獎得主 Simon Johnson 指出荷姆茲每日 2,000 萬桶缺口無處替代；壓制伊朗核武、平抑油價與保衛台灣形成三難困局。</td>
+              <td><span class="epistemic-tag">INFERENCE</span></td>
+              <td><a href="https://www.pbs.org/newshour/world/war-with-iran-delivers-high-oil-prices-and-another-shock-to-the-global-economy" target="_blank" rel="noopener">PBS / Simon Johnson</a></td>
+            </tr>
+            <tr>
+              <td><strong>D1 / D2</strong></td>
+              <td><strong>殊途同歸與台灣底牌</strong></td>
+              <td>華爾街慢性抽身與白宮急性變現共享「本土優先」預設；台灣須深耕自主防空網、低軌衛星、分散電網與先進製程根系。</td>
+              <td><span class="epistemic-tag">INFERENCE</span></td>
+              <td>本庫綜合判讀</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-prologue">
+      <h2>序章：兩套平行宇宙的美國大戰略</h2>
+      <p>
+        在曼哈頓公園大道二百七十號摩根大通（JPMorgan Chase）嶄新的摩天大樓頂層，執掌超過五兆美元金融帝國二十年的傑米・戴蒙（Jamie Dimon）俯瞰世界時，看到的是一張結構清晰、籌碼分明的資產負債表。在這張表上，美國擁有得天獨厚的地理稟賦：東西兩側有大西洋與太平洋作為天然護城河，南北兩境皆無戰火；北美大陸蘊藏著不虞匱乏的頁岩油與天然氣，人均 GDP 高達八萬美元；更重要的是，美國擁有由制度自由、創新企業家精神所驅動的科技發動機。反觀大洋彼岸的競爭對手中國，人均 GDP 仍徘徊在一萬五千美元，每天必須穿過漫長脆弱的海上交通線進口一千一百萬桶原油，更因自身的軍事擴張與戰狼外交，讓周邊的日本、南韓、菲律賓、印尼、越南與印度深感焦慮與警惕。在戴蒙看來，美國手裡握著一副「好得不能再好的牌（a very, very good position）」，只要華府保持清醒，一方面將涉及國防軍事的戰略產業（F-35 戰機零件、醫藥原料、半導體、AI 與關鍵礦物）遷回本土或友岸，另一方面聯合盟友、以液化天然氣（LNG）等能源實力作為談判籌碼與北京進行強硬而有原則的交涉，美國的全球領導地位就能延續至下一個世紀。
+      </p>
+      <p>
+        然而，當鏡頭從曼哈頓的金融殿堂拉向華盛頓白宮的南草坪，全球盟友看到的卻是另一個截然不同、甚至令人毛骨悚然的現實世界。二○二六年十月十日，在「陸戰隊一號」直升機的引擎轟鳴聲中，美國總統川普準備前往田納西州為共和黨期中選舉造勢。面對全球媒體的鏡頭，川普毫不留情地痛罵正在承受俄軍滑翔炸彈轟炸的烏克蘭總統澤倫斯基（Volodymyr Zelenskyy），指責烏軍對俄羅斯煉油廠的反擊「給美國的農民與卡車司機製造了柴油危機」，並公然宣稱「是時候讓烏克蘭換一位新總統了」（<a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">The Guardian 2026-10-10</a>）。就在這場發言的前一天，川普甚至撇開了正在邁阿密與美方特使研商終戰方案的烏克蘭與歐洲代表團，在社群平台上高調宣布他與「好朋友」俄羅斯總統普丁（Vladimir Putin）達成了一項令西方震驚的交易：由美國財政部簽發臨時許可豁免對俄制裁，向俄羅斯採購數百萬噸柴油，以換取期中選舉前美國國內燃油價格的短暫舒緩（<a href="https://www.axios.com/2026/10/10/trump-zelensky-putin-diesel-deal-war" target="_blank" rel="noopener">Axios 2026-10-09</a>）。
+      </p>
+      <p>
+        這正是所有清醒觀察者心中最深沉的荒謬感與巨大裂痕：為什麼華爾街最有權勢的銀行家在歷數印太鄰國、盤點半導體命脈與地緣槓桿時，能從頭到尾完全略過「台灣」這兩個字？為什麼戴蒙口中那套「以能源獨立為後盾、以盟友網絡為長矛、以自由價值為底氣」的理性大戰略，到了白宮主人的手裡，卻變成了「對盟友領袖公然霸凌、向發動侵略的獨裁者採購柴油輸血、將台灣急需的防空軍售扣押在抽屜裡當作交易籌碼」？要理解當前台海與全球同盟體系的生死困局，我們絕不能只聽戴蒙說了什麼，更必須穿透他刻意隱去的潛台詞，直視「制度派的理性霸權算盤」與「民粹強人的交易型政治」之間這場災難性的正面碰撞。
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-ch1">
+      <h2>第一章：消失的「台灣」——戴蒙點名亞洲六國卻對台海噤聲的「結構性消音」</h2>
+      <p>
+        重新檢視戴蒙在公開訪談中的發言，會發現一個極具戲劇張力的地理真空。當戴蒙試圖向聽眾論證「中國正因自身的激進行動嚇壞鄰居，而非美國挑釁」時，他像是拿著點名簿般精準地列出了六個國家：菲律賓、日本、南韓、印尼、越南、印度。隨後，當他強調美國必須圍繞國家安全重新重構貿易結構時，他又極其具體地列舉了五項核心戰略物資：F-35 匿蹤戰機所需的零組件、關鍵醫藥有效成分、半導體（Semiconductors）、人工智慧以及鋰礦。
+      </p>
+      <p>
+        這是一幅將周邊輪廓描繪得極其清晰、卻偏偏將畫面正中心刻意塗黑的詭異拼圖。在西太平洋的地緣版圖上，究竟是誰正面承受著中國解放軍最密集的軍機擾台、圍島軍演與灰色地帶封鎖？是台灣。在全球先進製造鏈中，又是誰生產了全球超過六成的晶圓代工、九成以上攸關 AI 與尖端航電系統的先進製程晶片？答案依然是台灣。一位每天閱讀著摩根大通「地緣政治中心（Center for Geopolitics）」頂級情報簡報、掌管數十萬億交易流向的華爾街領袖，絕不可能在地理知識上遺忘台灣的存在。
+      </p>
+      <p>
+        這種沉默，是一場經過冷酷精算的<strong>「結構性消音（Structural Silencing）」</strong>。首先是來自商業利益與受託責任的現實牽絆。摩根大通是極少數獲准在中國設立外資全資證券公司與全資資產管理公司的外國頂級投行之一，其在中國大陸的跨國清算、外匯交易與企業信貸暴險深廣。二○二一年底，戴蒙曾因一句無傷大雅的玩笑話——「摩根大通成立於一七九九年，我們將比中國共產黨更長壽」——在二十四小時內兩度公開致歉並「深刻反省」。從那一刻起，摩根大通的公開發言體系便立下了一條紅線：可以談論美中競合的大原則，但絕不在涉及「主權鄰國（Neighbors）」的名單中列入台灣，以免瞬間引爆北京當局的政治雷區與商業制裁。戴蒙過去接受專訪時曾坦承，他會遵守美國政府的禁令，如果政府下令撤離中國，摩根大通會配合執行，但在指令下達之前，華爾街絕不會主動替前線承受政治代價。
+      </p>
+      <p>
+        然而，比商業避險更為殘酷的第二個維度，在於戴蒙在思想架構中已經悄悄將台灣從「必須捍衛的同盟」欄位，移到了「必須進行去風險化轉移的脆弱節點」欄位。注意戴蒙的論述脈絡：他將半導體、AI、鋰與 F-35 零組件並列，呼籲美國必須「回流本土（Reshore）或友岸外包（Friend-shore）」。在華爾街風險控制模型的坐標系中，台灣距離中國大陸僅一百多公里，隨時面臨空中與海上封鎖；一旦戰火爆發，這條單一供應鏈就是美國國家安全最致命的單點故障（Single Point of Failure）。
+      </p>
+      <p>
+        這一戰略轉向在摩根大通於二○二五年十月啟動、並於二○二六年十月滿週年的<a href="https://www.jpmorgan.com/about-us/security-and-resiliency" target="_blank" rel="noopener">「一兆五千億美元安全與韌性倡議（Security and Resiliency Initiative, SRI）」</a>中展露無遺。該倡議由摩根大通戰略投資集團領軍，在短短一年內已動用數十億美元直接股權投資，並帶動逾二千三百億美元的交易融資，其資源投向高度集中於美國本土與<a href="https://globalbusinessoutlook.com/banking-and-finance/jpmorgan-expands-usd-1-5-trillion-10-year-sri-initiative-to-canada/" target="_blank" rel="noopener">加拿大</a>、歐洲等條約盟友的國防供應鏈（Tier 2 至 Tier 4 軍工供應商）、重稀土提煉（如 F-35 戰機永磁馬達不可或缺的重稀土「鏑」與釹鐠化合物，長期被中國掌握逾八成供應）、次世代核能電網與本土半導體生態系。戴蒙所謂的「好牌」，其背後的底層思維是：美國必須趁著台海尚未爆發實體衝突的歷史窗口，以國家資本主義等級的動員，把原本壓在台灣身上的先進晶片與關鍵軍工製造產能，在受兩大洋保護的安全地帶「複製並備份一份」。換言之，台灣在戴蒙演講中的缺席，不是因為無關緊要，而是因為在金融帝國的深層規劃裡，台灣已被視為一個「一旦出事就會瞬間斷鏈、因此必須盡速解除依賴」的高風險資產。
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-ch2">
+      <h2>第二章：能源籌碼的驚天逆轉——從戴蒙的「荷姆茲底氣」到川普的「俄羅斯柴油協議」</h2>
+      <p>
+        如果說戴蒙對台灣的刻意忽視揭示了華爾街的資本避險本能，那麼他在言論中所誇耀的美國第一大戰略王牌——「能源獨立與地緣槓桿」——到了二○二六年秋天的政治現實中，則遭遇了一場無情而諷刺的崩塌。
+      </p>
+      <p>
+        在戴蒙描繪的宏觀戰略藍圖中，能源是美國制衡中俄聯盟最銳利的不對稱武器。正如他所強調的：「我們擁有所有需要的能源……中國每天需要進口一千一百萬桶石油……他們需要石油與天然氣，液化天然氣（LNG）在地緣政治上極具戰略價值，我會以此為籌碼與他們談判。」這套推論承襲了經典的國際政治經濟學理論：誰掌握了不可替代的能源生產與海上動脈，誰就能掐住工業進口國的咽喉。美國坐擁每日超過一千萬桶的國內原油產量，更是全球數一數二的 LNG 出口大國；相反地，中國作為全球最大的能源進口國，每日高達一千一百萬桶原油高度依賴波斯灣與麻六甲海峽。照此邏輯，只要美國牢牢封鎖俄羅斯的能源收入、穩定西方的戰略供應，北京就會因能源命脈受制於人而不敢輕舉妄動，莫斯科也會因外匯乾涸而難以為繼。
+      </p>
+      <p>
+        然而，戴蒙這套在黑板上嚴密無比的理性公式，卻徹底忽略了當代美國選舉政治中最脆弱的變數：國內選民對通膨與油價的極端敏感，以及一位願意為了短期選票將一切長期同盟原則賤賣的交易型總統。
+      </p>
+      <p>
+        二○二六年爆發的美伊戰爭，徹底顛覆了全球能源版圖的走勢。美軍與以色列雖重創了伊朗的軍事設施，但伊朗隨即在荷姆茲海峽（Strait of Hormuz）發動水雷戰、無人機騷擾與油輪攔截，迫使這條承載全球五分之一原油運輸的咽喉要道運量驟降，波斯灣每日高達一千多萬桶的石油與凝析油出口受阻（<a href="https://www.pbs.org/newshour/world/war-with-iran-delivers-high-oil-prices-and-another-shock-to-the-global-economy" target="_blank" rel="noopener">PBS NewsHour 2026-03-10</a>）。雪上加霜的是，烏克蘭為了反制俄羅斯對其境內電網與能源設施的無情打擊，利用精準長程無人機對俄國本土的柴油煉油廠展開系統性打擊，造成俄羅斯柴油精煉產能嚴重受挫。這兩場危機交織，導致全美柴油零售均價自二○二六年年初的每加侖約三點五美元，狂飆至九月下旬超過六點五美元的歷史天價。柴油是美國整個實體物流、農業機械與大型卡車運輸的生命線，油價的飆漲直接帶動九月消費者物價指數（CPI）升至百分之三點七，在即將到來的十一月期中選舉前，對執政的共和黨造成了毀滅性的民意反彈。
+      </p>
+      <p>
+        面對農業州與藍領選區的怒火，身為總統的川普所採取的應對手段，將戴蒙的「能源優勢大戰略」撕得粉碎：
+      </p>
+      <ul>
+        <li><strong>其一，是「將自身外交決策的代價，全數轉嫁並遷怒給前線盟友」</strong>。美國發動對伊朗戰事與各類關稅措施推高了生活成本，但川普卻在公開場合一再將柴油暴漲的責任扣在烏克蘭頭上，公開警告澤倫斯基「立刻停手打擊俄羅斯的柴油煉油廠」，甚至數落烏克蘭「想給美國偉大的農民製造麻煩」、「想給全世界製造問題」（<a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">The Guardian 2026-10-10</a>）。</li>
+        <li><strong>其二，是「背著正在流血抵抗的盟友，向發動侵略的獨裁者送上大禮」</strong>。二○二六年十月九日，正當川普任命的特使魏科夫（Steve Witkoff）與女婿庫許納（Jared Kushner）在邁阿密與烏克蘭、英國、法國、德國及歐盟代表閉門磋商終戰框架之際，川普卻越過整個談判團隊，直接與俄羅斯總統普丁通話，並在當天高調宣布達成「美俄柴油交易」：由俄羅斯即刻向國際市場供應數十萬噸柴油，後續進一步擴大至數百萬噸（<a href="https://www.axios.com/2026/10/10/trump-zelensky-putin-diesel-deal-war" target="_blank" rel="noopener">Axios 2026-10-09</a>）。美國財政部隨即發出臨時豁免，暫停執行針對俄羅斯柴油出口的制裁法令直到二○二七年四月；數日後，川普更簽署行政命令，單方面豁免了國會通過的《全面對俄制裁法》相關條款。十月二十二日，滿載四萬噸俄羅斯柴油的油輪自波羅的海啟航直奔紐約港，這是二○二二年俄烏戰爭爆發以來，俄羅斯燃油首度堂而皇之地合法進入美國（參見本庫<a href="19_x_posts_russian_diesel_dmitriev_snyder_ukraine_l1.md">報告 19</a>）。</li>
+      </ul>
+      <div class="quote-card">
+        「今天，俄羅斯用五枚滑翔炸彈轟炸札波羅熱的平民大樓，來感謝美國解除柴油出口制裁。」<br>
+        —— 烏克蘭總統澤倫斯基（Volodymyr Zelenskyy），於 2026 年 10 月 10 日俄軍空襲札波羅熱住宅區造成含 3 名兒童在內 20 名平民喪生後之公開控訴（<a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">The Guardian</a>）
+      </div>
+      <p>
+        這場政治交易在經濟上被普遍視為杯水車薪——俄方承諾的供應量甚至難以彌補全球每日一百萬桶的缺口，全美柴油價格在交易後依舊徘徊在每加侖六點三美元高檔，連資深共和黨國會領袖都公開批評此舉在戰略上極度天真。然而在政治與軍事上，普丁卻贏得了不可思議的戰略喘息：俄羅斯的戰爭機器獲得了直接的外匯輸血，美方甚至以切斷戰場情資、限制衛星連線為威脅，強壓烏克蘭停止打擊俄國能源設施。對照戴蒙在演講中意氣風發地宣稱「我們掌控了能源，所以我們能逼中俄回到談判桌」，現實卻給出了一個極度殘酷的諷刺：<strong>美國即便擁有全世界最豐富的地底能源，但只要白宮掌舵者心中只裝著下個月的選舉牌價與個人面子，再強大的國家能源稟賦，也會在一瞬間退化為向敵國磕頭求購柴油的軟肋。</strong>
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-ch3">
+      <h2>第三章：為何川普總稱習近平與普丁是「好朋友」？——強人私交外交與建制派同盟體系的正面對撞</h2>
+      <p>
+        這便導向了另一個核心矛盾：為什麼川普一方面將中國定性為戰略對手、發動史上最激進的關稅戰，另一方面卻又無數次在公開場合盛讚習近平與普丁是他的「好朋友（Great Friends）」，甚至在面對民主盟友領袖（如澤倫斯基、北約元首或日韓領導人）時語帶輕蔑，卻對鐵腕獨裁者流露出難以掩飾的讚嘆與熱情？
+      </p>
+      <p>
+        要解構這種看似精神分裂的外交行為，必須理解美國當前權力體系內兩種作業系統的根本對立：戴蒙與華府傳統建制派運作的是<strong>「法理與制度型霸權（Legal-Rational Hegemony）」</strong>，而川普施展的則是<strong>「家產制個人交易主義（Patrimonial Transactionalism）」</strong>。
+      </p>
+      <p>
+        在戴蒙所代表的制度型世界裡，國際秩序的基石是「多邊規則、法律條約與集體安全網絡」。戴蒙一再警告，美國的儲備貨幣地位與資本市場之所以能吸納全球數十兆美元的巨額資金，根本支柱在於美國與全球維繫的四十個軍事盟約與二十個自由貿易協定。因此，戴蒙在對中策略上極力反對「順我者昌、逆我者亡（our-way-or-the-highway）」的孤立霸凌作風，反而極力倡議美國應主動與歐洲、加拿大、日本、南韓、澳洲與菲律賓等民主國家締結全面自由貿易協定，藉由一個龐大的法治同盟共同向北京劃定國家安全與公平貿易的不可逾越底線。
+      </p>
+      <p>
+        然而，在川普的個人交易主義大腦中，<strong>多邊機制與條約盟友從來不是戰略資產，而是只會搭美國便車、佔美國便宜的「賠錢貨」；相反地，像普丁、習近平這樣大權獨攬、不受國會質詢牽制、無需面對反對黨與獨立司法的威權統治者，在川普眼中才是真正擁有決策實力、能在一頓晚餐上拍板巨大交易的「合適買賣對手（Peer Deal-makers）」。</strong>
+      </p>
+      <p>這種心理機制體現於三個層面：</p>
+      <ol>
+        <li><strong>對「無約束權力」的心理投射與崇拜</strong>：川普在國內受到憲政體制、國會預算與新聞媒體的嚴密掣肘，因此對於民主盟國那些受制於聯合內閣、議會審查或必須嚴守主權邊界的領袖（如為了國土存亡寸步不讓的澤倫斯基）感到極度不耐；反之，他發自內心地欽佩普丁與習近平「一句話就能調動整座國家」的統治權力。當川普的特使在莫斯科為了爭取一名被扣押的美國公民獲釋，竟當面對著被國際法院通緝的普丁諂媚地說出「閣下是一位人道主義者」時，這正是這種崇拜強人心理在外交第一線的荒謬體現（<a href="https://www.atlanticcouncil.org/dispatches/what-will-end-trumps-back-and-forth-approach-toward-russia-and-ukraine/" target="_blank" rel="noopener">Atlantic Council 2026-10-23</a>）。</li>
+        <li><strong>將公領域的地緣安全衝突，降維為私領域的私人私交</strong>：川普深信個人魅力與商場談判技巧能夠超越歷史恩怨與地緣結構性矛盾。他堅信只要自己與習近平、普丁維持著「良好的個人友誼」，任何重大爭端都能透過元首閉門密室達成「大交易（Grand Bargain）」。在這種框架下，國家承諾不再具有延續性，而是完全繫於他個人當下的情緒喜好與談判得失。</li>
+        <li><strong>欺善怕惡的談判槓桿倒錯</strong>：在川普式的商業施壓邏輯中，向那些在安全、武器與情報上百分之百依賴美國的盟友（如烏克蘭與台灣）開刀最為容易，因為只要揚言切斷軍援或情報，就能迅速逼迫對方讓步；相反地，對於手中握有核武底牌、大宗能源或稀土反制手段的莫斯科與北京，川普反而傾向於先主動送上利益（例如豁免俄國柴油制裁、或考慮解凍俄國數十億海外資產），幻想用「預付的誠意」誘導強人簽署和平協議。</li>
+      </ol>
+      <p>
+        這種將大國外交當作私人秀場的後果，正在精準摧毀戴蒙口中「被中國嚇壞的鄰友網絡」。根據權威智庫學者與<a href="https://www.pewresearch.org/global/2026/07/15/people-in-many-countries-now-view-china-more-positively-than-the-u-s/" target="_blank" rel="noopener">皮尤研究中心（Pew Research Center）在二○二六年針對全球三十多個國家的民調</a>（以及<a href="https://www.cfr.org/articles/china-now-outranks-the-united-states-in-global-favorability-what-happened" target="_blank" rel="noopener">美國外交關係協會 CFR 的深度剖析</a>）顯示，由於川普一方面熱衷於與習近平展現私人親密關係，另一方面卻無差別地對盟邦課徵關稅並質疑防衛承諾，導致多達二十五個傳統盟友（包括澳洲、加拿大、德國、法國與墨西哥）的受訪民眾，對中國的好感度竟然全面超越了對美國的好感度。各國政府為了避免被華府隨時拋棄，紛紛開始採取對中「避險策略」，主動緩和與北京的摩擦。
+      </p>
+      <p>
+        戴蒙在演講中深信「周邊鄰國因為害怕中國而必然依附美國」；但他沒料到的是，當白宮主人在邁阿密把烏克蘭與歐洲代表當作煙幕彈隨意犧牲時，<strong>盟邦對於「被美國隨意拋棄（Abandonment）」的深層恐懼，已開始凌駕於他們對威權擴張的戒心之上。</strong>
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-ch4">
+      <h2>第四章：從基輔到台北的骨牌效應——當「T-Dome」一百四十億美元軍售淪為川習峰會的交易籌碼</h2>
+      <p>
+        當我們把目光從東歐平原轉向台灣海峽，這場戰略脫節就不再是一場遠方的外交思辨，而是正在台北總統府與國防部眼前上演的實體生存危機。
+      </p>
+      <p>
+        如果川普在烏克蘭戰場上，可以為了壓低國內選前的柴油價格，毫不猶豫地越過基輔政府，將解除制裁、停止打擊煉油廠乃至星鏈通訊限制當作交易商品；那麼在台海局勢上，當美國面臨美伊戰爭泥淖、國內通膨居高不下，且急需中國在金融、能源或中東問題上提供配合時，台灣難道不會成為下一筆被擺上談判桌的「柴油協議」？
+      </p>
+      <p>事實上，這條「台灣籌碼化」的危險軌跡，在二○二六年已經浮現了三道令人心驚的裂痕：</p>
+      <ol>
+        <li><strong>打破數十年憲政慣例，公然將「對台軍售」列入美中元首談判議程</strong>：自一九七九年《台灣關係法》生效以來，歷任美國政府皆嚴守底線：對台軍售純屬美台之間評估自我防衛需求的內政事務，絕不作為與北京峰會討價還價的條件。然而，在二○二六年五月中旬川普訪問北京期間，習近平當面嚴厲劃出「台灣問題是美中第一條不可逾越的紅線」，川普隨後竟在面對媒體時公然坦承，他在會談中主動提到了對台軍售，甚至脫口說出<strong>「對台軍售可以成為美中談判時非常好的一張籌碼（a very good bargaining chip）」</strong>（<a href="https://understandingwar.org/research/china-taiwan/china-taiwan-update-may-8-2026/" target="_blank" rel="noopener">ISW China &amp; Taiwan Update 2026-05-08</a>、<a href="https://www.washingtonpost.com/national-security/2026/05/23/us-pauses-14-billion-taiwan-arms-sale-after-china-summit/" target="_blank" rel="noopener">The Washington Post 2026-05-23</a>）。儘管在數天後面對中俄「五二○峰會」的高調示威時，川普為了賭氣曾宣稱「我願意跟賴清德通話，我跟任何人都能通話」，但這種把台灣當成「想氣北京時就拿出來晃晃、想簽協議時就收進口袋」的輕浮操作，已經實質崩解了美國對台承諾的制度嚴肅性。</li>
+        <li><strong>為維護「川習二會」融洽氣氛，壓制台灣一百四十億美元「T-Dome」防空防衛案</strong>：二○二六年五月，台灣立法院通過了高達二百五十億美元（約新台幣 7,800 億元）的跨年度國防特別預算，向美方正式提出規模達<strong>一百四十億美元（折合新台幣逾四千五百億元）</strong>的軍備採購清單，核心旨在採購愛國者飛彈（PAC-3 MSE）、自動化防空指管系統與全向雷達，以全力建構抵抗解放軍飽和飛彈打擊的多層次防空網「T-Dome（台灣鐵穹）」（<a href="https://www.aei.org/commentary/china-taiwan-update-may-8-2026/" target="_blank" rel="noopener">AEI / ISW 2026-05-08</a>、<a href="https://centerformaritimestrategy.org/publications/taiwans-concerning-mda-gap-facing-chinas-gray-zone/" target="_blank" rel="noopener">Center for Maritime Strategy 2026-01-29</a>）。然而，為了確保習近平於九月下旬能如期前往華盛頓舉行第二次「川習會」，並在期中選舉與 APEC 峰會前維持美中暫時休兵的表象，白宮頂住了來自國會跨黨派的強烈要求，將這項攸關台灣防空韌性的一百四十億美元軍售案整整卡在行政審批程序中數個月之久（<a href="https://dominotheory.com/14-billion-arms-sale-still-on-hold-as-trump-and-xi-look-to-apec/" target="_blank" rel="noopener">Domino Theory 2026-10-13</a>、<a href="https://timesofindia.indiatimes.com/world/us/trump-xi-summit-14-billion-taiwan-arms-deal-hangs-over-washington-talks/articleshow/134428850.cms" target="_blank" rel="noopener">Times of India 2026-09-23</a>）。白宮官員私下給出的推託理由，除了擔心刺激北京退出峰會，更包括美軍必須保留庫存以應對當前「美伊戰爭」的彈藥消耗。正如台灣國防智庫專家所警告的，軍火採購並非得來速點餐，生產、交付、部署與人員訓練需要數年光景；在共軍加速圍島常態化的當下，扣押防衛裝備無異於親手剝奪台灣與時間賽跑的生存機會。</li>
+        <li><strong>波斯灣危機所觸發的「不可能三角」</strong>：諾貝爾經濟學獎得主賽門・強森（Simon Johnson）等經濟學者曾針對當前地緣賽局提出精準推演（<a href="https://www.pbs.org/newshour/world/war-with-iran-delivers-high-oil-prices-and-another-shock-to-the-global-economy" target="_blank" rel="noopener">PBS NewsHour 2026-03-10</a>）：川普當前在國際事務上面臨著三個互斥的目標——其一，壓制伊朗的核武擴張；其二，徹底打通荷姆茲海峽（每日 2,000 萬桶原油通道）以壓制全球能源價格；其三，避免在歷史上背負「在任內失去台灣」的千古罵名。但現實是，在美軍軍力已被波斯灣牢牢牽制、全球通膨蠢蠢欲動的當下，川普最多只能達成其中兩個目標。如果川普寄望於與他關係良好的「好朋友」習近平出面，利用中國對伊朗的巨大經濟影響力調停荷姆茲海峽危機、拯救美國農民的油價，北京開出的交換條件必將極度嚴苛：<strong>中國的最佳策略，就是表面上充當調停者，但絕不讓美國太容易脫身，並逼迫華府在台灣的防禦軍售、政治承諾與經貿圍堵上做出實質讓步，藉此向全世界印證美國在全球戰略上的空洞與虛弱。</strong></li>
+      </ol>
+      <p>
+        這正是令人不寒而慄的骨牌連鎖：在東歐，當美伊戰爭推高了柴油牌價，烏克蘭打擊侵略者的自衛權與戰場通訊權益成了代罪羔羊；在印太，同樣因為中東戰火牽制了美軍彈藥庫存與大宗物資，台灣爭取多層次防空系統的黃金時間，也淪為大國元首互稱「好朋友」時被暫緩履行的交易籌碼。
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-ch5">
+      <h2>第五章：穿透迷霧的思辨——為什麼戴蒙與川普「看似矛盾，卻在掏空盟友安全感上殊途同歸」？</h2>
+      <p>
+        行文至此，我們必須進行最深一層的批判性思辨：摩根大通執行長傑米・戴蒙所代表的華爾街金融菁英，與白宮的川普總統，兩人在看待中國、俄羅斯與台灣的態度上，難道真的是完全背道而馳的兩極嗎？
+      </p>
+      <p>在表面手法上，兩者確實針鋒相對：</p>
+      <ul>
+        <li><strong>戴蒙代表的是優雅的「制度派全球主義鷹派」</strong>。他信奉大西洋與太平洋兩岸的長期同盟，主張用規矩嚴密的貿易協議框住盟友，反對毫無章法的單邊關稅，更主張以美國高達一兆五千億美元的安全與韌性倡議（SRI）在本土重構國防製造業與晶片產業，從體質上壓制威權國家。</li>
+        <li><strong>川普代表的則是粗暴的「孤立型個人交易民粹派」</strong>。他無視同盟信用與長遠戰略，把一切國際承諾簡化為當下的雙邊順逆差與國內加油站的牌價；他可以今天簽署制裁俄羅斯，明天就為了柴油私下交易，今天宣稱台灣是談判籌碼，明天又在造勢場合誇口自己的私人友誼。</li>
+      </ul>
+      <p>
+        然而，如果我們剝開表面修辭的包裝，從「結構現實主義（Structural Realism）」的視角探入本質，你會驚駭地發現：<strong>戴蒙那套冷靜理性的「美國優勢論」，與川普那套反覆無常的「強人交易術」，在對待烏克蘭與台灣這類處於帝國地緣斷層帶前線的實體時，其實共享著同一個冰冷殘酷的底層預設——那就是「美國本土核心利益的絕對安全，永遠凌駕於邊陲盟友的生死存亡」。</strong>
+      </p>
+      <p>
+        重新推敲戴蒙那句貫穿全篇的核心宣示：「我們擁有大西洋和太平洋，我們在北美洲沒有戰爭……對於任何可能用於軍事目的的晶片、AI、鋰與 F-35 零件，我們都應該回流本土或友岸外包。」為什麼戴蒙要把「大西洋與太平洋的隔離」當作美國最強大的底牌？因為在他的潛意識資產負債表裡，歐亞大陸邊緣的戰火無論多麼慘烈，只要美國利用這段時間，把原本必須向台灣採購的先進製程半導體、把原本仰賴亞洲組裝的軍規電子產線，全數在美國本土與美洲大陸建立起鏡像備份，那麼美國就能從容地退守至兩大洋環抱的<strong>「美洲堡壘（Fortress America）」</strong>之中，立於不敗之地。
+      </p>
+      <p>這徹底解答了為什麼戴蒙在通篇談話中對「台灣」隻字不提，也解釋了戴蒙與川普在歷史劇變中的詭異合流：</p>
+      <ul>
+        <li><strong>戴蒙代表的是美國資本集團的「慢性撤資與長線抽身」</strong>：動員數千億美元的資本，以國家安全為由，有步驟地稀釋台灣在先進科技與國防產業鏈中的「不可替代性」；一旦本土備援建立完成，台灣海峽在華爾街風險評估表上的權重便會迅速降級為一項隨時可以切割的外部風險。</li>
+        <li><strong>川普代表的則是白宮統治精英的「急性套現與短線交易」</strong>：他連供應鏈回流本土的漫長時間都等不及，便急於在當下的政治拍賣會上，把前線盟友的主權尊嚴、防空軍售與防衛承諾當作現成籌碼，用來向普丁換取柴油、向習近平換取貿易訂單。</li>
+      </ul>
+      <p>
+        對身處地緣風暴核心的台灣與烏克蘭而言，<strong>戴蒙的路線是一杯溫水，用制度重組與友岸外包的名義，在國際舞台上對你的主權身分消音，慢慢抽空你的戰略唯一性；川普的路線則是一把明火，用赤裸裸的強人私交與商人本色，把你的生死防衛隨時擺上貨架套現。</strong>一者披著理性資本的外衣，一者顯露著民粹交易的粗糙，但兩者共同傳遞出同一個冰冷無比的歷史教訓：<strong>任何將自身生存完全託付給「大國菁英手握好牌的自信」、或是寄望於「外國元首與獨裁者私交」的前線國家，最終都將面臨被無情重組或當場變現的殘酷命運。</strong>
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-epilogue">
+      <h2>終章：給台灣讀者的三個底層認知座標與貝氏決策檢驗</h2>
+      <p>
+        站在當前這個美伊戰火封鎖波斯灣咽喉、俄羅斯柴油航向紐約、美國國防撥款被各方撕扯、而台灣關鍵防空軍售案仍卡在華府審批迷宮裡的動盪時刻，我們在面對這場「華爾街理性 vs. 白宮交易」的論述衝突時，應當建立起三個清醒的認知座標：
+      </p>
+
+      <div class="decision-grid">
+        <div class="decision-box amber">
+          <h4>座標一：聽懂強權論述中的「留白」</h4>
+          <p>
+            當世界最大銀行的掌舵人在論及亞洲安全與半導體供應鏈、細數所有鄰近國家時，卻整篇繞過台灣，這絕不是筆誤，而是一種經過嚴密審查的戰略姿態。這代表在跨國資本眼中，台灣已經被標註為高度敏感、需要盡速轉移依賴的「風險科目」。學會看穿國際博弈中被刻意省略的主詞，才能精確掌握全球資本真正的避險航向，而不至於被表面上的友善辭令所麻痺。
+          </p>
+        </div>
+        <div class="decision-box warn">
+          <h4>座標二：劃分「客觀國力」與「政治意志」</h4>
+          <p>
+            戴蒙所盤點的美國優勢——龐大的能源產能、八萬美元人均 GDP、兩洋天然屏障、頂尖科技創新——全部都是真實不虛的客觀國力；然而，歷史反覆證明，<strong>雄厚的國力並不會自動轉化為保護盟友的承諾</strong>。當白宮掌權者將個人面子、選票得失與商業交易置於集體安全條約之上時，美國越是自恃擁有兩洋屏障與能源獨立，前線盟友就越容易淪為討好強人的籌碼。
+          </p>
+        </div>
+        <div class="decision-box">
+          <h4>座標三：鍛造「無法搬走」的不對稱嚇阻</h4>
+          <p>
+            二○二六年烏克蘭在柴油協議上的遭遇證明：當戰場情資、通訊衛星開關與高階防空彈藥全數受制於人時，大洋彼岸隨時可以為了一項燃油交易命令你停火受辱；但反過來看，也正因為烏克蘭靠自主研發的國產長程無人機重創俄羅斯煉油核心，才讓烏克蘭在被背刺後依舊保有不被輕易吞併的戰場底氣。
+          </p>
+        </div>
+      </div>
+
+      <p>
+        對台灣而言，看穿戴蒙的資本避險算盤與川普的強人交易幻象，絕不意味著走向虛無的疑美論或失敗主義，而是逼迫我們徹底擺脫「大國必然會無條件前來拯救」的政治浪漫主義。將能源自主儲備、分散式電網、全島不對稱防空網、低軌自主通訊衛星與核心半導體製程的根系深深扎在自己的土地上，讓我們手中的籌碼厚重到任何人都無法輕易搬走、也無力在牌桌上隨手賤賣——這才是在這場華爾街與白宮共同譜寫的地緣殘局中，唯一能夠護衛這座島嶼尊嚴與和平的真正底牌。
+      </p>
+    </section>
+
+    <section class="section-card" id="sec-sources">
+      <h2>附錄：結構化查核來源清單（Verified Primary &amp; Secondary Sources）</h2>
+      <ol>
+        <li><strong>JPMorgan Chase Official</strong> (2025-10 / 2026-07)：<a href="https://www.jpmorgan.com/about-us/security-and-resiliency" target="_blank" rel="noopener">Security and Resiliency Initiative ($1.5 Trillion 10-Year Plan for Defense, Energy &amp; Supply Chain Resiliency)</a></li>
+        <li><strong>Global Business Outlook</strong> (2026-06-17)：<a href="https://globalbusinessoutlook.com/banking-and-finance/jpmorgan-expands-usd-1-5-trillion-10-year-sri-initiative-to-canada/" target="_blank" rel="noopener">JPMorgan expands USD 1.5 trillion, 10-year SRI initiative to Canada</a></li>
+        <li><strong>The Guardian</strong> (2026-10-10)：<a href="https://www.theguardian.com/world/2026/oct/10/ukraine-russia-strikes-war-trump-diesel-deal-zelenskyy" target="_blank" rel="noopener">Trump says Ukraine needs a new leader after diesel deal with Russia (Zaporizhzhia glide bomb strikes)</a></li>
+        <li><strong>Axios</strong> (2026-10-09/10)：<a href="https://www.axios.com/2026/10/10/trump-zelensky-putin-diesel-deal-war" target="_blank" rel="noopener">U.S. official: Trump cut deal with Putin after Zelensky ignored his requests on refinery strikes</a></li>
+        <li><strong>Pew Research Center</strong> (2026-07-15)：<a href="https://www.pewresearch.org/global/2026/07/15/people-in-many-countries-now-view-china-more-positively-than-the-u-s/" target="_blank" rel="noopener">People in Many Countries Now View China More Positively Than the U.S.</a></li>
+        <li><strong>Council on Foreign Relations (CFR)</strong> (2026-07-27)：<a href="https://www.cfr.org/articles/china-now-outranks-the-united-states-in-global-favorability-what-happened" target="_blank" rel="noopener">China Now Outranks the United States in Global Favorability. What Happened?</a></li>
+        <li><strong>Institute for the Study of War (ISW)</strong> (2026-05-08)：<a href="https://understandingwar.org/research/china-taiwan/china-taiwan-update-may-8-2026/" target="_blank" rel="noopener">China &amp; Taiwan Update, May 8, 2026 (Taiwan LY NT$780B / US$25B Special Defense Budget &amp; Trump-Xi Summit Agenda)</a></li>
+        <li><strong>The Washington Post</strong> (2026-05-23)：<a href="https://www.washingtonpost.com/national-security/2026/05/23/us-pauses-14-billion-taiwan-arms-sale-after-china-summit/" target="_blank" rel="noopener">Iran war, China thaw complicate U.S. support for Taiwan ($14 billion Taiwan arms sale on hold)</a></li>
+        <li><strong>Domino Theory</strong> (2026-10-13)：<a href="https://dominotheory.com/14-billion-arms-sale-still-on-hold-as-trump-and-xi-look-to-apec/" target="_blank" rel="noopener">$14 Billion Arms Sale Still on Hold as Trump and Xi Look to APEC</a></li>
+        <li><strong>Center for Maritime Strategy</strong> (2026-01-29)：<a href="https://centerformaritimestrategy.org/publications/taiwans-concerning-mda-gap-facing-chinas-gray-zone/" target="_blank" rel="noopener">Taiwan's Concerning MDA Gap facing China's Gray Zone (T-Dome air and missile defense integration)</a></li>
+        <li><strong>PBS NewsHour</strong> (2026-03-10)：<a href="https://www.pbs.org/newshour/world/war-with-iran-delivers-high-oil-prices-and-another-shock-to-the-global-economy" target="_blank" rel="noopener">War with Iran delivers high oil prices and another shock to the global economy (Simon Johnson on Strait of Hormuz 20M bpd)</a></li>
+        <li><strong>Atlantic Council</strong> (2026-10-23)：<a href="https://www.atlanticcouncil.org/dispatches/what-will-end-trumps-back-and-forth-approach-toward-russia-and-ukraine/" target="_blank" rel="noopener">What will end Trump's back-and-forth approach toward Russia and Ukraine?</a></li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<dialog id="mermaid-modal" aria-label="全螢幕檢視垂直分層戰略傳導圖">
+  <div class="modal-header">
+    <h4>全螢幕檢視：華爾街理性避險 × 白宮強人交易 × 台海防衛衝擊傳導圖（按 Esc 關閉）</h4>
+    <button type="button" class="modal-close-btn" id="btn-modal-close" onclick="closeFullscreen()">關閉 (Esc)</button>
+  </div>
+  <div class="modal-body" id="modal-svg-container"></div>
+</dialog>
+
+<script>
+  const SHARED_THEME_CSS = `
+    .cluster-label foreignObject { overflow: visible !important; }
+    .cluster-label foreignObject > div { display: inline-block !important; white-space: nowrap !important; overflow: visible !important; }
+    .cluster-label, .cluster-label text, .cluster-label span, .cluster-label p, .cluster-label .nodeLabel {
+      font-size: 17px !important; font-weight: 700 !important; line-height: 1.4 !important; text-align: center; color: #1A1714 !important; fill: #1A1714 !important;
+    }
+    .cluster rect { rx: 8px !important; ry: 8px !important; }
+    .spacer { height: 0px !important; min-height: 0px !important; max-height: 0px !important; font-size: 0px !important; line-height: 0px !important; padding: 0px !important; margin: 0px !important; border: none !important; }
+    .spacer rect { height: 0px !important; fill: transparent !important; stroke: none !important; display: none !important; }
+    .spacer .label { padding: 0px !important; height: 0px !important; }
+    .spacer span { display: none !important; }
+  `;
+
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 36,
+      rankSpacing: 52,
+      padding: 20,
+      subGraphTitleMargin: {
+        top: 14,
+        bottom: 22
+      }
+    },
+    themeCSS: SHARED_THEME_CSS
+  });
+
+  let currentZoom = 1.0;
+
+  function applyZoom() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    if (svg) {
+      svg.style.transform = `scale(${currentZoom})`;
+      document.getElementById('zoom-pct').textContent = Math.round(currentZoom * 100) + '%';
+    }
+  }
+
+  function zoomMermaid(factor) {
+    currentZoom = Math.min(2.5, Math.max(0.5, currentZoom * factor));
+    applyZoom();
+  }
+
+  function resetMermaid() {
+    currentZoom = 1.0;
+    applyZoom();
+  }
+
+  let lastFocusedElement = null;
+
+  function openFullscreen() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    if (!svg) return;
+    lastFocusedElement = document.activeElement;
+    const modal = document.getElementById('mermaid-modal');
+    const container = document.getElementById('modal-svg-container');
+    container.innerHTML = '';
+    const clone = svg.cloneNode(true);
+    clone.style.transform = 'none';
+    clone.style.maxWidth = '100%';
+    clone.style.height = 'auto';
+    container.appendChild(clone);
+    modal.showModal();
+    document.getElementById('btn-modal-close').focus();
+  }
+
+  function closeFullscreen() {
+    const modal = document.getElementById('mermaid-modal');
+    modal.close();
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
+  document.getElementById('mermaid-modal').addEventListener('close', () => {
+    if (lastFocusedElement) lastFocusedElement.focus();
+  });
+
+  function exportSVG() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    if (!svg) return;
+    const clone = svg.cloneNode(true);
+    clone.style.transform = 'none';
+    const styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+    styleEl.textContent = SHARED_THEME_CSS;
+    clone.insertBefore(styleEl, clone.firstChild);
+    const serializer = new XMLSerializer();
+    const source = '<?xml version="1.0" standalone="no"?>\r\n' + serializer.serializeToString(clone);
+    const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = '22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_graph.svg';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+</body>
+</html>
