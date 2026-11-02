@@ -1,6 +1,6 @@
 # 克里姆林宮的長線牌局與華盛頓的耗竭資產：從麥克フォ爾《普丁的戰略正在奏效》剖析美俄交易外交、防空消耗戰與盟邦韌性
 
-> **文檔定位**：`74_aerospace_defense_research` 專題研究深度專文（L1 思想敘事純淨版）  
+> **文檔定位**：`74_aerospace_defense_research` 專題研究深度專文（L1 思想敘事純淨版） ｜ [閱讀精煉故事版](23_mcfaul_putins_strategy_working_trump_ukraine_l1_story.md)
 > **基準時間**：2026-11-02  
 > **核心來源**：前美國駐俄大使、史丹佛大學教授麥克フォ爾（Michael McFaul）於《外交事務》（[Foreign Affairs](https://www.foreignaffairs.com/russia/putins-strategy-working-michael-mcfaul)）發表之專論〈普丁的戰略正在奏效：川普可能挽救克里姆林宮在烏克蘭的目標〉（[全文轉載備份](https://www.almendron.com/tribuna/putins-strategy-is-working/)）及其 [X 平台貼文](https://x.com/McFaul/status/2116925661160050955)，並結合美國財政部海外資產控制辦公室（OFAC）、白宮行政命令、華府戰爭研究所（ISW）、《金融時報》（FT）與烏克蘭防務實證進行跨學科擴容剖析。
 
