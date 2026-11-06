@@ -19,6 +19,7 @@
 - **既有研究專題**：
   1. [`10_starlink_ukraine_zalenskyy_trump_musk_report.md`](10_starlink_ukraine_zalenskyy_trump_musk_report.md)：深入剖析 Starlink 烏克蘭限速事件、軍用 Starshield 雙用管制、地緣政治博弈與合約邊界。
   2. [`12_musk_spacex_stock_gift_trump_accounts_report.md`](12_musk_spacex_stock_gift_trump_accounts_report.md)：SpaceX IPO 2 兆美元市值、Starlink 現金流支撐與川普帳戶全民兒童贈股之國家資本共生體制。
+  3. [`inbox/spain_hodio_palantir_dual_use_analysis.md`](inbox/spain_hodio_palantir_dual_use_analysis.md)：西班牙 HODIO 政策對 Grok 原稿之漏洞審查、Palantir Ontology 深度解析，以及馬斯克「物理軌道（Starshield）＋認知演算法（X/Grok）」雙重超國家主權壟斷與 2026 美歐烏地緣棋局串聯。
 
 ---
 
