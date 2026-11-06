@@ -12,6 +12,46 @@
 
 ---
 
+## 核對狀態標註（2026-11-06 補註，內文未更動）
+
+> [!WARNING]
+> 本文維持原貌保留。下表標示各項陳述的實際核對程度。**沒有任何一項已達 `OBSERVED`**：撰寫時只讀到搜尋結果摘要，沒有逐一開啟原文。標示沿用本庫報告慣例；本文整體 `verification_status` 仍為 `partially_verified`，不得據此更新貝氏信念（未核實者維持 `0 dB`）。
+>
+> **標示說明**
+> - `摘要一致`：多個獨立來源的搜尋摘要互相吻合，未開原文。
+> - `單一摘要／標題層級`：只見單一摘要，或只見標題。
+> - `推論`：本庫審查意見或由日期、上下文推得，無直接來源。
+> - `未驗證`：記憶引述或轉述自其他本庫文件，本次未搜尋。
+
+| 項目（所在 Part） | 標示 | 備註與搜尋時見到的來源 |
+|---|---|---|
+| 2026-02-03 杜拜峰會五項措施的內容（I、IV） | 摘要一致 | AA、healthpolicy-watch、El País、FIRE |
+| HODIO 於 2026-03-11 馬德里首屆反仇恨論壇發布（IV） | 摘要一致 | La Moncloa、包容部頁面、El País |
+| HODIO 由 OBERAXE 主導、底層為常規 NLP 輿情工具（II 漏洞一） | **推論／未驗證** | 部會頁面選單可見 OBERAXE，但未見技術規格或承辦單位；「常規 NLP」是本庫推測 |
+| HODIO「多停留在宣傳層面」（II 漏洞三） | 單一摘要 | Vozpópuli 標題，屬評論性質，非中立來源 |
+| 馬斯克稱桑切斯 “tyrant and traitor to the people of Spain”（IV、VI） | 摘要一致 | Al Jazeera、El País、Guardian 標題 |
+| **“Dirty Sánchez is a tyrant and traitor to the people of Spain.” 這句完整引述（IV、VI）** | **未驗證為逐字原文** | 搜尋只見 “dirty” 與 “tyrant and traitor” 分別出現在轉述中，**未確認同一句**；此句可能是拼接，勿當逐字引用 |
+| 馬斯克稱桑切斯 “the true fascist totalitarian”（IV、VI） | 摘要一致 | Times of Israel、Catalan News |
+| 桑切斯 “Mars can wait. Humanity can't.”，日期 2026-01-30（IV） | 摘要一致（日期為推算） | El País 稱「上週五」，推得 1/30 |
+| 2026-01-27 內閣批准約 50 萬移民合法化（IV） | 推論（日期） | 由 TRT「週二批准」（1/31 報導）推得 |
+| 2025-02 馬斯克 “Vox will win the next election”（IV） | 標題層級 | El País 2025-02-24 標題 |
+| 2025-01-08 桑切斯於佛朗哥週年活動點名馬斯克（IV） | 摘要一致 | Guardian |
+| 2026-02-03 巴黎檢方突襲 X 法國辦公室並傳喚馬斯克（IV） | 單一摘要 | El País |
+| 瓦倫西亞水壩假訊息：約 2,800 萬次、80% 藍勾、66 則（IV） | 摘要一致 | Maldita.es |
+| 2026-04 馬斯克指控「叛國」（IV） | 摘要一致 | Brussels Signal、Wonkette |
+| 部長 Bolaños 反擊、布魯塞爾聲援（IV） | 單一摘要／標題層級 | AA；The Diplomat in Spain 標題。「Félix」與全銜為背景知識，未見於摘要 |
+| 歐盟 2025-12-05 罰款 X 1.2 億歐元（V） | 標題層級 | Guardian 相關文章清單中的標題 |
+| 波蘭外長 Sikorski “Be quiet, small man”、波蘭出資訂閱 Starlink（VI） | **未驗證** | 轉述自本庫報告 10，該報告自身標為「搜尋摘要，未驗證」 |
+| 澳洲 Albanese “Fascists”、德國 Scholz “Narr”、英國 Starmer “civil war is inevitable”／“Two-tier Keir”、巴西 Moraes “Voldemort”／“Dictator”、委內瑞拉 Maduro 約戰（VI） | **未驗證** | 記憶引述，本次 session 未搜尋 |
+| Starshield 160 km/h 限速等烏克蘭事件細節（V） | 未驗證 | 引自本庫報告 10，該報告自標「搜尋摘要，未驗證」 |
+| 2026 期中選舉：民主黨奪回眾議院與參議院、Vance 歸咎伊朗戰爭、桑切斯表示歡迎（V） | 標題層級 | SCMP 11/03、Voz.us 11/05、Daily Beirut 11/04 |
+| 期中選舉「三大主因」（V） | **推論** | 本庫分析，未見因果研究；語氣偏肯定，宜視為假說 |
+| 「澤倫斯基炸毀莫斯科雲端機房」說法（V） | 未驗證 | 使用者轉述的網路說法，未見來源，本文僅作為玩笑處理 |
+| Palantir 9→1、Scale AI 7→2、Starlink 3→8 等評分（II） | **推論** | 本庫審查意見，**尚未登錄 `claim_register.csv`**，不是正式 claim |
+| Ontology 描述（III） | 摘要來源 | 取自本庫 CH3 與一般技術知識；CH3 多數引用為影片轉述 |
+
+---
+
 # Part I：原始 Grok 解析留存（Baseline Text Under Review）
 
 > [!WARNING]
@@ -212,6 +252,7 @@ Palantir 技術長夏姆·桑卡（Shyam Sankar）與前線部署工程師（FDE
 * 就在「火星可以等」交鋒僅僅四天後，桑切斯在杜拜世界政府峰會發表措辭極度強硬的演說，把社群媒體比喻為「演算法取代法律的失敗國家（failed state）」，並宣布五項新規——其中第一條「讓平台 CEO 背負刑事責任」、第二條「演算法放大非法內容入刑」以及第五條**「指示檢察官調查 Grok、TikTok 與 Instagram」**，幾乎每一槍都精準指著馬斯克（同一天，法國巴黎檢察官辦公室也針對演算法操縱與外國干預嫌疑，突襲搜查了 X 的法國辦公室並傳喚馬斯克作證）。
 * **馬斯克的破防痛罵**：演說結束數小時內，馬斯克在 X 上暴怒發文，以極端字眼直接辱罵一國總理：
   > **“Dirty Sánchez is a tyrant and traitor to the people of Spain.”（骯髒的桑切斯是暴君、是西班牙人民的叛徒。）**
+  > ⚠️ 逐字性未驗證（疑為拼接），見文首「核對狀態標註」。
   >
   > 隨後更再度發文稱桑切斯為 **“The true fascist totalitarian”（真正的法西斯極權主義者）**。
 * 西班牙司法與總統府部長 Félix Bolaños 隨即出面回擊，指責「身價千億的科技寡頭企圖用威脅恫嚇主權國家的民主制度」，歐盟布魯塞爾高層亦公開表態聲援西班牙。
@@ -262,7 +303,7 @@ Palantir 技術長夏姆·桑卡（Shyam Sankar）與前線部署工程師（FDE
 
 | 衝突國家／對象 | 觸發事件 | 馬斯克的反擊詞彙（公開原話） | 套路特徵 |
 |---|---|---|---|
-| **西班牙總理 Pedro Sánchez** | 推動社群禁 16 歲以下使用、平台高管刑責、點名調查 Grok | **“Dirty Sánchez is a tyrant and traitor to the people of Spain”**<br/>**“The true fascist totalitarian”** | 將平台監管直接定調為「背叛人民的法西斯暴政」 |
+| **西班牙總理 Pedro Sánchez** | 推動社群禁 16 歲以下使用、平台高管刑責、點名調查 Grok | **“Dirty Sánchez is a tyrant and traitor to the people of Spain”**（⚠️ 逐字性未驗證）<br/>**“The true fascist totalitarian”** | 將平台監管直接定調為「背叛人民的法西斯暴政」 |
 | **澳洲總理 Anthony Albanese** | 澳洲立法通過禁止 16 歲以下兒童與青少年使用社群媒體 | **“Fascists”**（法西斯分子） | 澳洲總理回擊：「他在捍衛他的商業利益，我們在捍衛孩子。」 |
 | **波蘭外交部長 Radosław Sikorski** | 波蘭外長就烏克蘭 Starlink 限速質問馬斯克是否在玩弄政治（波蘭出資訂閱） | **“Be quiet, small man.”**（閉嘴，小人物） | 以超國家資產擁有者姿態，對主權國家外長進行「地位降維打擊」 |
 | **德國總理 Olaf Scholz** | 德國紅綠燈執政聯盟瓦解與大選辯論 | **“Olaf ist ein Narr”**（德文：蕭茲是個蠢蛋） | 直接羞辱現任總理，並連線專訪極右翼 AfD 黨魁 Weidel |
