@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L2 互動拓撲：2026 AI 資本市場實質負向架構與歷史信貸反例 (Archify 3.0.1 Claude Light)</title>
+<style>
+  :root {
+    --bg-paper: #F7F4ED;
+    --bg-card: #FFFFFF;
+    --bg-cream: #F0E9D9;
+    --ink-primary: #141413;
+    --ink-secondary: #52514E;
+    --ink-muted: #78756E;
+    --accent-terracotta: #D97757;
+    --accent-crimson: #B91C1C;
+    --accent-amber: #B45309;
+    --accent-teal: #0F766E;
+    --accent-navy: #1D4ED8;
+    --border-warm: #E4DEC8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif;
+    background: var(--bg-paper);
+    color: var(--ink-primary);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  header {
+    background: var(--bg-cream);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .badge {
+    background: var(--accent-terracotta);
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    background: #fff;
+    border: 1px solid var(--border-warm);
+    color: var(--ink-secondary);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--ink-primary);
+    color: #fff;
+    border-color: var(--ink-primary);
+  }
+  .workspace {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    flex: 1;
+    overflow: hidden;
+  }
+  @media (max-width: 900px) {
+    .workspace { grid-template-columns: 1fr; grid-template-rows: 55% 45%; }
+  }
+  .canvas-pane {
+    position: relative;
+    background: radial-gradient(#DED8C8 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: var(--bg-paper);
+    overflow: auto;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  svg#topology {
+    width: 100%;
+    max-width: 1020px;
+    height: auto;
+    min-height: 600px;
+    filter: drop-shadow(0 4px 16px rgba(20,20,19,0.05));
+  }
+  .node-group {
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .node-group:hover rect {
+    stroke-width: 2.8px;
+    filter: drop-shadow(0 4px 10px rgba(217,119,87,0.22));
+  }
+  .node-group.selected rect {
+    stroke: var(--accent-terracotta) !important;
+    stroke-width: 3.2px !important;
+  }
+  .node-group.dimmed {
+    opacity: 0.22;
+  }
+  .edge-path {
+    fill: none;
+    stroke-width: 2px;
+    transition: opacity 0.2s;
+  }
+  .edge-path.dimmed {
+    opacity: 0.15;
+  }
+  .inspector-pane {
+    background: var(--bg-card);
+    border-left: 1px solid var(--border-warm);
+    padding: 22px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .insp-category {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-terracotta);
+  }
+  .insp-title {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--ink-primary);
+  }
+  .insp-kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .insp-kpi {
+    background: var(--bg-paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .insp-kpi-label {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .insp-kpi-val {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink-primary);
+  }
+  .insp-section {
+    border-top: 1px solid var(--border-warm);
+    padding-top: 14px;
+  }
+  .insp-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-secondary);
+    margin-bottom: 8px;
+  }
+  .insp-section p, .insp-section li {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink-primary);
+  }
+  .insp-section ul {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .tag-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 11px;
+    border-radius: 4px;
+    background: var(--bg-cream);
+    color: var(--ink-secondary);
+    font-weight: 600;
+    margin-right: 6px;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-title">
+    <span>Archify 3.0.1 互動系統拓撲：2026 AI 資本市場實質負向架構（四大斷層 × 貝氏配置）</span>
+    <span class="badge">v12 Claude Light</span>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterNodes('all', this)">全部節點 (13)</button>
+    <button class="filter-btn" onclick="filterNodes('history', this)">大歷史信貸反例 (4)</button>
+    <button class="filter-btn" onclick="filterNodes('leverage', this)">2026 連環槓桿與賣夢股 (4)</button>
+    <button class="filter-btn" onclick="filterNodes('china', this)">中國記憶體与開源突圍 (2)</button>
+    <button class="filter-btn" onclick="filterNodes('alpha', this)">3x–5x P/E 記憶體與台積電 (3)</button>
+  </div>
+</header>
+
+<div class="workspace">
+  <div class="canvas-pane">
+    <svg id="topology" viewBox="0 0 1020 660" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+        </marker>
+        <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#B45309"/>
+        </marker>
+        <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#0F766E"/>
+        </marker>
+        <marker id="arrow-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#1D4ED8"/>
+        </marker>
+      </defs>
+
+      <!-- Layer Backgrounds -->
+      <rect x="15" y="15" width="990" height="130" rx="10" fill="#F0E9D9" stroke="#D8CEB8" stroke-width="1.5"/>
+      <text x="30" y="40" font-size="14" font-weight="800" fill="#52514E">LAYER 1 · 大歷史資本負向迴路原型（《人類簡史》第 16 章：信用崩塌與泡沫反例）</text>
+
+      <rect x="15" y="165" width="990" height="160" rx="10" fill="#FDF2F2" stroke="#F5C2C2" stroke-width="1.5"/>
+      <text x="30" y="190" font-size="14" font-weight="800" fill="#991B1B">LAYER 2 · 2026 斷層一：囚徒困境下的現金流枯竭、「10% 高息二房東」與「軟銀×OpenAI 債上加債」</text>
+
+      <rect x="15" y="345" width="990" height="145" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="30" y="370" font-size="14" font-weight="800" fill="#92400E">LAYER 3 · 2026 斷層二與三：零營收賣夢股破滅 vs. 中國「記憶體 (CXMT) + 開源模型 (DeepSeek/Kimi)」突圍</text>
+
+      <rect x="15" y="510" width="990" height="135" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="30" y="535" font-size="14" font-weight="800" fill="#065F46">LAYER 4 · 2026 斷層四：3x–5x P/E 記憶體「印鈔機」極端折價悖論 vs. 台灣硬體軍火庫貝氏配置</text>
+
+      <!-- Edges -->
+      <path class="edge-path" d="M 135 125 L 135 205" stroke="#B91C1C" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+      <path class="edge-path" d="M 380 125 L 150 385" stroke="#B45309" stroke-dasharray="5,4" marker-end="url(#arrow-amber)"/>
+      <path class="edge-path" d="M 625 125 L 625 205" stroke="#B91C1C" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+      <path class="edge-path" d="M 870 125 L 380 205" stroke="#B91C1C" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+
+      <path class="edge-path" d="M 240 250 L 285 250" stroke="#B91C1C" marker-end="url(#arrow-red)"/>
+      <path class="edge-path" d="M 495 250 L 535 250" stroke="#B91C1C" marker-end="url(#arrow-red)"/>
+      <path class="edge-path" d="M 745 250 L 785 250" stroke="#B91C1C" marker-end="url(#arrow-red)"/>
+
+      <path class="edge-path" d="M 780 430 L 675 295" stroke="#B45309" marker-end="url(#arrow-amber)"/>
+      <path class="edge-path" d="M 780 430 L 400 295" stroke="#B45309" marker-end="url(#arrow-amber)"/>
+      <path class="edge-path" d="M 500 430 L 260 555" stroke="#B45309" marker-end="url(#arrow-amber)"/>
+      <path class="edge-path" d="M 830 470 L 830 555" stroke="#0F766E" marker-end="url(#arrow-teal)"/>
+      <path class="edge-path" d="M 340 595 L 405 595" stroke="#0F766E" marker-end="url(#arrow-teal)"/>
+      <path class="edge-path" d="M 675 595 L 735 595" stroke="#1D4ED8" marker-end="url(#arrow-navy)"/>
+
+      <!-- LAYER 1 NODES (History) -->
+      <g class="node-group selected" data-cat="history" onclick="selectNode('n1', this)">
+        <rect x="30" y="55" width="215" height="72" rx="8" fill="#FFFFFF" stroke="#8C7A5B" stroke-width="2"/>
+        <text x="42" y="78" font-size="12.5" font-weight="800" fill="#141413">1. 西班牙王權破產 vs 荷蘭</text>
+        <text x="42" y="96" font-size="11" fill="#52514E">4次國家違約 · 15-20% 高利貸</text>
+        <text x="42" y="113" font-size="10.5" fill="#B91C1C" font-weight="700">契約破壞 ➔ 資本逃往阿姆斯特丹</text>
+      </g>
+
+      <g class="node-group" data-cat="history" onclick="selectNode('n2', this)">
+        <rect x="275" y="55" width="215" height="72" rx="8" fill="#FFFFFF" stroke="#8C7A5B" stroke-width="2"/>
+        <text x="287" y="78" font-size="12.5" font-weight="800" fill="#141413">2. 荷蘭鬱金香狂熱 (1637)</text>
+        <text x="287" y="96" font-size="11" fill="#52514E">空氣期貨 (Windhandel) · 零現金流</text>
+        <text x="287" y="113" font-size="10.5" fill="#B45309" font-weight="700">哈勒姆拍賣無人接盤 ➔ 90%違約</text>
+      </g>
+
+      <g class="node-group" data-cat="history" onclick="selectNode('n3', this)">
+        <rect x="520" y="55" width="215" height="72" rx="8" fill="#FFFFFF" stroke="#8C7A5B" stroke-width="2"/>
+        <text x="532" y="78" font-size="12.5" font-weight="800" fill="#141413">3. 法國密西西比泡沫 (1720)</text>
+        <text x="532" y="96" font-size="11" fill="#52514E">皇家銀行印鈔死鎖單一殖民股權</text>
+        <text x="532" y="113" font-size="10.5" fill="#B91C1C" font-weight="700">帳面富豪擠兌硬通貨 ➔ 主權信用崩潰</text>
+      </g>
+
+      <g class="node-group" data-cat="history" onclick="selectNode('n4', this)">
+        <rect x="765" y="55" width="225" height="72" rx="8" fill="#FFFFFF" stroke="#8C7A5B" stroke-width="2"/>
+        <text x="777" y="78" font-size="12.5" font-weight="800" fill="#141413">4. 英國南海泡沫與法案 (1720)</text>
+        <text x="777" y="96" font-size="11" fill="#52514E">空殼公司吸金 · 斷外圍槓桿反噬母體</text>
+        <text x="777" y="113" font-size="10.5" fill="#0F766E" font-weight="700">科學家買單 (瓦特蒸汽機) 拯救信用</text>
+      </g>
+
+      <!-- LAYER 2 NODES (2026 Cascading Leverage) -->
+      <g class="node-group" data-cat="leverage" onclick="selectNode('n5', this)">
+        <rect x="30" y="205" width="210" height="92" rx="8" fill="#FFFFFF" stroke="#B91C1C" stroke-width="2"/>
+        <text x="42" y="228" font-size="12.5" font-weight="800" fill="#991B1B">5. 雲端巨頭現金流反轉</text>
+        <text x="42" y="246" font-size="11" fill="#141413">2026 全美 CapEx &gt;$8,000億 (+94%)</text>
+        <text x="42" y="263" font-size="11" fill="#52514E">FCF 趨近零/轉負 · Meta 發債$300億</text>
+        <text x="42" y="281" font-size="10.5" fill="#B91C1C" font-weight="700">SPCX 前三季 FCF -$349.7億</text>
+      </g>
+
+      <g class="node-group" data-cat="leverage" onclick="selectNode('n6', this)">
+        <rect x="285" y="205" width="210" height="92" rx="8" fill="#FFFFFF" stroke="#B91C1C" stroke-width="2"/>
+        <text x="297" y="228" font-size="12.5" font-weight="800" fill="#991B1B">6. 10% 高息算力二房東</text>
+        <text x="297" y="246" font-size="11" fill="#141413">CoreWeave (CRWV) 借 9%–10%+ 高息債</text>
+        <text x="297" y="263" font-size="11" fill="#52514E">DDTL $85億+$31億 · 設備融資$51億</text>
+        <text x="297" y="281" font-size="10.5" fill="#B91C1C" font-weight="700">租金微跌即遭利息吞噬 (對比ORCL預收款)</text>
+      </g>
+
+      <g class="node-group" data-cat="leverage" onclick="selectNode('n7', this)">
+        <rect x="535" y="205" width="210" height="92" rx="8" fill="#FFFFFF" stroke="#B91C1C" stroke-width="2"/>
+        <text x="547" y="228" font-size="12.5" font-weight="800" fill="#991B1B">7. 軟銀 × OpenAI 債上加債</text>
+        <text x="547" y="246" font-size="11" fill="#141413">軟銀簽 20 銀行 $119 億聯貸+高收益債</text>
+        <text x="547" y="263" font-size="11" fill="#52514E">借債買未上市高估值虧損 AI 股權</text>
+        <text x="547" y="281" font-size="10.5" fill="#B91C1C" font-weight="700">IPO 估值若低於私募輪即觸發債務危機</text>
+      </g>
+
+      <g class="node-group" data-cat="leverage" onclick="selectNode('n8', this)">
+        <rect x="785" y="205" width="205" height="92" rx="8" fill="#FFFFFF" stroke="#B91C1C" stroke-width="2"/>
+        <text x="797" y="228" font-size="12.5" font-weight="800" fill="#991B1B">8. S&amp;P 500 帳面獲利幻覺</text>
+        <text x="797" y="246" font-size="11" fill="#141413">2026Q2 高達 $1,500 億美元帳面獲利</text>
+        <text x="797" y="263" font-size="11" fill="#52514E">佔 S&amp;P 500 整體 EPS 約 12%</text>
+        <text x="797" y="281" font-size="10.5" fill="#B91C1C" font-weight="700">源自私有 AI 實驗室「未實現估值調升」</text>
+      </g>
+
+      <!-- LAYER 3 NODES (Dream Stocks & China Breakout) -->
+      <g class="node-group" data-cat="leverage" onclick="selectNode('n9', this)">
+        <rect x="30" y="385" width="275" height="88" rx="8" fill="#FFFFFF" stroke="#B45309" stroke-width="2"/>
+        <text x="42" y="408" font-size="12.5" font-weight="800" fill="#92400E">9. 「賣夢股」破滅：SMR 小型核電泡沫</text>
+        <text x="42" y="426" font-size="11" fill="#141413">Oklo / NuScale 炒作 AI 缺電題材</text>
+        <text x="42" y="443" font-size="11" fill="#52514E">審批與建廠動輒 10 年 · 零實質營收</text>
+        <text x="42" y="460" font-size="10.5" fill="#B45309" font-weight="700">成本過高與監管停擺 ➔ 股價劇烈修正</text>
+      </g>
+
+      <g class="node-group" data-cat="china" onclick="selectNode('n10', this)">
+        <rect x="335" y="385" width="305" height="88" rx="8" fill="#FFFFFF" stroke="#B45309" stroke-width="2"/>
+        <text x="347" y="408" font-size="12.5" font-weight="800" fill="#92400E">10. 中國記憶體紅海化：CXMT 與 YMTC</text>
+        <text x="347" y="426" font-size="11" fill="#141413">長鑫存儲 (CXMT) 科創板 579 億 RMB IPO</text>
+        <text x="347" y="443" font-size="11" fill="#52514E">全球 DRAM 市佔 7.67% ➔ 2026年中邁向 10%</text>
+        <text x="347" y="460" font-size="10.5" fill="#B45309" font-weight="700">標準型 DRAM/NAND 紅海化 ➔ 壓抑韓美大廠 P/E</text>
+      </g>
+
+      <g class="node-group" data-cat="china" onclick="selectNode('n11', this)">
+        <rect x="670" y="385" width="320" height="88" rx="8" fill="#FFFFFF" stroke="#0F766E" stroke-width="2.5"/>
+        <text x="682" y="408" font-size="12.5" font-weight="800" fill="#0F766E">11. 中國開源模型突圍：DeepSeek-V4.1 &amp; Kimi K3.1</text>
+        <text x="682" y="426" font-size="11" fill="#141413">‧ DeepSeek-V4.1-Flash：DeepSWE 77.0 · 單任務 &lt;$0.20</text>
+        <text x="682" y="443" font-size="11" fill="#141413">‧ Kimi K3.1 Pro (2.8T)：SWE Marathon 51.7 全球第一 (半價)</text>
+        <text x="682" y="460" font-size="10.5" fill="#0F766E" font-weight="700">OpenRouter 69% Token 佔比 ➔ 瓦解閉源高毛利回收假設</text>
+      </g>
+
+      <!-- LAYER 4 NODES (Memory Paradox & Bayesian Allocation) -->
+      <g class="node-group" data-cat="alpha" onclick="selectNode('n12', this)">
+        <rect x="30" y="550" width="340" height="82" rx="8" fill="#FFFFFF" stroke="#0F766E" stroke-width="2.5"/>
+        <text x="42" y="573" font-size="12.5" font-weight="800" fill="#065F46">12. 「印鈔機」極端折價：四大記憶體 2.7x–5x P/E</text>
+        <text x="42" y="591" font-size="11" fill="#141413">SK海力士/三星 2027E P/E ~2.7-3x · 美光 ~5x (GM 84.9%)</text>
+        <text x="42" y="608" font-size="11" fill="#52514E">美光鎖定 &gt;$1,000億長約 · SanDisk 零負債+$420億 RPO</text>
+        <text x="42" y="624" font-size="10.5" fill="#0F766E" font-weight="700">定價悖論：若 HBM 僅值 3x–5x，全 AI 鏈皆難逃週期見頂</text>
+      </g>
+
+      <g class="node-group" data-cat="alpha" onclick="selectNode('n13', this)">
+        <rect x="405" y="550" width="290" height="82" rx="8" fill="#FFFFFF" stroke="#0F766E" stroke-width="2.5"/>
+        <text x="417" y="573" font-size="12.5" font-weight="800" fill="#065F46">13. 傑文斯悖論受益者：台積電與高階 HBM</text>
+        <text x="417" y="591" font-size="11" fill="#141413">2.8T Kimi K3.1 單實例需 &gt;2.8TB HBM</text>
+        <text x="417" y="608" font-size="11" fill="#52514E">DeepSeek Loop 24/7 運轉引爆總 Token 消耗</text>
+        <text x="417" y="624" font-size="10.5" fill="#0F766E" font-weight="700">物理瓶頸鎖定 TSMC N3P/N2 + CoWoS-L</text>
+      </g>
+
+      <g class="node-group" data-cat="alpha" onclick="selectNode('n14', this)">
+        <rect x="730" y="550" width="260" height="82" rx="8" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5"/>
+        <text x="742" y="573" font-size="12.5" font-weight="800" fill="#1D4ED8">14. 資金配置座標与四大見頂訊號</text>
+        <text x="742" y="591" font-size="11" fill="#141413">核心：TSMC · 波段價值：MU / SKHY / SNDK</text>
+        <text x="742" y="608" font-size="11" fill="#52514E">避開/對沖：CRWV 高息債 · SMR 概念股</text>
+        <text x="742" y="624" font-size="10.5" fill="#1D4ED8" font-weight="700">監控雲端 FCF、GPU 時租與預付款比例</text>
+      </g>
+    </svg>
+  </div>
+
+  <aside class="inspector-pane" id="inspector">
+    <div class="insp-category" id="insp-cat">LAYER 1 · 大歷史資本負向迴路原型</div>
+    <div class="insp-title" id="insp-title">1. 西班牙哈布斯堡王權破產 vs. 荷蘭契約法治 (1568–1648)</div>
+    <div class="insp-kpi-grid" id="insp-kpis">
+      <div class="insp-kpi"><div class="insp-kpi-label">菲利普二世破產次數</div><div class="insp-kpi-val">4 次主權違約</div></div>
+      <div class="insp-kpi"><div class="insp-kpi-label">西班牙 vs 荷蘭融資利率</div><div class="insp-kpi-val">15–20% vs 3–4%</div></div>
+    </div>
+    <div class="insp-section">
+      <h4>底層機制與病灶剖析</h4>
+      <p id="insp-desc">赫拉利在《人類簡史》第 16 章提出「馬德里分行 vs. 阿姆斯特丹分行」思想實驗：西班牙坐擁波托西銀礦與龐大皇家艦隊，但國王視自身高於法律，戰敗即凍結債務或關押銀行家。相反地，荷蘭司法獨立、嚴格保護私有產權，資本用腳投票湧入阿姆斯特丹，使荷蘭得以 3%–4% 低利建立跨國傭兵與企業艦隊。</p>
+    </div>
+    <div class="insp-section">
+      <h4>2026 AI 資本市場對照</h4>
+      <ul id="insp-bullets">
+        <li><strong>致命觸發點</strong>：1576 年西班牙因發不出軍餉引發「安特衛普狂怒」兵變，親手摧毀自身金融樞紐。</li>
+        <li><strong>當代映射</strong>：主權行政干預、隨意變更關稅與補貼契約，必然推高本土硬體建置的資金成本。</li>
+      </ul>
+    </div>
+    <div class="insp-section">
+      <h4>知識庫來源與認識論標籤</h4>
+      <div id="insp-tags">
+        <span class="tag-pill">[AUTHOR STATEMENT] 人類簡史 Ch.16</span>
+        <span class="tag-pill">[INFERENCE] 制度經濟學映射</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script>
+const NODE_DATA = {
+  n1: {
+    cat: "LAYER 1 · 大歷史資本負向迴路原型",
+    title: "1. 西班牙哈布斯堡王權破產 vs. 荷蘭契約法治 (1568–1648)",
+    kpis: [["菲利普二世破產次數", "4 次主權違約"], ["西班牙 vs 荷蘭利率", "15–20% vs 3–4%"]],
+    desc: "赫拉利在《人類簡史》第 16 章提出「馬德里分行 vs. 阿姆斯特丹分行」思想實驗：西班牙坐擁波托西銀礦與龐大皇家艦隊，但國王視自身高於法律，戰敗即凍結債務或關押銀行家。相反地，荷蘭司法獨立、嚴格保護私有產權，資本用腳投票湧入阿姆斯特丹。",
+    bullets: [
+      "<strong>致命觸發點</strong>：1576 年西班牙因發不出軍餉引發「安特衛普狂怒」兵變，親手摧毀自身金融樞紐。",
+      "<strong>當代映射</strong>：當代大國若以行政命令干預供應鏈契約或強制入股，將導致長期資本外逃與融資成本飆升。"
+    ],
+    tags: ["[AUTHOR STATEMENT] 人類簡史 Ch.16", "[FACT] 荷蘭八十年戰爭"]
+  },
+  n2: {
+    cat: "LAYER 1 · 大歷史資本負向迴路原型",
+    title: "2. 荷蘭鬱金香狂熱：脫離實體現金流的空氣交易 (1636–1637)",
+    kpis: [["衍生品工具", "Windhandel 空氣期貨"], ["崩盤後合約違約率", "> 90%"]],
+    desc: "東印度貿易順差帶來過剩流動性，荷蘭市場發明只需極少保證金的「空氣期貨（Windhandel）」。球莖本身不創造任何內生現金流，價格暴漲完全建立在「下一個買家出價更高」的博傻預期上。",
+    bullets: [
+      "<strong>致命觸發點</strong>：1637 年 2 月哈勒姆拍賣會買家集體缺席（無人接盤），二級市場三天內全線崩潰。",
+      "<strong>當代映射</strong>：對應 2026 年無實質營收、建廠遙遙無期的 AI 缺電題材股（如 SMR 小型核電股 Oklo、NuScale）。"
+    ],
+    tags: ["[FACT] 1637 哈勒姆拍賣崩盤", "[INFERENCE] 零現金流題材股映射"]
+  },
+  n3: {
+    cat: "LAYER 1 · 大歷史資本負向迴路原型",
+    title: "3. 法國密西西比泡沫：主權貨幣與單一高估值股權死鎖 (1717–1720)",
+    kpis: [["股價暴漲幅度", "500 ➔ 10,000 里弗爾"], ["歷史後果", "法國百年信用崩潰"]],
+    desc: "約翰·羅（John Law）將皇家銀行（印鈔機）與密西西比公司（路易斯安那沼澤地殖民預期）強制綁定，透過印鈔推升股價、再用高股價吸納國債，形成虛假的帳面財富效應。",
+    bullets: [
+      "<strong>致命觸發點</strong>：內部大股東試圖將紙面獲利兌換為真金白銀離場，擠兌迫使官方承認紙幣與股價的虛假掛鉤。",
+      "<strong>當代映射</strong>：對應軟銀借 $119 億聯貸買 OpenAI 未上市股權，以及 S&P 500 高達 $1,500 億美元來自私有 AI 實驗室未實現估值調升的帳面獲利。"
+    ],
+    tags: ["[AUTHOR STATEMENT] 人類簡史 Ch.16", "[INFERENCE] 未實現估值調升風險"]
+  },
+  n4: {
+    cat: "LAYER 1 · 大歷史資本負向迴路原型",
+    title: "4. 英國南海泡沫與《泡沫法案》：外圍去槓桿反噬母體 (1720)",
+    kpis: [["南海公司承接國債", "3,100 萬英鎊"], ["最終買單者", "瓦特蒸汽機與工業革命"]],
+    desc: "無數空殼新創（Bubble Companies）跟風吸金，南海公司遊說國會通過《泡沫法案》刺破外圍泡沫，卻引發投資人為補繳保證金而恐慌拋售南海母體股票。最終靠首相沃波爾重組債務，以及數十年後科學家與工程師的工業革命產出才真正填平債務。",
+    bullets: [
+      "<strong>赫拉利洞見</strong>：「銀行和政府在印鈔票，但最後買單的是科學家。」",
+      "<strong>當代映射</strong>：若外圍高息二房東（CoreWeave）資金斷鏈，去槓桿賣壓將沿著 GPU 租賃鏈向上游硬體傳導。"
+    ],
+    tags: ["[AUTHOR STATEMENT] 科學家買單論", "[FACT] 1720 泡沫法案"]
+  },
+  n5: {
+    cat: "LAYER 2 · 2026 斷層一：囚徒困境與連環槓桿",
+    title: "5. 超級雲端巨頭（Hyperscalers）的自由現金流反轉",
+    kpis: [["2026 全美雲端 CapEx", "> $8,000 億 (+94%)"], ["Meta 發債 / SPCX FCF", "$300億 / -$349.7億"]],
+    desc: "為了在膽小鬼賽局中搶奪算力，2026 年全美雲端巨頭資本支出衝破 8,000 億美元（單座 1 GW 資料中心耗資 500–600 億美元）。過去躺著印鈔的巨頭自由現金流（FCF）趨近於零甚至轉負，被迫大規模發債（如 Meta 300 億美元發債案；SpaceX 前三季累計 FCF 達 -$349.7 億美元）。",
+    bullets: [
+      "<strong>核心脆弱點</strong>：巨頭不會倒閉，但當每年折舊與資本支出遠超 AI 帶來的淨現金回收時，股東對 Breakeven 的耐心正在耗盡。",
+      "<strong>觀察指標</strong>：只要前四大雲端巨頭有兩家在季報宣布下修明年 CapEx 指引，硬體週期即正式見頂。"
+    ],
+    tags: ["[FACT] 2026 CapEx >$800B", "[FACT] DC_20261019 / OBS_20261021"]
+  },
+  n6: {
+    cat: "LAYER 2 · 2026 斷層一：囚徒困境與連環槓桿",
+    title: "6. 10% 高息輸血的算力二房東（CoreWeave vs. Oracle 防禦型合約）",
+    kpis: [["CoreWeave 借貸利率", "9% – 10%+ 高息債"], ["CRWV 債務規模", "$85億+$31億 DDTL + $51億設備"]],
+    desc: "CoreWeave (CRWV) 依靠 NVIDIA 配額背書，向摩根大通與私募信貸借入 9%–10% 以上高息債務擴張。這種模式在算力絕對短缺時能轉動，但利息負擔極重，只要算力時租微跌或客戶延遲續約，現金流立刻被利息吞噬。",
+    bullets: [
+      "<strong>結構對照（Oracle 與 AI XPV）</strong>：Oracle 雖有 $1,390 億債務，但握有 $6,380 億 RPO 與 $750 億客戶預付款（要求 20–40% 預付或自備硬體）；Broadcom/Apollo 則用 $350 億表外 AI XPV 隔離風險。",
+      "<strong>貝氏推論</strong>：無預付款保護的純算力二房東是這輪槓桿鏈中最脆弱的第一張骨牌。"
+    ],
+    tags: ["[FACT] OBS_20261021 CRWV 債務", "[INFERENCE] 算力二房東脆弱性"]
+  },
+  n7: {
+    cat: "LAYER 2 · 2026 斷層一：囚徒困境與連環槓桿",
+    title: "7. 軟銀（SoftBank）與 OpenAI 的「債上加債」",
+    kpis: [["軟銀 20 銀行聯貸", "$119 億美元 + 高收益債"], ["OpenAI/Anthropic 狀態", "巨額燒錢未上市"]],
+    desc: "軟銀（9984.T）為了領投仍在巨額燒錢的 OpenAI（總曝險上看數百億美元），透過 20 家銀行簽下 119 億美元聯貸案並發行高收益債——本質上是「借高息債務去買未上市的最高估值股權」。",
+    bullets: [
+      "<strong>致命觸發點</strong>：OpenAI 甚至不需要倒閉；只要未來 IPO 時的公開市值低於私募輪預期估值，就會直接觸發軟銀的債務再融資危機。",
+      "<strong>催化劑</strong>：中國 DeepSeek-V4.1 與 Kimi K3.1 Pro 以 1/10 至 1/2 價格提供同級能力，直接壓縮閉源實驗室的估值倍數。"
+    ],
+    tags: ["[FACT] 軟銀 $11.9B 聯貸", "[INFERENCE] 私募估值倒掛風險"]
+  },
+  n8: {
+    cat: "LAYER 2 · 2026 斷層一：囚徒困境與連環槓桿",
+    title: "8. S&P 500 的 $1,500 億美元「未實現估值調升」帳面獲利幻覺",
+    kpis: [["2026Q2 未實現帳面獲利", "$1,500 億美元"], ["佔 S&P 500 EPS 比重", "約 12%"]],
+    desc: "2026 年第二季 S&P 500 企業有高達 1,500 億美元的帳面獲利（佔指數整體 EPS 約 12%）並非來自實體銷售現金流，而是來自對私有 AI 實驗室（OpenAI、Anthropic、xAI 等）的「未實現估值調升（Unrealized Markups）」。",
+    bullets: [
+      "<strong>系統性傳導機制</strong>：一旦私有 AI 實驗室在公開市場定價下修，科技巨頭財報上的 12% EPS 帳面獲利將瞬間被抹去，觸發美股指數級別的估值修正與去槓桿。"
+    ],
+    tags: ["[FACT] 2026Q2 S&P 500 $150B 未實現獲利", "[INFERENCE] 財報減記連鎖反應"]
+  },
+  n9: {
+    cat: "LAYER 3 · 斷層二：賣夢股破滅",
+    title: "9. 無實質營收的「概念泡沫」：SMR 小型核電股（Oklo、NuScale）",
+    kpis: [["核電審批與建廠週期", "~10 年"], ["當前實質商業營收", "$0（零營收）"]],
+    desc: "為了炒作 AI 資料中心缺電題材，Oklo、NuScale 等小型模組化核能（SMR）公司一度被資金捧上天。但核能監管審批與建廠動輒以十年為單位，幾十個月過去依然零營收，部分專案更因建造成本過高或監管停擺而劇烈修正。",
+    bullets: [
+      "<strong>投資啟示</strong>：在資金成本高企的環境下，純靠題材融資、缺乏 3 年內可見現金流的「賣夢股」是標準的鬱金香泡沫。"
+    ],
+    tags: ["[FACT] SMR 建廠週期與修正", "[INFERENCE] 題材泡沫過濾"]
+  },
+  n10: {
+    cat: "LAYER 3 · 斷層三：中國記憶體與模型突圍",
+    title: "10. 中國記憶體產能紅海化：長鑫存儲（CXMT）與長江存儲（YMTC）",
+    kpis: [["CXMT 科創板 IPO 募資", "579 億人民幣 (~$82.9億)"], ["CXMT 全球 DRAM 市佔", "7.67% ➔ 2026年中 ~10%"]],
+    desc: "長鑫存儲（CXMT）產能利用率達 95.73%，第 5 代 DRAM 進入量產並計畫 2028 年前產能翻倍，全球 DRAM 市佔率邁向 10%（結合 YMTC 在 NAND 的擴張），將標準型與中低階記憶體徹底變成紅海。",
+    bullets: [
+      "<strong>技術瓶頸與估值壓抑</strong>：雖然中國本土 HBM 仍受制於 DUV SAQP 多重曝光良率（2026 年產出約 200 萬顆堆疊），但標準品紅海化與未來技術突破的潛在威脅，成為華爾街將韓美記憶體大廠壓在 3x–5x P/E 的核心結構因素。"
+    ],
+    tags: ["[FACT] 72_semiconductor Report 08", "[FACT] Omdia DRAM 市佔數據"]
+  },
+  n11: {
+    cat: "LAYER 3 · 斷層三：中國記憶體與模型突圍",
+    title: "11. 中國開源模型雙軌突圍：DeepSeek-V4.1-Flash-1017 與 Kimi K3.1 Pro",
+    kpis: [["DeepSeek 單任務成本", "<$0.20 (DeepSWE 77.0)"], ["Kimi K3.1 Pro (2.8T)", "SWE Marathon 51.7 全球第一"]],
+    desc: "2026 年 10 月中下旬，中國開源模型完成雙軌合圍：輕量端 DeepSeek-V4.1-Flash-1017（763B CED 稀疏 MoE，激活 8B/16B，CSA2 壓縮 KV Cache 至 890B/token）在 DeepSWE v1.1 拿下 77.0 擊敗 Opus 5，單任務成本僅 <$0.20；旗艦端 Kimi K3.1 Pro（2.8T 總參數/104B 激活）在 SWE Marathon (51.7) 與 OfficeQA Pro v2 (64.4) 奪下全球第一，API 定價直接砍半並承諾 11/4 前開源權重。",
+    bullets: [
+      "<strong>生態系逆轉</strong>：OpenRouter 上高達 69% 每週 Token 來自中國模型，超過 40% 美國新創在生產環境採用 DeepSeek，徹底動搖美國閉源模型的高毛利訂閱回收假設。"
+    ],
+    tags: ["[FACT] DC_20261019 DeepSeek-V4.1", "[FACT] DC_20261024 Kimi K3.1 Pro"]
+  },
+  n12: {
+    cat: "LAYER 4 · 斷層四：記憶體極端折價悖論",
+    title: "12. 滿手現金卻被當成「夕陽循環股」的四大記憶體巨頭（2.7x–5x P/E）",
+    kpis: [["SK海力士 / 三星 2027E P/E", "~2.7x – 3.0x"], ["美光 2027E P/E / 毛利率", "~5.0x / 84.9% GM"]],
+    desc: "SK 海力士（2Q25 營收 $162 億、OPM 41.4%、HBM 市佔 61%、NASDAQ 上市募資 $265 億）、美光（FQ3-26 營收 $414.6 億、毛利率 84.9%、鎖定 >$1,000 億長約與 >$220 億預付款、HBM 售罄至 2028 年）、SanDisk（FY3Q26 營收 $59.5 億、毛利率 78.4%、零負債+$60億庫藏股、鎖定 >$420 億 NBM RPO）是真正賺取暴利的印鈔機，卻被壓在 2.7x–5x 遠期本益比。",
+    bullets: [
+      "<strong>定價邏輯的終極悖論</strong>：HBM 與企業級 SSD 是 100% 綁定 AI 伺服器、先收百億預付款才擴產的寡占品。若市場認定它們在 2027 後會產能過剩而只給 3x–5x P/E，那整個 AI 硬體鏈又怎麼可能不具週期性？"
+    ],
+    tags: ["[FACT] 72_semiconductor Reports 05-07", "[INFERENCE] 定價精神分裂悖論"]
+  },
+  n13: {
+    cat: "LAYER 4 · 斷層四：貝氏硬體傳導",
+    title: "13. 傑文斯悖論（Jevons Paradox）：為何開源突圍反而強化台積電與高階 HBM？",
+    kpis: [["Kimi K3.1 單實例 HBM 需求", "> 2.8 TB HBM3E/HBM4"], ["台積電核心製程瓶頸", "N3P / N2 + CoWoS-L"]],
+    desc: "中國開源模型雖然刺破閉源軟體溢價，但在物理層卻觸發傑文斯悖論：(1) DeepSeek 將單任務成本降至 $0.10，促使企業部署 24/7 Loop Harness，總 Token 消耗暴增；(2) Kimi K3.1 Pro 採用 2.8T 巨型 MoE 且強制開啟 max 深度推理，企業自建推論叢集每實例需 >2.8TB HBM，直接鎖死台積電 CoWoS-L 與韓美高階 HBM3E/HBM4 產能。",
+    bullets: [
+      "<strong>上下游剪刀差</strong>：軟體溢價與高息二房東被壓縮，但底層物理晶圓與先進封裝成為不可繞過的剛性稅收。"
+    ],
+    tags: ["[INFERENCE] DC_20261019 / DC_20261024", "[FACT] 2.8T MoE 記憶體物理需求"]
+  },
+  n14: {
+    cat: "LAYER 4 · 斷層四：貝氏決策矩陣",
+    title: "14. 資金配置思考座標：趁 3x–5x P/E 佈局記憶體 vs. 監控四大見頂訊號",
+    kpis: [["核心底倉 / 波段價值", "TSMC / MU, SKHY, SNDK"], ["四大見頂撤退訊號", "雲端FCF、時租、IPO估值、預付款"]],
+    desc: "在 2.7x–5x Forward P/E 水位，美光、SK 海力士與 SanDisk 股價已預先反映「獲利腰斬」悲觀預期，且有百億預付款與庫藏股護體，具備極高安全邊際。建議採取「台積電核心底倉 + 高 HBM 佔比記憶體波段配置」，同時緊盯四大領先撤退指標。",
+    bullets: [
+      "<strong>指標 1</strong>：前四大雲端巨頭 FCF 連續兩季轉負且下修次年 CapEx 指引。",
+      "<strong>指標 2</strong>：CoreWeave 等二房東 GPU 時租跌破 9%–10% 利息成本線。",
+      "<strong>指標 3</strong>：OpenAI / Anthropic 上市或融資估值低於私募輪，觸發 S&P 500 $1,500 億未實現獲利減記。",
+      "<strong>指標 4</strong>：記憶體廠法說會不再維持「次年 HBM 100% 鎖定 + 20% 預付款」，改回按季議價。"
+    ],
+    tags: ["[INFERENCE] 貝氏狀態機決策規則", "[FACT] 2026Q4 實證數據錨點"]
+  }
+};
+
+function selectNode(id, el) {
+  document.querySelectorAll('.node-group').forEach(g => g.classList.remove('selected'));
+  el.classList.add('selected');
+  const d = NODE_DATA[id];
+  if (!d) return;
+  document.getElementById('insp-cat').textContent = d.cat;
+  document.getElementById('insp-title').textContent = d.title;
+  document.getElementById('insp-kpis').innerHTML = d.kpis.map(k =>
+    `<div class="insp-kpi"><div class="insp-kpi-label">${k[0]}</div><div class="insp-kpi-val">${k[1]}</div></div>`
+  ).join('');
+  document.getElementById('insp-desc').textContent = d.desc;
+  document.getElementById('insp-bullets').innerHTML = d.bullets.map(b => `<li>${b}</li>`).join('');
+  document.getElementById('insp-tags').innerHTML = d.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
+}
+
+function filterNodes(cat, btn) {
+  document.querySelectorAll('.filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.node-group').forEach(g => {
+    if (cat === 'all' || g.dataset.cat === cat) {
+      g.classList.remove('dimmed');
+    } else {
+      g.classList.add('dimmed');
+    }
+  });
+}
+</script>
+</body>
+</html>

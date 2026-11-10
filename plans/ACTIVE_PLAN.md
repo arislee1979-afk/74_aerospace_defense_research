@@ -2,7 +2,8 @@
 
 > **儲存庫**：`74_aerospace_defense_research`  
 > **基準日期**：2026-10-19  
-> **當前 Stage**：**Capture**（累積成熟度最高已通過 gate）  
+> **控制層更新**：2026-11-05（`sources/report_index.csv`、IRQ-07、Framing 退出條件）
+> **當前 Stage**：**Capture**（累積成熟度最高已通過 gate。F3 未過，不得標 Framing。）
 > **維護者**：Argon & Flash Subagents  
 > **主軸對齊**：國防航太實業技術 × 非紅供應鏈溢價 × 貝氏決策工程
 
@@ -35,13 +36,26 @@ Capture ➔ Framing ➔ Collection ➔ Analysis ➔ Review ➔ Synthesis ➔ Mai
 ### 閘門 1：Capture ➔ Framing 推進檢查表
 - [x] **有可命名題目**：`74_aerospace_defense_research`（航太、國防工業與雙用技術研究）。
 - [x] **為何值得整理之核心價值**：在地緣政治緊張、全球國防預算擴張與非紅供應鏈重組下，辨識台灣供應鏈具備真實自由現金流之結構性受惠者。
-- [ ] **完成核心問題與邊界界定（Framing）**：
-  - [x] 核心問題明確：單一 Open Question 已載入 `README.md`。
-  - [x] 納入與排除範圍（Included / Excluded）已界定。
-  - [ ] **完成條件（Completion Criteria）可驗收**：待完成首批主要追蹤標的（民用航太製造、衛星地面設備、無人機載具）之研究大綱文件。
+- [ ] **完成核心問題與邊界界定（Framing）**：F1、F2、F4、F5、F6、F7 已滿足。F3 未滿足。stage 維持 Capture。
+
+#### Framing 退出條件（2026-11-05 訂立）
+
+七項全部為真，才可把 stage 從 Capture 改為 Framing。出版長文、GitHub Pages 與期中選舉登記都不計入 stage。
+
+| ID | 完成條件 | 驗收方式 | 2026-11-05 |
+|---|---|---|---|
+| F1 | README 恰好一句 Open Question，且不含 `；` 或 `;` 串列 | 讀 README 元資料表 | 通過 |
+| F2 | README 同時寫出 Included 與 Excluded | 讀 README §2 | 通過 |
+| F3 | 三份研究大綱都存在，且各含五段：一句問題、追蹤標的、primary 來源清單、一條可證偽條件、原型／MOU／PoC 與營收的區分 | `01_space_infrastructure_and_satellite_supply_chain.md`、`02_ndaa_non_red_drone_supply_chain.md`、`03_aerospace_primes_backlog_and_taiwan_machining.md` | 未通過。三檔都不存在 |
+| F4 | IRQ-01、IRQ-02、IRQ-03 在主張表各至少一列，五維皆為單一允許值 | CLM-74-001、CLM-74-002、CLM-74-003 | 通過 |
+| F5 | `sources/report_index.csv` 覆蓋根目錄每一份編號研究稿，含本機未提交稿與 `origin/main` 領先的 CH3。沒有任何列的 `document_role` 為 `synthesis` | 對照工作區與 `git diff --name-only HEAD origin/main` | 通過 |
+| F6 | Current Synthesis 為空 | README 元資料表寫「尚未建立」 | 通過 |
+| F7 | 日期已過的 inbox 檢驗哨標成已觀察、未觀察或來源不足 | IRQ-06 的 2026-10-31 算力哨 | 通過。狀態為來源不足，似然比 1.0 |
+
+`70_investment_hub/projects.yaml` 的一列不在這七項裡。Phase 5 仍待人工授權。
 
 ### 閘門 2：Framing ➔ Collection 檢查表（後續工作）
-- [ ] 建立 Evidence Base / Sources 索引清單。
+- [ ] 建立 Evidence Base / Sources 索引清單。`sources/report_index.csv` 只滿足 F5，不是 primary 證據庫。
 - [ ] 擴充 `sources/claim_register.csv` 累積至少 10 筆具備五維標籤之主要主張。
 - [ ] 排除單一來源依賴，核心財務數據必須取得官方 10-K/10-Q 或公司法說資料支持。
 
@@ -52,6 +66,9 @@ Capture ➔ Framing ➔ Collection ➔ Analysis ➔ Review ➔ Synthesis ➔ Mai
 | 階段 | 預計工作項目 | 預期交付成果 | 負責角色 | 狀態 |
 |---|---|---|---|---|
 | **Phase 1** | 完成倉庫骨架初始化與首輪主張基線登錄 | `AGENTS.md`, `README.md`, `claim_register.csv`, `00_inbox.md` | Argon / Subagent | **完成 (2026-10-19)** |
+| **Phase 1b** | 控制層：報告索引、決策卡路徑、Framing 退出條件 | `sources/report_index.csv`；`00_inbox.md` 改指向 75；本節 F1–F7 | 本庫 | **完成 (2026-11-05)**。F3 未過，stage 維持 Capture |
+| **Phase 1c** | 2026 期中選舉開票與國防採購影響 | `24_us_midterm_2026_results_and_defense_impact_l1.md`；IRQ-07；CLM-74-004／005／006 | 本庫 | **完成 (2026-11-05)**。三列 `delta_db` 皆為 0.00 |
+| **Phase 1d** | 期中選舉決策卡與決策分析 | `34_midterm_decision_analysis_l1.md`；75 的六張 `DC_20261105_*`。分數與報告 30 相同 | 本庫 | **完成 (2026-11-05)**。不寫主張表，不改 stage |
 | **Phase 2** | 深度調研 IRQ-01：SpaceX 與低軌衛星台系地面設備鏈 | 建立 `01_space_infrastructure_and_satellite_supply_chain.md` | Subagent | 待啟動 |
 | **Phase 3** | 深度調研 IRQ-02：NDAA 非紅供應鏈與無人機自主防務 | 建立 `02_ndaa_non_red_drone_supply_chain.md` | Subagent | 待啟動 |
 | **Phase 4** | 深度調研 IRQ-03：航太主承包商積壓訂單與台灣鍛鑄造/結構件 | 建立 `03_aerospace_primes_backlog_and_taiwan_machining.md` | Subagent | 待啟動 |

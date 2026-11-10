@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大歷史視野下的資本負向迴路與 2026 AI 實質負向架構 — Claude Light Edition (v12)</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  :root {
+    --paper: #F7F4ED;
+    --paper-elevated: #FFFFFF;
+    --cream-shell: #F0E9D9;
+    --ink: #141413;
+    --ink-secondary: #4A4843;
+    --ink-muted: #78756E;
+    --terracotta: #D97757;
+    --crimson: #B91C1C;
+    --amber: #B45309;
+    --teal: #0F766E;
+    --navy: #1D4ED8;
+    --border-warm: #E2DAC7;
+    --shadow-soft: 0 6px 24px rgba(20, 20, 19, 0.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Serif TC", "Noto Sans TC", "PingFang TC", serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.78;
+    font-size: 16.5px;
+  }
+  .top-banner {
+    background: var(--cream-shell);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 10px 28px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .top-banner .pill {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 11.5px;
+  }
+  .layout-container {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 36px 28px 80px;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 1060px) {
+    .layout-container { grid-template-columns: 1fr; }
+    .toc-sidebar { position: static !important; }
+  }
+  .toc-sidebar {
+    position: sticky;
+    top: 24px;
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 20px 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .toc-sidebar h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+  .toc-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toc-sidebar a {
+    text-decoration: none;
+    color: var(--ink-secondary);
+    font-size: 13.5px;
+    line-height: 1.45;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .toc-sidebar a:hover {
+    background: var(--paper-elevated);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  main {
+    min-width: 0;
+  }
+  .hero-header {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-top: 5px solid var(--terracotta);
+    border-radius: 14px;
+    padding: 36px 38px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.32;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 16.5px;
+    color: var(--ink-secondary);
+    line-height: 1.68;
+    margin-bottom: 24px;
+  }
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .kpi-card {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi-card .k-label {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .kpi-card .k-val {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 4px 0;
+  }
+  .kpi-card .k-sub {
+    font-size: 12px;
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+  .section-card {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-radius: 14px;
+    padding: 34px 38px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+  }
+  .section-card h2 {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--ink);
+    border-bottom: 2px solid var(--cream-shell);
+    padding-bottom: 12px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-card h3 {
+    font-size: 18.5px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 24px 0 12px;
+  }
+  .section-card p {
+    margin-bottom: 14px;
+  }
+  .section-card ul, .section-card ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+  .section-card li {
+    margin-bottom: 8px;
+  }
+  blockquote.thesis-box {
+    background: var(--cream-shell);
+    border-left: 4px solid var(--terracotta);
+    padding: 18px 22px;
+    border-radius: 0 10px 10px 0;
+    margin: 18px 0 24px;
+    font-size: 15.8px;
+    color: var(--ink);
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 18px 0 24px;
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 14px;
+  }
+  th {
+    background: var(--cream-shell);
+    color: var(--ink);
+    font-weight: 800;
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--border-warm);
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-warm);
+    vertical-align: top;
+    line-height: 1.58;
+  }
+  tr:nth-child(even) td {
+    background: #FAF8F3;
+  }
+  .epistemic-tag {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--cream-shell);
+    color: var(--ink-secondary);
+    border: 1px solid var(--border-warm);
+  }
+  /* v12 Mandatory Dual-Track Mermaid Subgraph Styling */
+  .svg-shell {
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 22px 0;
+    overflow: hidden;
+  }
+  .svg-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-secondary);
+  }
+  .svg-toolbar-btns button {
+    background: #fff;
+    border: 1px solid var(--border-warm);
+    padding: 5px 11px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 6px;
+  }
+  .svg-toolbar-btns button:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+  .mermaid-viewport {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 24px 16px;
+    overflow-x: auto;
+    border: 1px solid var(--border-warm);
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .mermaid .cluster-label span,
+  .mermaid .cluster-label text,
+  .mermaid .cluster-label p,
+  .mermaid .cluster-label foreignObject div {
+    font-size: 19px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    fill: #0F172A !important;
+    line-height: 1.4 !important;
+  }
+  .mermaid .cluster rect {
+    rx: 10px !important;
+    ry: 10px !important;
+  }
+  .iframe-shell {
+    border: 2px solid var(--border-warm);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 16px;
+  }
+  .decision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .decision-box {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-top: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .decision-box.warn { border-top-color: var(--crimson); }
+  .decision-box.amber { border-top-color: var(--amber); }
+  .decision-box h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <div><strong>Knowledge Publication L1 + L2 (Claude Light Edition)</strong> · 跨知識庫整合：<code>50_WeRead</code> × <code>71_china_overcapacity</code> × <code>72_semiconductor</code> × <code>73_deepseek_Kimi</code> × <code>74_aerospace</code> × <code>75_bayesian</code></div>
+  <div><span class="pill">skill: knowledge-publication-l1-l2-v12</span></div>
+</div>
+
+<div class="layout-container">
+  <aside class="toc-sidebar">
+    <h3>章節導覽 (Reading TOC)</h3>
+    <ul>
+      <li><a href="#sec-thesis">核心命題：2026 實質負向架構</a></li>
+      <li><a href="#sec-mermaid">v12 全局因果拓撲圖 (Mermaid)</a></li>
+      <li><a href="#sec-history">一、大歷史四大信貸崩塌反例</a></li>
+      <li><a href="#sec-pillar1">二、斷層一：現金流枯竭與連環槓桿</a></li>
+      <li><a href="#sec-pillar2">三、斷層二：賣夢股 vs 3x–5x P/E 記憶體</a></li>
+      <li><a href="#sec-pillar3">四、斷層三：中國記憶體與模型突圍</a></li>
+      <li><a href="#sec-pillar4">五、斷層四：資金配置與見頂指標</a></li>
+      <li><a href="#sec-l2-interactive">六、L2 Archify 互動拓撲沙盒</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="hero-header" id="sec-thesis">
+      <div class="hero-eyebrow">GRAND HISTORY × AI CAPITAL CYCLE × BAYESIAN DECISION MATRIX · 2026-10-25</div>
+      <h1 class="hero-title">大歷史視野下的資本負向迴路與 2026 AI 實質負向架構：連環槓桿、記憶體極端折價與中國開源模型突圍</h1>
+      <p class="hero-subtitle">
+        從《人類簡史》第 16 章「誰在最後買單」出發，系統性解構西班牙破產、鬱金香狂熱、密西西比與南海泡沫的底層病灶，並正面對決 2026 年第四季 AI 資本市場的四大結構斷層：<strong>$8,000 億雲端資本支出下的現金流反轉</strong>、<strong>CoreWeave 10% 高息債務與軟銀×OpenAI 債上加債</strong>、<strong>SK 海力士／美光／SanDisk 2.7x–5x P/E 的定價精神分裂</strong>，以及<strong>長鑫存儲（CXMT）與 DeepSeek-V4.1 / Kimi K3.1 Pro 的雙重突圍</strong>。
+      </p>
+
+      <blockquote class="thesis-box">
+        <strong>核心命題（Executive Thesis）</strong>：現在真正的危機不是「AI 技術沒有用」，而是支撐這場軍備競賽的<strong>「金融連環槓桿」與「資本錯配」已經繃到極限</strong> <span class="epistemic-tag">[INFERENCE]</span>。當 2026Q2 S&amp;P 500 有高達 <strong>1,500 億美元帳面獲利（佔 EPS 約 12%）</strong>來自私有 AI 實驗室的「未實現估值調升」，而真正賺取暴利、鎖定百億預付款的記憶體巨頭卻被壓在 <strong>2.7x–5x 遠期本益比</strong>時，資本市場其實已經對「2027–2028 硬體週期能否無縫延續」投下了高度懷疑的一票 <span class="epistemic-tag">[FACT / INFERENCE]</span>。
+      </blockquote>
+
+      <div class="kpi-strip">
+        <div class="kpi-card">
+          <div class="k-label">2026 全美雲端巨頭 CapEx</div>
+          <div class="k-val">&gt; $8,000 億</div>
+          <div class="k-sub">YoY +94% · 多數巨頭 FCF 趨零或轉負</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">S&amp;P 500 未實現 AI 估值獲利</div>
+          <div class="k-val">$1,500 億 (12% EPS)</div>
+          <div class="k-sub">軟銀另簽 20 銀行 $119 億聯貸買 OpenAI</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">SK海力士 / 三星 / 美光 2027E P/E</div>
+          <div class="k-val">2.7x–3x / 5.0x</div>
+          <div class="k-sub">美光 FQ3 GM 84.9% · 鎖定 &gt;$1,000 億長約</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">中國開源模型極端成本壓縮</div>
+          <div class="k-val">&lt; $0.20 / 任務</div>
+          <div class="k-sub">DeepSeek-V4.1 (77.0) · Kimi K3.1 (2.8T 奪冠)</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- v12 Mermaid Diagram -->
+    <section class="section-card" id="sec-mermaid">
+      <h2>架構全景：大歷史負向迴路與 2026 AI 四大斷層傳導圖（v12 視覺規範）</h2>
+      <p>以下系統拓撲採用 <code>knowledge-publication-l1-l2-v12</code> 雙軌規範（19px 粗體分區標題、<code>subGraphTitleMargin: { top: 18, bottom: 28 }</code> 與隱形 Micro-Spacer 防重疊節點），完整呈現從歷史信貸崩塌到 2026 四大結構斷層與資金配置的因果鏈條：</p>
+
+      <div class="svg-shell">
+        <div class="svg-toolbar">
+          <span>Mermaid v12 架構圖 · 支援縮放與全螢幕檢視</span>
+          <div class="svg-toolbar-btns">
+            <button onclick="zoomMermaid(1.15)">放大 (+)</button>
+            <button onclick="zoomMermaid(0.85)">縮小 (-)</button>
+            <button onclick="resetMermaid()">重設 (100%)</button>
+          </div>
+        </div>
+        <div class="mermaid-viewport" id="mermaid-box">
+          <pre class="mermaid">
+flowchart TB
+  classDef spacer fill:none,stroke:none,color:transparent,font-size:1px;
+  classDef hist fill:#FFFBEB,stroke:#B45309,stroke-width:2px,color:#141413;
+  classDef risk fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px,color:#141413;
+  classDef china fill:#F0FDFA,stroke:#0F766E,stroke-width:2px,color:#141413;
+  classDef alpha fill:#EFF6FF,stroke:#1D4ED8,stroke-width:2.5px,color:#141413;
+
+  subgraph SG1["【第一層：大歷史資本負向迴路原型（人類簡史 Ch.16）】"]
+    KP_TITLE_SPACE_1[" "]:::spacer
+    H1["西班牙哈布斯堡 4 次破產<br/>絕對王權賴債 ➔ 15-20% 高利貸斷糧"]:::hist
+    H2["1637 荷蘭鬱金香狂熱<br/>Windhandel 空氣期貨 ➔ 零現金流崩盤"]:::hist
+    H3["1720 法國密西西比泡沫<br/>皇家印鈔機死鎖單一高估值殖民股權"]:::hist
+    H4["1720 英國南海泡沫與法案<br/>外圍槓桿斷鏈反噬母體 ➔ 科學家買單"]:::hist
+    KP_TITLE_SPACE_1 ~~~ H1
+  end
+
+  subgraph SG2["【第二層：2026 斷層一 —— 囚徒困境下的現金流枯竭與連環槓桿】"]
+    KP_TITLE_SPACE_2[" "]:::spacer
+    L1["雲端巨頭 CapEx 衝破 $8,000 億 (+94%)<br/>FCF 趨零或轉負 · Meta 發債 $300 億<br/>SpaceX 前三季累計 FCF -$349.7 億"]:::risk
+    L2["10% 高息算力二房東 CoreWeave<br/>借 9-10%+ 高息債 ($85億+$31億 DDTL)<br/>對比 Oracle $750 億預付款保護"]:::risk
+    L3["軟銀 × OpenAI 債上加債與帳面幻覺<br/>軟銀簽 20 銀行 $119 億聯貸買未上市股權<br/>S&P 500 Q2 $1,500 億獲利 (12% EPS) 來自未實現調升"]:::risk
+    KP_TITLE_SPACE_2 ~~~ L1
+  end
+
+  subgraph SG3["【第三層：2026 斷層二與三 —— 賣夢股破滅 vs 中國記憶體與開源突圍】"]
+    KP_TITLE_SPACE_3[" "]:::spacer
+    C1["零營收賣夢股破滅 (SMR 核電)<br/>Oklo / NuScale 審批建廠需 10 年<br/>無實質營收遭劇烈修正"]:::risk
+    C2["中國記憶體紅海化 (CXMT / YMTC)<br/>長鑫存儲 579 億 RMB IPO · 稼動率 95.7%<br/>全球 DRAM 市佔 7.67% 邁向 10%"]:::china
+    C3["中國低成本高生產力開源模型雙軌突圍<br/>‧ DeepSeek-V4.1-Flash：DeepSWE 77.0 · 單任務 &lt;$0.20<br/>‧ Kimi K3.1 Pro (2.8T)：SWE Marathon 51.7 全球第一 (半價)<br/>OpenRouter 69% Token 佔比 ➔ 瓦解閉源高毛利回收"]:::china
+    KP_TITLE_SPACE_3 ~~~ C1
+  end
+
+  subgraph SG4["【第四層：2026 斷層四 —— 3x–5x P/E 記憶體極端折價悖論與貝氏配置座標】"]
+    KP_TITLE_SPACE_4[" "]:::spacer
+    A1["四大記憶體印鈔機極端折價 (2.7x–5x P/E)<br/>‧ SK海力士 (HBM 61%) & 三星：2027E P/E ~2.7x–3x<br/>‧ 美光 (FQ3 GM 84.9% · &gt;$1,000億長約)：P/E ~5x<br/>‧ SanDisk (GM 78.4% · 零負債+$420億 RPO)"]:::alpha
+    A2["傑文斯悖論強化物理硬體瓶頸<br/>2.8T Kimi K3.1 單實例需 &gt;2.8TB HBM<br/>24/7 Agent Loop 鎖死 TSMC N3P/N2 + CoWoS-L"]:::alpha
+    A3["貝氏配置與四大見頂撤退訊號 (Kill-Switch)<br/>核心：TSMC · 波段價值：MU / SKHY / SNDK<br/>監控：雲端 FCF、GPU 時租、IPO 估值、預付款比例"]:::alpha
+    KP_TITLE_SPACE_4 ~~~ A1
+  end
+
+  H1 -.-> L1
+  H2 -.-> C1
+  H3 -.-> L3
+  H4 -.-> L2
+  L1 --> L2 --> L3
+  C3 -->|"壓縮閉源 ROI 與二房東租金"| L2
+  C3 -->|"壓縮未上市閉源估值"| L3
+  C2 -->|"標準品紅海化壓抑估值倍數"| A1
+  C3 -->|"Jevons Paradox 引爆高階硬體消耗"| A2
+  A1 --> A3
+  A2 --> A3
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Historical Counterexamples -->
+    <section class="section-card" id="sec-history">
+      <h2>一、大歷史負向死亡螺旋：當「信用—帝國—科學」莫比烏斯環反轉</h2>
+      <p>
+        在《人類簡史》第 16 章中，尤瓦爾·赫拉利指出現代經濟的核心動力是「對未來的信任（Credit）」：信用轉化為資本，資本資助科學與遠征，而科學突破創造的新財富再回頭擴大信用 <span class="epistemic-tag">[AUTHOR STATEMENT]</span>。然而，歷史更普遍的底色是當<strong>金融槓桿脫離實體生產力</strong>或<strong>法治產權遭到踐踏</strong>時，正向飛輪瞬間反轉為吞噬帝國的負向死亡螺旋：
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%">歷史反例與年代</th>
+              <th style="width:24%">歷史表象與數據 (<span class="epistemic-tag">[FACT]</span>)</th>
+              <th style="width:28%">深層制度／金融病灶 (<span class="epistemic-tag">[INFERENCE]</span>)</th>
+              <th style="width:30%">致命觸發點與 2026 AI 資本映射</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. 西班牙哈布斯堡破產 vs. 荷蘭崛起</strong><br><em>(1568–1648)</em></td>
+              <td>西班牙坐擁波托西銀礦與龐大皇家艦隊（Spanish Armada），菲利普二世在位期間卻<strong>宣布國家破產 4 次</strong>；彈丸之地的荷蘭反而在八十年戰爭勝出。</td>
+              <td><strong>馬德里分行（王權高於法律）</strong>：國王戰敗即賴債或關押銀行家，借貸利率飆至 <strong>15%–20%</strong> 仍無人放款。<br><strong>阿姆斯特丹分行（法治護產權）</strong>：司法獨立強制履約，荷蘭以 <strong>3%–4%</strong> 低利募集跨國企業艦隊。</td>
+              <td><strong>觸發點</strong>：1576 年西班牙欠餉引發「安特衛普狂怒」兵變。<br><strong>2026 映射</strong>：主權關稅突襲、行政干預晶片出口與強制股權要求，必然推升本土硬體基建的資金成本。</td>
+            </tr>
+            <tr>
+              <td><strong>2. 荷蘭鬱金香狂熱</strong><br><em>(1636–1637)</em></td>
+              <td>單顆稀有球莖炒至阿姆斯特丹運河豪宅天價，3 天內崩盤，期貨合約違約率逾 <strong>90%</strong>。</td>
+              <td><strong>流動性氾濫 + 空氣期貨（Windhandel）</strong>：買家僅付極少保證金鎖定遠期球莖；資產本身<strong>完全不具備現金流生成能力</strong>，純靠博傻傳花。</td>
+              <td><strong>觸發點</strong>：1637 年 2 月哈勒姆拍賣會<strong>買家集體缺席（無人接盤）</strong>。<br><strong>2026 映射</strong>：炒作 AI 缺電但審批建廠需 10 年、<strong>零實質營收的 SMR 小型核電股（Oklo、NuScale）</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>3. 法國密西西比泡沫</strong><br><em>(1717–1720)</em></td>
+              <td>約翰·羅將密西西比股價從 500 推升至 10,000 里弗爾，崩盤後摧毀法國百年公債信用，埋下 1789 大革命導火線。</td>
+              <td><strong>央行印鈔機與單一高估值股權死鎖</strong>：將皇家銀行紙幣發行與路易斯安那沼澤地殖民預期綁定，印鈔買股製造帳面繁榮。</td>
+              <td><strong>觸發點</strong>：大股東將紙面富貴兌換為真金白銀離場引發擠兌。<br><strong>2026 映射</strong>：<strong>軟銀借 $119 億聯貸買 OpenAI 未上市股權</strong>，以及 <strong>S&amp;P 500 Q2 $1,500 億未實現估值調升獲利</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>4. 英國南海泡沫與《泡沫法案》</strong><br><em>(1720)</em></td>
+              <td>南海公司承接 3,100 萬英鎊國債，股價自 128 飆至 1,000 英鎊後跌回原點；牛頓慘賠 2 萬英鎊，但大英帝國信用得以保全。</td>
+              <td><strong>空殼新創吸金與外圍去槓桿反噬</strong>：南海公司遊說通過《泡沫法案》刺破外圍空殼公司，卻引發投資人為補繳保證金而恐慌拋售南海母體股票。</td>
+              <td><strong>觸發點</strong>：外圍槓桿斷鏈傳導至核心資產；最終靠沃波爾重組與<strong>瓦特蒸汽機（科學家買單）</strong>救回國運。<br><strong>2026 映射</strong>：<strong>CoreWeave 10% 高息債二房東</strong>若因租金下滑斷鏈，將向上游傳導。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Pillar 1 -->
+    <section class="section-card" id="sec-pillar1">
+      <h2>二、2026 斷層一：囚徒困境下的現金流枯竭與「連環槓桿」</h2>
+      <p>
+        當前的 AI 算力投資早已超越單純的商業 ROI 考量，演變為一場<strong>「誰先停下來誰就出局」的膽小鬼賽局（Chicken Game）</strong> <span class="epistemic-tag">[INFERENCE]</span>。整合本機決策卡（<code>DC_20261019</code>、<code>OBS_20261021</code>）的實證數據，這條金融槓桿鏈正出現三大緊繃訊號：
+      </p>
+
+      <h3>1. 超級雲端巨頭（Hyperscalers）的自由現金流反轉</h3>
+      <ul>
+        <li><strong>$8,000 億美元的資本黑洞</strong>：2026 年全美雲端巨頭的資本支出（CapEx）已衝破 <strong>8,000 億美元</strong>大關，較前一年暴增近 <strong>94%</strong> <span class="epistemic-tag">[FACT]</span>。單一 1 GW 超大型 AI 資料中心的總建置成本高達 <strong>500 億至 600 億美元</strong>（其中 NVIDIA 算力系統佔 $350 億–$450 億美元） <span class="epistemic-tag">[FACT]</span>。</li>
+        <li><strong>從躺著印鈔到舉債度日</strong>：過去 Meta、Amazon、Google 是自由現金流（FCF）充沛的印鈔機，但 2026 年市場已預期除少數特例外，多數巨頭的 FCF 將趨近於零甚至轉為負數 <span class="epistemic-tag">[FACT / INFERENCE]</span>。巨頭們被迫在債券市場大規模發債——例如 <strong>Meta 近期高達 300 億美元的發債案</strong> <span class="epistemic-tag">[FACT]</span>；而在馬斯克的航太與算力複合體中，<strong>SpaceX (<code>SPCX</code>) 2026 年 Q1–Q3 累計自由現金流更達到 -$349.7 億美元</strong>（Q4 單季 CapEx 指引 $350 億–$400 億，未來 5 季 CapEx 計畫高達 $4,700 億美元） <span class="epistemic-tag">[FACT]</span>。當支出遠大於 AI 帶來的淨現金回收時，股東對「何時打平」的耐心正在快速消耗。</li>
+      </ul>
+
+      <h3>2. 10% 高息輸血的算力二房東（Neoclouds）vs. 合約保護型基建</h3>
+      <ul>
+        <li><strong>CoreWeave (<code>CRWV</code>) 的高息槓桿脆弱性</strong>：像 CoreWeave 這類新興算力租賃公司，本質上是靠著 NVIDIA 的晶片配額背書，向摩根大通（JPMorgan）與私募信貸借入高達 <strong>9% 至 10% 以上</strong>的高息債務來擴張（帳上背負 <strong>$85 億與 $31 億美元延遲提款定期貸款 DDTL</strong> 及 <strong>$51 億美元設備融資</strong>，總負債與租賃承諾滾到數百億美元規模） <span class="epistemic-tag">[FACT]</span>。這種模式在「算力絕對短缺」時能轉動，但利息支出極其沉重，只要未來的算力租金微幅下滑或客戶延遲續約，現金流立刻會被利息吞噬（10 月中旬其股債已雙雙承壓） <span class="epistemic-tag">[FACT / INFERENCE]</span>。</li>
+        <li><strong>Oracle 與 AI XPV 的結構性防禦對照</strong>：相比之下，<strong>Oracle (<code>ORCL</code>)</strong> 雖有 $1,390 億美元總債務，但握有 <strong>$6,380 億美元 RPO</strong> 與 <strong>$750 億美元客戶預付款</strong>（新合約強制要求客戶預付 20%–40% 現金或自備硬體） <span class="epistemic-tag">[FACT]</span>；而 Broadcom、Apollo 與 Blackstone 為 Anthropic 打造的 <strong>$350 億美元「AI XPV」</strong> 則將硬體採購隔離於資產負債表外 <span class="epistemic-tag">[FACT]</span>。這凸顯缺乏預付款保護的純 Neocloud 二房東處於風險最前線。</li>
+      </ul>
+
+      <h3>3. 軟銀（SoftBank）與 OpenAI 的「債上加債」與 S&amp;P 500 帳面獲利地雷</h3>
+      <ul>
+        <li><strong>借錢買未上市高估值股權</strong>：OpenAI 與 Anthropic 仍在巨額燒錢，而軟銀（<code>9984.T</code>）為了領投 OpenAI（總曝險上看數百億美元），近期透過 <strong>20 家銀行簽下 119 億美元的聯貸案</strong>並發行高收益債 <span class="epistemic-tag">[FACT]</span>。</li>
+        <li><strong>$1,500 億美元的未實現估值調升（佔 S&amp;P 500 EPS 約 12%）</strong>：2026 年第二季 S&amp;P 500 企業有高達 <strong>1,500 億美元的帳面獲利（佔指數 EPS 約 12%）</strong>來自對這些私有 AI 實驗室的「未實現估值調升」 <span class="epistemic-tag">[FACT]</span>。這意味著：<strong>OpenAI 甚至不需要倒閉；只要它未來 IPO 時的市值低於私募輪的預期估值，就會直接觸發軟銀的債務危機，並瞬間抹去科技巨頭財報上的帳面獲利，形成連鎖的金融去槓桿</strong> <span class="epistemic-tag">[INFERENCE]</span>。</li>
+      </ul>
+    </section>
+
+    <!-- Section 3: Pillar 2 -->
+    <section class="section-card" id="sec-pillar2">
+      <h2>三、2026 斷層二：「賣夢股」的破滅 vs. 「印鈔機」的極端折價</h2>
+      <p>
+        當投資人審視手上的現金該投向何處時，正好撞見 2026 年資本市場最荒謬的<strong>「定價精神分裂（Pricing Schizophrenia）」</strong>：一邊是毫無營收卻曾被捧上天的概念股，另一邊則是賺進百億真金白銀、卻被當成夕陽循環股賤賣的記憶體巨頭。
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%">公司與代號</th>
+              <th style="width:32%">2025–2026 實質營收與獲利能力 (<span class="epistemic-tag">[FACT]</span>)</th>
+              <th style="width:30%">長約鎖定與資產負債表保護 (<span class="epistemic-tag">[FACT]</span>)</th>
+              <th style="width:20%">2026 年 10 月估值水位 (<span class="epistemic-tag">[FACT]</span>)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SMR 小型核電概念股</strong><br><em>(Oklo / NuScale)</em></td>
+              <td>炒作 AI 缺電題材，但核能監管審批與建廠動輒以<strong>「十年」</strong>為單位；數十個月過去依然<strong>零實質商業營收</strong>。</td>
+              <td>靠高估值增發融資維持營運，部分專案因成本過高或監管審查停擺。</td>
+              <td>題材退潮後股價面臨劇烈修正（標準鬱金香泡沫特徵）。</td>
+            </tr>
+            <tr>
+              <td><strong>SK 海力士 (SK Hynix)</strong><br><em>(000660.KS / SKHY)</em></td>
+              <td>2Q25 營收 <strong>22.23 兆韓元（$162 億美元，YoY +35.4%）</strong>，營業利益 <strong>9.21 兆韓元（OPM 41.4%）</strong>；全球 DRAM 市佔 <strong>38.7%</strong> 登頂第一，HBM 市佔高達 <strong>~61%</strong>。</td>
+              <td>2026/07/10 完成 <strong>NASDAQ 雙重上市（SKHY）募資 $265.1 億美元</strong>；HBM3E 12Hi 與 HBM4 產能深度綁定 NVIDIA。</td>
+              <td>對 2027E 預估獲利的遠期本益比（Forward P/E）僅約 <strong>2.7 倍至 3.0 倍</strong>！</td>
+            </tr>
+            <tr>
+              <td><strong>三星電子 (Samsung)</strong><br><em>(005930.KS)</em></td>
+              <td>標準型 DRAM 與企業級 SSD 現金流龐大，加速推進 HBM3E 12Hi 與 HBM4 認證。</td>
+              <td>擁有龐大淨現金與全產業鏈整合能力。</td>
+              <td>對 2027E 預估獲利的遠期本益比（Forward P/E）僅約 <strong>2.7 倍至 3.0 倍</strong>！</td>
+            </tr>
+            <tr>
+              <td><strong>美光科技 (Micron)</strong><br><em>(MU)</em></td>
+              <td>FQ3-26 單季營收 <strong>$414.6 億美元（QoQ +73.8%，YoY +345.8%）</strong>，Non-GAAP 毛利率高達 <strong>84.9%</strong>，單季 EPS <strong>$25.11</strong>，單季調整後 FCF <strong>$183 億美元</strong>。</td>
+              <td>簽署 <strong>16 份多年期供應保障協議（SCAs）</strong>，鎖定 <strong>&gt;$1,000 億美元營收</strong>與 <strong>&gt;$220 億美元客戶預付款</strong>；HBM 產能至 <strong>2028 年 100% 售罄</strong>。</td>
+              <td>2027E Forward P/E 僅約 <strong>5.0 倍</strong>（TTM P/E 僅約 <strong>12 倍</strong>，遠低於歷史中位數）。</td>
+            </tr>
+            <tr>
+              <td><strong>SanDisk (&amp; Kioxia)</strong><br><em>(SNDK)</em></td>
+              <td>FY3Q26 單季營收 <strong>$59.5 億美元（QoQ +97%，YoY +251%）</strong>，Non-GAAP 毛利率 <strong>78.4%</strong>，單季稀釋 EPS <strong>$23.41</strong>；資料中心營收季增 <strong>316%</strong>。</td>
+              <td>提前清償 $6.5 億 TLB 達成<strong>零負債（Net Cash）</strong>，啟動 <strong>$60 億美元庫藏股</strong>；5 份多年期 NBM 合約鎖定 <strong>&gt;$420 億美元 RPO</strong>。</td>
+              <td>遭 Citron 做空報告狙擊後自高點 $2,350 回落 <strong>42%</strong> 至 $1,354.82，隱含極低遠期本益比。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <blockquote class="thesis-box">
+        <strong>定價邏輯的終極悖論（The Valuation Paradox）</strong>：市場給出 2.7x–5x P/E 的理由，是把記憶體當成「隨時會產能過剩、報價崩盤」的傳統景氣循環股。但現在的 HBM 與企業級 SSD 是 <strong>100% 綁定 AI 伺服器、先收數百億美元預付款才擴產的客製化寡占品</strong> <span class="epistemic-tag">[FACT]</span>。<strong>如果市場認定連 HBM 與企業級記憶體都會在 2027 年後過剩崩盤，那整個 AI 硬體鏈（包含上游 30x P/E 的邏輯晶片與下游高槓桿二房東）又怎麼可能不具週期性？</strong> 這正是市場在潛意識裡對 AI 資本支出無休止擴張投下的懷疑票 <span class="epistemic-tag">[INFERENCE]</span>。
+      </blockquote>
+    </section>
+
+    <!-- Section 4: Pillar 3 -->
+    <section class="section-card" id="sec-pillar3">
+      <h2>四、2026 斷層三：被低估的隱性變數——中國的「記憶體、模型與人才」突圍</h2>
+      <p>
+        為什麼聰明錢不敢給韓美記憶體大廠高本益比，同時又開始質疑美國閉源 AI 實驗室（OpenAI / Anthropic）的高估值？因為底層正面臨來自中國的三重突圍（詳見本機 <code>71_china_overcapacity</code>、<code>72_semiconductor</code> 報告 08 與 <code>73_deepseek_Kimi</code>）：
+      </p>
+
+      <h3>1. 記憶體的產能紅海化：長鑫存儲（CXMT）與長江存儲（YMTC）</h3>
+      <ul>
+        <li><strong>CXMT 全球 DRAM 市佔邁向 10%</strong>：長鑫存儲（CXMT）已提交科創板 IPO 申請（募資 <strong>579 億人民幣 / 約 $82.9 億美元</strong>），產能利用率高達 <strong>95.73%</strong> <span class="epistemic-tag">[FACT]</span>。根據 Omdia 數據，其全球 DRAM 市佔率已從 2025 年底的 <strong>7.67%</strong> 邁向 <strong>2026 年中的 10%</strong>，第 5 代 DRAM 已進入量產並計畫在 2028 年前將產能翻倍 <span class="epistemic-tag">[FACT]</span>。</li>
+        <li><strong>紅海外溢效應</strong>：儘管中國本土 HBM 仍受制於 DUV SAQP 多重曝光良率（2026 年產出約 200 萬顆堆疊，與韓美仍有代差） <span class="epistemic-tag">[FACT]</span>，但 CXMT 與 YMTC 在傳統 DRAM 與 NAND Flash 的大舉擴產，已將中低階記憶體變成紅海，並讓華爾街擔憂其長期向高階滲透，直接壓抑了三星、SK 海力士與美光的估值倍數 <span class="epistemic-tag">[INFERENCE]</span>。</li>
+      </ul>
+
+      <h3>2. 「低算力成本、高生產力」的模型雙軌突圍：DeepSeek-V4.1 與 Kimi K3.1 Pro</h3>
+      <p>在 2026 年 10 月 17 日至 24 日短短一週內，中國 AI 實驗室在「輕量快思」與「旗艦慢想」兩條路線同時完成對美國頂尖閉源模型的追平與超越（且成本僅 1/10 至 1/2）：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%">比較維度</th>
+              <th style="width:34%">輕量快思：<code>DeepSeek-V4.1-Flash-1017</code><br><em>(2026-10-17 發布 · MIT 開源)</em></th>
+              <th style="width:34%">旗艦慢想：<code>Kimi K3.1 Pro</code> (Moonshot AI)<br><em>(2026-10-23/24 發布 · 11/4 前開源權重)</em></th>
+              <th style="width:14%">美系閉源對照<br><em>(Opus 5.5 / GPT-6)</em></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>架構與演算法突破</strong> (<span class="epistemic-tag">[FACT]</span>)</td>
+              <td><strong>763B CED 稀疏 MoE</strong>（552B 主幹 + 196B Engram 條件記憶；<strong>Prefill 僅激活 8B / Decode 16B</strong>）；<strong>CSA2</strong> 將 KV Cache 壓至 <strong>890 bytes/token（前代 1/4）</strong>；<strong>RLSF 自我反饋強化學習</strong> + <code>Loop Harness</code>。</td>
+              <td><strong>2.8 兆（2.8T）總參數 / 104B 激活參數 MoE</strong>，1M Context；跨數百領域大規模 <strong>Joint RL 後訓練</strong>，預設強制開啟最高推理強度（<code>max</code> thinking effort）。</td>
+              <td>閉源黑盒架構，高度依賴超大規模算力堆疊。</td>
+            </tr>
+            <tr>
+              <td><strong>權威軟體工程與推理基準</strong> (<span class="epistemic-tag">[FACT]</span>)</td>
+              <td>‧ <strong>DeepSWE v1.1</strong>：<strong>77.0</strong>（超越 Opus 5 的 74.0 與 GPT-5.6 Sol 的 73.0）<br>‧ <strong>Automation-Bench</strong>：<strong>60.5</strong>（超越 Opus 5 的 57.2）<br>‧ <strong>Apex Bench</strong>：<strong>72.1</strong>（超越 Opus 5 的 69.8）</td>
+              <td>‧ <strong>SWE Marathon</strong>：<strong>51.7 全球第一</strong>（超越 Opus 5.5 的 46.3 與 GPT-6 Astra 的 42.2）<br>‧ <strong>OfficeQA Pro v2</strong>：<strong>64.4 全球第一</strong>（超越 Opus 5.5 的 62.2）<br>‧ <strong>HLE Full w/ tools</strong>：<strong>70.0 全球第一</strong>（超越 Opus 5.5 的 67.7）<br>‧ <strong>Terminal-Bench 4.0</strong>：<strong>65.7</strong>（緊咬 Opus 5.5 的 66.4，遠超 GPT-6 的 58.2）</td>
+              <td>Opus 5.5 與 GPT-6 Astra 在長程 SWE Marathon 與 OfficeQA 均落後於 Kimi K3.1 Pro。</td>
+            </tr>
+            <tr>
+              <td><strong>API 與任務端到端成本</strong> (<span class="epistemic-tag">[FACT]</span>)</td>
+              <td>快取命中輸入 <strong>$0.003–$0.006 / MTok</strong>，輸出 <strong>$0.60–$1.20 / MTok</strong>；<strong>單次驗證任務總成本 &lt;$0.20（低檔 ~$0.10）</strong>，推理 Token 減少 20%–30%。</td>
+              <td>官方 API 定價 <strong>$2 輸入 / $10 輸出 per MTok</strong>（較美系旗艦便宜 <strong>50%–60%</strong>），且企業可免費下載開源權重自建。</td>
+              <td>單次複雜 Agent 任務成本高達 <strong>$2.00–$10.00+</strong>（貴 10 至 50 倍）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <strong>生態系板塊位移</strong>：加上阿里巴巴的 <strong>Qwen3</strong> 與智譜的 <strong>GLM-5.2 / 5.3</strong>，2026 年 10 月 <strong>OpenRouter 平台上高達 69% 的每週 Token 消耗來自中國模型（72% 為開源權重）</strong>，且<strong>超過 40% 的美國新創公司已在生產環境採用 DeepSeek</strong>（年初僅 13%） <span class="epistemic-tag">[FACT]</span>。當企業能用 1/10 的成本獲得頂級 Agent 生產力，OpenAI 與 Anthropic 靠高價訂閱回收數千億資本支出的財務假設正面臨嚴峻考驗 <span class="epistemic-tag">[INFERENCE]</span>。
+      </p>
+    </section>
+
+    <!-- Section 5: Pillar 4 & Strategic Answer -->
+    <section class="section-card" id="sec-pillar4">
+      <h2>五、2026 斷層四：資金配置的思考座標與貝氏決策矩陣（記憶體佈局 vs. 見頂訊號）</h2>
+      <p>
+        直接回應最核心的資金配置抉擇——<strong>「該趁記憶體本益比僅 3x–5x 時佈局這些有實質獲利的硬體股，還是擔心這是景氣循環見頂訊號、先觀察巨頭縮減資本支出的時間點？」</strong>——我們結合本機貝氏分析框架，給出清晰的結構化答案：
+      </p>
+
+      <h3>1. 為什麼「趁低本益比佈局高 HBM 佔比記憶體」與「觀察巨頭縮減 CapEx」並不衝突？</h3>
+      <ul>
+        <li><strong>傑文斯悖論（Jevons Paradox）保護了 2026–2027 的高階硬體需求</strong>：中國開源模型雖然刺破了「美國閉源軟體的高毛利溢價」與「高息二房東的租金泡沫」，但卻在物理層引爆了更龐大的硬體消耗——<code>DeepSeek-V4.1</code> 讓 24/7 全天候 Agent Loop 成為可能，而 <code>Kimi K3.1 Pro</code> 高達 <strong>2.8 兆（2.8T）參數且強制開啟 max 深度推理</strong>，意味著企業每部署一個推論實例就需要 <strong>超過 2.8 TB 的 HBM3E / HBM4 記憶體</strong> <span class="epistemic-tag">[FACT / INFERENCE]</span>！</li>
+        <li><strong>3x–5x P/E 已經預先計入（Price-in）了週期回落風險</strong>：傳統景氣循環股最怕在「25x P/E + 無合約保護」時買入；但現在 SK 海力士（~2.7x–3x P/E）、美光（~5x P/E，鎖定 &gt;$1,000 億長約與 &gt;$220 億預付款）、SanDisk（零負債 + $60 億庫藏股 + &gt;$420 億 RPO）的估值，<strong>相當於市場已經假設它們 2028 年獲利會腰斬再腰斬</strong> <span class="epistemic-tag">[INFERENCE]</span>。只要 2027 年雲端 CapEx 不發生斷崖式崩盤，這批「手握百億預付款的印鈔機」就具備極厚的下檔安全邊際與估值修復空間。</li>
+      </ul>
+
+      <div class="decision-grid">
+        <div class="decision-box">
+          <h4>策略一：核心底倉（終極賣鏟人）<br>台積電 (<code>2330.TW</code> / <code>TSM</code>)</h4>
+          <p><strong>配置邏輯</strong>：無論閉源或開源模型誰勝出、無論是 NVIDIA GPU 或雲端自研 ASIC，100% 必須消耗台積電的 <strong>N3P / N2 晶圓與 CoWoS-L 先進封裝</strong>。不受軟體定價戰波及，是穿越 AI 資本週期的第一核心底倉。</p>
+        </div>
+        <div class="decision-box amber">
+          <h4>策略二：波段價值窪地（分批逢回買入）<br>美光 (<code>MU</code>)、SK海力士 (<code>SKHY</code>)、SanDisk (<code>SNDK</code>)</h4>
+          <p><strong>配置邏輯</strong>：鎖定 <strong>HBM 與企業級 NBM 佔比最高、且有 20%–40% 客戶預付款與庫藏股保護</strong>的標的（優先序：<code>SKHY / MU</code> &gt; <code>SNDK</code> &gt; <code>三星</code>）。在 3x–5x Forward P/E 分批建立部位，不追高，賺取「預付款保障下的估值修復」。</p>
+        </div>
+        <div class="decision-box warn">
+          <h4>策略三：嚴格避開或作為空頭對沖<br>CoreWeave (<code>CRWV</code>)、SMR 核電股、軟銀高收益債</h4>
+          <p><strong>配置邏輯</strong>：零營收的 SMR 賣夢股（Oklo/NuScale）與背負 9%–10% 高息債務的算力二房東（CRWV）處於負向迴路最脆弱的第一線。若擔心硬體週期見頂，可用少許 CRWV 或高估值無營收概念股作為多頭部位的避險空單（Hedge）。</p>
+        </div>
+      </div>
+
+      <h3>2. 實戰操作紀律：決定何時從記憶體與硬體股撤退的「四大領先見頂指標（Kill-Switch Checklist）」</h3>
+      <p>你不需要盲目猜測巨頭哪一天會砍資本支出，只需每季追蹤以下四個具體訊號——<strong>只要其中 2 項亮起紅燈，即代表「2026 實質負向架構」開始向實體硬體傳導，應立即將記憶體波段部位獲利了結</strong>：</p>
+      <ol>
+        <li><strong>【訊號一：前四大雲端巨頭 FCF 與發債利差】</strong>：當 Meta、Amazon、Google、Microsoft 之中有 <strong>2 家以上連續兩季自由現金流（FCF）為負</strong>，且在財報電話會議中宣布<strong>下修下一年度的 CapEx 絕對金額指引</strong>。</li>
+        <li><strong>【訊號二：算力二房東（Neoclouds）GPU 時租跌破利息線】</strong>：當 CoreWeave 等二房東的 H200 / B200 長約與現貨時租價格下滑，導致其營業利益率無法覆蓋 <strong>9%–10% 的債務利息成本</strong>，甚至開始在二級市場拋售二手 GPU。</li>
+        <li><strong>【訊號三：私有 AI 實驗室估值倒掛與 S&amp;P 500 帳面減記】</strong>：當 OpenAI 或 Anthropic 的新融資輪或 IPO 定價低於私募輪估值，迫使軟銀面臨聯貸違約壓力，並導致微軟、Amazon 在財報上<strong>逆轉減記 2026Q2 那 $1,500 億美元的未實現帳面獲利</strong>。</li>
+        <li><strong>【訊號四：記憶體廠「預付款條款」鬆動】</strong>：只要美光與 SK 海力士仍維持「次年 HBM 產能 100% 售罄 + 客戶預付 20% 以上現金」，就不必恐慌下車；一旦法說會改口稱<strong>「客戶要求延後拉貨（Push-out）或恢復按季議價（Quarterly Pricing）」</strong>，即為週期見頂的明確撤退訊號。</li>
+      </ol>
+    </section>
+
+    <!-- Section 6: Embedded L2 Interactive Topology -->
+    <section class="section-card" id="sec-l2-interactive">
+      <h2>六、L2 Archify 3.0.1 互動系統拓撲沙盒（點擊節點檢視數據與貝氏證據）</h2>
+      <p>下方內嵌完整的 L2 互動式架構沙盒（亦可獨立開啟 <code>16_negative_capital_loop_credit_collapse_ai_capex_l2_light.html</code>），支援按「大歷史反例」、「2026 連環槓桿」、「中國突圍」與「3x–5x P/E 記憶體配置」四大維度過濾並檢視各節點的財務數據：</p>
+      <div class="iframe-shell">
+        <iframe src="16_negative_capital_loop_credit_collapse_ai_capex_l2_light.html" width="100%" height="720" style="border:none;display:block;" title="L2 Interactive Topology"></iframe>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+      padding: 20,
+      nodeSpacing: 42,
+      rankSpacing: 58,
+      subGraphTitleMargin: { top: 18, bottom: 28 }
+    },
+    themeVariables: {
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif',
+      fontSize: '14px',
+      primaryColor: '#FFFFFF',
+      primaryTextColor: '#141413',
+      primaryBorderColor: '#8C7A5B',
+      lineColor: '#52514E',
+      clusterBkg: '#F5EFE0',
+      clusterBorder: '#C8B99E'
+    },
+    themeCSS: `
+      .cluster-label span, .cluster-label text, .cluster-label p, .cluster-label foreignObject div {
+        font-size: 19px !important;
+        font-weight: 800 !important;
+        color: #0F172A !important;
+        fill: #0F172A !important;
+      }
+      .edgeLabel {
+        background-color: #F7F4ED !important;
+        padding: 3px 6px !important;
+        border-radius: 4px !important;
+      }
+    `
+  });
+
+  let currentZoom = 1;
+  function zoomMermaid(factor) {
+    currentZoom = Math.min(2.2, Math.max(0.6, currentZoom * factor));
+    const svg = document.querySelector('#mermaid-box svg');
+    if (svg) {
+      svg.style.transform = `scale(${currentZoom})`;
+      svg.style.transformOrigin = 'top center';
+    }
+  }
+  function resetMermaid() {
+    currentZoom = 1;
+    const svg = document.querySelector('#mermaid-box svg');
+    if (svg) {
+      svg.style.transform = 'scale(1)';
+    }
+  }
+</script>
+</body>
+</html>

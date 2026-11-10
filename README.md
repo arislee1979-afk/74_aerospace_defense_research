@@ -1,5 +1,7 @@
 # 74_aerospace_defense_research — 航太、國防工業與雙用技術研究庫
 
+> 2026-10-25 本機權威：本庫正式 Mac 目錄為 source of truth，GitHub 保存版本備份與查核快照。依 [Local-first 合約](/Users/arislee/0_project_mac/00_agent_control_plane/docs/LOCAL_FIRST_AUTHORITY.md) 區分草稿、人工採納與發布；既有 runtime 權限不隨文件更新而擴張。
+
 > **專案定位**：航太、國防工業、低軌衛星與軍工雙用供應鏈之實業與政策研究生產者（Producer Repo）。  
 > **研究視角**：立足台灣產業製造與地緣位置，結合美歐國防預算、太空基礎設施演進與非紅供應鏈認證，建立具備實質財務現金流檢驗力之深度研究基座。  
 > **基準方法**：全面遵循 [`../70_investment_hub/docs/epistemic_schema.md`](../70_investment_hub/docs/epistemic_schema.md) 之五維認識論標籤與 [`../70_investment_hub/docs/BAYESIAN_DECISION_FRAMEWORK.md`](../70_investment_hub/docs/BAYESIAN_DECISION_FRAMEWORK.md) 之貝氏決策工程。

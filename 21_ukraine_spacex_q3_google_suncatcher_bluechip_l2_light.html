@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 — 烏克蘭戰場主權破局、SpaceX Q3 算力財報與 Google Suncatcher 在軌 TPU 推論實證 — Knowledge L2 HTML (v15)</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  :root {
+    --paper: #F7F4ED;
+    --paper-elevated: #FFFFFF;
+    --cream-shell: #F0E9D9;
+    --ink: #1A1714;
+    --ink-secondary: #4A4843;
+    --ink-muted: #78756E;
+    --terracotta: #D97757;
+    --crimson: #B91C1C;
+    --amber: #B45309;
+    --teal: #0F766E;
+    --navy: #1D4ED8;
+    --border-warm: #E2DAC7;
+    --shadow-soft: 0 6px 24px rgba(26, 23, 20, 0.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Serif TC", "Noto Sans TC", "PingFang TC", serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.78;
+    font-size: 16.5px;
+  }
+  .top-banner {
+    background: var(--cream-shell);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 10px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13px;
+    color: var(--ink-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .top-banner .pill {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .layout-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  @media (max-width: 1024px) {
+    .layout-container {
+      grid-template-columns: 1fr;
+      padding: 20px 16px 60px;
+      gap: 24px;
+    }
+    .toc-sidebar {
+      position: static !important;
+    }
+  }
+  .toc-sidebar {
+    position: sticky;
+    top: 24px;
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 20px 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .toc-sidebar h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+  .toc-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toc-sidebar a {
+    text-decoration: none;
+    color: var(--ink-secondary);
+    font-size: 14px;
+    line-height: 1.45;
+    display: block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .toc-sidebar a:hover {
+    background: var(--paper-elevated);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  main {
+    min-width: 0;
+  }
+  .hero-header {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-top: 5px solid var(--terracotta);
+    border-radius: 14px;
+    padding: 32px 34px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) {
+    .hero-header, .section-card {
+      padding: 22px 18px !important;
+    }
+    .hero-title {
+      font-size: 24px !important;
+    }
+  }
+  .hero-eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.34;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    color: var(--ink-secondary);
+    line-height: 1.68;
+    margin-bottom: 22px;
+  }
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .kpi-card {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi-card .k-label {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .kpi-card .k-val {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 4px 0;
+  }
+  .kpi-card .k-sub {
+    font-size: 12.5px;
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+  .section-card {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-radius: 14px;
+    padding: 32px 34px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 28px;
+  }
+  .section-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    border-bottom: 2px solid var(--cream-shell);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .section-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 22px 0 10px;
+  }
+  .section-card p {
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+  .section-card ul, .section-card ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+  .section-card li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  blockquote.thesis-box {
+    background: var(--cream-shell);
+    border-left: 4px solid var(--terracotta);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 18px 0 22px;
+    font-size: 15.8px;
+    color: var(--ink);
+  }
+  .haiku-card {
+    background: #FAF8F3;
+    border: 1px solid var(--border-warm);
+    border-left: 4px solid var(--navy);
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-family: Georgia, "Noto Serif TC", serif;
+  }
+  .haiku-card .poem-en {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .haiku-card .poem-zh {
+    font-size: 15px;
+    color: var(--ink-secondary);
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 18px 0 22px;
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    min-width: 640px;
+  }
+  th {
+    background: var(--cream-shell);
+    color: var(--ink);
+    font-weight: 800;
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--border-warm);
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-warm);
+    vertical-align: top;
+    line-height: 1.58;
+  }
+  tr:nth-child(even) td {
+    background: #FAF8F3;
+  }
+  .epistemic-tag {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--cream-shell);
+    color: var(--ink-secondary);
+    border: 1px solid var(--border-warm);
+  }
+  a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: var(--terracotta);
+  }
+
+  /* v15 Dual-Track Mermaid Subgraph & Vertical-Only Contract */
+  .svg-shell {
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 18px;
+    margin: 22px auto;
+    max-width: 760px;
+    overflow-x: hidden;
+  }
+  .svg-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-secondary);
+  }
+  .svg-toolbar-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .svg-toolbar-btns button {
+    background: #fff;
+    border: 1px solid var(--border-warm);
+    color: var(--ink);
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .svg-toolbar-btns button:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+  .mermaid-viewport {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px 12px;
+    max-width: 760px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border: 1px solid var(--border-warm);
+  }
+  .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform-origin: top center;
+    transition: transform 0.18s ease;
+  }
+
+  /* Dual-Track CSS Contract for Subgraph Titles & Spacer */
+  .cluster-label foreignObject {
+    overflow: visible !important;
+  }
+  .cluster-label foreignObject > div {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+  .cluster-label,
+  .cluster-label text,
+  .cluster-label span,
+  .cluster-label p,
+  .cluster-label .nodeLabel {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-align: center;
+    color: #1A1714 !important;
+    fill: #1A1714 !important;
+  }
+  .cluster rect {
+    rx: 8px !important;
+    ry: 8px !important;
+  }
+  .spacer {
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    font-size: 0px !important;
+    line-height: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    border: none !important;
+  }
+  .spacer rect {
+    height: 0px !important;
+    fill: transparent !important;
+    stroke: none !important;
+    display: none !important;
+  }
+  .spacer .label {
+    padding: 0px !important;
+    height: 0px !important;
+  }
+  .spacer span {
+    display: none !important;
+  }
+
+  .legend-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-secondary);
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  /* Fullscreen Modal Dialog */
+  dialog#mermaid-modal {
+    width: 94vw;
+    max-width: 1100px;
+    height: 90vh;
+    margin: auto;
+    border: 2px solid var(--border-warm);
+    border-radius: 14px;
+    background: var(--paper-elevated);
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  }
+  dialog#mermaid-modal::backdrop {
+    background: rgba(20, 20, 19, 0.65);
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-warm);
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .modal-header h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .modal-close-btn {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .modal-body {
+    height: calc(100% - 56px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid var(--border-warm);
+  }
+  .decision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .decision-box {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-top: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .decision-box.warn { border-top-color: var(--crimson); }
+  .decision-box.amber { border-top-color: var(--amber); }
+  .decision-box h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .decision-box p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <div><strong>Knowledge Publication L2 (Claude Light Edition)</strong> · 專案：<code>74_aerospace_defense_research</code> · 查核基準：2026-10-31 UTC+8</div>
+  <div><span class="pill">v15 Vertical-Only Contract</span></div>
+</div>
+
+<div class="layout-container">
+  <aside class="toc-sidebar">
+    <h3>章節導覽 (Reading TOC)</h3>
+    <ul>
+      <li><a href="#sec-thesis">一、核心問題與權重摘要</a></li>
+      <li><a href="#sec-matrix">二、權重認識論總表</a></li>
+      <li><a href="#sec-ukraine">三、第一權重：烏克蘭戰場破局</a></li>
+      <li><a href="#sec-spacex">四、核心主軸：SpaceX Q3 財報</a></li>
+      <li><a href="#sec-suncatcher">五、第7則完整報導：Suncatcher TPU</a></li>
+      <li><a href="#sec-bluechip">六、次要權重：BlueChip 非紅產線</a></li>
+      <li><a href="#sec-graph">七、v15 直式依賴圖與節點表</a></li>
+      <li><a href="#sec-bayesian">八、貝氏評分與供應鏈定位</a></li>
+      <li><a href="#sec-sources">九、已查核來源清單</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="hero-header" id="sec-thesis">
+      <div class="hero-eyebrow">UKRAINE SOVEREIGN SATCOM &amp; AIR DEFENSE × SPACEX Q3 × GOOGLE SUNCATCHER TPU × BLUECHIP · 2026-10-31</div>
+      <h1 class="hero-title">烏克蘭戰場主權破局、SpaceX Q3 算力財報與 Google Suncatcher 在軌 TPU 推論實證</h1>
+      <p class="hero-subtitle">
+        依權重配置深度整合：<strong>(I) 烏克蘭問題為主</strong>（Starshield 10 日限速解除 &gt;400 km/h、美國務院批准 21 億美元 500 枚愛國者 PAC-3 MSE 由歐加全額買單、<code>OBRIA NANO</code> 主權通訊衛星入軌運作與 $7,000 F-Jet 80 邊緣 AI 攔截機）；<strong>(II) SpaceX (<code>SPCX</code>) Q3 財報與 Google × SpaceX 軌道算力競合</strong>（完整展開第 7 則：Google Project Suncatcher 在軌 Trillium TPU 運行 Gemma 4 首度生成俳句 Haiku 與遙測自檢完整報導）；以及 <strong>(III) Anduril × 高通 × 台積電「BlueChip」全美非紅供應鏈軍規電腦產線</strong>。
+      </p>
+
+      <blockquote class="thesis-box">
+        <strong>核心決策命題與貝氏結論（Executive Thesis）</strong> <span class="epistemic-tag">[INFERENCE]</span>：<br>
+        1. <strong>烏克蘭戰場的「三重去單點依賴」</strong>：10/14–24 Starshield 限速（60–160 km/h）迫使烏軍以單價 $100 萬的 F-16 飛彈填補防空缺口（攔截率 77% $\to$ 74%），觸發三大結構回應——<strong>歐洲與加拿大透過 JUMPSTART 與歐盟貸款全額出資 $21 億美元向美採購 500 枚 PAC-3 MSE（零美聯邦資金）</strong>、烏丹合作首顆主權衛星 <strong><code>OBRIA NANO</code> 啟動在軌運作</strong>，以及加速部署單價 $7,000 之 <strong>F-Jet 80 邊緣 AI 攔截無人機</strong> <span class="epistemic-tag">[FACT]</span>。<br>
+        2. <strong>SpaceX (<code>SPCX</code>) Q3 財報的雙面實相</strong>：Q3 總營收 $145.8 億（YoY +161%），<strong>Super Intelligence (SI) 算力部門營收達 $75.6 億（含第三方租賃 $70.2 億與 Cursor 併表 $6.08 億），首度超車 Starlink（$52.5 億）</strong>；但扣除 $24.7 億折舊與 $12.2 億 SBC 後 SI 營業利益僅 $4.31 億，全集團實質營業利益（$27.9 億）高達 <strong>84.9% 仍由 Starlink（$23.7 億，營益率 45.1%）貢獻</strong>，支撐前三季 -$350 億之自由現金流赤字与 Q4 $350–400 億資本支出 <span class="epistemic-tag">[FACT]</span>。<br>
+        3. <strong>Google Suncatcher「Hello World」與「房東即對手」格局</strong>：10/30 Google 宣布在軌 <strong>Trillium TPU (v6e)</strong> 運行 <strong>Gemma 4</strong> 成功於挪威 Svalbard 地面站下傳首首太空 AI 生成俳句與系統遙測自檢；惟受真空輻射散熱限制仍處 15 分鐘衝刺工作制，且其 $200/kg 軌道平價門檻高度仰賴最大算力對手 SpaceX 之 Starship 發射降本曲線 <span class="epistemic-tag">[FACT / INFERENCE]</span>。<br>
+        4. <strong>BlueChip 驗證台美非紅供應鏈真實路徑</strong>：Anduril 與高通推出 BlueChip 軍規強固筆電（Arsenal-1 組裝 PCB、逾 90% 成本採購自美與盟國），高通證實核心 <strong>Snapdragon X 晶片由台積電亞利桑那州鳳凰城廠製造</strong>，確立台積電與盟國非紅零組件為美軍再工業化之底層支點 <span class="epistemic-tag">[FACT / INFERENCE]</span>。
+      </blockquote>
+
+      <div class="kpi-strip">
+        <div class="kpi-card">
+          <div class="k-label">烏克蘭 PAC-3 MSE 軍售 / 主權衛星</div>
+          <div class="k-val">$21 億 (500枚) / OBRIA</div>
+          <div class="k-sub">加德挪歐全額買單 · Starshield 恢復 &gt;400km/h</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">SpaceX Q3 SI 算力 vs Starlink 營收</div>
+          <div class="k-val">$75.6 億 vs $52.5 億</div>
+          <div class="k-sub">Starlink 營益 $23.7 億 (45%) · 9M FCF -$350 億</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">Google Suncatcher 在軌 TPU 驗證</div>
+          <div class="k-val">Gemma 4 俳句 &amp; 遙測</div>
+          <div class="k-sub">耐受 15 krad 輻射 · 15 分鐘衝刺 · 目標 $200/kg</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">Anduril × 高通 BlueChip 軍規筆電</div>
+          <div class="k-val">&gt;90% 美與盟國非紅物料</div>
+          <div class="k-sub">TSMC 鳳凰城廠造 Snapdragon X · Arsenal-1 組裝</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-card" id="sec-matrix">
+      <h2>二、權重矩陣與核心議題認識論總表（Weighted Epistemic Matrix）</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:22%">權重排序與主題模組</th>
+              <th style="width:40%">核心量化指標與工程／政策進展</th>
+              <th style="width:20%">認識論五維標籤</th>
+              <th style="width:18%">主要驗證來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>權重 I（最高）：烏克蘭問題</strong><br>1A. Starshield 限速解除與調查<br>1B. $21億 500枚 PAC-3 軍售<br>1C. <code>OBRIA NANO</code> 主權衛星</td>
+              <td>• 10/14–24 限速 <strong>60–160 km/h</strong> 致噴射無人機攔截率由 <strong>77% 降至 74%</strong>，現已恢復 <strong>&gt;400 km/h</strong>；F-Jet 80 單價 <strong>$7,000</strong> 對比 F-16 飛彈 <strong>$100 萬</strong>。<br>• 10/30 美國務院批准 <strong>500 枚 PAC-3 MSE（$2.1B）</strong>，由加、德、挪威與歐盟貸款全額出資。<br>• HIMERA 與 GomSpace 啟動 <strong><code>OBRIA NANO</code></strong>（10/1 Transporter-18 入軌）在軌運作。</td>
+              <td><span class="epistemic-tag">fact / primary &amp; secondary / verified</span></td>
+              <td><a href="https://defence-industry.eu/u-s-department-of-state-approves-potential-2-1-billion-sale-of-500-patriot-pac-3-mse-missiles-to-ukraine/" target="_blank" rel="noopener">Defence Industry EU</a> · <a href="https://gomspace.com/ukraines-sovereign-satellite-now-operating-in-orbit/" target="_blank" rel="noopener">GomSpace</a> · <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW</a></td>
+            </tr>
+            <tr>
+              <td><strong>權重 II-A（核心）：SpaceX Q3</strong><br><code>SPCX</code> Form 8-K 算力超車星鏈與現金流帳單</td>
+              <td>• Q3 營收 <strong>$14.58B</strong>（YoY +161%），GAAP 淨利 <strong>$4.40B</strong>（營業利益 <strong>$2.79B</strong> + 業外 <strong>$1.61B</strong>）。<br>• <strong>Super Intelligence (SI)</strong> 營收 <strong>$7.56B</strong>（算力租賃 <strong>$7.02B</strong> + Cursor <strong>$608M</strong>），營業利益 <strong>$431M</strong>（折舊 <strong>$2.47B</strong>、SBC <strong>$1.22B</strong>），CapEx <strong>$16.44B</strong>。<br>• <strong>Starlink</strong> 營收 <strong>$5.25B</strong>，營業利益 <strong>$2.37B</strong>（營益率 <strong>45.1%</strong>），用戶 <strong>1,360 萬</strong>。</td>
+              <td><span class="epistemic-tag">fact / primary (8-K) / verified</span></td>
+              <td><a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">Complete Trader's Edge</a> · <a href="https://spaceq.ca/spacex-q3-2026-ai-passes-starlink-profit/" target="_blank" rel="noopener">SpaceQ</a></td>
+            </tr>
+            <tr>
+              <td><strong>權重 II-B（核心）：Google × SPCX</strong><br>第 7 則：Project Suncatcher 在軌 TPU 生成俳句完整報導</td>
+              <td>• 10/30 Travis Beals 宣布在軌 <strong>Trillium TPU (v6e)</strong> 運行 <strong>Gemma 4</strong> 完成「Hello World」推論，飛越挪威 <strong>Svalbard</strong> 下傳俳句與遙測自檢。<br>• 《Joule》驗證 TPU 耐受 <strong>15 krad(Si)</strong>（5 年劑量 20 倍）與發射 <strong>50–100G</strong> 震動；惟受真空散熱限制採 <strong>15 分鐘衝刺制</strong>。<br>• 平價門檻需發射成本由 F9 <strong>$3,600/kg</strong> 降至 Starship <strong>$200/kg</strong>。</td>
+              <td><span class="epistemic-tag">fact &amp; estimate / primary &amp; secondary / verified</span></td>
+              <td><a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Unite.AI</a> · <a href="https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" target="_blank" rel="noopener">HWBusters</a> · <a href="https://www.eetimes.com/in-orbit-useful-life-becomes-a-performance-metric/" target="_blank" rel="noopener">EE Times</a></td>
+            </tr>
+            <tr>
+              <td><strong>權重 III（次要）：非紅硬體</strong><br>Anduril × Qualcomm × TSMC「BlueChip」軍規電腦</td>
+              <td>• 10/27 發表 <strong>BlueChip</strong> 軍規強固筆電，預計 <strong>2027 年</strong>接單出貨。<br>• 核心 <strong>Snapdragon X</strong> 晶片由<strong>台積電亞利桑那州鳳凰城廠</strong>製造；PCB 由 Anduril 俄亥俄州 <strong>Arsenal-1</strong> 組裝。<br>• 原型機 <strong>&gt;90% 物料採購成本</strong>來自美國與盟國供應商。</td>
+              <td><span class="epistemic-tag">fact / primary &amp; secondary / verified</span></td>
+              <td><a href="https://www.anduril.com/news/anduril-and-qualcomm-unveil-bluechip-to-rebuild-american-computer-manufacturing" target="_blank" rel="noopener">Anduril</a> · <a href="https://www.manufacturingdive.com/news/anduril-qualcomm-blue-chip-tsmc-snapdragon-reshoring-computer-hardware/872925/" target="_blank" rel="noopener">Manufacturing Dive</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-ukraine">
+      <h2>三、【第一權重：烏克蘭戰場問題】從 Starshield 限速風暴到「防空歐洲買單＋主權衛星＋終端 AI」的三維破局</h2>
+
+      <h3>1. Starshield 10 月 14–24 日限速事件與非對稱成本交換比衝擊</h3>
+      <ul>
+        <li><strong>雙重限速門檻與「中程打擊（Middle Strike）」受阻（<span class="epistemic-tag">[FACT]</span>）</strong>：商用 Starlink 在烏克蘭戰區早設有 70–90 km/h 速限且於俄境斷網，烏軍用於打擊俄軍後方 100–300 公里目標的「中程打擊」無人機與高速防空攔截機，實質依賴五角大廈合約管轄之軍用級 <strong>Starshield</strong>（原速限約 470 km/h）。10 月 14 日至 24 日間，該上限被無預警降至 <strong>60 km/h（部分終端鎖於約 100 mph / 160 km/h）</strong>，導致高速無人載具一加速即斷線失控（<a href="https://united24media.com/war-in-ukraine/ukraines-drones-were-hit-by-a-10-day-starlink-speed-limit-what-happened-and-why-it-matters-23813" target="_blank" rel="noopener">UNITED24 Media</a>）。</li>
+        <li><strong>F-16 百萬美元飛彈補位與 $7,000 F-Jet 80 邊緣 AI 攔截機（<span class="epistemic-tag">[FACT / INFERENCE]</span>）</strong>：戰爭研究所（ISW）量化指出，面對俄軍大量投入噴射動力無人機（10/24–25 單夜 153 架中佔 92 架），限速期烏軍攔截率雖僅由 <strong>77% 微降至 74%</strong>，卻被迫派 F-16 發射單價約 <strong>100 萬美元</strong>的空對空飛彈補位。為扭轉惡化的非對稱作戰成本交換比，烏商 <strong>F-Drones</strong> 正加速推進單價僅 <strong>7,000 美元</strong>、搭載機載邊緣 AI 視覺導引的 <strong>F-Jet 80</strong> 噴射攔截無人機（<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25</a>）。</li>
+        <li><strong>恢復 &gt;400 km/h 連線與美國會問責（<span class="epistemic-tag">[FACT]</span>）</strong>：烏國防部確認 Starshield 已於 10 月 24–25 日恢復對時速逾 <strong>400 km/h（250 mph）</strong> 載具之穩定連線；美參議員 Blumenthal 與 Schiff 則要求防長 Hegseth 赴參院宣誓作證，釐清白宮與 SpaceX 在軍規合約控制權上的矛盾說詞（<a href="https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored" target="_blank" rel="noopener">NPR</a>）。</li>
+      </ul>
+
+      <h3>2. 防空補給破局：美國務院批准 21 億美元 500 枚愛國者 PAC-3 MSE 軍售（盟國全額買單）</h3>
+      <ul>
+        <li><strong>公開施壓後的行政放行（<span class="epistemic-tag">[FACT]</span>）</strong>：在澤倫斯基公開批評五角大廈壓件延宕近一個月後，美國國務院於 <strong>2026 年 10 月 30 日正式批准向烏克蘭出售 500 枚愛國者 PAC-3 MSE 防空攔截飛彈</strong>及配套後勤支援，預估總值達 <strong>21 億美元</strong>（<a href="https://defence-industry.eu/u-s-department-of-state-approves-potential-2-1-billion-sale-of-500-patriot-pac-3-mse-missiles-to-ukraine/" target="_blank" rel="noopener">Defence Industry Europe</a>、<a href="https://denkstrom.org/artikel/usa-genehmigen-moeglichen-verkauf-von-500-patriot-raketen/" target="_blank" rel="noopener">Denkstrom / Tagesschau</a>）。</li>
+        <li><strong>「零美國聯邦資金」的財務結構（<span class="epistemic-tag">[FACT / INFERENCE]</span>）</strong>：國務院公報明載本案<strong>不動用任何美國資金</strong>，全數由<strong>加拿大、德國、挪威透過 JUMPSTART 機制捐款</strong>及<strong>歐盟烏克蘭支援貸款（Ukraine Support Loan）</strong>支付，主承包商為洛克希德·馬丁（Lockheed Martin）。這確立了「歐洲與盟國出資買單、美國軍工複合體接單生產」的跨大西洋防務新常態。</li>
+      </ul>
+
+      <h3>3. 通訊自主破局：烏克蘭 HIMERA 與丹麥 GomSpace 啟動 <code>OBRIA NANO</code> 主權衛星在軌運作</h3>
+      <ul>
+        <li><strong>首顆主權通訊試驗星入軌運作（<span class="epistemic-tag">[FACT]</span>）</strong>：烏克蘭戰術電台商 <strong>HIMERA</strong> 與丹麥小衛星商 <strong>GomSpace</strong>（<code>GOMX</code>）於 10 月 27–29 日正式宣布，烏克蘭首顆主權通訊試驗衛星 <strong><code>OBRIA NANO</code></strong>（於 10 月 1 日搭乘 SpaceX Transporter-18 升空）已在軌啟動運作並由烏克蘭營運商獨立控制，長期目標是在烏國本土建立衛星與地面終端產線，降低對單一外國商業星系的戰略依賴（<a href="https://gomspace.com/ukraines-sovereign-satellite-now-operating-in-orbit/" target="_blank" rel="noopener">GomSpace 官方新聞稿</a>、<a href="https://en.defence-ua.com/news/independent_ukrainian_satellite_communications_within_reach_himera_gomspace_launch_first_obria_nano_satellite-20248.html" target="_blank" rel="noopener">Defense Express</a>）。</li>
+      </ul>
+    </section>
+
+    <section class="section-card" id="sec-spacex">
+      <h2>四、【第二權重 A：SpaceX Q3 財報深剖】Super Intelligence 營收 75.6 億美元超車 Starlink 背後的資本帳單</h2>
+      <p>
+        依據 SpaceX（NASDAQ: <code>SPCX</code>）於 2026 年 10 月 20 日提交之 SEC Form 8-K 財報，Q3 單季營收達 <strong>145.8 億美元（YoY +161%）</strong>，首次實現上市後單季 GAAP 淨利 <strong>44.04 億美元（稀釋 EPS $0.35）</strong>。然而深度拆解三大業務部門可見「營收成長引擎」與「實質營業現金牛」的強烈反差（<a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">Complete Trader's Edge 8-K 拆解</a>、<a href="https://spaceq.ca/spacex-q3-2026-ai-passes-starlink-profit/" target="_blank" rel="noopener">SpaceQ</a>）：
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:24%">業務部門 / 財務指標</th>
+              <th style="width:12%">2025 Q3</th>
+              <th style="width:12%">2026 Q2</th>
+              <th style="width:16%">2026 Q3 (實績)</th>
+              <th style="width:36%">SEC Form 8-K 結構拆解與關鍵財務註腳 (<span class="epistemic-tag">[FACT]</span>)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Super Intelligence (SI)</strong><br>（原 AI 算力與軟體部門）</td>
+              <td>營收 $0.81B<br>營益 -$1.72B<br>CapEx $4.76B</td>
+              <td>營收 $2.56B<br>營益 -$1.26B<br>CapEx $15.83B</td>
+              <td><strong>營收 $7.56B</strong><br><strong>營益 +$0.43B</strong><br><strong>CapEx $16.44B</strong></td>
+              <td>• <strong>首度超車 Starlink</strong>：第三方算力租賃（SI solutions &amp; infra）由 $2.19B 暴增至 <strong>$7.02B</strong>；8/14 以 $600 億收購 <strong>Cursor</strong> 貢獻 <strong>$608M</strong>；X 廣告佔 <strong>$538M</strong>。<br>• <strong>折舊與 SBC 吞噬獲利</strong>：單季折舊攤銷升至 <strong>$2.47B</strong>，並吸收 Cursor 股份給付（SBC）<strong>$1.22B</strong>；Colossus II 銘牌算力達 <strong>1.7 GW</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>2. Connectivity (Starlink)</strong><br>（星鏈寬頻與軍規連線）</td>
+              <td>營收 $3.10B<br>營益 +$1.19B<br>CapEx $1.01B</td>
+              <td>營收 $4.29B<br>營益 +$1.66B<br>CapEx $1.37B</td>
+              <td><strong>營收 $5.25B</strong><br><strong>營益 +$2.37B</strong><br><strong>CapEx $1.54B</strong></td>
+              <td>• <strong>營業利益率高達 45.1%</strong>，貢獻全集團營業利益（$2.79B）的 <strong>84.9%</strong>！<br>• 消費者用戶達 <strong>1,360 萬戶</strong>（月 ARPU 回升至 <strong>$69</strong>）；企業與政府（含 Starshield）營收年增 91% 至 <strong>$2.13B</strong>，逾 3,800 架飛機安裝。</td>
+            </tr>
+            <tr>
+              <td><strong>3. Space (火箭發射運輸)</strong><br>（Falcon 9 與 Starship）</td>
+              <td>營收 $1.67B<br>營益 +$0.26B<br>CapEx $1.11B</td>
+              <td>營收 $0.96B<br>營益 -$0.54B<br>CapEx $1.17B</td>
+              <td><strong>營收 $1.77B</strong><br><strong>營益 -$0.01B</strong><br><strong>CapEx $1.61B</strong></td>
+              <td>• 單季 35 次發射，R&amp;D 支出 <strong>$1.23B</strong>，營業虧損收斂至僅 <strong>-$7M</strong>。<br>• 含 9/28 <strong>Starship Flight 14</strong> 首趟入軌創收任務（部署 26 顆 V3 衛星，容量為 F9 之 10 倍）；宣布建 <strong>Starbase, Louisiana</strong>（目標 2029 首飛）。</td>
+            </tr>
+            <tr>
+              <td><strong>集團合計 (Consolidated)</strong></td>
+              <td>營收 $5.58B<br>營益 -$0.27B<br>CapEx $6.88B</td>
+              <td>營收 $7.81B<br>營益 -$0.14B<br>CapEx $18.37B</td>
+              <td><strong>營收 $14.58B</strong><br><strong>營益 +$2.79B</strong><br><strong>CapEx $19.59B</strong></td>
+              <td>• <strong>GAAP 淨利 $4.40B 中有 $1.61B（36.6%）來自業外</strong>（IPO 利息收入 +$873M、其他收入 +$1.03B、稅務利益 +$390M、抵減利息支出 -$675M）。<br>• <strong>9M 2026 OCF $13.1B vs. CapEx $48.1B（FCF 缺口 -$35.0B）</strong>；Q4 CapEx 指引 <strong>$35B–$40B</strong>，敲定 <strong>$40B GPU 債</strong>。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul>
+        <li><strong>Anthropic 雲端合約「90 天通知終止條款」與折舊錯配風險（<span class="epistemic-tag">[FACT / INFERENCE]</span>）</strong>：SpaceX 在 IPO 前提交之 S-1 招股書揭露，其於 2026 年 5 月與主要算力客戶 Anthropic 簽署之雲端租賃協議，在初始三個月期滿後，<strong>任一方僅需提前 90 天通知即可終止合約</strong>；以每季逾 160 億美元的重資本 GPU 投資與剛性折舊（單季 $24.7 億）去匹配具 90 天退租權的短期需求，加上 10 月下旬至 12 月 8 日累計逾 <strong>24 億股 IPO 閉鎖期解禁</strong>，構成次級市場不可忽視的財務與籌碼風險（<a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">Complete Trader's Edge</a>）。</li>
+      </ul>
+    </section>
+
+    <section class="section-card" id="sec-suncatcher">
+      <h2>五、【第二權重 B：Google × SpaceX 軌道算力】第 7 則完整報導展開：Google「Project Suncatcher」在軌 TPU 首度生成俳句與工程極限</h2>
+      <p>
+        針對第 7 則重點事件，綜合 2026 年 10 月 30–31 日發布之完整技術報導（<a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Unite.AI</a>、<a href="https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" target="_blank" rel="noopener">HWBusters</a>、<a href="https://www.infobae.com/tecno/2026/10/30/el-satelite-de-centro-de-datos-de-google-ya-se-comunica-con-la-tierra-este-fue-su-primer-mensaje/?outputType=amp-type" target="_blank" rel="noopener">Infobae / TechCrunch</a>）與《Joule》同儕審查論文，完整還原如下：
+      </p>
+
+      <h3>1. 「Hello World」在軌推論全過程：Gemma 4、Svalbard 地面站與首首太空俳句</h3>
+      <ul>
+        <li><strong>任務時序與硬體配置（<span class="epistemic-tag">[FACT]</span>）</strong>：Project Suncatcher 首顆冰箱大小的原型衛星（MVP，由 <strong>Planet</strong> 打造衛星平台，搭載 <strong>4 顆商用資料中心級 Trillium TPU v6e</strong> 與 1 kW 太陽能），於 2026 年 10 月 1 日搭乘 <strong>SpaceX Falcon 9 Transporter-18 共乘任務</strong>升空。在歷經約三週的入軌初期系統檢整（Commissioning checklist：依序開啟主機電腦與 TPU 托盤電源並完成初步機器學習測試）後，Google 智慧範式資深總監 <strong>Travis Beals</strong> 於 <strong>10 月 30 日</strong>正式宣布達成任務的「Hello World」里程碑——人類史上首次由資料中心級 TPU 在太空軌道回傳生成式 AI 推論回應（<a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Unite.AI</a>）。</li>
+        <li><strong>首首在軌 AI 生成俳句原文（<span class="epistemic-tag">[FACT]</span>）</strong>：工程團隊於地面站飛越窗口期間上傳首個提示詞（Prompt），要求預載於衛星上的 Google DeepMind 開源權重模型 <strong>Gemma 4</strong> 寫一首關於「身處太空」的俳句。當衛星飛越北極圈內的<strong>挪威斯瓦爾巴群島（Svalbard, Norway）</strong>時，成功下傳以下詩句：</li>
+      </ul>
+
+      <div class="haiku-card">
+        <div class="poem-en">"Blue marble below / Data streams in silent grace / Starlight feeds my core."</div>
+        <div class="poem-zh">「下方藍色彈珠 ／ 資料流靜謐優雅穿梭 ／ 星光哺育吾核。」—— Google Project Suncatcher 在軌 Trillium TPU 運行 Gemma 4 首則回傳訊息（2026-10-30 經挪威 Svalbard 地面站接收）</div>
+      </div>
+
+      <ul>
+        <li><strong>打油詩與「酬載遙測自檢提示詞（Telemetry Prompts）」（<span class="epistemic-tag">[FACT / INFERENCE]</span>）</strong>：在完成俳句後，團隊接著測試太空主題五行打油詩（limericks），並要求 Gemma 4 執行<strong>遙測提示詞（telemetry prompts）</strong>以直接回報運算酬載自身的技術狀態。這證明 Trillium TPU 不僅能執行語言生成，更能與 Planet 衛星匯流排（Spacecraft Bus）感測器完成雙向資料讀取與系統自檢（<a href="https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" target="_blank" rel="noopener">HWBusters</a>）。</li>
+      </ul>
+
+      <h3>2. 物理極限檢驗與 Google × SpaceX「房東即對手」的雙軌博弈</h3>
+      <ul>
+        <li><strong>發射力學（50–100G）與質子束輻射測試（15 krad(Si)）（<span class="epistemic-tag">[FACT]</span>）</strong>：商用 TPU 熬過了 Falcon 9 發射 10 分鐘內高達 10G 的持續加速與晶片局部 <strong>50G 至 100G 的高頻震動</strong>；在 UC Davis Crocker 核子實驗室的質子束照射測試中，Trillium TPU 可承受超過 <strong>15 krad(Si)</strong> 的總游離劑量（為 5 年太空任務預期劑量 750 rad(Si) 的 <strong>20 倍</strong>，HBM 則達 2 krad(Si)，約每千萬次推論才出現一次不可校正靜默錯誤），相關研究已發表於能源期刊《Joule》（<a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Unite.AI</a>）。</li>
+        <li><strong>真正的硬牆才剛開始：真空熱輻射散熱與 2027 雙星雷射互聯（<span class="epistemic-tag">[FACT / INFERENCE]</span>）</strong>：在太空真空無對流環境下，高功耗 TPU 僅能靠熱導管與外部輻射板排熱（1 MW 算力需約 2,500 平方公尺散熱板），使 MVP 目前受限於<strong>約 15 分鐘衝刺工作制</strong>。Beals 指出，團隊接下來才要開始執行嚴苛的在軌熱應力與長期輻射累積測試，並預計於 <strong>2027 年發射兩顆衛星測試超高速自由空間雷射互聯（目標雙向 1.6 Tbps，相當於數英里外高速移動中命中硬幣大小目標）</strong>（<a href="https://www.eetimes.com/in-orbit-useful-life-becomes-a-performance-metric/" target="_blank" rel="noopener">EE Times</a>）。</li>
+        <li><strong>押注 $200/kg 的競合悖論（<span class="epistemic-tag">[INFERENCE]</span>）</strong>：Google《Joule》論文坦承，軌道算力要與地面資料中心電費（~$810/kW-yr）平價，入軌成本須從 Falcon 9 的 <strong>$3,600/kg</strong> 降至 <strong>$200/kg</strong>（需 Starship 年發 180 次、10 年運載 37 萬噸）。這意味著 Google 必須付費搭乘最大算力對手 SpaceX 的火箭，並仰賴 Starship 的降本曲線來兌現自身軌道 TPU 的長天期期權。</li>
+      </ul>
+    </section>
+
+    <section class="section-card" id="sec-bluechip">
+      <h2>六、【第三權重：非紅供應鏈硬體】Anduril × Qualcomm × TSMC「BlueChip」軍規電腦產線解構</h2>
+      <ul>
+        <li><strong>端側 AI 強固筆電與 Arsenal-1 組裝（<span class="epistemic-tag">[FACT]</span>）</strong>：10 月 27 日 Anduril 與高通（Qualcomm）正式推出 <strong>BlueChip</strong> 本土電腦硬體產線，首款軍規強固筆電搭載高通 <strong>Snapdragon X 系列處理器</strong>（支援離線端側 AI 推論），電路板（PCB）將於 Anduril 俄亥俄州 Ashville 的 <strong>Arsenal-1</strong> 工廠組裝，預計 <strong>2027 年開放接單並出貨</strong>（<a href="https://www.anduril.com/news/anduril-and-qualcomm-unveil-bluechip-to-rebuild-american-computer-manufacturing" target="_blank" rel="noopener">Anduril 官方新聞稿</a>）。</li>
+        <li><strong>台積電亞利桑那州鳳凰城廠製造核心晶片，逾 90% 物料來自美與盟國（<span class="epistemic-tag">[FACT / AUTHOR STATEMENT]</span>）</strong>：高通發言人向《Manufacturing Dive》證實，BlueChip 筆電搭載之 Snapdragon X 晶片將在<strong>台積電（TSMC）亞利桑那州鳳凰城（Phoenix）晶圓廠製造</strong>；目前原型機逾 <strong>90% 零件採購成本</strong>來自美國與盟國供應商。創辦人 Palmer Luckey 坦言初期無法做到 100% 純美製造，印證「台積電在地晶圓代工＋盟國非紅零組件＋美國本土終端組裝」為美軍去風險化之實質工業路徑（<a href="https://www.manufacturingdive.com/news/anduril-qualcomm-blue-chip-tsmc-snapdragon-reshoring-computer-hardware/872925/" target="_blank" rel="noopener">Manufacturing Dive</a>）。</li>
+      </ul>
+    </section>
+
+    <section class="section-card" id="sec-graph">
+      <h2>七、方法與架構：權重事件傳導與貝氏決策圖（v15 直式規範）</h2>
+      <p>
+        以下嚴格遵循 <code>knowledge-publication-l1-l2-v15</code> 直式規範（外層 <code>flowchart TB</code>，子圖間以「上層最後節點 <code>~~~</code> 下層 spacer」串接成單欄，每條邊標註證據等級與關係名稱）：
+      </p>
+
+      <div class="svg-shell">
+        <div class="svg-toolbar">
+          <span>直式因果依賴圖 · 縮放比例：<strong id="zoom-pct">100%</strong></span>
+          <div class="svg-toolbar-btns">
+            <button type="button" onclick="zoomMermaid(1.15)" aria-label="放大">放大 (+)</button>
+            <button type="button" onclick="zoomMermaid(0.85)" aria-label="縮小">縮小 (−)</button>
+            <button type="button" onclick="resetMermaid()" aria-label="重設為 100%">重設 (100%)</button>
+            <button type="button" id="btn-fullscreen" onclick="openFullscreen()" aria-label="全螢幕檢視">全螢幕檢視</button>
+            <button type="button" onclick="exportSVG()" aria-label="匯出 SVG">匯出 SVG</button>
+          </div>
+        </div>
+
+        <div class="mermaid-viewport" id="mermaid-box">
+          <pre class="mermaid" id="mermaid-graph">
+flowchart TB
+  classDef spacer fill:transparent,stroke:transparent,stroke-width:0px;
+  classDef person fill:#FFFBEB,stroke:#B45309,stroke-width:2px,color:#1A1714;
+  classDef sys fill:#EFF6FF,stroke:#1D4ED8,stroke-width:2px,color:#1A1714;
+  classDef risk fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px,color:#1A1714;
+  classDef decision fill:#ECFDF5,stroke:#047857,stroke-width:2px,color:#1A1714;
+
+  subgraph A["👤 第一層：決策主體與戰略行為者 (P1–P4)<br/>Key Actors & Strategic Decision Makers"]
+    direction TB
+    KP_TITLE_SPACE_A[" "]:::spacer
+    P1["<b>P1 烏克蘭與歐盟北約盟國</b><br/>澤倫斯基、HIMERA、加德挪歐"]:::person
+    P2["<b>P2 SpaceX 資本與工程層</b><br/>Musk、CFO Johnsen、Starbase"]:::person
+    P3["<b>P3 Google Suncatcher 團隊</b><br/>Travis Beals 與 Planet"]:::person
+    P4["<b>P4 Anduril × 高通 × 台積電</b><br/>Arsenal-1 與 TSMC 鳳凰城廠"]:::person
+    KP_TITLE_SPACE_A ~~~ P1
+    P1 ~~~ P2
+    P2 ~~~ P3
+    P3 ~~~ P4
+  end
+
+  subgraph C["🛰️ 第二層：戰場破局、太空算力與非紅系統 (M1–M4)<br/>Battlefield, Orbital Compute & Non-Red Systems"]
+    direction TB
+    KP_TITLE_SPACE_C[" "]:::spacer
+    M1["<b>M1 烏防空與通訊三維破局</b><br/>500枚PAC-3、OBRIA星、恢復連線"]:::sys
+    M2["<b>M2 SpaceX Q3 算力超車星鏈</b><br/>SI營收$75.6B、Starlink營益$23.7B"]:::sys
+    M3["<b>M3 Suncatcher 在軌TPU推論</b><br/>Gemma 4生成俳句與遙測自檢"]:::sys
+    M4["<b>M4 BlueChip 軍規電腦產線</b><br/>Snapdragon X、逾90%盟國非紅料"]:::sys
+    KP_TITLE_SPACE_C ~~~ M1
+    M1 ~~~ M2
+    M2 ~~~ M3
+    M3 ~~~ M4
+  end
+
+  subgraph R["⚖️ 第三層：成本交換比、資本消耗與物理瓶頸 (R1–R3)<br/>Cost-Exchange, CapEx Burn & Physical Bottlenecks"]
+    direction TB
+    KP_TITLE_SPACE_R[" "]:::spacer
+    R1["<b>R1 戰場成本交換比與主權風險</b><br/>限速耗百萬飛彈催生$7k AI攔截機"]:::risk
+    R2["<b>R2 算力重資本消耗與房東競合</b><br/>9M FCF -$35B、$200/kg依賴Starship"]:::risk
+    R3["<b>R3 真空散熱極限與非紅爬坡期</b><br/>15分鐘衝刺制、BlueChip 2027出貨"]:::risk
+    KP_TITLE_SPACE_R ~~~ R1
+    R1 ~~~ R2
+    R2 ~~~ R3
+  end
+
+  subgraph B["🎯 第四層：貝氏後驗更新與台美供應鏈定位 (D1–D2)<br/>Bayesian Log-Odds Update & Supply Chain Strategy"]
+    direction TB
+    KP_TITLE_SPACE_B[" "]:::spacer
+    D1["<b>D1 主權多軌備援與邊緣AI剛需</b><br/>H1(+4.2dB) 歐盟買單與非紅C-UAS"]:::decision
+    D2["<b>D2 太空算力基建與台積電支點</b><br/>H2(+3.5dB) H3(+3.0dB) TSMC先進封裝"]:::decision
+    KP_TITLE_SPACE_B ~~~ D1
+    D1 ~~~ D2
+  end
+
+  P4 ~~~ KP_TITLE_SPACE_C
+  M4 ~~~ KP_TITLE_SPACE_R
+  R3 ~~~ KP_TITLE_SPACE_B
+
+  P1 ==>|"FACT：盟國出資$21億與發射主權星"| M1
+  P2 ==>|"FACT：8-K揭露SI營收$75.6B"| M2
+  P2 ==>|"FACT：Transporter-18共乘發射"| M3
+  P3 ==>|"FACT：Svalbard接收Gemma 4俳句"| M3
+  P4 ==>|"FACT：TSMC鳳凰城造Snapdragon X"| M4
+  M1 -->|"FACT：10日限速迫使F-16補位"| R1
+  M2 -->|"FACT：Q3 CapEx $19.6B與90天退租條款"| R2
+  M3 -->|"INFERENCE：平價需Starship降至$200/kg"| R2
+  M3 -->|"FACT：受真空散熱限15分鐘運作"| R3
+  M4 -.->|"AUTHOR STATEMENT：初期非100%純美製"| R3
+  R1 ==>|"INFERENCE：確立多軌衛星與邊緣AI剛需"| D1
+  R2 ==>|"INFERENCE：實業現金流壟斷算力融資"| D2
+  R3 -->|"INFERENCE：確認TSMC與盟國非紅溢價"| D2
+          </pre>
+        </div>
+
+        <div class="legend-bar">
+          <span class="legend-item"><span class="legend-swatch" style="background:#FFFBEB;border:2px solid #B45309;"></span> 決策主體與行為者 (P1–P4)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#EFF6FF;border:2px solid #1D4ED8;"></span> 戰場與算力系統 (M1–M4)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#FEF2F2;border:2px solid #B91C1C;"></span> 成本、資本與物理風險 (R1–R3)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#ECFDF5;border:2px solid #047857;"></span> 貝氏後驗決策定位 (D1–D2)</span>
+          <span class="legend-item"><strong>實線箭頭 (==&gt; / --&gt;)</strong>：已驗證事實 (FACT) 或結構推論 (INFERENCE)</span>
+          <span class="legend-item"><strong>虛線箭頭 (-.-&gt;)</strong>：當事人聲明／待量產驗證 (AUTHOR STATEMENT)</span>
+        </div>
+
+        <noscript>
+          <p>您的瀏覽器未啟用 JavaScript，請直接參閱下方「7.1 節點表」與「7.2 關係表」取得完整拓撲結構。</p>
+        </noscript>
+      </div>
+
+      <h3>7.1 節點表（Node Registry）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:9%">節點 ID</th>
+              <th style="width:23%">節點名稱</th>
+              <th style="width:36%">架構角色與核心內容</th>
+              <th style="width:18%">認識論標籤</th>
+              <th style="width:14%">驗證來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td><strong>烏克蘭與歐盟北約盟國</strong></td>
+              <td>主權與出資行為者：澤倫斯基政府、戰術通訊商 HIMERA，以及全額出資 $21 億採購 PAC-3 之加、德、挪威與歐盟</td>
+              <td><span class="epistemic-tag">FACT / primary &amp; secondary</span></td>
+              <td><a href="https://defence-industry.eu/u-s-department-of-state-approves-potential-2-1-billion-sale-of-500-patriot-pac-3-mse-missiles-to-ukraine/" target="_blank" rel="noopener">Defence Industry EU</a>、<a href="https://gomspace.com/ukraines-sovereign-satellite-now-operating-in-orbit/" target="_blank" rel="noopener">GomSpace</a></td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td><strong>SpaceX 資本與工程層</strong></td>
+              <td>雙寡頭與發射壟斷者：執行長 Musk 與 CFO Johnsen 主導 Q3 財報、$40B GPU 債務與 Transporter-18 / Starship 發射排程</td>
+              <td><span class="epistemic-tag">FACT / primary (8-K)</span></td>
+              <td><a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">Complete Trader's Edge</a></td>
+            </tr>
+            <tr>
+              <td><strong>P3</strong></td>
+              <td><strong>Google Suncatcher 團隊</strong></td>
+              <td>軌道算力研發主體：Google Research 資深總監 Travis Beals 團隊與衛星平台夥伴 Planet，主導在軌 TPU 實驗</td>
+              <td><span class="epistemic-tag">FACT / primary &amp; secondary</span></td>
+              <td><a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Unite.AI</a></td>
+            </tr>
+            <tr>
+              <td><strong>P4</strong></td>
+              <td><strong>Anduril × 高通 × 台積電</strong></td>
+              <td>非紅硬體聯盟：Anduril 俄亥俄州 Arsenal-1 工廠、高通（Snapdragon X 設計）與台積電亞利桑那州鳳凰城晶圓廠</td>
+              <td><span class="epistemic-tag">FACT / primary &amp; secondary</span></td>
+              <td><a href="https://www.anduril.com/news/anduril-and-qualcomm-unveil-bluechip-to-rebuild-american-computer-manufacturing" target="_blank" rel="noopener">Anduril</a>、<a href="https://www.manufacturingdive.com/news/anduril-qualcomm-blue-chip-tsmc-snapdragon-reshoring-computer-hardware/872925/" target="_blank" rel="noopener">Manufacturing Dive</a></td>
+            </tr>
+            <tr>
+              <td><strong>M1</strong></td>
+              <td><strong>烏防空與通訊三維破局</strong></td>
+              <td>戰場系統能力：10/30 獲批 500 枚 PAC-3 MSE（$2.1B）；<code>OBRIA NANO</code> 主權衛星在軌運作；Starshield 恢復 &gt;400 km/h 連線</td>
+              <td><span class="epistemic-tag">FACT / verified</span></td>
+              <td><a href="https://defence-industry.eu/u-s-department-of-state-approves-potential-2-1-billion-sale-of-500-patriot-pac-3-mse-missiles-to-ukraine/" target="_blank" rel="noopener">Defence Industry EU</a>、<a href="https://en.defence-ua.com/news/independent_ukrainian_satellite_communications_within_reach_himera_gomspace_launch_first_obria_nano_satellite-20248.html" target="_blank" rel="noopener">Defense Express</a></td>
+            </tr>
+            <tr>
+              <td><strong>M2</strong></td>
+              <td><strong>SpaceX Q3 算力超車星鏈</strong></td>
+              <td>實業與算力財報：Q3 營收 $14.58B（SI 算力佔 $7.56B 超越 Starlink 的 $5.25B），惟 Starlink 貢獻 $2.37B 營業利益（佔比 85%）</td>
+              <td><span class="epistemic-tag">FACT / primary (8-K)</span></td>
+              <td><a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">Complete Trader's Edge</a></td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><strong>Suncatcher 在軌 TPU 推論</strong></td>
+              <td>太空 AI 驗證里程碑：10/30 宣布在軌 Trillium TPU 運行 Gemma 4 生成俳句並於 Svalbard 下傳，完成遙測自檢提示詞</td>
+              <td><span class="epistemic-tag">FACT / verified</span></td>
+              <td><a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Unite.AI</a>、<a href="https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" target="_blank" rel="noopener">HWBusters</a></td>
+            </tr>
+            <tr>
+              <td><strong>M4</strong></td>
+              <td><strong>BlueChip 軍規電腦產線</strong></td>
+              <td>本土非紅運算硬體：首款強固筆電採用 TSMC 鳳凰城廠製造之 Snapdragon X，原型機逾 90% 物料採購自美與盟國</td>
+              <td><span class="epistemic-tag">FACT / verified</span></td>
+              <td><a href="https://www.manufacturingdive.com/news/anduril-qualcomm-blue-chip-tsmc-snapdragon-reshoring-computer-hardware/872925/" target="_blank" rel="noopener">Manufacturing Dive</a></td>
+            </tr>
+            <tr>
+              <td><strong>R1</strong></td>
+              <td><strong>戰場成本交換比與主權風險</strong></td>
+              <td>作戰與治理監督：10 日限速使攔截率降至 74% 並消耗百萬美元 F-16 飛彈，催生 $7,000 F-Jet 80 邊緣 AI 攔截機與參院調查</td>
+              <td><span class="epistemic-tag">FACT / INFERENCE</span></td>
+              <td><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25</a>、<a href="https://united24media.com/war-in-ukraine/ukraines-drones-were-hit-by-a-10-day-starlink-speed-limit-what-happened-and-why-it-matters-23813" target="_blank" rel="noopener">UNITED24</a></td>
+            </tr>
+            <tr>
+              <td><strong>R2</strong></td>
+              <td><strong>算力重資本消耗與房東競合</strong></td>
+              <td>財務與結構矛盾：SpaceX 前三季 FCF 缺口 -$35B、Anthropic 合約具 90 天終止權；Google 軌道平價（$200/kg）依賴對手 Starship</td>
+              <td><span class="epistemic-tag">FACT / INFERENCE</span></td>
+              <td><a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">Complete Trader's Edge</a></td>
+            </tr>
+            <tr>
+              <td><strong>R3</strong></td>
+              <td><strong>真空散熱極限與非紅爬坡期</strong></td>
+              <td>物理與量產邊界：Suncatcher 受真空輻射散熱限制僅能衝刺 15 分鐘；BlueChip 仍處功能原型階段，預計 2027 方能出貨</td>
+              <td><span class="epistemic-tag">FACT / verified</span></td>
+              <td><a href="https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" target="_blank" rel="noopener">HWBusters</a>、<a href="https://www.eetimes.com/in-orbit-useful-life-becomes-a-performance-metric/" target="_blank" rel="noopener">EE Times</a></td>
+            </tr>
+            <tr>
+              <td><strong>D1</strong></td>
+              <td><strong>主權多軌備援與邊緣 AI 剛需</strong></td>
+              <td>貝氏決策更新 I：$H_1 (+4.2\text{ dB})$ 確認歐洲出資買單防空、主權衛星去單點依賴與終端 AI 導引 C-UAS 結構剛需</td>
+              <td><span class="epistemic-tag">INFERENCE / internal</span></td>
+              <td>本庫貝氏決策框架</td>
+            </tr>
+            <tr>
+              <td><strong>D2</strong></td>
+              <td><strong>太空算力基建與台積電支點</strong></td>
+              <td>貝氏決策更新 II：$H_2 (+3.5\text{ dB})$ 確認 Starlink 現金流支撐算力霸權、$H_3 (+3.0\text{ dB})$ 確認 TSMC 亞利桑那與先進封裝支點</td>
+              <td><span class="epistemic-tag">INFERENCE / internal</span></td>
+              <td>本庫貝氏決策框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>7.2 關係表（Edge Registry）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:9%">起點</th>
+              <th style="width:35%">關係名稱與證據標籤</th>
+              <th style="width:9%">終點</th>
+              <th style="width:47%">關係類型與實證依據</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td><code>FACT：盟國出資$21億與發射主權星</code>（實線）</td>
+              <td><strong>M1</strong></td>
+              <td><strong>政策與工程執行</strong>：加、德、挪威與歐盟貸款全額出資 $2.1B 採購 500 枚 PAC-3 MSE（10/30 批准）；HIMERA 與 GomSpace 啟動 <code>OBRIA NANO</code> 在軌運作。</td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td><code>FACT：8-K揭露SI營收$75.6B</code>（實線）</td>
+              <td><strong>M2</strong></td>
+              <td><strong>財報揭露</strong>：SpaceX 10/20 提交之 Form 8-K 確認 Q3 Super Intelligence 營收達 $7.56B，首度超越 Starlink ($5.25B)。</td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td><code>FACT：Transporter-18共乘發射</code>（實線）</td>
+              <td><strong>M3</strong></td>
+              <td><strong>運力供給</strong>：SpaceX 於 10/1 以 Falcon 9 Transporter-18 共乘任務同時將 Google Suncatcher MVP 與烏克蘭 <code>OBRIA NANO</code> 送入低軌。</td>
+            </tr>
+            <tr>
+              <td><strong>P3</strong></td>
+              <td><code>FACT：Svalbard接收Gemma 4俳句</code>（實線）</td>
+              <td><strong>M3</strong></td>
+              <td><strong>在軌驗證</strong>：Travis Beals 宣布團隊上傳提示詞至在軌 Trillium TPU，飛越挪威 Svalbard 時成功下傳 Gemma 4 生成之俳句與遙測自檢。</td>
+            </tr>
+            <tr>
+              <td><strong>P4</strong></td>
+              <td><code>FACT：TSMC鳳凰城造Snapdragon X</code>（實線）</td>
+              <td><strong>M4</strong></td>
+              <td><strong>供應鏈製造</strong>：高通發言人證實 BlueChip 筆電之 Snapdragon X 處理器由台積電亞利桑那州鳳凰城廠製造，Arsenal-1 負責電路板組裝。</td>
+            </tr>
+            <tr>
+              <td><strong>M1</strong></td>
+              <td><code>FACT：10日限速迫使F-16補位</code>（實線）</td>
+              <td><strong>R1</strong></td>
+              <td><strong>戰場因果</strong>：10/14–24 Starshield 限速 60–160 km/h 期間，烏軍高速攔截無人機斷線，被迫派 F-16 發射百萬美元飛彈以維持 74% 攔截率。</td>
+            </tr>
+            <tr>
+              <td><strong>M2</strong></td>
+              <td><code>FACT：Q3 CapEx $19.6B與90天退租條款</code>（實線）</td>
+              <td><strong>R2</strong></td>
+              <td><strong>財務風險</strong>：SpaceX 單季投入 $16.44B 於 SI 資本支出（9M FCF -$35B），但 S-1 揭露 Anthropic 雲端合約具 90 天通知終止權。</td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><code>INFERENCE：平價需Starship降至$200/kg</code>（實線）</td>
+              <td><strong>R2</strong></td>
+              <td><strong>經濟依賴</strong>：《Joule》論文模型顯示軌道算力需發射成本降至 $200/kg 方能與地面電費平價，使 Google 高度依賴對手 SpaceX 之 Starship 爬坡。</td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><code>FACT：受真空散熱限15分鐘運作</code>（實線）</td>
+              <td><strong>R3</strong></td>
+              <td><strong>物理約束</strong>：真空無對流環境下僅能靠熱導管與輻射板排熱，使 MVP 原型星目前受限於約 15 分鐘衝刺工作制，熱應力測試剛要展開。</td>
+            </tr>
+            <tr>
+              <td><strong>M4</strong></td>
+              <td><code>AUTHOR STATEMENT：初期非100%純美製</code>（虛線）</td>
+              <td><strong>R3</strong></td>
+              <td><strong>量產邊界</strong>：Palmer Luckey 坦言初期出貨無法達成 100% 純美製造（目前逾 90% 採購自美與盟國），且預計 2027 年方開始接單出貨。</td>
+            </tr>
+            <tr>
+              <td><strong>R1</strong></td>
+              <td><code>INFERENCE：確立多軌衛星與邊緣AI剛需</code>（實線）</td>
+              <td><strong>D1</strong></td>
+              <td><strong>決策收斂 I</strong>：單一外國衛星限速風險與防空消耗戰，直接驗證主權多軌衛星備援與低成本邊緣 AI 自主導引（C-UAS）之結構性剛需。</td>
+            </tr>
+            <tr>
+              <td><strong>R2</strong></td>
+              <td><code>INFERENCE：實業現金流壟斷算力融資</code>（實線）</td>
+              <td><strong>D2</strong></td>
+              <td><strong>決策收斂 II</strong>：唯有具備 Starlink $23.7B 季度營業利益之實業巨頭能承擔每年近千億美元算力 CapEx，持續擠壓純算力二房東（Neoclouds）。</td>
+            </tr>
+            <tr>
+              <td><strong>R3</strong></td>
+              <td><code>INFERENCE：確認TSMC與盟國非紅溢價</code>（實線）</td>
+              <td><strong>D2</strong></td>
+              <td><strong>決策收斂 III</strong>：無論是太空 Trillium TPU、SpaceX 採購之 Nvidia GPU 或 BlueChip 搭載之 Snapdragon X，底層均收斂至台積電先進製程與非紅供應鏈。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-bayesian">
+      <h2>八、貝氏決策評分與台灣非紅供應鏈策略定位（Bayesian Scoring &amp; Strategy）</h2>
+      <div class="decision-grid">
+        <div class="decision-box">
+          <h4>H1：歐洲買單防空與主權多軌備援 (+4.2 dB · 後驗 ~72.5%)</h4>
+          <p>
+            <strong>實證支撐</strong>：10/30 美國務院批准 $21 億 500 枚 PAC-3 MSE 由加、德、挪威與歐盟貸款全額出資，加上 <code>OBRIA NANO</code> 主權衛星運作與 $7k F-Jet 80 邊緣 AI 攔截機，確立「歐洲出錢買美製防空彈藥＋自建非單一依賴通訊與終端導引」長期趨勢。<br>
+            <strong>定位</strong>：鎖定 <code>LMT</code> / <code>RTX</code> 積壓訂單變現，強化台灣多軌衛星地面終端（PCB/RF）與非紅無人機光學/邊緣 AI 評估基線。
+          </p>
+        </div>
+        <div class="decision-box amber">
+          <h4>H2：SpaceX 實業現金流壟斷算力資本 (+3.5 dB · 後驗 ~69.1%)</h4>
+          <p>
+            <strong>實證支撐</strong>：Starlink 單季 $23.7 億營業利益（營益率 45.1%）支撐 SI 算力部門單季 $164.4 億 CapEx 與 $400 億 GPU 債務，並掌握 Google Suncatcher 發射降本鑰匙。<br>
+            <strong>定位</strong>：確認上游賣鏟人 <code>NVDA</code> 與台積電（<code>2330.TW</code>）2027H1 產能滿載；維持高槓桿二房東 <code>CRWV</code> 迴避；<code>SPCX</code> 本體則需待 12/8 主閉鎖期解禁與折舊壓力消化。
+          </p>
+        </div>
+        <div class="decision-box warn">
+          <h4>H3：軌道算力與非紅硬體收斂至台積電 (+3.0 dB · 後驗 ~66.6%)</h4>
+          <p>
+            <strong>實證支撐</strong>：Google 商用 Trillium TPU 在軌耐受 20 倍 5 年輻射劑量完成 Gemma 4 推論，Anduril × 高通 BlueChip 軍規筆電指定由 TSMC 亞利桑那廠製造 Snapdragon X。<br>
+            <strong>邊界提醒</strong>：Suncatcher 仍受 15 分鐘真空散熱限制（2030 年代期權），BlueChip 預計 2027 年出貨，須嚴格區分原型驗證與規模量產。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-sources">
+      <h2>九、驗證來源清單（Verified Primary &amp; Secondary Sources）</h2>
+      <ol>
+        <li><strong>Unite.AI</strong> (2026-10-30/31)：<a href="https://www.unite.ai/project-suncatchers-orbiting-tpu-delivers-its-first-ai-generated-haiku/" target="_blank" rel="noopener">Project Suncatcher's Orbiting TPU Delivers Its First AI-Generated Haiku</a></li>
+        <li><strong>HWBusters</strong> (2026-10-31)：<a href="https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" target="_blank" rel="noopener">Project Suncatcher's Orbiting TPU Sends Back Its First AI Answer, and It's a Haiku</a></li>
+        <li><strong>Infobae / TechCrunch</strong> (2026-10-30/31)：<a href="https://www.infobae.com/tecno/2026/10/30/el-satelite-de-centro-de-datos-de-google-ya-se-comunica-con-la-tierra-este-fue-su-primer-mensaje/?outputType=amp-type" target="_blank" rel="noopener">El satélite de centro de datos de Google ya se comunica con la Tierra: este fue su primer mensaje</a></li>
+        <li><strong>Google Research Official Blog</strong> (Travis Beals, 2026-09-24 &amp; 2026-10-30)：<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/" target="_blank" rel="noopener">Behind Project Suncatcher, our moonshot to put AI in space</a> · <a href="https://blog.google/" target="_blank" rel="noopener">Google Newsroom ("Our first response from the Project Suncatcher satellite")</a></li>
+        <li><strong>EE Times</strong> (2026-10-22)：<a href="https://www.eetimes.com/in-orbit-useful-life-becomes-a-performance-metric/" target="_blank" rel="noopener">In-Orbit Useful Life Becomes a Performance Metric</a></li>
+        <li><strong>Complete Trader's Edge</strong> (2026-10-20/21)：<a href="https://completetradersedge.com/spacex-q3-2026-earnings-results/" target="_blank" rel="noopener">SpaceX Q3 Earnings: The First Real Profit, and the Bill Underneath It (SEC Form 8-K Breakdown)</a></li>
+        <li><strong>SpaceQ</strong> (2026-10-21)：<a href="https://spaceq.ca/spacex-q3-2026-ai-passes-starlink-profit/" target="_blank" rel="noopener">SpaceX Q3 2026: AI Passes Starlink Profit / Revenue</a></li>
+        <li><strong>Defence Industry Europe</strong> (2026-10-30/31)：<a href="https://defence-industry.eu/u-s-department-of-state-approves-potential-2-1-billion-sale-of-500-patriot-pac-3-mse-missiles-to-ukraine/" target="_blank" rel="noopener">U.S. Department of State approves potential $2.1 billion sale of 500 Patriot PAC-3 MSE missiles to Ukraine</a></li>
+        <li><strong>Denkstrom / Tagesschau / Der Spiegel</strong> (2026-10-31)：<a href="https://denkstrom.org/artikel/usa-genehmigen-moeglichen-verkauf-von-500-patriot-raketen/" target="_blank" rel="noopener">USA genehmigen möglichen Verkauf von 500 Patriot-Raketen</a></li>
+        <li><strong>GomSpace Official Press Release</strong> (2026-10-27)：<a href="https://gomspace.com/ukraines-sovereign-satellite-now-operating-in-orbit/" target="_blank" rel="noopener">Ukraine's Sovereign Satellite Now Operating in Orbit</a></li>
+        <li><strong>Defense Express (Ukraine)</strong> (2026-10-29)：<a href="https://en.defence-ua.com/news/independent_ukrainian_satellite_communications_within_reach_himera_gomspace_launch_first_obria_nano_satellite-20248.html" target="_blank" rel="noopener">Independent Ukrainian Satellite Communications Within Reach: HIMERA, GomSpace Launch First OBRIA NANO Satellite</a></li>
+        <li><strong>UNITED24 Media</strong> (2026-10-26)：<a href="https://united24media.com/war-in-ukraine/ukraines-drones-were-hit-by-a-10-day-starlink-speed-limit-what-happened-and-why-it-matters-23813" target="_blank" rel="noopener">Ukraine's Drones Were Hit by a 10-Day Starlink Speed Limit. What Happened and Why It Matters</a></li>
+        <li><strong>Institute for the Study of War (ISW)</strong> (2026-10-25)：<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">Russian Offensive Campaign Assessment, October 25, 2026</a></li>
+        <li><strong>Anduril Industries Official Newsroom</strong> (2026-10-27)：<a href="https://www.anduril.com/news/anduril-and-qualcomm-unveil-bluechip-to-rebuild-american-computer-manufacturing" target="_blank" rel="noopener">Anduril and Qualcomm Unveil BlueChip to Rebuild American Computer Manufacturing</a></li>
+        <li><strong>Manufacturing Dive</strong> (2026-10-28/29)：<a href="https://www.manufacturingdive.com/news/anduril-qualcomm-blue-chip-tsmc-snapdragon-reshoring-computer-hardware/872925/" target="_blank" rel="noopener">Anduril, Qualcomm partner on BlueChip computer hardware line (TSMC Phoenix fab confirmation)</a></li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<dialog id="mermaid-modal" aria-label="全螢幕檢視直式因果圖">
+  <div class="modal-header">
+    <h4>全螢幕檢視：權重事件傳導與貝氏決策圖（按 Esc 關閉）</h4>
+    <button type="button" class="modal-close-btn" id="btn-modal-close" onclick="closeFullscreen()">關閉 (Esc)</button>
+  </div>
+  <div class="modal-body" id="modal-svg-container"></div>
+</dialog>
+
+<script>
+  const SHARED_THEME_CSS = `
+    .cluster-label foreignObject { overflow: visible !important; }
+    .cluster-label foreignObject > div { display: inline-block !important; white-space: nowrap !important; overflow: visible !important; }
+    .cluster-label, .cluster-label text, .cluster-label span, .cluster-label p, .cluster-label .nodeLabel {
+      font-size: 19px !important; font-weight: 700 !important; line-height: 1.4 !important; text-align: center; color: #1A1714 !important; fill: #1A1714 !important;
+    }
+    .cluster rect { rx: 8px !important; ry: 8px !important; }
+    .spacer { height: 0px !important; min-height: 0px !important; max-height: 0px !important; font-size: 0px !important; line-height: 0px !important; padding: 0px !important; margin: 0px !important; border: none !important; }
+    .spacer rect { height: 0px !important; fill: transparent !important; stroke: none !important; display: none !important; }
+    .spacer .label { padding: 0px !important; height: 0px !important; }
+    .spacer span { display: none !important; }
+  `;
+
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 40,
+      rankSpacing: 60,
+      padding: 24,
+      subGraphTitleMargin: {
+        top: 18,
+        bottom: 28
+      }
+    },
+    themeCSS: SHARED_THEME_CSS
+  });
+
+  let currentZoom = 1.0;
+
+  function applyZoom() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    if (svg) {
+      svg.style.transform = `scale(${currentZoom})`;
+      document.getElementById('zoom-pct').textContent = Math.round(currentZoom * 100) + '%';
+    }
+  }
+
+  function zoomMermaid(factor) {
+    currentZoom = Math.min(2.5, Math.max(0.5, currentZoom * factor));
+    applyZoom();
+  }
+
+  function resetMermaid() {
+    currentZoom = 1.0;
+    applyZoom();
+  }
+
+  let lastFocusedElement = null;
+
+  function openFullscreen() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    if (!svg) return;
+    lastFocusedElement = document.activeElement;
+    const modal = document.getElementById('mermaid-modal');
+    const container = document.getElementById('modal-svg-container');
+    container.innerHTML = '';
+    const clone = svg.cloneNode(true);
+    clone.style.transform = 'none';
+    clone.style.maxWidth = '100%';
+    clone.style.height = 'auto';
+    container.appendChild(clone);
+    modal.showModal();
+    document.getElementById('btn-modal-close').focus();
+  }
+
+  function closeFullscreen() {
+    const modal = document.getElementById('mermaid-modal');
+    modal.close();
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
+  document.getElementById('mermaid-modal').addEventListener('close', () => {
+    if (lastFocusedElement) lastFocusedElement.focus();
+  });
+
+  function exportSVG() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    if (!svg) return;
+    const clone = svg.cloneNode(true);
+    clone.style.transform = 'none';
+    const styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+    styleEl.textContent = SHARED_THEME_CSS;
+    clone.insertBefore(styleEl, clone.firstChild);
+    const serializer = new XMLSerializer();
+    const source = '<?xml version="1.0" standalone="no"?>\r\n' + serializer.serializeToString(clone);
+    const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = '21_ukraine_spacex_q3_google_suncatcher_bluechip_graph.svg';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+</body>
+</html>

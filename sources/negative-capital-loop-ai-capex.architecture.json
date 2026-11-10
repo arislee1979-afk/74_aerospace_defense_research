@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "05. 大歷史視野下的資本負向迴路：信用崩塌、投機泡沫、帝國暴力與當代科技槓桿",
+    "subtitle": "西荷王權違約vs法治 · 1637鬱金香博傻 · 1720密西西比印鈔自爆 · 1840/1882帝國武裝討債 · 2026美中AI算力循環融資與折舊懸崖",
+    "output": "topics/大歷史/03_精華劃線與書評摘要/l2/output/negative-capital-loop-ai-capex-light.html",
+    "quality_profile": "showcase",
+    "locale": "zh-TW",
+    "legend": {
+      "mode": "all",
+      "entries": {
+        "frontend": { "label": "1. 正向飛輪反轉為負向死亡螺旋機制" },
+        "backend": { "label": "2. 歷史反例：西荷違約、鬱金香與密西西比泡沫" },
+        "security": { "label": "3. 帝國暴力討債：埃及保護國、鴉片戰爭與希臘公債" },
+        "database": { "label": "4. 當代映射：美中 AI 算力競賽與三大連環暴雷鏈" },
+        "cloud": { "label": "5. 兩大歷史鐵律與貝氏對稱檢驗閘門 (S1/S3/IRQ-06)" }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "c_positive_mobius",
+      "type": "frontend",
+      "label": "正向莫比烏斯飛輪",
+      "sublabel": "信用→資本→實體生產力擴張→法治履約",
+      "tag": "Virtuous Loop",
+      "pos": [50, 80],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_negative_spiral",
+      "type": "frontend",
+      "label": "負向死亡螺旋反轉",
+      "sublabel": "膨脹槓桿→資產虛化→違約斷糧→暴力清算",
+      "tag": "Death Spiral",
+      "pos": [380, 80],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_spain_dutch_default",
+      "type": "frontend",
+      "label": "西班牙王權破產四次",
+      "sublabel": "馬德里賴帳抓銀行家vs阿姆斯特丹3%低利法治",
+      "tag": "Sovereign Default",
+      "pos": [710, 80],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_tulip_windhandel",
+      "type": "backend",
+      "label": "1637 鬱金香空氣交易",
+      "sublabel": "零現金流球莖·哈勒姆拍賣無人接盤崩跌99%",
+      "tag": "Greater Fool Bubble",
+      "pos": [50, 240],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_mississippi_johnlaw",
+      "type": "backend",
+      "label": "1720 密西西比泡沫自爆",
+      "sublabel": "約翰勞一身三職·印鈔買股·路易十六50%付息",
+      "tag": "Fiat-Equity Crash",
+      "pos": [380, 240],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_southsea_contrast",
+      "type": "backend",
+      "label": "英國南海泡沫制度止血",
+      "sublabel": "國會獨立問責關大臣·英格蘭銀行接盤保信用",
+      "tag": "Rule of Law Buffer",
+      "pos": [710, 240],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_egypt_1882_debt",
+      "type": "security",
+      "label": "1882 英國武裝佔領埃及",
+      "sublabel": "蘇伊士1億英鎊外債·棉價暴跌·砲轟亞歷山大港",
+      "tag": "Sovereign Collateral",
+      "pos": [50, 400],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_opium_war_1840",
+      "type": "security",
+      "label": "1840 鴉片戰爭與香港",
+      "sublabel": "扭轉白銀逆差·議員持股毒梟·4千萬人成癮",
+      "tag": "Gunboat Narcotics",
+      "pos": [380, 400],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_greek_bonds_1827",
+      "type": "security",
+      "label": "1821 希臘叛軍公債",
+      "sublabel": "倫敦證交所戰爭證券化·1827納瓦里諾海戰護盤",
+      "tag": "War Commodification",
+      "pos": [710, 400],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_us_ai_roundtrip",
+      "type": "database",
+      "label": "美國AI重資本循環閉環",
+      "sublabel": "CSP投資換算力採購·SPCX負FCF與千億CapEx",
+      "tag": "US CapEx Loop",
+      "pos": [50, 560],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_china_deepseek_moe",
+      "type": "database",
+      "label": "中國開源架構低成本突圍",
+      "sublabel": "DeepSeek/Qwen/Kimi·MoE與MLA壓低推論單價",
+      "tag": "China Efficiency",
+      "pos": [380, 560],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_depreciation_cliff",
+      "type": "database",
+      "label": "三大連環暴雷與折舊懸崖",
+      "sublabel": "Scaling遞減·GPU三年折舊減值·二級市場斷流",
+      "tag": "Depreciation Cliff",
+      "pos": [710, 560],
+      "size": [160, 64]
+    },
+    {
+      "id": "c_surplus_value_gate",
+      "type": "cloud",
+      "label": "兩大歷史鐵律與貝氏檢驗",
+      "sublabel": "獨立司法契約+真實自由現金流(FCF>WACC)審計",
+      "tag": "Canonical Gate",
+      "pos": [380, 720],
+      "size": [160, 64]
+    }
+  ],
+  "connections": [
+    {
+      "from": "c_positive_mobius",
+      "to": "c_negative_spiral",
+      "label": "違約或脫離實體產出"
+    },
+    {
+      "from": "c_negative_spiral",
+      "to": "c_spain_dutch_default",
+      "label": "王權踐踏司法契約"
+    },
+    {
+      "from": "c_spain_dutch_default",
+      "to": "c_tulip_windhandel",
+      "label": "資本湧入荷蘭氾濫"
+    },
+    {
+      "from": "c_tulip_windhandel",
+      "to": "c_mississippi_johnlaw",
+      "label": "投機升級為國家印鈔"
+    },
+    {
+      "from": "c_mississippi_johnlaw",
+      "to": "c_southsea_contrast",
+      "label": "專制崩盤vs憲政止血"
+    },
+    {
+      "from": "c_southsea_contrast",
+      "to": "c_tulip_windhandel",
+      "label": "獨立司法守住底線"
+    },
+    {
+      "from": "c_tulip_windhandel",
+      "to": "c_egypt_1882_debt",
+      "label": "過剩資本跨國放貸"
+    },
+    {
+      "from": "c_egypt_1882_debt",
+      "to": "c_opium_war_1840",
+      "label": "國家充當資本家工會"
+    },
+    {
+      "from": "c_egypt_1882_debt",
+      "to": "c_greek_bonds_1827",
+      "label": "主權債務與戰爭商品化"
+    },
+    {
+      "from": "c_opium_war_1840",
+      "to": "c_us_ai_roundtrip",
+      "label": "歷史映射2026算力霸權"
+    },
+    {
+      "from": "c_tulip_windhandel",
+      "to": "c_china_deepseek_moe",
+      "label": "高估值泡沫vs極限效率"
+    },
+    {
+      "from": "c_china_deepseek_moe",
+      "to": "c_depreciation_cliff",
+      "label": "平價替代衝擊高CapEx"
+    },
+    {
+      "from": "c_us_ai_roundtrip",
+      "to": "c_surplus_value_gate",
+      "label": "檢驗真實FCF回報"
+    },
+    {
+      "from": "c_depreciation_cliff",
+      "to": "c_surplus_value_gate",
+      "label": "回歸實體剩餘價值"
+    }
+  ]
+}

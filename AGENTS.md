@@ -1,5 +1,7 @@
 # AGENTS.md — 74_aerospace_defense_research 作業契約與最高憲法
 
+> 2026-10-25 本機權威：本庫正式 Mac 目錄為 source of truth，GitHub 保存版本備份與查核快照。依 [Local-first 合約](/Users/arislee/0_project_mac/00_agent_control_plane/docs/LOCAL_FIRST_AUTHORITY.md) 區分草稿、人工採納與發布；既有 runtime 權限不隨文件更新而擴張。
+
 > **適用範圍**：本 Repository (`74_aerospace_defense_research`) 全部檔案與協同 AI 代理人。  
 > **制定宗旨**：規範航太、國防工業與軍工雙用技術供應鏈研究之推論紀律與輸出語感，徹底杜絕軍事自媒體與大眾行銷常見之誇張渲染與非客觀修辭，確保產出品質嚴格對齊頂尖智庫、國防採購評估與實業財務分析標準。  
 > **生效日期**：2026-10-19 起永久生效。  
@@ -75,7 +77,7 @@
 
 1. **獨立 Git 管理**：
    - 本庫為獨立 Git 倉庫，預設分支為 `main`。
-   - GitHub accepted/default branch 為版本化權威；本機目錄為執行環境。
+   - 正式本機 repo 為內容、證據與採納紀錄的權威；GitHub 為版本備份與查核快照。
    - **禁止直接 push `main`**；工作分支完成後需經明確驗證。
 2. **跨庫邊界**：
    - 本庫未經使用者明確跨庫授權前，**嚴禁修改** `70_investment_hub`、`71_china_overcapacity`、`72_semiconductor_research`、`73_deepseek_Kimi`。
