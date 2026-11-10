@@ -246,6 +246,62 @@ footer {
   .main-content { padding: 24px 16px; }
   .hero-title { font-size: 1.75rem; }
 }
+
+/* ==========================================================================
+   knowledge-publication-l1-l2-v12 (2026-10-25):
+   Mermaid Subgraph Titles, Vertical Spacing (~71px Golden Header Band) & Micro-Spacer Contract
+   ========================================================================== */
+.cluster-label foreignObject {
+  overflow: visible !important;
+}
+.cluster-label foreignObject > div {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+.cluster-label,
+.cluster-label text,
+.cluster-label span,
+.cluster-label p,
+.cluster-label .nodeLabel {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  color: #1a1714 !important;
+  fill: #1a1714 !important;
+}
+.cluster rect {
+  rx: 8px !important;
+  ry: 8px !important;
+  fill: #f9f7f1 !important;
+  stroke: #c8c2b3 !important;
+  stroke-width: 1.5px !important;
+}
+.spacer {
+  height: 0px !important;
+  min-height: 0px !important;
+  max-height: 0px !important;
+  font-size: 0px !important;
+  line-height: 0px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: none !important;
+}
+.spacer rect {
+  height: 0px !important;
+  fill: transparent !important;
+  stroke: none !important;
+  display: none !important;
+}
+.spacer .label {
+  padding: 0px !important;
+  height: 0px !important;
+}
+.spacer span {
+  display: none !important;
+}
+
   </style>
 </head>
 <body>
@@ -339,7 +395,7 @@ footer {
 
       <!-- Mermaid Section -->
       <section id="knowledge-map" class="section">
-        <h2 class="section-title">全域體系架構圖 (Mermaid 垂直展開結構) <span class="badge">可縮放 · 全螢幕 · 可匯出 SVG</span></h2>
+        <h2 class="section-title">全域體系架構圖 (Mermaid 垂直展開結構) <span class="badge">v12 規範 · 19px 標題帶 · 黃金留白 18/28px · Micro-Spacer</span></h2>
         <div class="diagram-box" data-diagram-card data-diagram-title="科學家替印鈔買單與白宮科技授勳全景架構">
           <div class="diagram-header-bar" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #cbd5e1; background: #f8fafc; border-top-left-radius: 12px; border-top-right-radius: 12px; flex-wrap: wrap; gap: 10px;">
             <div class="diagram-status" style="display: flex; align-items: center; gap: 8px;">
@@ -358,38 +414,48 @@ footer {
           <div class="mermaid-wrapper svg-shell" id="mermaid-shell" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 32px 16px; margin: 0; border: 1px solid #cbd5e1; border-top: none; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; text-align: center; background: #ffffff;">
             <div id="mermaid-zoom-target" style="display: inline-block; min-width: 860px; transform-origin: top center; transition: transform 0.15s ease-out;">
               <pre class="mermaid" id="main-mermaid">
-graph TD
-    subgraph HarariLaw ["📜 1. 《人類簡史》信貸鐵律：銀行與政府印鈔，科學家買單 (L2906–2910)"]
+flowchart TB
+    subgraph HarariLaw["📜 1. 《人類簡史》信貸鐵律：銀行與政府印鈔，科學家買單 (L2906–2910)<br/><span style='font-size:14px;font-weight:normal;color:#6e675f;'>Harari's Credit Law: Banks & Governments Print Money, Scientists Foot the Bill</span>"]
         direction TB
-        H1["<b style='font-size:15px; color:#b45309;'>36兆美元美債與印鈔泡沫壓力</b><br/><br/>• 現代銀行10:1部分準備金與90%數位信貸預支未來大餅<br/>• 2008與2020後全球央行擴表數十兆美元，美債突破36兆<br/>• 若無實質全要素生產力(TFP)躍遷，恐重演1789路易十六50%預算付息破產"]
-        H2["<b style='font-size:15px; color:#b45309;'>1945《無盡的前沿》→ 2026《新黃金時代》範式轉移</b><br/><br/>• 傳統大學教授已無力負擔百億至千億美元級GW資料中心與火箭星系<br/>• 聯邦傳統科研預算受國債利息排擠，必須外包予兆元級私人科技巨企<br/>• 白宮OSTP克拉齊奧斯報告確立：由超大型企業實驗室替國家主權信貸買單"]
+        KP_TITLE_SPACE_HarariLaw[" "]:::spacer
+        H1["<b style='font-size:15.5px; color:#b45309;'>36兆美元美債與印鈔泡沫壓力</b><br/><br/>• 現代銀行10:1部分準備金與90%數位信貸預支未來大餅<br/>• 2008與2020後全球央行擴表數十兆美元，美債突破36兆<br/>• 若無實質全要素生產力(TFP)躍遷，恐重演1789路易十六50%預算付息破產"]
+        H2["<b style='font-size:15.5px; color:#b45309;'>1945《無盡的前沿》→ 2026《新黃金時代》範式轉移</b><br/><br/>• 傳統大學教授已無力負擔百億至千億美元級GW資料中心與火箭星系<br/>• 聯邦傳統科研預算受國債利息排擠，必須外包予兆元級私人科技巨企<br/>• 白宮OSTP克拉齊奧斯報告確立：由超大型企業實驗室替國家主權信貸買單"]
+        KP_TITLE_SPACE_HarariLaw ~~~ H1
         H1 --> H2
     end
 
-    subgraph WhiteHouseTrilogy ["🏛️ 2. 白宮 2026 年 9–10 月「政商授勳與算力結盟」三部曲"]
+    subgraph WhiteHouseTrilogy["🏛️ 2. 白宮 2026 年 9–10 月「政商授勳與算力結盟」三部曲<br/><span style='font-size:14px;font-weight:normal;color:#6e675f;'>White House Sept–Oct 2026 Trilogy: Compute as Oil, East Room Table & National Medals</span>"]
         direction TB
-        W1["<b style='font-size:15px; color:#1d4ed8;'>第一幕 (9/14) & 第二幕 (9/29)：排除減速與東廳座次</b><br/><br/>• 9/14 All-In峰會川普連線黃仁勳擴音：資料中心是未來25年石油，絕不放慢<br/>• 9/29 白宮東廳34人午宴：川普居中，左一馬斯克、右一黃仁勳、右二蘇姿丰、左三皮查伊<br/>• 簽署一頁紙《白宮超級智慧協議》自律承諾，掃除強制AI專法與暫停風險"]
-        W2["<b style='font-size:15px; color:#1d4ed8;'>第三幕 (10/8)：打破67年傳統頒授國家科學與技術創新獎章</b><br/><br/>• 史上首次將國家科學獎章集中頒予現職科技巨頭掌門人 (合計身家1.736兆美元)<br/>• 國家科學獎章4人：Elon Musk、Jensen Huang(黃仁勳)、Lisa Su(蘇姿丰)、Sergey Brin<br/>• 國家技術與創新獎章2人：Satya Nadella(微軟)、Michael Dell(戴爾)；川普封為「美國國寶」"]
+        KP_TITLE_SPACE_WhiteHouseTrilogy[" "]:::spacer
+        W1["<b style='font-size:15.5px; color:#1d4ed8;'>第一幕 (9/14) & 第二幕 (9/29)：排除減速與東廳座次</b><br/><br/>• 9/14 All-In峰會川普連線黃仁勳擴音：資料中心是未來25年石油，絕不放慢<br/>• 9/29 白宮東廳34人午宴：川普居中，左一馬斯克、右一黃仁勳、右二蘇姿丰、左三皮查伊<br/>• 簽署一頁紙《白宮超級智慧協議》自律承諾，掃除強制AI專法與暫停風險"]
+        W2["<b style='font-size:15.5px; color:#1d4ed8;'>第三幕 (10/8)：打破67年傳統頒授國家科學與技術創新獎章</b><br/><br/>• 史上首次將國家科學獎章集中頒予現職科技巨頭掌門人 (合計身家1.736兆美元)<br/>• 國家科學獎章4人：Elon Musk、Jensen Huang(黃仁勳)、Lisa Su(蘇姿丰)、Sergey Brin<br/>• 國家技術與創新獎章2人：Satya Nadella(微軟)、Michael Dell(戴爾)；川普封為「美國國寶」"]
+        KP_TITLE_SPACE_WhiteHouseTrilogy ~~~ W1
         W1 --> W2
     end
 
-    subgraph MuskAndTitans ["🚀 3. 為何以 Elon Musk 為首？六大科技巨頭的物理買單分工"]
+    subgraph MuskAndTitans["🚀 3. 為何以 Elon Musk 為首？六大科技巨頭的物理買單分工<br/><span style='font-size:14px;font-weight:normal;color:#6e675f;'>First Among Equals: Elon Musk ('Modern-Day Edison') & The Six Tech Pillars</span>"]
         direction TB
-        M1["<b style='font-size:15px; color:#b91c1c;'>為首核心：Elon Musk (白宮最高評價「現代愛迪生」)</b><br/><br/>• 唯一打通「太空發射+1.1萬顆星鏈+自製Raptor渦輪發電+xAI算力」物理閉環<br/>• SpaceX(SPCX, 2兆市值)月裝22萬顆GB300，Q3營收暴增161%達145.8億美元(SI占76億)<br/>• 現場呼應川普行政命令改名 SpaceX SI，並掌握烏克蘭 Starshield 戰場可否認開關"]
-        M2["<b style='font-size:15px; color:#b91c1c;'>算力與雲端五大支柱：黃仁勳 · 蘇姿丰 · 布林/皮查伊 · 納德拉 · 戴爾</b><br/><br/>• 黃仁勳 (NVDA)：前沿超級智慧「絕對骨幹」，Blackwell年營收1840億、推進Vera Rubin<br/>• 蘇姿丰 (AMD)：小晶片(Chiplet)驅動能源部El Capitan百萬兆級(Exascale)核武與科學超算<br/>• Google (布林受獎/皮查伊簽約)：攜手SpaceX發射Trillium TPU v6e太空算力衛星；微軟與戴爾建構主權雲機櫃"]
+        KP_TITLE_SPACE_MuskAndTitans[" "]:::spacer
+        M1["<b style='font-size:15.5px; color:#b91c1c;'>為首核心：Elon Musk (白宮最高評價「現代愛迪生」)</b><br/><br/>• 唯一打通「太空發射+1.1萬顆星鏈+自製Raptor渦輪發電+xAI算力」物理閉環<br/>• SpaceX(SPCX, 2兆市值)月裝22萬顆GB300，Q3營收暴增161%達145.8億美元(SI占76億)<br/>• 現場呼應川普行政命令改名 SpaceX SI，並掌握烏克蘭 Starshield 戰場可否認開關"]
+        M2["<b style='font-size:15.5px; color:#b91c1c;'>算力與雲端五大支柱：黃仁勳 · 蘇姿丰 · 布林/皮查伊 · 納德拉 · 戴爾</b><br/><br/>• 黃仁勳 (NVDA)：前沿超級智慧「絕對骨幹」，Blackwell年營收1840億、推進Vera Rubin<br/>• 蘇姿丰 (AMD)：小晶片(Chiplet)驅動能源部El Capitan百萬兆級(Exascale)核武與科學超算<br/>• Google (布林受獎/皮查伊簽約)：攜手SpaceX發射Trillium TPU v6e太空算力衛星；微軟與戴爾建構主權雲機櫃"]
+        KP_TITLE_SPACE_MuskAndTitans ~~~ M1
         M1 --> M2
     end
 
-    subgraph SovereignLoop ["🌐 4. 24億創世紀任務、川普帳戶全民入股與台灣矽盾底座"]
+    subgraph SovereignLoop["🌐 4. 24億創世紀任務、川普帳戶全民入股與台灣矽盾底座<br/><span style='font-size:14px;font-weight:normal;color:#6e675f;'>$2.4B Genesis Mission, 70M Trump Accounts & Taiwan TSMC Silicon Base</span>"]
         direction TB
-        S1_Node["<b style='font-size:15px; color:#15803d;'>60億科學倡議 × 24億「創世紀任務」× 7000萬「川普帳戶」</b><br/><br/>• 11家巨頭捐24億算力 (NVDA 10億、AMD 5億、OpenAI 2億、Google 1.5億) 訓練14部會模型<br/>• 財政部10/1自動開立7000萬兒童「川普帳戶」，Dell捐62.5億、Musk宣示贈每人一股SPCX (105億)<br/>• 將「美國主權信貸、全民兒童資產、科技巨頭市值」鎖入同一莫比烏斯環"]
-        S2_Node["<b style='font-size:15px; color:#15803d;'>台灣矽盾底座 (Taiwan Lens) 與四大結構矛盾邊界</b><br/><br/>• 4位科學獎章得主中2位(50%)生於台灣(黃仁勳、蘇姿丰)；所有AI與太空晶片100%仰賴台積電CoWoS<br/>• 結構矛盾：頒獎前數小時范斯暫停H-1B簽證 vs 台上5位得主為移民；民間取代公共科研之壟斷隱憂<br/>• 財務與物理邊界：SpaceX前三季FCF -349.7億；Suncatcher太空TPU受真空散熱限制每15分鐘須停機冷卻"]
+        KP_TITLE_SPACE_SovereignLoop[" "]:::spacer
+        S1_Node["<b style='font-size:15.5px; color:#15803d;'>60億科學倡議 × 24億「創世紀任務」× 7000萬「川普帳戶」</b><br/><br/>• 11家巨頭捐24億算力 (NVDA 10億、AMD 5億、OpenAI 2億、Google 1.5億) 訓練14部會模型<br/>• 財政部10/1自動開立7000萬兒童「川普帳戶」，Dell捐62.5億、Musk宣示贈每人一股SPCX (105億)<br/>• 將「美國主權信貸、全民兒童資產、科技巨頭市值」鎖入同一莫比烏斯環"]
+        S2_Node["<b style='font-size:15.5px; color:#15803d;'>台灣矽盾底座 (Taiwan Lens) 與四大結構矛盾邊界</b><br/><br/>• 4位科學獎章得主中2位(50%)生於台灣(黃仁勳、蘇姿丰)；所有AI與太空晶片100%仰賴台積電CoWoS<br/>• 結構矛盾：頒獎前數小時范斯暫停H-1B簽證 vs 台上5位得主為移民；民間取代公共科研之壟斷隱憂<br/>• 財務與物理邊界：SpaceX前三季FCF -349.7億；Suncatcher太空TPU受真空散熱限制每15分鐘須停機冷卻"]
+        KP_TITLE_SPACE_SovereignLoop ~~~ S1_Node
         S1_Node --> S2_Node
     end
 
     HarariLaw ==> WhiteHouseTrilogy
     WhiteHouseTrilogy ==> MuskAndTitans
     MuskAndTitans ==> SovereignLoop
+
+    classDef spacer fill:transparent,stroke:transparent,stroke-width:0px;
               </pre>
             </div>
           </div>
@@ -694,25 +760,44 @@ graph TD
   </div>
 
   <script>
-    mermaid.initialize({
+        mermaid.initialize({
       startOnLoad: true,
-      theme: 'base',
+      theme: 'neutral',
       securityLevel: 'loose',
       flowchart: {
-        useMaxWidth: false,
+        useMaxWidth: true,
         htmlLabels: true,
         curve: 'basis',
-        nodeSpacing: 36,
-        rankSpacing: 48
+        nodeSpacing: 50,
+        rankSpacing: 70,
+        padding: 24,
+        subGraphTitleMargin: {
+          top: 18,
+          bottom: 28
+        }
       },
       themeVariables: {
+        fontSize: '15.5px',
+        fontFamily: 'Noto Sans TC, system-ui, sans-serif',
         primaryColor: '#ffffff',
         primaryTextColor: '#1a1714',
         primaryBorderColor: '#c8c2b3',
         lineColor: '#6e675f',
         secondaryColor: '#f4f1ea',
         tertiaryColor: '#faf9f5'
-      }
+      },
+      themeCSS: `
+        .cluster-label foreignObject { overflow: visible !important; }
+        .cluster-label foreignObject > div { display: inline-block !important; white-space: nowrap !important; overflow: visible !important; }
+        .cluster-label, .cluster-label text, .cluster-label span, .cluster-label p, .cluster-label .nodeLabel {
+          font-size: 19px !important; font-weight: 700 !important; line-height: 1.4 !important; text-align: center !important; color: #1a1714 !important; fill: #1a1714 !important;
+        }
+        .cluster rect { rx: 8px !important; ry: 8px !important; fill: #f9f7f1 !important; stroke: #c8c2b3 !important; stroke-width: 1.5px !important; }
+        .spacer { height: 0px !important; min-height: 0px !important; max-height: 0px !important; font-size: 0px !important; line-height: 0px !important; padding: 0px !important; margin: 0px !important; border: none !important; }
+        .spacer rect { height: 0px !important; fill: transparent !important; stroke: none !important; display: none !important; }
+        .spacer .label { padding: 0px !important; height: 0px !important; }
+        .spacer span { display: none !important; }
+      `
     });
 
     let currentMermaidScale = 1.0;

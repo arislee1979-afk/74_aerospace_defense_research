@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-10-26 太空基建、AI 算力融資與戰場反無人機（C-UAS）24 小時實質事件解構 — Knowledge L2 HTML (v15)</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  :root {
+    --paper: #F7F4ED;
+    --paper-elevated: #FFFFFF;
+    --cream-shell: #F0E9D9;
+    --ink: #1A1714;
+    --ink-secondary: #4A4843;
+    --ink-muted: #78756E;
+    --terracotta: #D97757;
+    --crimson: #B91C1C;
+    --amber: #B45309;
+    --teal: #0F766E;
+    --navy: #1D4ED8;
+    --border-warm: #E2DAC7;
+    --shadow-soft: 0 6px 24px rgba(26, 23, 20, 0.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Serif TC", "Noto Sans TC", "PingFang TC", serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.78;
+    font-size: 16.5px;
+  }
+  .top-banner {
+    background: var(--cream-shell);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 10px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13px;
+    color: var(--ink-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .top-banner .pill {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .layout-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  @media (max-width: 1024px) {
+    .layout-container {
+      grid-template-columns: 1fr;
+      padding: 20px 16px 60px;
+      gap: 24px;
+    }
+    .toc-sidebar {
+      position: static !important;
+    }
+  }
+  .toc-sidebar {
+    position: sticky;
+    top: 24px;
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 20px 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .toc-sidebar h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+  .toc-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toc-sidebar a {
+    text-decoration: none;
+    color: var(--ink-secondary);
+    font-size: 14px;
+    line-height: 1.45;
+    display: block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .toc-sidebar a:hover {
+    background: var(--paper-elevated);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  main {
+    min-width: 0;
+  }
+  .hero-header {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-top: 5px solid var(--terracotta);
+    border-radius: 14px;
+    padding: 32px 34px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) {
+    .hero-header, .section-card {
+      padding: 22px 18px !important;
+    }
+    .hero-title {
+      font-size: 24px !important;
+    }
+  }
+  .hero-eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.34;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    color: var(--ink-secondary);
+    line-height: 1.68;
+    margin-bottom: 22px;
+  }
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .kpi-card {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi-card .k-label {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .kpi-card .k-val {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 4px 0;
+  }
+  .kpi-card .k-sub {
+    font-size: 12.5px;
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+  .section-card {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border-warm);
+    border-radius: 14px;
+    padding: 32px 34px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 28px;
+  }
+  .section-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    border-bottom: 2px solid var(--cream-shell);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .section-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 22px 0 10px;
+  }
+  .section-card p {
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+  .section-card ul, .section-card ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+  .section-card li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  blockquote.thesis-box {
+    background: var(--cream-shell);
+    border-left: 4px solid var(--terracotta);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 18px 0 22px;
+    font-size: 15.8px;
+    color: var(--ink);
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 18px 0 22px;
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 15px;
+    min-width: 620px;
+  }
+  th {
+    background: var(--cream-shell);
+    color: var(--ink);
+    font-weight: 800;
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--border-warm);
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-warm);
+    vertical-align: top;
+    line-height: 1.58;
+  }
+  tr:nth-child(even) td {
+    background: #FAF8F3;
+  }
+  .epistemic-tag {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--cream-shell);
+    color: var(--ink-secondary);
+    border: 1px solid var(--border-warm);
+  }
+  a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: var(--terracotta);
+  }
+
+  /* v15 Dual-Track Mermaid Subgraph & Vertical-Only Contract */
+  .svg-shell {
+    background: var(--cream-shell);
+    border: 1px solid var(--border-warm);
+    border-radius: 12px;
+    padding: 18px;
+    margin: 22px auto;
+    max-width: 760px;
+    overflow-x: hidden;
+  }
+  .svg-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-secondary);
+  }
+  .svg-toolbar-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .svg-toolbar-btns button {
+    background: #fff;
+    border: 1px solid var(--border-warm);
+    color: var(--ink);
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .svg-toolbar-btns button:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+  .mermaid-viewport {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px 12px;
+    max-width: 760px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border: 1px solid var(--border-warm);
+  }
+  .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform-origin: top center;
+    transition: transform 0.18s ease;
+  }
+
+  /* Dual-Track CSS Contract for Subgraph Titles & Spacer */
+  .cluster-label foreignObject {
+    overflow: visible !important;
+  }
+  .cluster-label foreignObject > div {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+  .cluster-label,
+  .cluster-label text,
+  .cluster-label span,
+  .cluster-label p,
+  .cluster-label .nodeLabel {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-align: center;
+    color: #1A1714 !important;
+    fill: #1A1714 !important;
+  }
+  .cluster rect {
+    rx: 8px !important;
+    ry: 8px !important;
+  }
+  .spacer {
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    font-size: 0px !important;
+    line-height: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    border: none !important;
+  }
+  .spacer rect {
+    height: 0px !important;
+    fill: transparent !important;
+    stroke: none !important;
+    display: none !important;
+  }
+  .spacer .label {
+    padding: 0px !important;
+    height: 0px !important;
+  }
+  .spacer span {
+    display: none !important;
+  }
+
+  .legend-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-secondary);
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  /* Fullscreen Modal Dialog */
+  dialog#mermaid-modal {
+    width: 94vw;
+    max-width: 1100px;
+    height: 90vh;
+    margin: auto;
+    border: 2px solid var(--border-warm);
+    border-radius: 14px;
+    background: var(--paper-elevated);
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  }
+  dialog#mermaid-modal::backdrop {
+    background: rgba(20, 20, 19, 0.65);
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-warm);
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .modal-header h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .modal-close-btn {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .modal-body {
+    height: calc(100% - 56px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid var(--border-warm);
+  }
+  .decision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  }
+  .decision-box {
+    background: var(--paper);
+    border: 1px solid var(--border-warm);
+    border-top: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .decision-box.warn { border-top-color: var(--crimson); }
+  .decision-box.amber { border-top-color: var(--amber); }
+  .decision-box h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .decision-box p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <div><strong>Knowledge Publication L2 (Claude Light Edition)</strong> · 專案：<code>74_aerospace_defense_research</code> · 查核時間：2026-10-26 17:33 UTC+8</div>
+  <div><span class="pill">v15 Vertical-Only Contract</span></div>
+</div>
+
+<div class="layout-container">
+  <aside class="toc-sidebar">
+    <h3>章節導覽 (Reading TOC)</h3>
+    <ul>
+      <li><a href="#sec-thesis">一、核心問題與貝氏摘要</a></li>
+      <li><a href="#sec-cases">二、24 小時五大實質事件</a></li>
+      <li><a href="#sec-graph">三、直式因果圖與節點／關係表</a></li>
+      <li><a href="#sec-bayesian">四、貝氏評分與適用邊界</a></li>
+      <li><a href="#sec-sources">五、已查核來源清單</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="hero-header" id="sec-thesis">
+      <div class="hero-eyebrow">AEROSPACE &amp; DEFENSE × AI COMPUTE FINANCING × C-UAS COST-EXCHANGE · 2026-10-26</div>
+      <h1 class="hero-title">2026-10-26 太空基建、AI 算力融資與戰場反無人機（C-UAS）24 小時實質事件解構</h1>
+      <p class="hero-subtitle">
+        鎖定台北時間 <strong>2026-10-25 17:33 至 2026-10-26 17:33</strong> 視窗，嚴格依據 SEC／公司財務指引、政府與智庫戰報及路透社一手報導，解構過去 24 小時內發生實質變化的 5 項核心事件：<strong>SpaceX 400 億美元 GPU 債務融資與 Q4 資本支出指引</strong>、<strong>Starshield 烏克蘭限速解除與國會問責</strong>、<strong>ISW 量化噴射無人機攔截率與 $7,000 AI 攔截機進展</strong>、<strong>Starship Booster 22 靜態點火與船體輪替</strong>，以及 <strong>Falcon 9 推進器破紀錄第 26 次複用排程</strong>。
+      </p>
+
+      <blockquote class="thesis-box">
+        <strong>核心問題與結論（Executive Thesis）</strong>：過去 24 小時內的 5 項實質事件揭示了三大結構性剪刀差 <span class="epistemic-tag">[INFERENCE]</span>：<br>
+        1. <strong>實業現金流決定算力融資生殺大權</strong>：SpaceX（<code>SPCX</code>）憑藉投資級信評與 Starlink 穩定營運現金流（2026Q3 連線部門營業利益 23.7 億美元），順利敲定 <strong>400 億美元可贖回債務</strong>採購 2027H1 交付的 Nvidia GPU，而無非 AI 核心現金流支撐的純算力二房東（Neoclouds）則遭債市切斷水源 <span class="epistemic-tag">[FACT / AUTHOR STATEMENT]</span>。<br>
+        2. <strong>可重複使用載具工程壁壘持續墊高</strong>：Starship Block 3 推進器 <strong>Booster 22</strong> 完成靜態點火並展開 Flight 15/16 船體輪替，同時 Falcon 9 排定執行單枚推進器第 <strong>26 次飛行</strong> <span class="epistemic-tag">[FACT]</span>。<br>
+        3. <strong>主權衛星單點限速催生低成本自主 C-UAS</strong>：10 月 14–24 日 Starshield 限速（約 100 mph）期間，烏軍對俄軍噴射無人機攔截率由 77% 降至 74%，被迫消耗單價 <strong>100 萬美元</strong>的 F-16 空對空飛彈，進而加速推進單價僅 <strong>7,000 美元</strong>、搭載終端 AI 導引的 <strong>F-Jet 80</strong> 噴射攔截無人機 <span class="epistemic-tag">[FACT / INFERENCE]</span>。
+      </blockquote>
+
+      <div class="kpi-strip">
+        <div class="kpi-card">
+          <div class="k-label">SpaceX GPU 債務融資 / Q4 CapEx</div>
+          <div class="k-val">$400 億 / $350–400 億</div>
+          <div class="k-sub">Q3 營收 $145.8 億 (+161%) · AI 佔 $75.6 億</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">Starshield 恢復連線速度上限</div>
+          <div class="k-val">&gt; 250 mph (402 km/h)</div>
+          <div class="k-sub">解除先前 ~100 mph 限速 · 參院要求作證</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">限速期噴射無人機攔截率 / AI 攔截機</div>
+          <div class="k-val">74% (原 77%) / $7,000</div>
+          <div class="k-sub">F-Jet 80 對比 F-16 飛彈 $100 萬成本交換比</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-label">Starship B22 點火 &amp; F9 複用紀錄</div>
+          <div class="k-val">Flight 15 就緒 / 第 26 飛</div>
+          <div class="k-sub">B22 完成靜態點火 · SL 15-16 自 SLC-4E 發射</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-card" id="sec-cases">
+      <h2>二、真實案例：過去 24 小時五大實質變化事件深度解構</h2>
+
+      <h3>事件 1：SpaceX 敲定 400 億美元 GPU 債務融資，預告 Q4 資本支出達 350–400 億美元</h3>
+      <ul>
+        <li><strong>融資宣告與結構（<span class="epistemic-tag">[AUTHOR STATEMENT]</span>）</strong>：SpaceX 執行長 Elon Musk 於美東時間 10 月 25 日下午（台北時間 10 月 26 日凌晨）於 X 宣布，SpaceX 已完成（closed）<strong>400 億美元</strong>的可贖回債務融資（callable debt），用於採購將於 2027 年 Q1 與 Q2 交付的 Nvidia GPU（<a href="https://www.investing.com/news/stock-market-news/musk-says-spacex-raised-40-billion-in-debt-for-gpus-4971248" target="_blank" rel="noopener">Reuters / Investing.com</a>、<a href="https://whbl.com/2026/10/25/musk-says-spacex-raised-40-billion-in-debt-for-gpus/" target="_blank" rel="noopener">WHBL / Thomson Reuters</a>）。</li>
+        <li><strong>財報實績與資本支出規模（<span class="epistemic-tag">[FACT]</span>）</strong>：根據 SpaceX 截至 2026 年 9 月 30 日之 Q3 財報，單季營收年增 161% 至 <strong>145.8 億美元</strong>，其中 AI 營收激增近 10 倍至 <strong>75.6 億美元</strong>，連線業務（Starlink）營業利益達 <strong>23.7 億美元</strong>。Q3 期末現金與有價證券合計 <strong>899 億美元</strong>（現金 513 億 + 有價證券 386 億），總負債 <strong>388 億美元</strong>；前三季累計資本支出 <strong>481 億美元</strong>（營業現金流 131 億美元），財務長 Bret Johnsen 預估 2026Q4 單季資本支出將高達 <strong>350 億至 400 億美元</strong>（<a href="https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade" target="_blank" rel="noopener">TIKR 財務分析</a>）。</li>
+        <li><strong>自研晶片 Terafab 與 Neoclouds 洗牌預警（<span class="epistemic-tag">[FACT / AUTHOR STATEMENT]</span>）</strong>：SpaceX 與 Tesla 於奧斯汀合資的晶圓廠 <strong>Terafab</strong> 預計於 2027 年 5–6 月產出首顆測試晶片、2028Q3 量產。Musk 同時指出債市已幾乎切斷對無非 AI 資料中心營收企業的融資，預言逾 200 家新興算力二房東（如 CoreWeave、Nebius 類型）將面臨整併與倒閉（<a href="https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade" target="_blank" rel="noopener">TIKR</a>）。</li>
+        <li><strong>未確認缺口（<span class="epistemic-tag">[UNKNOWN]</span>）</strong>：Musk 貼文尚未揭露該筆 400 億美元債務之最終定價利率、到期日、授信銀團名單，以及是否採用先前報導由 Apollo 領投之表外 SPV 結構。</li>
+      </ul>
+
+      <h3>事件 2：烏克蘭反駁違反 Starlink 條款指控，確認 Starshield 恢復 250 mph 高速連線</h3>
+      <ul>
+        <li><strong>商用條款技術反證（<span class="epistemic-tag">[AUTHOR STATEMENT]</span>）</strong>：針對 Musk 指控烏軍將商用 Starlink 用於攻擊無人機，烏克蘭總統澤倫斯基與國防技術顧問 Serhii Beskrestnov 於 10 月 25 日公開反駁，指出商用 Starlink 在烏境內早已設有 <strong>70 至 90 km/h</strong> 速限且無法於俄境運作，不可能用於深層打擊（<a href="https://www.europeaninterest.eu/ukraine-challenges-elon-musks-allegations-of-military-violations-of-starlink-terms/" target="_blank" rel="noopener">European Interest</a>）。</li>
+        <li><strong>解除 100 mph 限速與國會聽證要求（<span class="epistemic-tag">[FACT / AUTHOR STATEMENT]</span>）</strong>：烏克蘭國防部確認，先前逾一週的限速將連線限制在約 <strong>100 mph</strong>，目前已恢復對時速逾 <strong>250 mph</strong> 高速攔截載具的穩定連線。針對限速決策來源，美參議員 Adam Schiff 於 10 月 25 日要求國防部長 Pete Hegseth 赴參議院宣誓作證（<a href="https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored" target="_blank" rel="noopener">NPR / Central Florida Public Media</a>）。</li>
+      </ul>
+
+      <h3>事件 3：ISW 量化 Starshield 限速期間烏軍 C-UAS 攔截率與 $7,000 AI 攔截無人機進展</h3>
+      <ul>
+        <li><strong>攔截率實證數據（<span class="epistemic-tag">[FACT]</span>）</strong>：戰爭研究所（ISW）於 10 月 25 日晚間發布評估指出，在 10 月 14 至 24 日 Starshield 限速期間，烏軍對俄軍噴射動力無人機（10/24–25 單夜發射 153 架無人機中含 92 架噴射動力型）的攔截率由 <strong>77% 微幅降至約 74%</strong>（<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25 報告</a>）。</li>
+        <li><strong>非對稱作戰成本交換比與 F-Jet 80（<span class="epistemic-tag">[FACT / INFERENCE]</span>）</strong>：由於高速攔截無人機仰賴 Starshield 導引，限速迫使烏軍動用單價約 <strong>100 萬美元</strong>的 F-16 空對空飛彈補位。為改善成本交換比並降低外部衛星依賴，烏商 <strong>F-Drones</strong> 正推進單價僅約 <strong>7,000 美元</strong>、採用 AI 自主導引的 <strong>F-Jet 80</strong> 噴射攔截無人機（對比其他攔截無人機單價 $20,000–$70,000）（<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25 報告</a>）。</li>
+      </ul>
+
+      <h3>事件 4：Starship Flight 15 推進器 Booster 22 完成靜態點火，Starbase 展開船體輪替</h3>
+      <ul>
+        <li><strong>B22 靜態點火與 S42/S43 輪替（<span class="epistemic-tag">[FACT]</span>）</strong>：SpaceX 於德州 Starbase Pad 2 完成水噴淋系統測試（35 萬至 42.2 萬加侖）後，於 <strong>10 月 25 日完成 Block 3 超重型推進器 Booster 22（B22）的 Raptor 3 靜態點火</strong>；並於 <strong>10 月 26 日 UTC 凌晨</strong>將 B22 吊升至捕捉高度，將完成低溫測試的 Ship 43（預定執行 Flight 16）自 Massey 移回，改由 <strong>Ship 42</strong> 進駐發射台準備預計 11 月登場的 <strong>Starship Flight 15</strong>（<a href="https://www.basenor.com/blogs/news/starship-flight-15-prep-4-details-that-matter" target="_blank" rel="noopener">BASENOR Starbase 追蹤報導</a>）。</li>
+      </ul>
+
+      <h3>事件 5：Falcon 9 排定執行單枚推進器第 26 次重複使用飛行（Starlink 15-16）</h3>
+      <ul>
+        <li><strong>第 26 次複用里程碑（<span class="epistemic-tag">[FACT]</span>）</strong>：SpaceX 官網公告定於美西時間 10 月 26 日 21:45 至 10 月 27 日 01:45（台北時間 10 月 27 日 12:45–16:45）自加州范登堡 SLC-4E 發射 <strong>Starlink 15-16</strong>（27 顆衛星），一級推進器將執行第 <strong>26 次飛行</strong>並降落於太平洋無人船 <em>Of Course I Still Love You</em>（<a href="https://www.spacex.com/launches/sl-15-16" target="_blank" rel="noopener">SpaceX SL-15-16 官方任務頁</a>、<a href="https://www.spacex.com/launches" target="_blank" rel="noopener">SpaceX Launches</a>）。</li>
+      </ul>
+    </section>
+
+    <section class="section-card" id="sec-graph">
+      <h2>三、方法與架構：24 小時事件傳導與貝氏決策圖（v15 直式規範）</h2>
+      <p>
+        以下採用直式有向依賴圖（Vertical Directed Dependency Graph），依循「決策主體與戰場觀察者（P1–P3）$\to$ 太空基建與算力融資能力（M1–M4）$\to$ 財務現金流與作戰風險監督（R1–R3）」單欄向下排列，每條連線均標明證據屬性與關係名稱：
+      </p>
+
+      <div class="svg-shell">
+        <div class="svg-toolbar">
+          <span>直式因果依賴圖 · 縮放比例：<strong id="zoom-pct">100%</strong></span>
+          <div class="svg-toolbar-btns">
+            <button type="button" onclick="zoomMermaid(1.15)" aria-label="放大">放大 (+)</button>
+            <button type="button" onclick="zoomMermaid(0.85)" aria-label="縮小">縮小 (−)</button>
+            <button type="button" onclick="resetMermaid()" aria-label="重設為 100%">重設 (100%)</button>
+            <button type="button" id="btn-fullscreen" onclick="openFullscreen()" aria-label="全螢幕檢視">全螢幕檢視</button>
+            <button type="button" onclick="exportSVG()" aria-label="匯出 SVG">匯出 SVG</button>
+          </div>
+        </div>
+
+        <div class="mermaid-viewport" id="mermaid-box">
+          <pre class="mermaid" id="mermaid-graph">
+flowchart TB
+  classDef spacer fill:transparent,stroke:transparent,stroke-width:0px;
+  classDef person fill:#FFFBEB,stroke:#B45309,stroke-width:2px,color:#1A1714;
+  classDef sys fill:#EFF6FF,stroke:#1D4ED8,stroke-width:2px,color:#1A1714;
+  classDef risk fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px,color:#1A1714;
+
+  subgraph A["👤 決策主體與戰場觀察者 (P1–P3)<br/>Key Actors & Observers"]
+    direction TB
+    KP_TITLE_SPACE_A[" "]:::spacer
+    P1["<b>P1 SpaceX 管理層</b><br/>Musk 與財務長 Johnsen"]:::person
+    P2["<b>P2 美烏主權與國會監督</b><br/>美政府、澤倫斯基、參院"]:::person
+    P3["<b>P3 戰爭研究所與烏軍工</b><br/>ISW 評估與 F-Drones"]:::person
+    KP_TITLE_SPACE_A ~~~ P1
+    P1 ~~~ P2
+    P2 ~~~ P3
+  end
+
+  subgraph C["🛰️ 太空基建與算力融資能力 (M1–M4)<br/>Capabilities & Systems"]
+    direction TB
+    KP_TITLE_SPACE_C[" "]:::spacer
+    M1["<b>M1 $400億 GPU 債務融資</b><br/>採購 2027H1 Nvidia 晶片"]:::sys
+    M2["<b>M2 Starbase 與 F9 複用</b><br/>B22 靜態點火與 F9 26飛"]:::sys
+    M3["<b>M3 Starshield 軍規連線</b><br/>恢復逾 250mph 攔截導引"]:::sys
+    M4["<b>M4 F-Jet 80 AI 攔截機</b><br/>單價 $7,000 自主導引"]:::sys
+    KP_TITLE_SPACE_C ~~~ M1
+    M1 ~~~ M2
+    M2 ~~~ M3
+    M3 ~~~ M4
+  end
+
+  subgraph R["⚖️ 財務現金流與作戰風險監督 (R1–R3)<br/>Financial & Operational Risks"]
+    direction TB
+    KP_TITLE_SPACE_R[" "]:::spacer
+    R1["<b>R1 算力資本支出與洗牌</b><br/>Q4 CapEx $400億與二房東斷糧"]:::risk
+    R2["<b>R2 C-UAS 成本交換比壓力</b><br/>限速期攔截率 74% 耗百萬飛彈"]:::risk
+    R3["<b>R3 軍商雙用單點斷網風險</b><br/>參院要求國防部長作證釐清"]:::risk
+    KP_TITLE_SPACE_R ~~~ R1
+    R1 ~~~ R2
+    R2 ~~~ R3
+  end
+
+  P3 ~~~ KP_TITLE_SPACE_C
+  M4 ~~~ KP_TITLE_SPACE_R
+
+  P1 -.->|"AUTHOR STATEMENT：宣布完成融資"| M1
+  P1 ==>|"FACT：推進點火與第26飛排程"| M2
+  P2 ==>|"FACT：外交協商解除 100mph 限速"| M3
+  P3 ==>|"FACT：研發低成本 AI 攔截器"| M4
+  M1 -->|"FACT：支撐 Q4 $350-400億 CapEx"| R1
+  M2 -->|"INFERENCE：Starlink 現金流護城河"| R1
+  M3 -->|"FACT：限速期迫使 F-16 補位"| R2
+  M4 -->|"INFERENCE：降低對衛星連線依賴"| R2
+  M3 -.->|"AUTHOR STATEMENT：爭議觸發國會監督"| R3
+          </pre>
+        </div>
+
+        <div class="legend-bar">
+          <span class="legend-item"><span class="legend-swatch" style="background:#FFFBEB;border:2px solid #B45309;"></span> 決策主體與觀察者 (P1–P3)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#EFF6FF;border:2px solid #1D4ED8;"></span> 太空基建與技術系統 (M1–M4)</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#FEF2F2;border:2px solid #B91C1C;"></span> 財務與作戰風險 (R1–R3)</span>
+          <span class="legend-item"><strong>實線箭頭 (==&gt; / --&gt;)</strong>：已驗證事實 (FACT) 或結構推論 (INFERENCE)</span>
+          <span class="legend-item"><strong>虛線箭頭 (-.-&gt;)</strong>：當事人單方聲明／待 SEC 或聽證核實 (AUTHOR STATEMENT)</span>
+        </div>
+
+        <noscript>
+          <p>您的瀏覽器未啟用 JavaScript，請直接參閱下方「3.1 節點表」與「3.2 關係表」取得完整拓撲結構。</p>
+        </noscript>
+      </div>
+
+      <h3>3.1 節點表（Node Registry）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:10%">節點 ID</th>
+              <th style="width:24%">節點名稱</th>
+              <th style="width:34%">架構角色與核心內容</th>
+              <th style="width:18%">認識論標籤</th>
+              <th style="width:14%">驗證來源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td><strong>SpaceX 管理層</strong></td>
+              <td>決策主體：Musk 與財務長 Bret Johnsen，主導 $400 億 GPU 債務融資、Q4 $350–$400 億資本支出與火箭測試排程</td>
+              <td><span class="epistemic-tag">FACT / AUTHOR STATEMENT</span></td>
+              <td><a href="https://www.investing.com/news/stock-market-news/musk-says-spacex-raised-40-billion-in-debt-for-gpus-4971248" target="_blank" rel="noopener">Reuters</a>、<a href="https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade" target="_blank" rel="noopener">TIKR</a></td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td><strong>美烏主權與國會監督</strong></td>
+              <td>政策與主權行為者：美政府、烏總統澤倫斯基與美參院，涉入 Starshield 限速解除與國會問責</td>
+              <td><span class="epistemic-tag">FACT / AUTHOR STATEMENT</span></td>
+              <td><a href="https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored" target="_blank" rel="noopener">NPR</a>、<a href="https://www.europeaninterest.eu/ukraine-challenges-elon-musks-allegations-of-military-violations-of-starlink-terms/" target="_blank" rel="noopener">European Interest</a></td>
+            </tr>
+            <tr>
+              <td><strong>P3</strong></td>
+              <td><strong>戰爭研究所與烏軍工</strong></td>
+              <td>戰場評估與軍工研發：ISW 量化噴射無人機攔截率，烏商 F-Drones 研發低成本 AI 攔截機</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25</a></td>
+            </tr>
+            <tr>
+              <td><strong>M1</strong></td>
+              <td><strong>$400億 GPU 債務融資</strong></td>
+              <td>算力資本供給：可贖回債務融資鎖定 2027Q1–Q2 交付之 Nvidia AI 晶片（利率與 SPV 細節未公開）</td>
+              <td><span class="epistemic-tag">AUTHOR STATEMENT / UNKNOWN</span></td>
+              <td><a href="https://whbl.com/2026/10/25/musk-says-spacex-raised-40-billion-in-debt-for-gpus/" target="_blank" rel="noopener">WHBL / Reuters</a></td>
+            </tr>
+            <tr>
+              <td><strong>M2</strong></td>
+              <td><strong>Starbase 與 F9 複用</strong></td>
+              <td>發射載具工程能力：Booster 22 完成靜態點火並與 S42/S43 輪替；SL 15-16 推進器執行第 26 次飛行</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.spacex.com/launches/sl-15-16" target="_blank" rel="noopener">SpaceX SL-15-16</a>、<a href="https://www.basenor.com/blogs/news/starship-flight-15-prep-4-details-that-matter" target="_blank" rel="noopener">BASENOR</a></td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><strong>Starshield 軍規連線</strong></td>
+              <td>戰場通訊基建：解除約 100 mph 速限，恢復對時速逾 250 mph 高速攔截載具之穩定連線</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored" target="_blank" rel="noopener">NPR</a></td>
+            </tr>
+            <tr>
+              <td><strong>M4</strong></td>
+              <td><strong>F-Jet 80 AI 攔截機</strong></td>
+              <td>自主 C-UAS 武器系統：單價約 $7,000，搭載 AI 導引系統以攔截俄軍噴射動力 Shahed 無人機</td>
+              <td><span class="epistemic-tag">FACT</span></td>
+              <td><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25</a></td>
+            </tr>
+            <tr>
+              <td><strong>R1</strong></td>
+              <td><strong>算力資本支出與洗牌</strong></td>
+              <td>財務現金流監督：SpaceX Q4 CapEx 達 $350–$400 億；無非 AI 現金流之 Neocloud 二房東遭債市斷糧</td>
+              <td><span class="epistemic-tag">FACT / INFERENCE</span></td>
+              <td><a href="https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade" target="_blank" rel="noopener">TIKR</a></td>
+            </tr>
+            <tr>
+              <td><strong>R2</strong></td>
+              <td><strong>C-UAS 成本交換比壓力</strong></td>
+              <td>作戰經濟學風險：Starshield 限速期攔截率由 77% 降至 74%，迫使 F-16 消耗單價 $100 萬飛彈</td>
+              <td><span class="epistemic-tag">FACT / INFERENCE</span></td>
+              <td><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">ISW 2026-10-25</a></td>
+            </tr>
+            <tr>
+              <td><strong>R3</strong></td>
+              <td><strong>軍商雙用單點斷網風險</strong></td>
+              <td>政治與治理風險：美參議員 Schiff 要求國防部長 Hegseth 就 Starshield 限速決策赴國會作證</td>
+              <td><span class="epistemic-tag">AUTHOR STATEMENT</span></td>
+              <td><a href="https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored" target="_blank" rel="noopener">NPR</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.2 關係表（Edge Registry）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:10%">起點</th>
+              <th style="width:34%">關係名稱與證據標籤</th>
+              <th style="width:10%">終點</th>
+              <th style="width:46%">關係類型與實證依據</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td><code>AUTHOR STATEMENT：宣布完成融資</code>（虛線）</td>
+              <td><strong>M1</strong></td>
+              <td><strong>決策宣告</strong>：Musk 於 10/25 X 貼文宣布完成 $400 億可贖回債務融資，惟定價利率與銀團條款尚未見諸 SEC 申報。</td>
+            </tr>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td><code>FACT：推進點火與第26飛排程</code>（實線）</td>
+              <td><strong>M2</strong></td>
+              <td><strong>工程執行</strong>：SpaceX 於 10/25 完成 B22 靜態點火、10/26 進行船體輪替，並公告 10/26 晚間執行 SL 15-16（第 26 飛）。</td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td><code>FACT：外交協商解除 100mph 限速</code>（實線）</td>
+              <td><strong>M3</strong></td>
+              <td><strong>政策控制</strong>：經美烏直接對話與局部停火推進，烏國防部監測確認 Starshield 已恢復 &gt;250 mph 高速連線。</td>
+            </tr>
+            <tr>
+              <td><strong>P3</strong></td>
+              <td><code>FACT：研發低成本 AI 攔截器</code>（實線）</td>
+              <td><strong>M4</strong></td>
+              <td><strong>研發應變</strong>：ISW 引述 F-Drones 開發 $7,000 F-Jet 80 AI 攔截機，以應對俄軍單夜 92 架噴射無人機飽和攻擊。</td>
+            </tr>
+            <tr>
+              <td><strong>M1</strong></td>
+              <td><code>FACT：支撐 Q4 $350-400億 CapEx</code>（實線）</td>
+              <td><strong>R1</strong></td>
+              <td><strong>資金配置</strong>：$400 億債務資金直接對應 CFO Johnsen 預告之 Q4 $350–$400 億資本支出與 2027H1 GPU 採購。</td>
+            </tr>
+            <tr>
+              <td><strong>M2</strong></td>
+              <td><code>INFERENCE：Starlink 現金流護城河</code>（實線）</td>
+              <td><strong>R1</strong></td>
+              <td><strong>財務支撐</strong>：Falcon 9 26 次複用與 Starship 爬坡鞏固 Starlink 營業利益（Q3 $23.7 億），使其保有債市融資特權並與 Neoclouds 分化。</td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><code>FACT：限速期迫使 F-16 補位</code>（實線）</td>
+              <td><strong>R2</strong></td>
+              <td><strong>實戰因果</strong>：10/14–10/24 Starshield 限速導致高速攔截無人機受阻，攔截率降至 74% 並迫使 F-16 消耗百萬美元飛彈。</td>
+            </tr>
+            <tr>
+              <td><strong>M4</strong></td>
+              <td><code>INFERENCE：降低對衛星連線依賴</code>（實線）</td>
+              <td><strong>R2</strong></td>
+              <td><strong>技術替代</strong>：搭載終端 AI 導引之 $7,000 F-Jet 80 若能規模化量產，將改善成本交換比並降低對即時衛星遙控的依賴。</td>
+            </tr>
+            <tr>
+              <td><strong>M3</strong></td>
+              <td><code>AUTHOR STATEMENT：爭議觸發國會監督</code>（虛線）</td>
+              <td><strong>R3</strong></td>
+              <td><strong>政治問責</strong>：針對誰下令限制 Starshield，白宮、Musk 與烏方說法不一，引發參議員 Schiff 要求國防部長作證。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-bayesian">
+      <h2>四、深度解釋、貝氏評分更新與適用邊界</h2>
+
+      <div class="decision-grid">
+        <div class="decision-box">
+          <h4>假設 H1：實業現金流巨頭壟斷算力信貸<br>（貝氏更新：+3.0 dB）</h4>
+          <p>SpaceX 憑藉 Starlink 單季 $23.7 億營業利益與投資級信評取得 $400 億 GPU 債務，對比純算力二房東（Neoclouds）融資斷糧，印證 <code>16_negative_capital_loop</code> 結論：維持迴避 CoreWeave（<code>CRWV</code>），確認 Nvidia 2027H1 訂單能見度。</p>
+        </div>
+        <div class="decision-box amber">
+          <h4>假設 H2：邊緣 AI 導引重塑 C-UAS 交換比<br>（貝氏更新：+2.5 dB）</h4>
+          <p>Starshield 限速期間迫使烏軍以 $100 萬飛彈攔截噴射無人機，催生 $7,000 F-Jet 80 AI 攔截器。實戰驗證邊緣自主導引剛需，對台廠無人機與光電感測供應鏈維持 State 1 探針觀察（待量產財報驗證）。</p>
+        </div>
+        <div class="decision-box warn">
+          <h4>假設 H3：低軌衛星座落入主權與反衛星博弈<br>（貝氏更新：+4.0 dB）</h4>
+          <p>美烏 Starshield 速限爭議與俄羅斯 Kosmos-2612 逼近 ICEYE-X36 至 26–470 公尺並點名警告 Starlink（<a href="https://meduza.io/en/feature/2026/10/26/russia-is-escalating-its-confrontation-with-the-west-in-orbit-its-satellites-are-pursuing-spacecraft-from-companies-helping-ukraine-and-starlink-has-been-put-on-notice" target="_blank" rel="noopener">Meduza</a>），凸顯台灣推進多軌衛星備援與非紅地面終端之急迫性。</p>
+        </div>
+      </div>
+
+      <h3>4.1 其餘指定範圍查核狀態與時間邊界說明（Negative Results）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:26%">查核範圍</th>
+              <th style="width:74%">過去 24 小時（2026-10-25 17:33 至 2026-10-26 17:33 UTC+8）查核結果與時間邊界</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>(b) Google Suncatcher、軌道算力</strong></td>
+              <td><strong>無新增實質事件（<span class="epistemic-tag">UNKNOWN</span> / 無新公告）</strong>。Google Project Suncatcher 首顆搭載 4 顆 TPU 與 1kW 太陽能之原型衛星已於 2026 年 10 月 1 日發射升空（<a href="https://www.btpm.org/2026-10-01/google-launches-project-suncatcher-a-step-towards-ai-data-centers-in-space" target="_blank" rel="noopener">BTPM / NPR</a>、<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/" target="_blank" rel="noopener">Google Blog</a>），過去 24 小時內無新增在軌遙測數據或官方公告。</td>
+            </tr>
+            <tr>
+              <td><strong>(c) NDAA 與非紅供應鏈標案</strong></td>
+              <td><strong>無新增政府公報或標案</strong>。除上述 ISW 對烏克蘭 C-UAS 攔截率與攔截無人機之實戰評估外，美國防部（DoD / DCMA）與聯邦公報於週日／週一交界視窗內無發布新的 NDAA 非紅供應鏈或 Blue UAS 標案。</td>
+            </tr>
+            <tr>
+              <td><strong>(d) Anduril、Palantir 國防合約</strong></td>
+              <td><strong>無新增合約公告</strong>。五角大廈每日合約公告於週末休刊；Anduril 近期最新公開進展為 10 月 13 日之美國陸軍次世代戰場指揮系統擴充合約（<a href="https://www.defensenews.com/industry/techwatch/2026/10/13/anduril-awarded-contract-to-expand-us-armys-next-gen-battlefield-command-system/" target="_blank" rel="noopener">Defense News</a>），過去 24 小時內兩家公司均無新 SEC 申報或得標公告。</td>
+            </tr>
+            <tr>
+              <td><strong>(e) LMT、RTX、Boeing、Airbus</strong></td>
+              <td><strong>無新增交付、積壓訂單、罷工或品質事件</strong>。Lockheed Martin（Q3 積壓訂單創 2,920 億美元紀錄）與 RTX（Q3 積壓訂單創 3,400 億美元紀錄）財報皆於 10 月 20–22 日發布（<a href="https://247wallst.com/cards/lmt-xpost-01m5sje8wr0j1hc89fffewwx2r" target="_blank" rel="noopener">24/7 Wall St. 10/25 彙整</a>）；10 月 25 日《Financial Times》與 Reuters 披露 Airbus 高層本週將與 BAE Systems 會談探討參與第六代戰機 GCAP 計畫（<a href="https://migflug.com/afterburner/de/airbus-bae-systems-gcap-fighter-talks-germany-2026/" target="_blank" rel="noopener">MiGFlug 引述 FT/Reuters</a>），屬防務研發聯盟探索而非交付／罷工／品質事件。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card" id="sec-sources">
+      <h2>五、已查核來源清單（Verified Sources）</h2>
+      <ol>
+        <li><strong>Reuters / Investing.com</strong> (2026-10-25)：<a href="https://www.investing.com/news/stock-market-news/musk-says-spacex-raised-40-billion-in-debt-for-gpus-4971248" target="_blank" rel="noopener">Musk says SpaceX raised $40 billion in debt deal, predicts neocloud shakeout</a></li>
+        <li><strong>Thomson Reuters / WHBL</strong> (2026-10-25)：<a href="https://whbl.com/2026/10/25/musk-says-spacex-raised-40-billion-in-debt-for-gpus/" target="_blank" rel="noopener">Musk says SpaceX raised $40 billion in debt for GPUs</a></li>
+        <li><strong>TIKR</strong> (2026-10-26)：<a href="https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade" target="_blank" rel="noopener">Musk Says SpaceX Locked In $40 Billion for Chips, a Win for Nvidia: "We're Investment Grade"</a></li>
+        <li><strong>NPR / Central Florida Public Media</strong> (2026-10-25 更新)：<a href="https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored" target="_blank" rel="noopener">Musk says SpaceX did restrict Starlink, as Ukraine says the tech has been restored</a></li>
+        <li><strong>European Interest / AP</strong> (2026-10-25/26)：<a href="https://www.europeaninterest.eu/ukraine-challenges-elon-musks-allegations-of-military-violations-of-starlink-terms/" target="_blank" rel="noopener">Ukraine challenges Elon Musk's allegations of military violations of Starlink terms</a></li>
+        <li><strong>Institute for the Study of War (ISW)</strong> (2026-10-25)：<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/" target="_blank" rel="noopener">Russian Offensive Campaign Assessment, October 25, 2026</a></li>
+        <li><strong>BASENOR SpaceX Tracker</strong> (2026-10-26 更新)：<a href="https://www.basenor.com/blogs/news/starship-flight-15-prep-4-details-that-matter" target="_blank" rel="noopener">Starship Flight 15 Prep: 4 Details That Matter (Booster 22 Static Fire &amp; Ship Swap)</a></li>
+        <li><strong>SpaceX Official Launches</strong> (2026-10-26)：<a href="https://www.spacex.com/launches/sl-15-16" target="_blank" rel="noopener">Starlink Mission SL-15-16 (Falcon 9 26th Flight from SLC-4E)</a> 與 <a href="https://www.spacex.com/launches" target="_blank" rel="noopener">SpaceX Launches Manifest</a></li>
+        <li><strong>Meduza</strong> (2026-10-25/26)：<a href="https://meduza.io/en/feature/2026/10/26/russia-is-escalating-its-confrontation-with-the-west-in-orbit-its-satellites-are-pursuing-spacecraft-from-companies-helping-ukraine-and-starlink-has-been-put-on-notice" target="_blank" rel="noopener">Russia is escalating its confrontation with the West in orbit (Kosmos-2612 vs ICEYE-X36 &amp; Starlink warning)</a></li>
+        <li><strong>24/7 Wall St.</strong> (2026-10-25)：<a href="https://247wallst.com/cards/lmt-xpost-01m5sje8wr0j1hc89fffewwx2r" target="_blank" rel="noopener">Defense Contractor Backlogs Hit Records Across Lockheed, Northrop and RTX</a></li>
+        <li><strong>MiGFlug (citing Financial Times &amp; Reuters)</strong> (2026-10-26)：<a href="https://migflug.com/afterburner/de/airbus-bae-systems-gcap-fighter-talks-germany-2026/" target="_blank" rel="noopener">Airbus and BAE Systems to Discuss an Airbus Role in GCAP Fighter</a></li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<!-- Fullscreen Modal Dialog -->
+<dialog id="mermaid-modal" aria-label="Mermaid 全螢幕檢視">
+  <div class="modal-header">
+    <h4>直式因果依賴圖（全螢幕檢視 · 按 Esc 關閉）</h4>
+    <button type="button" class="modal-close-btn" id="btn-close-modal" onclick="closeFullscreen()">關閉 (Esc)</button>
+  </div>
+  <div class="modal-body" id="modal-svg-container"></div>
+</dialog>
+
+<script>
+  const SHARED_THEME_CSS = `
+    .cluster-label foreignObject { overflow: visible !important; }
+    .cluster-label foreignObject > div {
+      display: inline-block !important;
+      white-space: nowrap !important;
+      overflow: visible !important;
+    }
+    .cluster-label, .cluster-label text, .cluster-label span, .cluster-label p, .cluster-label .nodeLabel {
+      font-size: 19px !important;
+      font-weight: 700 !important;
+      line-height: 1.4 !important;
+      text-align: center;
+      color: #1A1714 !important;
+      fill: #1A1714 !important;
+    }
+    .cluster rect { rx: 8px !important; ry: 8px !important; }
+    .spacer {
+      height: 0px !important; min-height: 0px !important; max-height: 0px !important;
+      font-size: 0px !important; line-height: 0px !important;
+      padding: 0px !important; margin: 0px !important; border: none !important;
+    }
+    .spacer rect {
+      height: 0px !important; fill: transparent !important; stroke: none !important; display: none !important;
+    }
+    .spacer .label { padding: 0px !important; height: 0px !important; }
+    .spacer span { display: none !important; }
+  `;
+
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 40,
+      rankSpacing: 60,
+      padding: 24,
+      subGraphTitleMargin: {
+        top: 18,
+        bottom: 28
+      }
+    },
+    themeCSS: SHARED_THEME_CSS
+  });
+
+  let currentScale = 1.0;
+
+  function updateZoomUI() {
+    const svg = document.querySelector('#mermaid-box .mermaid svg');
+    const label = document.getElementById('zoom-pct');
+    if (svg) {
+      svg.style.transform = `scale(${currentScale})`;
+    }
+    if (label) {
+      label.textContent = `${Math.round(currentScale * 100)}%`;
+    }
+  }
+
+  function zoomMermaid(factor) {
+    currentScale = Math.min(2.5, Math.max(0.5, currentScale * factor));
+    updateZoomUI();
+  }
+
+  function resetMermaid() {
+    currentScale = 1.0;
+    updateZoomUI();
+  }
+
+  function openFullscreen() {
+    const modal = document.getElementById('mermaid-modal');
+    const container = document.getElementById('modal-svg-container');
+    const sourceSvg = document.querySelector('#mermaid-box .mermaid svg');
+    if (sourceSvg && modal && container) {
+      container.innerHTML = '';
+      const cloned = sourceSvg.cloneNode(true);
+      cloned.style.transform = 'none';
+      cloned.style.maxWidth = '100%';
+      cloned.style.height = 'auto';
+      container.appendChild(cloned);
+      modal.showModal();
+      document.getElementById('btn-close-modal').focus();
+    }
+  }
+
+  function closeFullscreen() {
+    const modal = document.getElementById('mermaid-modal');
+    const triggerBtn = document.getElementById('btn-fullscreen');
+    if (modal && modal.open) {
+      modal.close();
+      if (triggerBtn) triggerBtn.focus();
+    }
+  }
+
+  document.getElementById('mermaid-modal').addEventListener('close', () => {
+    const triggerBtn = document.getElementById('btn-fullscreen');
+    if (triggerBtn) triggerBtn.focus();
+  });
+
+  function exportSVG() {
+    const sourceSvg = document.querySelector('#mermaid-box .mermaid svg');
+    if (!sourceSvg) return;
+    const cloned = sourceSvg.cloneNode(true);
+    cloned.style.transform = 'none';
+    const styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+    styleEl.textContent = SHARED_THEME_CSS;
+    cloned.insertBefore(styleEl, cloned.firstChild);
+    const serializer = new XMLSerializer();
+    let svgString = serializer.serializeToString(cloned);
+    if (!svgString.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
+      svgString = svgString.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+    }
+    const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = '17_spacex_40b_gpu_debt_starshield_cuas_24h_digest_topology.svg';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+</body>
+</html>
