@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 美國期中選舉各州州長與 AI 資料中心／電網政見查核全解</title>
+  <style>
+    :root {
+      --bg-color: #FAF9F5;
+      --card-bg: #FFFFFF;
+      --text-main: #2C2B28;
+      --text-muted: #6E6D69;
+      --accent: #C1533B;
+      --accent-hover: #9E3E28;
+      --accent-light: #F7EAE6;
+      --border-color: #E8E6DF;
+      --sidebar-bg: #F4F2EB;
+      --quote-bg: #F5F3EC;
+      --tag-bg: #EDEBE4;
+      --font-serif: "Charter", "Bitstream Charter", "Sitka Text", "Cambria", "Noto Serif TC", "Source Han Serif TC", Georgia, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #1A1A18;
+        --card-bg: #242421;
+        --text-main: #E6E4DF;
+        --text-muted: #A3A199;
+        --accent: #E0735C;
+        --accent-hover: #F28D77;
+        --accent-light: #3D2620;
+        --border-color: #383733;
+        --sidebar-bg: #1F1F1D;
+        --quote-bg: #2A2A26;
+        --tag-bg: #33322E;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.85;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--accent), #D97706);
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+
+    .layout-container {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      gap: 48px;
+      position: relative;
+    }
+
+    .sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 32px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+      background-color: var(--sidebar-bg);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-color) transparent;
+    }
+
+    .sidebar-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-item {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .toc-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      display: block;
+      padding: 5px 8px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .toc-item a:hover {
+      color: var(--accent);
+      background-color: var(--card-bg);
+    }
+
+    .toc-item.active > a {
+      color: var(--accent);
+      font-weight: 600;
+      background-color: var(--accent-light);
+    }
+
+    .toc-sublist {
+      list-style: none;
+      padding-left: 14px;
+      margin-top: 4px;
+      border-left: 2px solid var(--border-color);
+    }
+
+    .toc-sublist .toc-item {
+      font-size: 13px;
+    }
+
+    .main-content {
+      flex: 1;
+      max-width: 860px;
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 56px 64px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+    }
+
+    header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h1.article-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-main);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .meta-box {
+      background-color: var(--sidebar-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      border: 1px solid var(--border-color);
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+
+    .meta-row {
+      margin-bottom: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .meta-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-label {
+      font-weight: 700;
+      color: var(--text-main);
+      min-width: 85px;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      background-color: var(--tag-bg);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    article h2 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-top: 56px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    article h3 {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      color: var(--accent);
+      scroll-margin-top: 24px;
+    }
+
+    p {
+      margin-bottom: 22px;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    blockquote {
+      background-color: var(--quote-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 28px;
+      margin: 28px 0;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-main);
+    }
+
+    blockquote p {
+      margin-bottom: 12px;
+    }
+
+    blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    ul, ol {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      font-size: 15px;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: var(--sidebar-bg);
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    tr:nth-child(even) td {
+      background-color: var(--quote-bg);
+    }
+
+    pre code {
+      display: block;
+      background-color: var(--sidebar-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 14px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      z-index: 100;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    @media (max-width: 1080px) {
+      .layout-container {
+        padding: 20px 16px;
+      }
+      .sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 1001;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+      }
+      .sidebar.open {
+        display: block;
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .main-content {
+        padding: 36px 28px;
+      }
+      h1.article-title {
+        font-size: 26px;
+      }
+      article h2 {
+        font-size: 21px;
+      }
+      article h3 {
+        font-size: 17.5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-content {
+        padding: 24px 16px;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+      }
+      h1.article-title {
+        font-size: 22px;
+      }
+      body {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="切換目錄">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+    目錄
+  </button>
+
+  <div class="layout-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">查核目錄</div>
+      <nav>
+        <ul class="toc-list">
+          <li class="toc-item"><a href="#summary">核心結論與查核總結</a></li>
+          <li class="toc-item">
+            <a href="#state-breakdown">一、各州候選人與州長政策逐項查核</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a href="#state-texas">1. 德州（Texas）</a></li>
+              <li class="toc-item"><a href="#state-ohio">2. 俄亥俄州（Ohio）</a></li>
+              <li class="toc-item"><a href="#state-georgia">3. 喬治亞州（Georgia）</a></li>
+              <li class="toc-item"><a href="#state-pa">4. 賓夕法尼亞州（PA）</a></li>
+              <li class="toc-item"><a href="#state-az">5. 亞利桑那州（Arizona）</a></li>
+              <li class="toc-item"><a href="#state-tn">6. 田納西州（Tennessee）</a></li>
+              <li class="toc-item"><a href="#state-other">7. 其他各州與 PJM 電網</a></li>
+            </ul>
+          </li>
+          <li class="toc-item"><a href="#gw-fallacy">二、GW 數據推算為何不合理？</a></li>
+          <li class="toc-item"><a href="#sources">三、權威查證來源清單</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1 class="article-title">2026 美國期中選舉各州州長與 AI 資料中心／電網政見查核全解</h1>
+        <div class="meta-box">
+          <div class="meta-row">
+            <span class="meta-label">文檔定位：</span>
+            <span class="meta-badge">74_aerospace_defense_research 專題深度查核與研究報告（L1 知識存檔）</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">基準時間：</span>
+            <span>2026-11-05</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">查核標的：</span>
+            <span>期中選舉各州州長對 AI 資料中心立場、電網負荷及 18–33 GW 受影響容量估算</span>
+          </div>
+        </div>
+      </header>
+
+      <article>
+        <section id="summary">
+          <h2>核心結論與查核總結</h2>
+          <p>近期社群與科技投資圈廣為流傳一份「2026 年美國期中選舉各州州長對 AI 資料中心（Data Center）之政策立場與受影響 GW 數量」表格。經深入比對各州官方公報、法律草案、電網監管紀錄與權威新聞查證，整體結論如下：</p>
+          <blockquote>
+            <p><strong>查核總判定</strong>：表格在<strong>「各州政治人物對資料中心的公開發言與草案方向」上大致符合事實</strong>；但在<strong>「政黨歸屬分類」以及「2028–2029 年受影響 GW 數量的推算邏輯」上存在明顯誤導與嚴重誇大</strong>。</p>
+          </blockquote>
+          <ul>
+            <li><strong>政見多數有本</strong>：候選人確實曾就民生水電負擔、供電吃緊或取消租稅減免發表政見。</li>
+            <li><strong>政黨標籤拼裝錯誤</strong>：如田納西州聯邦參議員 Marsha Blackburn 實為共和黨籍（Republican），卻被歸入民主黨立場；且地方反對資料中心並非單一黨派的意識形態對立。</li>
+            <li><strong>GW 算術誇大失真</strong>：將「取消租稅補貼」或「要求科技巨頭全額負擔電網擴建費」直接等同於「建案全面停擺」，完全忽略全美目前有 56.7 GW 已取得許可並正在施工的在建專案（不具追溯力），也忽視了科技巨頭正全面轉向「自備電力（BYOP）」的發展趨勢。</li>
+          </ul>
+        </section>
+
+        <section id="state-breakdown">
+          <h2>一、各州候選人與州長政策逐項查核</h2>
+          <p>關於 2026 年期中選舉各州州長最新認證與開票狀態，請查閱聯邦官方 <a href="https://www.usa.gov/election-results" target="_blank" rel="noopener">USAGov Election Results</a>、<a href="https://www.usa.gov/state-election-office" target="_blank" rel="noopener">USAGov State and Local Election Offices</a> 或 <a href="https://apnews.com/projects/elections-2026/" target="_blank" rel="noopener">Associated Press 2026 Midterm Election Results</a>。以下為政策立場實質查證：</p>
+
+          <h3 id="state-texas">1. 德克薩斯州（Texas）：Gina Hinojosa</h3>
+          <p><strong>政見描述屬實，但影響性質與範圍被誇大。</strong> 根據 <a href="https://www.texastribune.org/2026/11/04/data-center-texas-pause-gina-hinojosa-governor-policies/" target="_blank" rel="noopener">The Texas Tribune Data Center Policy Report</a>，Gina Hinojosa 確實倡議對全州新建資料中心實施過渡性暫停（Temporary Moratorium）。但其立法目標是等待德州議會 2027 年 1 月開議制定水資源保護、禁止隱匿水電用量的保密協議（NDA）以及防止電網成本轉嫁居民的收費機制，絕非永久性禁建。事實上，德州現任共和黨政府與 ERCOT 電網早在 2026 年 8 月就已因電網吃緊主動啟動了審查暫停。</p>
+
+          <h3 id="state-ohio">2. 俄亥俄州（Ohio）：Amy Acton</h3>
+          <p><strong>政見描述屬實，但需州議會立法配合。</strong> 根據俄亥俄公共廣播 <a href="https://www.statenews.org/government-politics/2026-09-23/acton-suggesting-data-center-halt-along-with-gas-tax-holiday-but-republicans-dismiss-that" target="_blank" rel="noopener">Statehouse News Bureau Ohio Data Center Report</a>，Amy Acton 確實呼籲採取「有條件的資料中心暫停令（Conditional Moratorium）」。然而該措施必須由州議會通過立法方能生效，州長無權單方面行政封殺；且因俄亥俄州處於 PJM 電網重災區，其共和黨籍對手在競選期間同樣提出過嚴審方案。</p>
+
+          <h3 id="state-georgia">3. 喬治亞州（Georgia）：Keisha Lance Bottoms</h3>
+          <p><strong>政見描述完全屬實。</strong> 根據 <a href="https://www.cbsnews.com/news/midterm-election-results-data-center-buildout-artificial-intelligence-texas/" target="_blank" rel="noopener">CBS News Midterm Election and Data Center Report</a> 與 <a href="https://newsletter.cleanview.co/p/newly-elected-governors-could-pause" target="_blank" rel="noopener">Cleanview Data Center Pipeline Report</a>，她公開主張對全州新建資料中心實施暫時性凍結（Temporary Statewide Pause），主要質疑喬治亞電力公司（Georgia Power）擴大化石燃料發電供應科技園區的做法，主張優先保障社區地下水資源。</p>
+
+          <h3 id="state-pa">4. 賓夕法尼亞州（Pennsylvania）：Josh Shapiro</h3>
+          <p><strong>描述嚴重誤導！Shapiro 是「積極支持但要求責任自負」，絕非暫停或禁建。</strong> 根據賓州州長辦公室官方發布之 <a href="https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-signs-executive-order-on-data-center-developmen" target="_blank" rel="noopener">Pennsylvania Governor's Office Data Center Executive Order Release</a> 與 <a href="https://www.pa.gov/governor/newsroom/2026-press-releases/gov--shapiro-protects-customers-and-holds-data-center-developers" target="_blank" rel="noopener">Pennsylvania Governor's Office Energy Accountability Release</a>，州長 Josh Shapiro 於 2026 年 8 月簽署第 2026-05 號行政命令並介入公用事業委員會（PUC）費率案：賓州<strong>全面歡迎</strong> AI 資料中心進駐（結合核電與天然氣），但硬性規定開發商全額自付輸電升級成本、極端天候供電吃緊時優先降載。這種政策是促進產業健康落地，而非阻擋發展。</p>
+
+          <h3 id="state-az">5. 亞利桑那州（Arizona）：Katie Hobbs</h3>
+          <p><strong>描述大致屬實，但僅限於「取消租稅優惠」，絕非禁建。</strong> 根據亞利桑那州政府官方 <a href="https://azgovernor.gov/office-arizona-governor/news/2026/06/pool-footage-governor-katie-hobbs-signs-arizona-first-budget" target="_blank" rel="noopener">Arizona Governor's Office Budget Release</a> 與 <a href="https://ktar.com/arizona-politics-news/katie-hobbs-data-57m-saved" target="_blank" rel="noopener">KTAR News Arizona Data Center Tax Freeze Report</a>，Katie Hobbs 於 2026 年 6 月簽署法案，<strong>暫停新建資料中心設備銷售稅免除優惠三年</strong>（預計保留 5,700 萬美元稅收）；其提議的強制用水規費在預算審查時被刪除，州長本人更公開澄清「沒有人要對資料中心本身實施暫停令」。</p>
+
+          <h3 id="state-tn">6. 田納西州（Tennessee）：Marsha Blackburn</h3>
+          <p><strong>立場屬實，但政黨歸屬完全錯誤（為共和黨籍）。</strong> 根據 <a href="https://wpln.org/post/nashville-zoos-data-center-pushback-captures-broad-political-support/" target="_blank" rel="noopener">WPLN Nashville Data Center Report</a> 與 <a href="https://www.axios.com/local/nashville/2026/06/15/sen-blackburn-takes-issue-with-data-center-planned-near-nashville-zoo" target="_blank" rel="noopener">Axios Nashville Data Center Report</a>，Blackburn 參議員大力肯定資料中心對田納西州的經濟貢獻，僅針對納什維爾動物園旁個別建案反映民意選址疑慮。表格將她標註在民主黨陣營，純屬事實錯誤。</p>
+
+          <h3 id="state-other">7. 其他各州與 PJM 電網現況</h3>
+          <p>關於維吉尼亞、印第安納、北卡羅來納等州電網負載過重、輸電排隊塞車與防止居民電費暴漲的討論，符合 PJM 區域電網現狀，可參考北卡官方 <a href="https://governor.nc.gov/documents/files/nc-energy-policy-task-force-2026-report/open" target="_blank" rel="noopener">North Carolina Governor's Office Energy Policy Task Force Report</a>、<a href="https://technical.ly/civics/what-is-pjm-interconnection-regional-grid-operator/" target="_blank" rel="noopener">Technical.ly PJM Grid Report</a> 及 <a href="https://richmond.com/news/local/business/development/article_404277ed-a678-4aaf-8bd1-f4975d89b5e2.html" target="_blank" rel="noopener">Richmond Times-Dispatch PJM Data Center Report</a>。</p>
+        </section>
+
+        <section id="gw-fallacy">
+          <h2>二、表格推算「18–33 GW 受阻」的致命謬誤</h2>
+          <p>表格聲稱 2028 年將有 18–28 GW、2029 年將有 21–33 GW 資料中心容量受阻，其推算邏輯存在嚴重漏洞：</p>
+
+          <pre><code>表格粗糙相加算式（以 2029 年為例）：
+德州（10–15 GW）+ 俄亥俄（5–8 GW）+ 喬治亞（4–6 GW）+ 賓州（2–4 GW） = 21–33 GW</code></pre>
+
+          <ul>
+            <li><strong>謬誤一：把「要求自付費用／取消稅務補貼」當作「專案取消」</strong><br>
+            如賓州要求科技公司負擔專用輸電設施、亞利桑那取消免稅。對於動輒投入數十億美元打造算力叢集的微軟、Google、AWS 或 Meta 而言，這些成本屬於內部化常態支出，絕不可能因為幾千萬美元稅金或電網成本就放棄迫切的 AI 戰略建置。</li>
+
+            <li><strong>謬誤二：混淆「施工中產能」與「遠期意向規劃」</strong><br>
+            根據能源智庫 <a href="https://newsletter.cleanview.co/p/newly-elected-governors-could-pause" target="_blank" rel="noopener">Cleanview Data Center Pipeline Report</a> 統計，全美目前已核准且<strong>正在施工中的資料中心容量高達 56.7 GW</strong>。依據美國憲法既得權益法理，新建案暫停令（Moratorium）無法溯及既往。這 56.7 GW 正是支撐 2026–2028 年伺服器拉貨的主力；真正受審批延宕影響的，僅是排在 2029–2030 年後的遠期意向案。</li>
+
+            <li><strong>謬誤三：忽視「自備電力模式（BYOP）」的產業突圍</strong><br>
+            面對公用電網審查瓶頸，全美大型園區早已加速導入「自備電力（Bring Your Own Power）」架構——在資料中心旁直接配置小型核反應爐（SMR）、天然氣渦輪或地熱設施（Behind-the-Meter），完全不必排隊等待公用電網併網。將行政法規程序簡化為「算力消失」，完全脫離了產業科技演進的客觀現實。</li>
+          </ul>
+        </section>
+
+        <section id="sources">
+          <h2>三、權威查證來源清單</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>機構名稱</th>
+                <th>官方來源與查核報導連結</th>
+                <th>涵蓋核心主旨</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>美國聯邦政府</strong></td>
+                <td>
+                  <a href="https://www.usa.gov/election-results" target="_blank" rel="noopener">USAGov Election Results</a><br>
+                  <a href="https://www.usa.gov/state-election-office" target="_blank" rel="noopener">USAGov State and Local Election Offices</a>
+                </td>
+                <td>聯邦官方認證之各州選務機關與正式選舉公告</td>
+              </tr>
+              <tr>
+                <td><strong>美聯社（AP）</strong></td>
+                <td><a href="https://apnews.com/projects/elections-2026/" target="_blank" rel="noopener">Associated Press 2026 Midterm Election Results</a></td>
+                <td>全美各州期中選舉即時開票與公職改選專頁</td>
+              </tr>
+              <tr>
+                <td><strong>德州論壇報</strong></td>
+                <td><a href="https://www.texastribune.org/2026/11/04/data-center-texas-pause-gina-hinojosa-governor-policies/" target="_blank" rel="noopener">The Texas Tribune Data Center Policy Report</a></td>
+                <td>德州立法者與候選人對資料中心水資源防護與電費規範</td>
+              </tr>
+              <tr>
+                <td><strong>俄亥俄公共廣播</strong></td>
+                <td><a href="https://www.statenews.org/government-politics/2026-09-23/acton-suggesting-data-center-halt-along-with-gas-tax-holiday-but-republicans-dismiss-that" target="_blank" rel="noopener">Statehouse News Bureau Ohio Data Center Report</a></td>
+                <td>俄亥俄州議會對資料中心有條件暫停提案之立法討論</td>
+              </tr>
+              <tr>
+                <td><strong>CBS 新聞</strong></td>
+                <td><a href="https://www.cbsnews.com/news/midterm-election-results-data-center-buildout-artificial-intelligence-texas/" target="_blank" rel="noopener">CBS News Midterm Election and Data Center Report</a></td>
+                <td>全美期中選舉各州資料中心政策與建置現況</td>
+              </tr>
+              <tr>
+                <td><strong>Cleanview 智庫</strong></td>
+                <td><a href="https://newsletter.cleanview.co/p/newly-elected-governors-could-pause" target="_blank" rel="noopener">Cleanview Data Center Pipeline Report</a></td>
+                <td>全美 56.7 GW 在建資料中心與各州暫停令追溯力研究</td>
+              </tr>
+              <tr>
+                <td><strong>賓夕法尼亞州政府</strong></td>
+                <td>
+                  <a href="https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-signs-executive-order-on-data-center-developmen" target="_blank" rel="noopener">Pennsylvania Governor's Office Data Center Executive Order Release</a><br>
+                  <a href="https://www.pa.gov/governor/newsroom/2026-press-releases/gov--shapiro-protects-customers-and-holds-data-center-developers" target="_blank" rel="noopener">Pennsylvania Governor's Office Energy Accountability Release</a>
+                </td>
+                <td>州長 Shapiro 第 2026-05 號行政命令與開發商全額自負費用規範</td>
+              </tr>
+              <tr>
+                <td><strong>亞利桑那州政府</strong></td>
+                <td><a href="https://azgovernor.gov/office-arizona-governor/news/2026/06/pool-footage-governor-katie-hobbs-signs-arizona-first-budget" target="_blank" rel="noopener">Arizona Governor's Office Budget Release</a></td>
+                <td>州長 Hobbs 簽署之預算案與三年銷售稅免除暫停規範</td>
+              </tr>
+              <tr>
+                <td><strong>KTAR 亞利桑那新聞</strong></td>
+                <td><a href="https://ktar.com/arizona-politics-news/katie-hobbs-data-57m-saved" target="_blank" rel="noopener">KTAR News Arizona Data Center Tax Freeze Report</a></td>
+                <td>亞利桑那資料中心免稅凍結法案細節與澄清報導</td>
+              </tr>
+              <tr>
+                <td><strong>納什維爾公共廣播</strong></td>
+                <td><a href="https://wpln.org/post/nashville-zoos-data-center-pushback-captures-broad-political-support/" target="_blank" rel="noopener">WPLN Nashville Data Center Report</a></td>
+                <td>田納西州各界對特定資料中心選址之多元討論</td>
+              </tr>
+              <tr>
+                <td><strong>Axios</strong></td>
+                <td><a href="https://www.axios.com/local/nashville/2026/06/15/sen-blackburn-takes-issue-with-data-center-planned-near-nashville-zoo" target="_blank" rel="noopener">Axios Nashville Data Center Report</a></td>
+                <td>Blackburn 參議員對特定動物園旁案場之選址關切</td>
+              </tr>
+              <tr>
+                <td><strong>北卡羅來納州政府</strong></td>
+                <td><a href="https://governor.nc.gov/documents/files/nc-energy-policy-task-force-2026-report/open" target="_blank" rel="noopener">North Carolina Governor's Office Energy Policy Task Force Report</a></td>
+                <td>州政府能源政策專案小組對電網供需之官方評估</td>
+              </tr>
+              <tr>
+                <td><strong>Technical.ly</strong></td>
+                <td><a href="https://technical.ly/civics/what-is-pjm-interconnection-regional-grid-operator/" target="_blank" rel="noopener">Technical.ly PJM Grid Report</a></td>
+                <td>PJM 跨州區域電網負載與科技園區審批機制解析</td>
+              </tr>
+              <tr>
+                <td><strong>里奇蒙時訊報</strong></td>
+                <td><a href="https://richmond.com/news/local/business/development/article_404277ed-a678-4aaf-8bd1-f4975d89b5e2.html" target="_blank" rel="noopener">Richmond Times-Dispatch PJM Data Center Report</a></td>
+                <td>維吉尼亞州電力負荷激增與資料中心法規審查追蹤</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="回到頁首">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+
+      const backToTop = document.getElementById('backToTop');
+      if (winScroll > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+
+      const sections = document.querySelectorAll('article section, article h3[id]');
+      let currentActive = null;
+      sections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (winScroll >= top) {
+          currentActive = section.getAttribute('id');
+        }
+      });
+
+      if (currentActive) {
+        document.querySelectorAll('.toc-item').forEach(item => {
+          item.classList.remove('active');
+          const link = item.querySelector('a');
+          if (link && link.getAttribute('href') === '#' + currentActive) {
+            item.classList.add('active');
+          }
+        });
+      }
+    });
+
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.toc-item a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1080) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

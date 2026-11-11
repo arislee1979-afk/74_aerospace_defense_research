@@ -5,6 +5,14 @@
 > **來源版本**：共用工作背景 `2026.10.22-candidate.2` · `user:knowledge-l1-publisher-v12` · 全面遵循 [`AGENTS.md`](AGENTS.md) 認識論五維標籤、禁詞令與貝氏決策評分規範  
 > **跨報告錨點**：串聯本庫 [《報告 10：Starlink 降速風暴》](10_starlink_ukraine_zalenskyy_trump_musk_report.md) · [《報告 11：Google Suncatcher 太空軌道算力》](11_google_suncatcher_orbital_compute_report.md) · [《報告 12：Musk 贈全美兒童 SpaceX 股票與川普帳戶》](12_musk_spacex_stock_gift_trump_accounts_report.md) · [《報告 14：大歷史東印度公司與 SpaceX/NVIDIA 雙軌博弈》](14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md) · [《報告 15：科學家替印鈔機買單與白宮科技授勳》](15_scientists_foot_the_bill_white_house_medals_l1.md) · [《報告 16：資本負向迴路與 Neocloud 高息債務》](16_negative_capital_loop_credit_collapse_ai_capex_l1.md) · [《報告 18：算力物理瓶頸與主權衛星備援》](18_x_posts_compute_bottleneck_sovereign_satcom_ukraine_l1.md) · [《報告 19：柴油換時間與煉油廠打擊鉸鏈》](19_x_posts_russian_diesel_dmitriev_snyder_ukraine_l1.md)
 
+## 2026-11-11 財務單位與後驗鉗制
+
+本檔 Q3 營收、流動性、自由現金流與資本支出整段改列 `estimate`／`secondary`／`requires_verification`。正文使用「億美元」（例如營收 145.8 億美元、流動性 899 億美元、前三季 FCF −349.7 億美元、Q4 資本支出 350–400 億美元）。事件表與第 4.1 節把同一組數字寫成 `$145.8B`、`$75.6B`、`$23.7B`、`$899B`、`$350B–$400B`。1 billion USD 等於 10 億美元，所以這組 `$B` 約是正文「億美元」的 10 倍。兩組同時留在文中，申報或法說原件打開前都不升為 `verified`，也不改寫 CLM-74-001。
+
+債務標題「400 億美元」與 Reuters 標題的 `$40 billion` 在換算上對得起來。這只說明標題單位可以對齊，不證明條款、利率與法律形式已經核實。
+
+第 4.1 節的 +3.0 dB、+2.5 dB、+4.0 dB 是 2026-10-26 的內文試算。2026-11-11 起這些分貝不寫入 `sources/claim_register.csv`，不改變 CLM-74-001 至 003 的後驗，也不授權 State 1 或 State 2。F-Jet 80 仍是研發與小批量驗證，不是規模化量產。Terafab 的 2027 測試片與 2028Q3 量產目標是時程聲明。
+
 ---
 
 ## 一、核心問題與貝氏執行摘要（Problem & Executive Thesis）
@@ -26,7 +34,7 @@
 
 | 事件編號与維度 | 核心實質進展與關鍵量化數據 | 認識論五維標籤 (`claim_type` / `source_tier` / `verification_status`) | 跨報告結構連結與主要來源 |
 | :--- | :--- | :--- | :--- |
-| **事件 1：算力資本融資**<br>SpaceX $400 億 GPU 債務與 Q4 CapEx 指引 | 敲定 **$400 億美元**可贖回債務採購 2027H1 Nvidia 晶片；Q3 營收 **$145.8B**（YoY +161%，AI 營收 **$75.6B**，Starlink 營業利益 **$23.7B**），帳上流動性 **$899B**；Q4 CapEx 指引 **$350B–$400B**；德州 **Terafab** 2027/5–6 首產測試片、2028Q3 量產。 | `estimate` (AUTHOR STATEMENT) & `fact` / `secondary` / `partially_verified`（SEC 原件與利率條款未公開） | 連結[報告 15](15_scientists_foot_the_bill_white_house_medals_l1.md)（SpaceX SI）、[報告 16](16_negative_capital_loop_credit_collapse_ai_capex_l1.md)（Neocloud 洗牌）、[報告 18](18_x_posts_compute_bottleneck_sovereign_satcom_ukraine_l1.md)（Apollo 融資租賃快訊對照）· [Reuters](https://www.investing.com/news/stock-market-news/musk-says-spacex-raised-40-billion-in-debt-for-gpus-4971248)、[TIKR](https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade) |
+| **事件 1：算力資本融資**<br>SpaceX 400 億美元 GPU 債務與 Q4 CapEx 指引 | 管理層稱敲定 **400 億美元**可贖回債務採購 2027H1 Nvidia 晶片。Q3 營收、AI 營收、Starlink 營業利益、流動性與 Q4 CapEx 以文首 2026-11-11 鉗制為準：正文是億美元，舊表曾寫成約 10 倍的 `$B`。Terafab 2027/5–6 為測試片，2028Q3 為量產目標。 | `estimate` / `secondary` / `requires_verification`（單位衝突未解，SEC 原件未核，不寫入主張表） | 連結[報告 15](15_scientists_foot_the_bill_white_house_medals_l1.md)（SpaceX SI）、[報告 16](16_negative_capital_loop_credit_collapse_ai_capex_l1.md)（Neocloud 洗牌）、[報告 18](18_x_posts_compute_bottleneck_sovereign_satcom_ukraine_l1.md)（Apollo 融資租賃快訊對照）· [Reuters](https://www.investing.com/news/stock-market-news/musk-says-spacex-raised-40-billion-in-debt-for-gpus-4971248)、[TIKR](https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade) |
 | **事件 2：主權衛星控制**<br>Starshield 解除 100 mph 限速與國會問責 | 烏方反證商用 Starlink 境內早設 **70–90 km/h** 上限且俄境斷網；國防部確認 Starshield 已解除約 **100 mph** 限速、恢復 **>250 mph** 連線；參議員 Schiff 要求防長 Hegseth 赴參院宣誓作證。 | `fact` & `AUTHOR STATEMENT` / `secondary` / `verified`（指令來源仍屬羅生門 `conflicting`） | 連結[報告 10](10_starlink_ukraine_zalenskyy_trump_musk_report.md)（10/13 限速起點）、[報告 14](14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md)（雙向可否認性）、[報告 18](18_x_posts_compute_bottleneck_sovereign_satcom_ukraine_l1.md)（反駁 P2「暫時關閉」誤稱）· [NPR](https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored)、[European Interest](https://www.europeaninterest.eu/ukraine-challenges-elon-musks-allegations-of-military-violations-of-starlink-terms/) |
 | **事件 3：C-UAS 成本交換比**<br>ISW 量化攔截率與 $7,000 AI 攔截機 | 10/14–10/24 限速期烏軍對俄噴射無人機（單夜 153 架中佔 92 架）攔截率由 **77% 降至 74%**，被迫派 F-16 發射 **$100 萬**飛彈補位；F-Drones 推進單價 **$7,000** 之 **F-Jet 80** AI 導引噴射攔截無人機。 | `fact` / `secondary` / `verified`（F-Jet 80 仍處研發爬坡，非規模化量產） | 連結[報告 14](14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md)、[報告 19](19_x_posts_russian_diesel_dmitriev_snyder_ukraine_l1.md)（Snyder 論戰場數月複製創新與愛國者庫存告急）· [ISW 2026-10-25](https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/) |
 | **事件 4：重型運載工程**<br>Starship B22 靜態點火與船體輪替 | Pad 2 完成每秒 **35–42.2 萬加侖**水噴淋與 **Booster 22**（33 具 Raptor 3）靜態點火；10/26 吊升 B22、移回低溫測試後之 **Ship 43**，並將 **Ship 42** 移上發射台準備 11 月 **Flight 15**。 | `fact` / `secondary` / `verified` | 連結[報告 11](11_google_suncatcher_orbital_compute_report.md)（Starship 年發射 180 次壓低至 $200/kg 之關鍵工程驗證）· [BASENOR Starbase Tracker](https://www.basenor.com/blogs/news/starship-flight-15-prep-4-details-that-matter) |
@@ -100,6 +108,8 @@
 ## 三、方法與架構：24 小時事件傳導與貝氏決策圖（L1 Vertical Layered Flowchart）
 
 依據 `user:knowledge-l1-publisher-v12` 規範，下方以單張、上下垂直分層的 Mermaid 圖表，完整呈現「決策主體與觀察者 $\to$ 太空發射、算力融資與戰場系統 $\to$ 財務洗牌與作戰風險傳導 $\to$ 貝氏後驗更新與台灣非紅供應鏈決策定位」的四層結構（隱形骨架僅固定由上至下閱讀順序，語意連線保留真實因果與證據分級；待目標 Chrome 閱讀器環境做最終視覺驗收）：
+
+2026-11-11 不改這張圖的節點文字。圖內 B1 的 +3.0／+2.5／+4.0 dB 與 State 1 是 2026-10-26 的畫面。有效後驗以主張表為準，這三筆分貝不寫入主張表。本次沒有重開 Chrome 重繪此圖。
 
 ```mermaid
 ---
@@ -201,14 +211,14 @@ flowchart TD
 | **R1** | **算力資本支出擴張與 Neoclouds 洗牌風險** | 財務現金流監督：SpaceX Q4 CapEx 達 $350–$400 億；無非 AI 現金流之二房東面臨斷糧 | `inference` / `secondary` / `verified` | [TIKR](https://www.tikr.com/blog/musk-says-spacex-locked-in-40-billion-for-chips-a-win-for-nvidia-were-investment-grade)、[本庫報告 16](16_negative_capital_loop_credit_collapse_ai_capex_l1.md) |
 | **R2** | **C-UAS 作戰成本交換比（Cost-Exchange Ratio）壓力** | 作戰經濟學風險：Starshield 限速期攔截率由 77% 降至 74%，迫使動用 $100 萬飛彈 | `fact` / `secondary` / `verified` | [ISW 2026-10-25](https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/) |
 | **R3** | **軍商雙用衛星單點斷網與軌道接近戰風險** | 政治與軌道安全風險：美參院要求防長作證；俄 Kosmos-2612 逼近 ICEYE 並警告 Starlink | `fact` / `secondary` / `verified` | [NPR](https://www.cfpublic.org/2026-10-24/musk-says-spacex-did-restrict-starlink-as-ukraine-says-the-tech-has-been-restored)、[Meduza](https://meduza.io/en/feature/2026/10/26/russia-is-escalating-its-confrontation-with-the-west-in-orbit-its-satellites-are-pursuing-spacecraft-from-companies-helping-ukraine-and-starlink-has-been-put-on-notice) |
-| **B1** | **貝氏似然比更新與台灣非紅供應鏈決策定位** | 後驗決策收斂：$H_1 (+3.0\text{ dB})$、$H_2 (+2.5\text{ dB})$、$H_3 (+4.0\text{ dB})$，確立台灣多軌備援與非紅硬體定位 | `inference` / `internal` / `verified` | 本庫 `BAYESIAN_DECISION_FRAMEWORK.md`、[報告 14](14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md) |
+| **B1** | **貝氏似然比更新與台灣非紅供應鏈決策定位** | 2026-10-26 內文試算曾寫 $H_1$ +3.0 dB、$H_2$ +2.5 dB、$H_3$ +4.0 dB。2026-11-11 起這三筆不寫入主張表 | `inference` / `internal` / `requires_verification`（歷史試算，不驅動後驗） | 本庫 `BAYESIAN_DECISION_FRAMEWORK.md`、[報告 14](14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md) |
 
 ---
 
 ## 四、深度解釋、貝氏決策評分與跨報告結構綜整（Explanation, Bayesian Scoring & Cross-Repo Synthesis）
 
 ### 4.1 貝氏決策評分更新（Bayesian Log-Odds Update）
-依據本庫 [`AGENTS.md`](AGENTS.md) 與 `BAYESIAN_DECISION_FRAMEWORK.md`，對過去 24 小時事件進行共模雜訊濾除與對數似然比（$\Delta\text{dB}$）評估：
+下表是 2026-10-26 的內文試算，保留作歷史紀錄。2026-11-11 的有效後驗以 `sources/claim_register.csv` 為準：本表的 +3.0／+2.5／+4.0 dB 不寫入該表。財務列裡的 `$B` 受文首單位鉗制，維持 `requires_verification`。
 
 | 評估假設 $H$ | 先驗底數 $P(H)$ | 本次事件證據 $E$（分子 $P(E\mid H)$ vs. 分母 $P(E\mid\neg H)$） | 似然比評估 $\Delta\text{dB}$ 與理由 | 狀態機與台股／美股供應鏈建議 |
 | :--- | :--- | :--- | :--- | :--- |

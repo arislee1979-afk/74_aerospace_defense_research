@@ -14,10 +14,10 @@
 |---|---|---|
 | **專案識別（Local ID）** | `74_aerospace_defense_research` | 本機工作目錄唯一識別碼 |
 | **角色定位（Role）** | `Producer`（實業／國防航太／雙用技術生產者） | 生產一手研究與證據，不複製外部雜訊 |
-| **當前成熟度階段（Knowledge Stage）** | **Capture** | 剛完成倉庫初始化，待完成首輪證據登錄與 Framing 閘門審查 |
+| **當前成熟度階段（Knowledge Stage）** | **Framing** | 2026-11-11：F1–F7 成立。01–03 大綱已寫入。Primary 申報尚未入主張表，故未進 Collection |
 | **當前正式綜述（Current Synthesis）** | **尚未建立** | 待完成 Review exit 閘門後方可收斂唯一正式 Synthesis |
 | **核心待解問題（Open Question）** | **在美中供應鏈脫鉤與北約／印太國防預算結構性擴張下，台灣航太軍工與低軌衛星供應鏈哪些次產業具備經得起財報自由現金流檢驗的「非紅供應鏈溢價」而非短期題材炒作？** | 嚴格維持單一句、聚焦財務實證 |
-| **當前下一步行動（Next Action）** | **建立首輪航太軍工與太空基建核心標的之貝氏先驗底數與 sources/claim_register.csv 初始基線登錄。** | 嚴格單一可交付成果、無多動詞串列 |
+| **當前下一步行動（Next Action）** | **以 primary 申報核對 CLM-74-002 與 CLM-74-003，未出現可核對長約或 Backlog 原件前維持這兩列 delta_db 為 0.00。** | 嚴格單一可交付成果、無多動詞串列 |
 
 ---
 
@@ -61,19 +61,24 @@
 
 ```text
 74_aerospace_defense_research/
-├── AGENTS.md                  # 本庫最高作業契約、禁詞令與方法論
-├── README.md                  # 本文件（專案主入口與範圍界定）
-├── .gitignore                 # Git 忽略設定
-├── 00_inbox.md                # 待處理候選事件與中斷請求（IRQ）收集箱
-├── 10_starlink_ukraine_zalenskyy_trump_musk_report.md    # Starlink 烏克蘭降速與軍用雙用管制深度調查
-├── 11_google_suncatcher_orbital_compute_report.md        # Google × Planet × SpaceX 太空運算原型衛星與 TPU 在軌驗證
-├── 12_musk_spacex_stock_gift_trump_accounts_report.md    # Musk 送全美兒童各一股 SpaceX 股票與川普帳戶機制剖析
-├── 13_tesla_roadster_spacex_copv_dual_use_report.md      # Tesla 第二代 Roadster 發表會與 SpaceX 航太雙用技術轉移
+├── AGENTS.md                  # 作業契約、禁詞令與方法論
+├── README.md                  # 本文件。Maturity、Open Question、Next Action 以本表為準
+├── index.html                 # 報告 14 的發布頁。不是全庫目錄，也不是 Current Synthesis
+├── 00_inbox.md                # IRQ 收集箱
+├── 01_space_infrastructure_and_satellite_supply_chain.md
+├── 02_ndaa_non_red_drone_supply_chain.md
+├── 03_aerospace_primes_backlog_and_taiwan_machining.md
+├── 10_ … 35_                  # 編號研究稿。清單與五維標籤見 sources/report_index.csv
 ├── sources/
-│   └── claim_register.csv     # 結構化主張登錄表（含五維標籤與貝氏對數勝算）
-└── plans/
-    └── ACTIVE_PLAN.md         # 當前執行狀態、Stage 檢查表與後續工作計畫
+│   ├── claim_register.csv     # 唯一可寫後驗的主張表（CLM-74-001 至 006）
+│   └── report_index.csv       # 報告索引。不是 primary 證據庫
+├── plans/
+│   ├── ACTIVE_PLAN.md
+│   └── 2026-11-11_branch_integration.md
+└── spcx/report/               # Starshield 側袋。圖預覽列為 duplicate
 ```
+
+編號稿的閱讀入口：期中選舉組用 `25_midterm_ai_reports_index_l1.md`。全庫用 `sources/report_index.csv`。`origin/main` 另有一份 24 號州長查核，檔名是 `24_us_midterm_governors_ai_datacenter_grid_policy_factcheck_l1.md`，與 `24_us_midterm_2026_results_and_defense_impact_l1.md` 並存。
 
 ---
 

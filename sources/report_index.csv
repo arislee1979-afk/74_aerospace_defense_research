@@ -1,37 +1,44 @@
 report_id,path,companion_paths,document_role,irq,claim_ids,source_tier,verification_status,workflow_disposition,git_sha,in_worktree,notes
-00,00_inbox.md,,raw,IRQ-01|IRQ-02|IRQ-03|IRQ-04|IRQ-05|IRQ-06|IRQ-07,CLM-74-001|CLM-74-002|CLM-74-003|CLM-74-004|CLM-74-005|CLM-74-006,internal,partially_verified,keep,582b8ee,yes,IRQ 收集箱。單點事件在登錄前似然比為 1.0
-10,10_starlink_ukraine_zalenskyy_trump_musk_report.md,10_starlink_ukraine_zalenskyy_trump_musk_report.html,analysis,IRQ-01,CLM-74-001,secondary,partially_verified,keep,582b8ee,yes,Starlink 限速與 Starshield 雙用管制
-11,11_google_suncatcher_orbital_compute_report.md,,analysis,IRQ-04,,secondary,requires_verification,keep,582b8ee,yes,軌道算力原型。PoC 未記入營收
-12,12_musk_spacex_stock_gift_trump_accounts_report.md,,analysis,IRQ-01,,secondary,requires_verification,keep,582b8ee,yes,贈股與帳戶機制
-13,13_tesla_roadster_spacex_copv_dual_use_report.md,,analysis,IRQ-05,,secondary,requires_verification,keep,582b8ee,yes,COPV 雙用。展示不等於量產
-14,14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md,14_mobius_history_spacex_nvda_ukraine_taiwan_l1.html|index.html,analysis,IRQ-01|IRQ-06,,secondary,requires_verification,keep,582b8ee,yes,長篇敘事。index.html 目前內嵌本篇，尚未改為目錄
-15,15_scientists_foot_the_bill_white_house_medals_l1.md,15_scientists_foot_the_bill_white_house_medals_l1_light.html|15_scientists_foot_the_bill_white_house_medals_l2_light.html,analysis,IRQ-06,,secondary,requires_verification,keep,582b8ee,yes,L1 light HTML 在工作區有未提交修改
-16,16_negative_capital_loop_credit_collapse_ai_capex_l1.md,16_negative_capital_loop_credit_collapse_ai_capex_l1_light.html|16_negative_capital_loop_credit_collapse_ai_capex_l2_light.html,analysis,IRQ-06,,secondary,requires_verification,keep,untracked,yes,未提交。資本支出與信用，連結 75 的主題多於本庫訂單
-17,17_spacex_40b_gpu_debt_starshield_cuas_24h_digest_l1.md,17_spacex_40b_gpu_debt_starshield_cuas_24h_digest_l2_light.html,analysis,IRQ-01|IRQ-02|IRQ-06,,secondary,partially_verified,keep,untracked,yes,未提交。24 小時彙編，內含 lead 與 internal 交叉引用
-18,18_x_posts_compute_bottleneck_sovereign_satcom_ukraine_l1.md,,analysis,IRQ-01|IRQ-06,,lead,requires_verification,keep,untracked,yes,未提交。X 貼文為 lead
-19,19_x_posts_russian_diesel_dmitriev_snyder_ukraine_l1.md,,analysis,IRQ-07,,lead,partially_verified,keep,untracked,yes,未提交。船期與選舉日曆。靠泊未核
-20,20_x_posts_applebaum_e5_mcfaul_ukraine_l1.md,,analysis,IRQ-07,,lead,requires_verification,keep,untracked,yes,未提交。評論與 X
-21,21_ukraine_spacex_q3_google_suncatcher_bluechip_l1.md,21_ukraine_spacex_q3_google_suncatcher_bluechip_l2_light.html,analysis,IRQ-04|IRQ-06,,secondary,requires_verification,keep,untracked,yes,未提交
-22,22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_l1.md,22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_l2_light.html,analysis,IRQ-02,,secondary,requires_verification,keep,582b8ee,yes,金融人士陳述與台海對照
-23,23_mcfaul_putins_strategy_working_trump_ukraine_l1.md,23_mcfaul_putins_strategy_working_trump_ukraine_l1.html|23_mcfaul_putins_strategy_working_trump_ukraine_l1_story.md|23_mcfaul_putins_strategy_working_trump_ukraine_l1_story.html,analysis,IRQ-07,,secondary,requires_verification,keep,582b8ee,yes,選前文本。後續見報告 24，不升格為 synthesis
-24,24_us_midterm_2026_results_and_defense_impact_l1.md,,analysis,IRQ-07,CLM-74-004|CLM-74-005|CLM-74-006,secondary,partially_verified,keep,untracked,yes,2026-11-05 開票與國防影響。delta_db 為 0
-25,25_midterm_ai_reports_index_l1.md,,navigation,IRQ-07,,secondary,partially_verified,keep,untracked,yes,閱讀索引
-26,26_hyperscaler_rally_data_center_split_l1.md,,analysis,IRQ-06|IRQ-07,,secondary,partially_verified,keep,untracked,yes,雲端四家與資料中心分裂，delta 不入主張表
-27,27_oracle_reaction_tencent_lease_l1.md,,analysis,IRQ-06,,secondary,partially_verified,keep,untracked,yes,Oracle 與騰訊租約待核
-28,28_china_ai_race_accounting_l1.md,,analysis,IRQ-02|IRQ-06,,secondary,partially_verified,keep,untracked,yes,中美 AI 三時鐘
-29,29_iran_ukraine_separate_tracks_l1.md,,analysis,IRQ-01|IRQ-03|IRQ-07,,secondary,partially_verified,keep,untracked,yes,伊朗與烏克蘭分帳
-30,30_formal_bayesian_decision_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,untracked,yes,正式評分。六列 ΔdB 皆 0.00，不寫入主張表
-31,31_democratic_winners_statements_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,untracked,yes,當選人原話
-32,32_trump_vance_musk_reactions_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,untracked,yes,川普 Vance Musk
-33,33_thiel_palantir_statements_l1.md,,analysis,IRQ-02|IRQ-06,,secondary,partially_verified,keep,untracked,yes,Thiel 與 Palantir 無選後新帖
-34,34_midterm_decision_analysis_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,untracked,yes,決策分析。六張卡 State 0，分數只引用報告 30，不寫入主張表
-CH3,CH3_軍工複合體的真知晶球與秒級兵推_Palantir與Scale_AI_L1.md,CH3_軍工複合體的真知晶球與秒級兵推_Palantir與Scale_AI_L1.html,analysis,IRQ-02,,internal,requires_verification,keep,57420f1,no,只存在於 origin/main。本機工作區未檢出，本索引未讀內文
-SPCX-L1,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-L1.md,,analysis,IRQ-01|IRQ-06,,secondary,requires_verification,keep,untracked,yes,未提交側袋
-SPCX-N,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1.md,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1.html,analysis,IRQ-01|IRQ-06,,secondary,requires_verification,keep,untracked,yes,未提交側袋敘事
-SPCX-P1,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1-dagre-md-preview.md,,analysis,IRQ-01|IRQ-06,,internal,requires_verification,duplicate,untracked,yes,圖預覽
-SPCX-P2,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1-elk-preview.md,,analysis,IRQ-01|IRQ-06,,internal,requires_verification,duplicate,untracked,yes,圖預覽
-REG,sources/claim_register.csv,,registry,IRQ-01|IRQ-02|IRQ-03|IRQ-07,CLM-74-001|CLM-74-002|CLM-74-003|CLM-74-004|CLM-74-005|CLM-74-006,internal,partially_verified,keep,582b8ee+dirty,yes,唯一可寫後驗的表。2026-11-05 起含 CLM-74-004 至 006
-ARCH-15,sources/white-house-medals-bailout.architecture.json,,raw,IRQ-06,,internal,requires_verification,keep,582b8ee,yes,報告 15 圖架構
-ARCH-16,sources/negative-capital-loop-ai-capex.architecture.json,,raw,IRQ-06,,internal,requires_verification,keep,untracked,yes,報告 16 圖架構
-PLAN,plans/ACTIVE_PLAN.md,,navigation,,,internal,partially_verified,keep,582b8ee+dirty,yes,stage 維持 Capture。F3 未過
-SCHED,plans/GEMINI_APP_SCHEDULES.md,,navigation,IRQ-01|IRQ-02|IRQ-03|IRQ-04|IRQ-06,,internal,requires_verification,keep,untracked,yes,排程設計稿。雲端輸出不得直接寫入主張表
+00,00_inbox.md,,raw,IRQ-01|IRQ-02|IRQ-03|IRQ-04|IRQ-05|IRQ-06|IRQ-07,CLM-74-001|CLM-74-002|CLM-74-003|CLM-74-004|CLM-74-005|CLM-74-006,internal,partially_verified,keep,worktree,yes,IRQ 收集箱。2026-11-11 補單位鉗制與大綱入口。單點事件似然比 1.0
+10,10_starlink_ukraine_zalenskyy_trump_musk_report.md,10_starlink_ukraine_zalenskyy_trump_musk_report.html,analysis,IRQ-01,CLM-74-001,secondary,partially_verified,keep,96d4c71,yes,Starlink 限速與 Starshield 雙用管制
+11,11_google_suncatcher_orbital_compute_report.md,,analysis,IRQ-04,,secondary,requires_verification,keep,96d4c71,yes,軌道算力原型。PoC 未記入營收
+12,12_musk_spacex_stock_gift_trump_accounts_report.md,,analysis,IRQ-01,,secondary,requires_verification,keep,96d4c71,yes,贈股與帳戶機制
+13,13_tesla_roadster_spacex_copv_dual_use_report.md,,analysis,IRQ-05,,secondary,requires_verification,keep,96d4c71,yes,COPV 雙用。展示不等於量產
+14,14_mobius_history_spacex_nvda_ukraine_taiwan_l1.md,14_mobius_history_spacex_nvda_ukraine_taiwan_l1.html|index.html,analysis,IRQ-01|IRQ-06,,secondary,requires_verification,keep,96d4c71,yes,長篇敘事。index.html 內嵌本篇。2026-11-11 頁首標籤改為 analysis / secondary / requires_verification。不是 Current Synthesis
+15,15_scientists_foot_the_bill_white_house_medals_l1.md,15_scientists_foot_the_bill_white_house_medals_l1_light.html|15_scientists_foot_the_bill_white_house_medals_l2_light.html,analysis,IRQ-06,,secondary,requires_verification,keep,96d4c71,yes,L1 light HTML 在工作區有已在 96d4c71修改
+16,16_negative_capital_loop_credit_collapse_ai_capex_l1.md,16_negative_capital_loop_credit_collapse_ai_capex_l1_light.html|16_negative_capital_loop_credit_collapse_ai_capex_l2_light.html,analysis,IRQ-06,,secondary,requires_verification,keep,96d4c71,yes,已在 96d4c71。資本支出與信用，連結 75 的主題多於本庫訂單
+17,17_spacex_40b_gpu_debt_starshield_cuas_24h_digest_l1.md,17_spacex_40b_gpu_debt_starshield_cuas_24h_digest_l2_light.html,analysis,IRQ-01|IRQ-02|IRQ-06,,secondary,partially_verified,keep,worktree,yes,2026-11-11 財務段改 requires_verification。內文 +3.0/+2.5/+4.0 dB 不寫入主張表。圖未重繪
+18,18_x_posts_compute_bottleneck_sovereign_satcom_ukraine_l1.md,,analysis,IRQ-01|IRQ-06,,lead,requires_verification,keep,96d4c71,yes,已在 96d4c71。X 貼文為 lead
+19,19_x_posts_russian_diesel_dmitriev_snyder_ukraine_l1.md,,analysis,IRQ-07,,lead,partially_verified,keep,96d4c71,yes,已在 96d4c71。船期與選舉日曆。靠泊未核
+20,20_x_posts_applebaum_e5_mcfaul_ukraine_l1.md,,analysis,IRQ-07,,lead,requires_verification,keep,96d4c71,yes,已在 96d4c71。評論與 X
+21,21_ukraine_spacex_q3_google_suncatcher_bluechip_l1.md,21_ukraine_spacex_q3_google_suncatcher_bluechip_l2_light.html,analysis,IRQ-04|IRQ-06,,secondary,requires_verification,keep,96d4c71,yes,已在 96d4c71
+22,22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_l1.md,22_jamie_dimon_jpmorgan_china_trump_diesel_taiwan_l2_light.html,analysis,IRQ-02,,secondary,requires_verification,keep,96d4c71,yes,金融人士陳述與台海對照
+23,23_mcfaul_putins_strategy_working_trump_ukraine_l1.md,23_mcfaul_putins_strategy_working_trump_ukraine_l1.html|23_mcfaul_putins_strategy_working_trump_ukraine_l1_story.md|23_mcfaul_putins_strategy_working_trump_ukraine_l1_story.html,analysis,IRQ-07,,secondary,requires_verification,keep,96d4c71,yes,選前文本。後續見報告 24，不升格為 synthesis
+24,24_us_midterm_2026_results_and_defense_impact_l1.md,,analysis,IRQ-07,CLM-74-004|CLM-74-005|CLM-74-006,secondary,partially_verified,keep,96d4c71,yes,2026-11-05 開票與國防影響。delta_db 為 0
+25,25_midterm_ai_reports_index_l1.md,,navigation,IRQ-07,,secondary,partially_verified,keep,worktree,yes,閱讀索引。狀態句已改為 96d4c71。功能分支尚未合併 main
+26,26_hyperscaler_rally_data_center_split_l1.md,,analysis,IRQ-06|IRQ-07,,secondary,partially_verified,keep,96d4c71,yes,雲端四家與資料中心分裂，delta 不入主張表
+27,27_oracle_reaction_tencent_lease_l1.md,,analysis,IRQ-06,,secondary,partially_verified,keep,96d4c71,yes,Oracle 與騰訊租約待核
+28,28_china_ai_race_accounting_l1.md,,analysis,IRQ-02|IRQ-06,,secondary,partially_verified,keep,96d4c71,yes,中美 AI 三時鐘
+29,29_iran_ukraine_separate_tracks_l1.md,,analysis,IRQ-01|IRQ-03|IRQ-07,,secondary,partially_verified,keep,96d4c71,yes,伊朗與烏克蘭分帳
+30,30_formal_bayesian_decision_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,96d4c71,yes,正式評分。六列 ΔdB 皆 0.00，不寫入主張表
+31,31_democratic_winners_statements_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,96d4c71,yes,當選人原話
+32,32_trump_vance_musk_reactions_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,96d4c71,yes,川普 Vance Musk
+33,33_thiel_palantir_statements_l1.md,,analysis,IRQ-02|IRQ-06,,secondary,partially_verified,keep,96d4c71,yes,Thiel 與 Palantir 無選後新帖
+34,34_midterm_decision_analysis_l1.md,,analysis,IRQ-07,,secondary,partially_verified,keep,worktree,yes,決策分析。狀態句已改為 96d4c71。分數只引用報告 30。不寫入主張表
+CH3,CH3_軍工複合體的真知晶球與秒級兵推_Palantir與Scale_AI_L1.md,CH3_軍工複合體的真知晶球與秒級兵推_Palantir與Scale_AI_L1.html,analysis,IRQ-02,,internal,requires_verification,keep,worktree,yes,2026-11-11 自 origin/main c0ecd0f 取回。內文未重寫。維持 requires_verification。不寫入主張表
+SPCX-L1,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-L1.md,,analysis,IRQ-01|IRQ-06,,secondary,requires_verification,keep,96d4c71,yes,已在 96d4c71 的側袋
+SPCX-N,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1.md,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1.html,analysis,IRQ-01|IRQ-06,,secondary,requires_verification,keep,96d4c71,yes,已在 96d4c71 的側袋敘事
+SPCX-P1,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1-dagre-md-preview.md,,analysis,IRQ-01|IRQ-06,,internal,requires_verification,duplicate,96d4c71,yes,圖預覽
+SPCX-P2,spcx/report/2026-10-27-starshield-musk-risk-iren-neocloud-narrative-L1-elk-preview.md,,analysis,IRQ-01|IRQ-06,,internal,requires_verification,duplicate,96d4c71,yes,圖預覽
+REG,sources/claim_register.csv,,registry,IRQ-01|IRQ-02|IRQ-03|IRQ-07,CLM-74-001|CLM-74-002|CLM-74-003|CLM-74-004|CLM-74-005|CLM-74-006,internal,partially_verified,keep,worktree,yes,唯一可寫後驗的表。CLM-74-001 至 006。002 與 003 在 primary 出現前維持 0.00
+ARCH-15,sources/white-house-medals-bailout.architecture.json,,raw,IRQ-06,,internal,requires_verification,keep,96d4c71,yes,報告 15 圖架構
+ARCH-16,sources/negative-capital-loop-ai-capex.architecture.json,,raw,IRQ-06,,internal,requires_verification,keep,96d4c71,yes,報告 16 圖架構
+PLAN,plans/ACTIVE_PLAN.md,,navigation,,,internal,partially_verified,keep,worktree,yes,stage 為 Framing。F3 已過。Collection 未開始
+SCHED,plans/GEMINI_APP_SCHEDULES.md,,navigation,IRQ-01|IRQ-02|IRQ-03|IRQ-04|IRQ-06,,internal,requires_verification,keep,96d4c71,yes,排程設計稿。雲端輸出不得直接寫入主張表
+01,01_space_infrastructure_and_satellite_supply_chain.md,,analysis,IRQ-01,CLM-74-001,internal,requires_verification,investigate,worktree,yes,Framing 大綱。無 primary 數字。不更新 delta_db
+02,02_ndaa_non_red_drone_supply_chain.md,,analysis,IRQ-02,CLM-74-002,internal,requires_verification,investigate,worktree,yes,Framing 大綱。CLM-74-002 維持 0.00
+03,03_aerospace_primes_backlog_and_taiwan_machining.md,,analysis,IRQ-03,CLM-74-003,internal,requires_verification,investigate,worktree,yes,Framing 大綱。CLM-74-003 維持 0.00
+35,35_lex_fridman_504_kofman_stewart_ukraine_drones_warfare_l1_story.md,,analysis,IRQ-01|IRQ-02,,secondary,requires_verification,keep,worktree,yes,Lex 504 故事版。訪談估計似然比 1.0。不寫入 CLM-74-002
+24G,24_us_midterm_governors_ai_datacenter_grid_policy_factcheck_l1.md,24_us_midterm_governors_ai_datacenter_grid_policy_factcheck_l1.html,analysis,IRQ-06|IRQ-07,,secondary,partially_verified,keep,worktree,yes,自 origin/main 取回的州長與資料中心查核。與 24 號國防影響稿並存
+ES,inbox/spain_hodio_palantir_dual_use_analysis.md,,review,IRQ-02,,secondary,partially_verified,keep,worktree,yes,自 origin/main 取回。政治修辭似然比 1.0。不寫入主張表
+LOOP,plans/LOOP_x_grok_agy_codex_decision_card.md,,navigation,,,internal,requires_verification,keep,worktree,yes,自 origin/main 取回的閉環計畫。不是證據。不進主張表

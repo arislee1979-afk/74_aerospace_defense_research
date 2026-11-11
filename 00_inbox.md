@@ -71,6 +71,7 @@
   3. 缺乏長約保護，一旦現貨價格回落，資產負債表將承受沉重壓力。
 - **決策卡**：[`DC_20261022_SPACEX_PER_WATT_COMPUTE_ECONOMICS.md`](../75_bayesian_analysis/decision_cards/DC_20261022_SPACEX_PER_WATT_COMPUTE_ECONOMICS.md)。檔案在 `75_bayesian_analysis`，標籤為 `hypothesis`／`partially_verified`／`keep`。該目錄說明寫明：決策卡未經 75 的獨立證據審查，不是 `70_investment_hub` 的正式策略結論。本庫後驗不因該卡更新。`70_investment_hub/decision_cards/` 無此檔。
 - **第一道檢驗哨（2026-10-31）**：額定算力是否由 1.7 GW 升至 2.2 GW。截至 2026-11-05，本庫沒有對應的 primary 觀測。狀態：來源不足。似然比維持 1.0。
+- **單位鉗制（2026-11-11）**：報告 17 正文把 Q3 營收、流動性、FCF 與 Q4 資本支出寫成億美元，事件表與第 4.1 節寫成約 10 倍的 `$B`。1 billion USD 等於 10 億美元。整段維持 `requires_verification`，似然比 1.0，不改 CLM-74-001。+3.0／+2.5／+4.0 dB 不寫入主張表。
 
 ---
 
@@ -84,5 +85,14 @@
 - **本庫登記**：[`24_us_midterm_2026_results_and_defense_impact_l1.md`](24_us_midterm_2026_results_and_defense_impact_l1.md)。主張 CLM-74-004、CLM-74-005、CLM-74-006。三列 `delta_db` 皆為 0.00，不更新 CLM-74-001、002、003。
 - **決策**：[`34_midterm_decision_analysis_l1.md`](34_midterm_decision_analysis_l1.md) 說明六張卡怎麼用。評分在 [`30_formal_bayesian_decision_l1.md`](30_formal_bayesian_decision_l1.md)，六列 ΔdB 皆 0.00，後驗 −3.68 dB，State 0。卡片在 `75_bayesian_analysis/decision_cards/DC_20261105_*`。這些卡不更新本庫後驗，也不重評 10 月舊卡。
 - **下一步檢驗**：州驗票與國會書記官認證；2027 年 1 月委員會主席與 NDAA／撥款草案是否出現援烏、制裁或衛星通訊條款；昇達科、啟碁、華通、漢翔、駐龍、寶一的財報是否出現可核對長約。報告 19 所載 11 月 7 日與 11 月 11 日柴油船期，另行核對靠泊紀錄，不併入本 IRQ 的後驗。
+
+---
+
+## 2026-11-11 治理收斂
+
+- Framing 大綱：[`01_space_infrastructure_and_satellite_supply_chain.md`](01_space_infrastructure_and_satellite_supply_chain.md)、[`02_ndaa_non_red_drone_supply_chain.md`](02_ndaa_non_red_drone_supply_chain.md)、[`03_aerospace_primes_backlog_and_taiwan_machining.md`](03_aerospace_primes_backlog_and_taiwan_machining.md)。三份都還沒有 primary 數字。
+- 報告 35 是 Lex Fridman #504 故事版。戰場消耗、預算占比與星座顆數維持似然比 1.0，掛在 IRQ-01 與 IRQ-02 之下，不更新 CLM-74-002。
+- CLM-74-002 只在上述台廠月營收或法說出現國防、衛星或地面終端長約、預付款或毛利率時重開。CLM-74-003 只在 Lockheed Martin、RTX、Boeing 或 Airbus 的 10-K 或月交付數據入表後重開。
+- 分叉取回與禁止合併 `main` 的範圍見 [`plans/2026-11-11_branch_integration.md`](plans/2026-11-11_branch_integration.md)。
 
 

@@ -3,7 +3,7 @@
 > **基準時間**：2026-11-05（Asia/Taipei）  
 > **document_role**：`navigation`  
 > **評分只在最後一份。** 前面各份只記錄事件、原話與機制。  
-> **沒有 commit，沒有 push。**
+> **版本**：正文在 `96d4c71` 提交。2026-11-11 只把本句改成帶 SHA 的狀態。功能分支尚未合併 `main`。
 
 所有檔案都在本庫根目錄。用 Chrome 的 Markdown Viewer 開 `.md`。
 
